@@ -1,0 +1,2 @@
+set(pdu_msgs_MESSAGE_FILES "/users/sanskrj/deeporange14_control/src/pacifica-dbw-ros/pdu_msgs/msg/FuseReport.msg;/users/sanskrj/deeporange14_control/src/pacifica-dbw-ros/pdu_msgs/msg/FuseStatus.msg;/users/sanskrj/deeporange14_control/src/pacifica-dbw-ros/pdu_msgs/msg/RelayCommand.msg;/users/sanskrj/deeporange14_control/src/pacifica-dbw-ros/pdu_msgs/msg/RelayReport.msg;/users/sanskrj/deeporange14_control/src/pacifica-dbw-ros/pdu_msgs/msg/RelayState.msg;/users/sanskrj/deeporange14_control/src/pacifica-dbw-ros/pdu_msgs/msg/RelayStatus.msg")
+set(pdu_msgs_SERVICE_FILES "")

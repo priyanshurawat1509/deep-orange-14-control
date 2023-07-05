@@ -1,0 +1,2 @@
+set(deeporange14_msgs_MESSAGE_FILES "/users/sanskrj/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg;/users/sanskrj/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg;/users/sanskrj/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg;/users/sanskrj/deeporange14_control/src/deeporange14_msgs/msgs/TorqueValuesMsg.msg")
+set(deeporange14_msgs_SERVICE_FILES "")

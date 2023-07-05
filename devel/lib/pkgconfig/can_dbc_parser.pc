@@ -1,0 +1,8 @@
+prefix=/users/sanskrj/deeporange14_control/devel
+
+Name: can_dbc_parser
+Description: Description of can_dbc_parser
+Version: 1.0.0
+Cflags: -I/users/sanskrj/deeporange14_control/src/pacifica-dbw-ros/can_dbc_parser/include
+Libs: -L${prefix}/lib -lcan_dbc_parser
+Requires: can_msgs roscpp

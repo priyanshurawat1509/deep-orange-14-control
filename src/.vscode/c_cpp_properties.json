@@ -1,0 +1,31 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/users/sanskrj/deeporange14_control/devel/include/**",
+        "/users/sanskrj/phoenix_source/clemson_LATEST/phoenix-r1/install/include/**",
+        "/opt/ros/noetic/include/**",
+        "/users/sanskrj/deeporange14_control/src/pacifica-dbw-ros/can_dbc_parser/include/**",
+        "/users/sanskrj/deeporange14_control/src/ros_canopen/canopen_402/include/**",
+        "/users/sanskrj/deeporange14_control/src/ros_canopen/canopen_chain_node/include/**",
+        "/users/sanskrj/deeporange14_control/src/ros_canopen/canopen_master/include/**",
+        "/users/sanskrj/deeporange14_control/src/ros_canopen/canopen_motor_node/include/**",
+        "/users/sanskrj/deeporange14_control/src/deeporange14_control/include/**",
+        "/users/sanskrj/deeporange14_control/src/pacifica-dbw-ros/raptor_dbw_can/include/**",
+        "/users/sanskrj/deeporange14_control/src/ros_canopen/socketcan_bridge/include/**",
+        "/users/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

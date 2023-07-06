@@ -62,6 +62,7 @@ namespace deeporange14
         allStates state;
         
         ros::Timer timer;
+        double a_little_after_the_beginning;
         // Publishers
 
 
@@ -76,7 +77,7 @@ namespace deeporange14
         ros::Subscriber sub_rosStop;
         ros::Subscriber sub_raptorState;
       
-        std::string topic_ns = "/deeporange14";
+        std::string topic_ns = "/warty";
         ros::Publisher pub_mobility;
 
         // Init the msg variables

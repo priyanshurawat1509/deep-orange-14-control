@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
         if not args.local:
             # environment at generation time
-            CMAKE_PREFIX_PATH = r'/users/sanskrj/phoenix_source/clemson_LATEST/phoenix-r1/install;/opt/ros/noetic'.split(';')
+            CMAKE_PREFIX_PATH = r'/users/sanskrj/Desktop/deeporange14_control/devel;/users/sanskrj/phoenix_source/clemson_LATEST/phoenix-r1/install;/opt/ros/noetic'.split(';')
         else:
             # don't consider any other prefix path than this one
             CMAKE_PREFIX_PATH = []

@@ -28,8 +28,6 @@ struct MobilityMsg_
     : header()
     , left_torque(0.0)
     , right_torque(0.0)
-    , left_brkPressure(0)
-    , right_brkPressure(0)
     , au_state(0)
     , brake_enable(false)  {
     }
@@ -37,8 +35,6 @@ struct MobilityMsg_
     : header(_alloc)
     , left_torque(0.0)
     , right_torque(0.0)
-    , left_brkPressure(0)
-    , right_brkPressure(0)
     , au_state(0)
     , brake_enable(false)  {
   (void)_alloc;
@@ -54,12 +50,6 @@ struct MobilityMsg_
 
    typedef double _right_torque_type;
   _right_torque_type right_torque;
-
-   typedef uint8_t _left_brkPressure_type;
-  _left_brkPressure_type left_brkPressure;
-
-   typedef uint8_t _right_brkPressure_type;
-  _right_brkPressure_type right_brkPressure;
 
    typedef uint8_t _au_state_type;
   _au_state_type au_state;
@@ -99,8 +89,6 @@ bool operator==(const ::deeporange14_msgs::MobilityMsg_<ContainerAllocator1> & l
   return lhs.header == rhs.header &&
     lhs.left_torque == rhs.left_torque &&
     lhs.right_torque == rhs.right_torque &&
-    lhs.left_brkPressure == rhs.left_brkPressure &&
-    lhs.right_brkPressure == rhs.right_brkPressure &&
     lhs.au_state == rhs.au_state &&
     lhs.brake_enable == rhs.brake_enable;
 }
@@ -159,12 +147,12 @@ struct MD5Sum< ::deeporange14_msgs::MobilityMsg_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "d0eaaf6b23ead9b732ddff611e74f7ec";
+    return "b44b2f62d416d75980f2be768e605900";
   }
 
   static const char* value(const ::deeporange14_msgs::MobilityMsg_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xd0eaaf6b23ead9b7ULL;
-  static const uint64_t static_value2 = 0x32ddff611e74f7ecULL;
+  static const uint64_t static_value1 = 0xb44b2f62d416d759ULL;
+  static const uint64_t static_value2 = 0x80f2be768e605900ULL;
 };
 
 template<class ContainerAllocator>
@@ -188,8 +176,6 @@ struct Definition< ::deeporange14_msgs::MobilityMsg_<ContainerAllocator> >
 "\n"
 "float64 left_torque\n"
 "float64 right_torque\n"
-"uint8 left_brkPressure\n"
-"uint8 right_brkPressure\n"
 "uint8 au_state \n"
 "bool brake_enable\n"
 "================================================================================\n"
@@ -228,8 +214,6 @@ namespace serialization
       stream.next(m.header);
       stream.next(m.left_torque);
       stream.next(m.right_torque);
-      stream.next(m.left_brkPressure);
-      stream.next(m.right_brkPressure);
       stream.next(m.au_state);
       stream.next(m.brake_enable);
     }
@@ -257,10 +241,6 @@ struct Printer< ::deeporange14_msgs::MobilityMsg_<ContainerAllocator> >
     Printer<double>::stream(s, indent + "  ", v.left_torque);
     s << indent << "right_torque: ";
     Printer<double>::stream(s, indent + "  ", v.right_torque);
-    s << indent << "left_brkPressure: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.left_brkPressure);
-    s << indent << "right_brkPressure: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.right_brkPressure);
     s << indent << "au_state: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.au_state);
     s << indent << "brake_enable: ";

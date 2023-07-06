@@ -99,6 +99,6 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_msgs" TYPE DIRECTORY FILES "/users/sanskrj/deeporange14_control/src/deeporange14_msgs/msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_msgs" TYPE DIRECTORY FILES "/users/sanskrj/deeporange14_control/src/deeporange14_msgs/msgs")
 endif()
 

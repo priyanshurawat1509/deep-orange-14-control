@@ -13,7 +13,7 @@ namespace deeporange14
 RosHealthMonitor::RosHealthMonitor(ros::NodeHandle& nh, ros::NodeHandle &priv_nh){
 
     sub_raptor = nh.subscribe(std::string(topic_ns + "/raptor_state"), 10, &RosHealthMonitor::raptorStateCallback, this, ros::TransportHints().tcpNoDelay(true));
-
+    
     // Initialize publishers
     pub_raptorHS = nh.advertise<std_msgs::Bool>(std::string(topic_ns + "/raptor_handshake_fail"),100);
     pub_stackstatus = nh.advertise<std_msgs::Bool>(std::string(topic_ns + "/stack_fault"),100);
@@ -27,7 +27,6 @@ void RosHealthMonitor::raptorStateCallback(const deeporange14_msgs::RaptorStateM
     checkdbwModeDisabled(raptorStateMsg);
     checkRaptorHandshakeFail(raptorStateMsg);
     checkBrakeEnableAck(raptorStateMsg);
-    checkStackFault();
 
 }
 void RosHealthMonitor::checkBrakeEnableAck(const deeporange14_msgs::RaptorStateMsg::ConstPtr& raptorStateMsg)
@@ -57,7 +56,7 @@ void RosHealthMonitor::checkdbwModeDisabled(const deeporange14_msgs::RaptorState
 void RosHealthMonitor::checkRaptorHandshakeFail(const deeporange14_msgs::RaptorStateMsg::ConstPtr& raptorStateMsg)
 {
 
-    std_msgs::Bool msg;
+  
     raptorHsmsg.data = (std::abs(raptorStateMsg->header.stamp.toSec() - ros::Time::now().toSec()) <= 3.0);
 
     if (raptorHsmsg.data){
@@ -73,7 +72,12 @@ void RosHealthMonitor::checkRaptorHandshakeFail(const deeporange14_msgs::RaptorS
 }
 
 void RosHealthMonitor::checkStackFault(){
-
+    ros::master::V_TopicInfo master_topics;
+    ros::master::getTopics(master_topics);
+    for (ros::master::V_TopicInfo::iterator it = master_topics.begin() ; it != master_topics.end(); it++) {
+                const ros::master::TopicInfo& info = *it;
+                std::cout << "topic_" << it - master_topics.begin() << ": " << info.name << std::endl;
+    }
     // std::string topicName = topic_ns + "/cmd_vel";
     // bool topicpresent = ros::master::topicExists(topicName);
     

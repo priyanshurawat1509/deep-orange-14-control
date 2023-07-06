@@ -9,8 +9,8 @@ namespace deeporange14 {
         sub_stackfault = nh.subscribe(std::string(topic_ns + "/stack_fault"), 10, &StateMachine::getStackFault, this, ros::TransportHints().tcpNoDelay(true));
         sub_dbwmode = nh.subscribe(std::string(topic_ns + "/dbw_mode_disabled"), 10, &StateMachine::getDbwModedisabled, this, ros::TransportHints().tcpNoDelay(true));
         sub_brkAck = nh.subscribe(std::string(topic_ns + "/brake_ack_raptor"),10, &StateMachine::getRaptorBrakeStatus, this, ros::TransportHints().tcpNoDelay(true));
-        sub_missionStatus = nh.subscribe(std::string(topic_ns + "/missionstatus"), 10, &StateMachine::getMissionStatus, this, ros::TransportHints().tcpNoDelay(true));
-        sub_brakeStatus = nh.subscribe(std::string(topic_ns + "/brake_enable"), 10, &StateMachine::getBrakeEnable, this, ros::TransportHints().tcpNoDelay(true));
+        sub_missionStatus = nh.subscribe(std::string(topic_ns + "/mission_status"), 10, &StateMachine::getMissionStatus, this, ros::TransportHints().tcpNoDelay(true));
+        sub_brakeStatus = nh.subscribe(std::string(topic_ns + "/brake_enable_stack"), 10, &StateMachine::getBrakeEnable, this, ros::TransportHints().tcpNoDelay(true));
         sub_rosController = nh.subscribe(std::string(topic_ns + "/cmd_trq"), 10, &StateMachine::getTorqueValues, this, ros::TransportHints().tcpNoDelay(true));
         sub_rosStop = nh.subscribe(std::string(topic_ns + "/exit_ROS"), 10, &StateMachine::getStopRos, this, ros::TransportHints().tcpNoDelay(true));
         sub_raptorState = nh.subscribe(std::string(topic_ns + "/raptor_state"), 10, &StateMachine::getRaptorMsg, this, ros::TransportHints().tcpNoDelay(true));
@@ -38,14 +38,21 @@ namespace deeporange14 {
         mobilityMsg.brake_enable = true;
         mobilityMsg.au_state = state;
 
+        a_little_after_the_beginning = ros::Time::now().toSec() + 0.001;
+        std::ostringstream ss;
+    
+        ss << a_little_after_the_beginning;
+        std::string myVariableString = ss.str();
+        ROS_INFO("My variable value: %s", myVariableString.c_str());
+
         // Set up Timer - with calback to publish ROS state all the time that the node is running
         timer = nh.createTimer(ros::Duration(1.0 / 20.0), &StateMachine::publishROSState, this);
         
     }
     StateMachine::~StateMachine(){}
 
-    void StateMachine::getHanshakeFailed(const std_msgs::Bool::ConstPtr& _){
-        raptorhs_fail = _->data; 
+    void StateMachine::getHanshakeFailed(const std_msgs::Bool::ConstPtr& raptorhsMsg){
+        raptorhs_fail = raptorhsMsg->data; 
     }
 
     void StateMachine::getStackFault(const std_msgs::Bool::ConstPtr& stackfault){
@@ -97,7 +104,6 @@ namespace deeporange14 {
                 mobilityMsg.au_state = state;
                 pub_mobility.publish(mobilityMsg);
 
-                ros::Time first_time_counter = ros::Time::now();
 
                 if(!raptorhs_fail){
                     // Raptor Handshake established
@@ -109,22 +115,25 @@ namespace deeporange14 {
                 }else{
                     // keep checking for 3 secs 
                     // if still not after 3 sec give Error
-                    while(std::abs(first_time_counter.toSec())- ros::Time::now().toSec()<= 3){ // allow 3 seconds to 
-                        
+                    while((std::abs(a_little_after_the_beginning - ros::Time::now().toSec()) <= 3)){ // allow 3 seconds to 
+                          
                         if (!raptorhs_fail){
                             //Raptor Handshake established
                             state = AU2_IDLE;
                             mobilityMsg.au_state = state;                           
                             pub_mobility.publish(mobilityMsg);
                             break;
-                        }  
-                        ROS_WARN("Warning: RaptorHandshake checking");  
+                        } 
+                        ROS_ERROR("Warning:[AU1_STARTUP]:RaptorHandshake checking"); 
+                        
                     }
+                    state = AU98_FAULT;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR("ERROR: RaptorHandshake not established");
-
+                    ROS_ERROR("ERROR:[AU1_STARTUP]: RaptorHandshake not established");
+                    break;
                 }
+                
             }
             
             case AU2_IDLE:{
@@ -146,14 +155,14 @@ namespace deeporange14 {
                     state = AU1_STARTUP;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR ("ERROR: RaptorHandshake failed ");
+                    ROS_ERROR ("ERROR: [AU2_IDLE]: RaptorHandshake failed ");
                     break;
                 }
                 else if (system_state != 8 or dbw_mode != 3){
                     state = AU2_IDLE;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR ("ERROR: SystemState not 8 or dbw mode not 3");
+                    ROS_ERROR ("ERROR: [AU2_IDLE]: SystemState not 8 or dbw mode not 3");
                     break;
                 }
                 // pub_mobility.publish(mobilityMsg);
@@ -180,21 +189,21 @@ namespace deeporange14 {
                     state = AU1_STARTUP;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR ("ERROR: RaptorHandshake failed ");
+                    ROS_ERROR ("ERROR:[AU3_WAIT_EXECUTION]: RaptorHandshake failed ");
                     break;
                 }
                 else if(dbwmode_disable){
                     state = AU2_IDLE;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR("ERROR: Out of dbwMode ");
+                    ROS_ERROR("ERROR: [AU3_WAIT_EXECUTION]: Out of dbwMode ");
                     break;                    
                 }
                 else if (stack_fault){
                     state = AU2_IDLE;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR("ERROR: Stack Crashed or failed ");
+                    ROS_ERROR("ERROR: [AU3_WAIT_EXECUTION]:Stack Crashed or failed ");
                     break;
                     
                 }
@@ -204,22 +213,23 @@ namespace deeporange14 {
                     mobilityMsg.brake_enable = brake_enable_stack;
                     mobilityMsg.au_state = state;                   
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR("ERROR: Stack should not disable brakes by now, brk enable should be false, meaning dont enable brakes yet");
+                    ROS_ERROR("ERROR: [AU3_WAIT_EXECUTION]:Stack should not disable brakes by now, brk enable should be false, meaning dont enable brakes yet");
                     break;
                 }
                 else if(mission_status != "executedNav"){
                     state = AU3_WAIT_EXECUTION;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: execute button is not pressed yet");
+                    ROS_WARN("Warning: [AU3_WAIT_EXECUTION]:execute button is not pressed yet");
                     break;
                 }
                 else if(stop_ros){
-                    //  go back to idle
+                    //  go backuint8 left_brkPressure
+
                     state = AU2_IDLE;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: stop button is pressed ");
+                    ROS_WARN("Warning: [AU3_WAIT_EXECUTION]:stop button is pressed ");
                     break;
                 }
 
@@ -245,21 +255,21 @@ namespace deeporange14 {
                     state = AU1_STARTUP;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR ("ERROR: RaptorHandshake failed ");
+                    ROS_ERROR ("ERROR: [AU4_EXEC_IMINENT]:RaptorHandshake failed ");
                     break;
                 }
                 else if(dbwmode_disable){
                     state = AU2_IDLE;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR("ERROR: Out of dbwMode ");
+                    ROS_ERROR("ERROR:[AU4_EXEC_IMINENT]: Out of dbwMode ");
                     break;                    
                 }
                 else if (stack_fault){
                     state = AU2_IDLE;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR("ERROR: Stack Crashed or failed ");
+                    ROS_ERROR("ERROR: [AU4_EXEC_IMINENT]:Stack Crashed or failed ");
                     break;
                     
                 }
@@ -268,14 +278,14 @@ namespace deeporange14 {
                     mobilityMsg.brake_enable = brake_enable_stack;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: Brakes are still enabled, they need to be disabled by now");
+                    ROS_WARN("Warning: [AU4_EXEC_IMINENT]:Brakes are still enabled, they need to be disabled by now");
                     break;
                 }
                 else if(mission_status != "globalPlanReady"){
                     state = AU4_EXEC_IMINENT;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: Execute button pressed but global plan not ready yet");
+                    ROS_WARN("Warning: [AU4_EXEC_IMINENT]:Execute button pressed but global plan not ready yet");
                     break;
                 }
                 else if(stop_ros){
@@ -283,7 +293,7 @@ namespace deeporange14 {
                     state = AU2_IDLE;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: stop button is pressed ");
+                    ROS_WARN("Warning: [AU4_EXEC_IMINENT]:stop button is pressed ");
                     break;
                 }
                       
@@ -308,21 +318,21 @@ namespace deeporange14 {
                     state = AU1_STARTUP;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR ("ERROR: RaptorHandshake failed ");
+                    ROS_ERROR ("ERROR: [AU5_DISENGAGED_BRAKE]:RaptorHandshake failed ");
                     break;
                 }
                 else if(dbwmode_disable){
                     state = AU2_IDLE;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR("ERROR: Out of dbwMode ");
+                    ROS_ERROR("ERROR: [AU5_DISENGAGED_BRAKE]:Out of dbwMode ");
                     break;                    
                 }
                 else if (stack_fault){
                     state = AU2_IDLE;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR("ERROR: Stack Crashed or failed ");
+                    ROS_ERROR("ERROR: [AU5_DISENGAGED_BRAKE]:Stack Crashed or failed ");
                     break;
                     
                 }
@@ -331,14 +341,14 @@ namespace deeporange14 {
                     mobilityMsg.brake_enable = brake_enable_stack;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: Brakes enable command from stack is True, it should be false, they need to be disengaged by now");
+                    ROS_WARN("Warning: [AU5_DISENGAGED_BRAKE]:Brakes enable command from stack is True, it should be false, they need to be disengaged by now");
                     break;
                 }
                 else if(raptorbrakeAck){
                     state = AU5_DISENGAGED_BRAKE;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: Raptor brakes disengaged acknowledgement not received !");
+                    ROS_WARN("Warning: [AU5_DISENGAGED_BRAKE]:Raptor brakes disengaged acknowledgement not received !");
                     break;
                 }
 
@@ -346,7 +356,7 @@ namespace deeporange14 {
                     state = AU5_DISENGAGED_BRAKE;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: Execute button pressed but global plan not ready yet");
+                    ROS_WARN("Warning: [AU5_DISENGAGED_BRAKE]:Execute button pressed but global plan not ready yet");
                     break;
                 }
 
@@ -355,7 +365,7 @@ namespace deeporange14 {
                     state = AU2_IDLE;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: stop button is pressed ");
+                    ROS_WARN("Warning: [AU5_DISENGAGED_BRAKE]:stop button is pressed ");
                     break;
                 }
 
@@ -382,21 +392,21 @@ namespace deeporange14 {
                     state = AU1_STARTUP;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR ("ERROR: RaptorHandshake failed ");
+                    ROS_ERROR ("ERROR: [AU6_COMMAND_TORQUES]: RaptorHandshake failed ");
                     break;
                 }
                 else if(dbwmode_disable){
                     state = AU2_IDLE;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR("ERROR: Out of dbwMode ");
+                    ROS_ERROR("ERROR: [AU6_COMMAND_TORQUES]:Out of dbwMode ");
                     break;                    
                 }
                 else if (stack_fault){
                     state = AU2_IDLE;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR("ERROR: Stack Crashed or failed ");
+                    ROS_ERROR("ERROR: [AU6_COMMAND_TORQUES]: Stack Crashed or failed ");
                     break;
                     
                 }
@@ -405,7 +415,7 @@ namespace deeporange14 {
                     mobilityMsg.brake_enable = brake_enable_stack;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: Brakes enable command from stack is True, it should be false, they need to be disengaged by now");
+                    ROS_WARN("Warning: [AU6_COMMAND_TORQUES]: Brakes enable command from stack is True, it should be false, they need to be disengaged by now");
                     break;
                 }
 
@@ -413,7 +423,7 @@ namespace deeporange14 {
                     state = AU6_COMMAND_TORQUES;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: Mission status not changed to commanding torques from stack side");
+                    ROS_WARN("Warning: [AU6_COMMAND_TORQUES]:Mission status not changed to commanding torques from stack side");
                     break;
                 }
 
@@ -422,7 +432,7 @@ namespace deeporange14 {
                     state = AU2_IDLE;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: stop button is pressed ");
+                    ROS_WARN("Warning: [AU6_COMMAND_TORQUES]:stop button is pressed ");
                     break;
                 }
             }
@@ -440,21 +450,21 @@ namespace deeporange14 {
                     state = AU1_STARTUP;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR ("ERROR: RaptorHandshake failed ");
+                    ROS_ERROR ("ERROR: [AU7_SAFE_STOP]:RaptorHandshake failed ");
                     break;
                 }
                 else if(dbwmode_disable){
                     state = AU2_IDLE;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR("ERROR: Out of dbwMode ");
+                    ROS_ERROR("ERROR: [AU7_SAFE_STOP]: Out of dbwMode ");
                     break;                    
                 }
                 else if (stack_fault){
                     state = AU2_IDLE;
                     mobilityMsg.au_state = AU98_FAULT;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR("ERROR: Stack Crashed or failed ");
+                    ROS_ERROR("ERROR: [AU7_SAFE_STOP]: Stack Crashed or failed ");
                     break;
                     
                 }
@@ -463,7 +473,7 @@ namespace deeporange14 {
                     mobilityMsg.brake_enable = brake_enable_stack;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: Brakes enable command from stack is False, it should be true, they need to be disengaged by now");
+                    ROS_WARN("Warning: [AU7_SAFE_STOP]:Brakes enable command from stack is False, it should be true, they need to be disengaged by now");
                     break;
                 }
 
@@ -471,7 +481,7 @@ namespace deeporange14 {
                     state = AU7_SAFE_STOP;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: Mission status not changed to completed or cancelled from stack side");
+                    ROS_WARN("Warning: [AU7_SAFE_STOP]: Mission status not changed to completed or cancelled from stack side");
                     break;
                 }
 
@@ -480,10 +490,17 @@ namespace deeporange14 {
                     state = AU2_IDLE;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: stop button is pressed ");
+                    ROS_WARN("Warning: [AU7_SAFE_STOP]:stop button is pressed ");
                     break;
                 }
             }
+            case AU98_FAULT:
+                ROS_ERROR("[AU98_Fault_state] : remain in fault");
+                break;
+
+            default:
+                std::cout << "Unknown state" << std::endl;
+                break;
              
             }   
 

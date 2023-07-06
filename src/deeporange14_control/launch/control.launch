@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="deeporange14_control" type="deeporange14_control_dbwnode" name="deeporange14" output="screen">
+    <!-- <param name="rtk_check_timer" value="$(arg rtk_check_timer)" />
+    <param name="do_ns" value="$(arg do_ns)" />
+    <param name="dbw_dbc_file" textfile="$(find deeporange13_control)/dbc/ros_do13.dbc" /> -->
+    <!-- <param name="vehicle_trackwidth" default="2.6" /> -->
+  </node>
+
+</launch>

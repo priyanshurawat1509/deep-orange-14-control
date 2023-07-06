@@ -22,8 +22,6 @@ class MobilityMsg {
       this.header = null;
       this.left_torque = null;
       this.right_torque = null;
-      this.left_brkPressure = null;
-      this.right_brkPressure = null;
       this.au_state = null;
       this.brake_enable = null;
     }
@@ -45,18 +43,6 @@ class MobilityMsg {
       }
       else {
         this.right_torque = 0.0;
-      }
-      if (initObj.hasOwnProperty('left_brkPressure')) {
-        this.left_brkPressure = initObj.left_brkPressure
-      }
-      else {
-        this.left_brkPressure = 0;
-      }
-      if (initObj.hasOwnProperty('right_brkPressure')) {
-        this.right_brkPressure = initObj.right_brkPressure
-      }
-      else {
-        this.right_brkPressure = 0;
       }
       if (initObj.hasOwnProperty('au_state')) {
         this.au_state = initObj.au_state
@@ -81,10 +67,6 @@ class MobilityMsg {
     bufferOffset = _serializer.float64(obj.left_torque, buffer, bufferOffset);
     // Serialize message field [right_torque]
     bufferOffset = _serializer.float64(obj.right_torque, buffer, bufferOffset);
-    // Serialize message field [left_brkPressure]
-    bufferOffset = _serializer.uint8(obj.left_brkPressure, buffer, bufferOffset);
-    // Serialize message field [right_brkPressure]
-    bufferOffset = _serializer.uint8(obj.right_brkPressure, buffer, bufferOffset);
     // Serialize message field [au_state]
     bufferOffset = _serializer.uint8(obj.au_state, buffer, bufferOffset);
     // Serialize message field [brake_enable]
@@ -102,10 +84,6 @@ class MobilityMsg {
     data.left_torque = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [right_torque]
     data.right_torque = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [left_brkPressure]
-    data.left_brkPressure = _deserializer.uint8(buffer, bufferOffset);
-    // Deserialize message field [right_brkPressure]
-    data.right_brkPressure = _deserializer.uint8(buffer, bufferOffset);
     // Deserialize message field [au_state]
     data.au_state = _deserializer.uint8(buffer, bufferOffset);
     // Deserialize message field [brake_enable]
@@ -116,7 +94,7 @@ class MobilityMsg {
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 20;
+    return length + 18;
   }
 
   static datatype() {
@@ -126,7 +104,7 @@ class MobilityMsg {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'd0eaaf6b23ead9b732ddff611e74f7ec';
+    return 'b44b2f62d416d75980f2be768e605900';
   }
 
   static messageDefinition() {
@@ -137,8 +115,6 @@ class MobilityMsg {
     
     float64 left_torque
     float64 right_torque
-    uint8 left_brkPressure
-    uint8 right_brkPressure
     uint8 au_state 
     bool brake_enable
     ================================================================================
@@ -185,20 +161,6 @@ class MobilityMsg {
     }
     else {
       resolved.right_torque = 0.0
-    }
-
-    if (msg.left_brkPressure !== undefined) {
-      resolved.left_brkPressure = msg.left_brkPressure;
-    }
-    else {
-      resolved.left_brkPressure = 0
-    }
-
-    if (msg.right_brkPressure !== undefined) {
-      resolved.right_brkPressure = msg.right_brkPressure;
-    }
-    else {
-      resolved.right_brkPressure = 0
     }
 
     if (msg.au_state !== undefined) {

@@ -27,6 +27,6 @@ catkin_package(CATKIN_DEPENDS
   geometry_msgs
 )
 
-install(DIRECTORY msg
+install(DIRECTORY msgs
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )

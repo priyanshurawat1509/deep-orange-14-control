@@ -21,7 +21,7 @@ enum allStates{
     AU5_DISENGAGED_BRAKE          = 5,
     AU6_COMMAND_TORQUES           = 6,
     AU7_SAFE_STOP                 = 7,
-    AU98_FAULT                    = 98, 
+    AU98_FAULT                    = 254, 
 
 
   };

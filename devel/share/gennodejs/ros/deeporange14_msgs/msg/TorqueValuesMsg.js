@@ -20,6 +20,8 @@ class TorqueValuesMsg {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.header = null;
+      this.seq = null;
+      this.stamp = null;
       this.left_torque = null;
       this.right_torque = null;
     }
@@ -29,6 +31,18 @@ class TorqueValuesMsg {
       }
       else {
         this.header = new std_msgs.msg.Header();
+      }
+      if (initObj.hasOwnProperty('seq')) {
+        this.seq = initObj.seq
+      }
+      else {
+        this.seq = 0;
+      }
+      if (initObj.hasOwnProperty('stamp')) {
+        this.stamp = initObj.stamp
+      }
+      else {
+        this.stamp = {secs: 0, nsecs: 0};
       }
       if (initObj.hasOwnProperty('left_torque')) {
         this.left_torque = initObj.left_torque
@@ -49,6 +63,10 @@ class TorqueValuesMsg {
     // Serializes a message object of type TorqueValuesMsg
     // Serialize message field [header]
     bufferOffset = std_msgs.msg.Header.serialize(obj.header, buffer, bufferOffset);
+    // Serialize message field [seq]
+    bufferOffset = _serializer.uint32(obj.seq, buffer, bufferOffset);
+    // Serialize message field [stamp]
+    bufferOffset = _serializer.time(obj.stamp, buffer, bufferOffset);
     // Serialize message field [left_torque]
     bufferOffset = _serializer.float64(obj.left_torque, buffer, bufferOffset);
     // Serialize message field [right_torque]
@@ -62,6 +80,10 @@ class TorqueValuesMsg {
     let data = new TorqueValuesMsg(null);
     // Deserialize message field [header]
     data.header = std_msgs.msg.Header.deserialize(buffer, bufferOffset);
+    // Deserialize message field [seq]
+    data.seq = _deserializer.uint32(buffer, bufferOffset);
+    // Deserialize message field [stamp]
+    data.stamp = _deserializer.time(buffer, bufferOffset);
     // Deserialize message field [left_torque]
     data.left_torque = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [right_torque]
@@ -72,7 +94,7 @@ class TorqueValuesMsg {
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 16;
+    return length + 28;
   }
 
   static datatype() {
@@ -82,14 +104,15 @@ class TorqueValuesMsg {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '6d520ba6826fce2ad8c1220c1158f51a';
+    return 'f89af58c9dfa929a2769a3c304e31d8f';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     Header header
-    
+      uint32 seq
+      time stamp
     float64 left_torque
     float64 right_torque
     
@@ -123,6 +146,20 @@ class TorqueValuesMsg {
     }
     else {
       resolved.header = new std_msgs.msg.Header()
+    }
+
+    if (msg.seq !== undefined) {
+      resolved.seq = msg.seq;
+    }
+    else {
+      resolved.seq = 0
+    }
+
+    if (msg.stamp !== undefined) {
+      resolved.stamp = msg.stamp;
+    }
+    else {
+      resolved.stamp = {secs: 0, nsecs: 0}
     }
 
     if (msg.left_torque !== undefined) {

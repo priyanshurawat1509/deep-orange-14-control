@@ -1,0 +1,12 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/users/sanskrj/deeporange14_control/devel/lib/python3/dist-packages",
+        "/users/sanskrj/phoenix_source/clemson_LATEST/phoenix-r1/install/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/users/sanskrj/deeporange14_control/devel/lib/python3/dist-packages",
+        "/users/sanskrj/phoenix_source/clemson_LATEST/phoenix-r1/install/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
+}

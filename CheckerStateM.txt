@@ -1,0 +1,56 @@
+
+rostopic pub /warty/raptor_handshake_fail std_msgs/Bool "{data: false}"
+rostopic pub /warty/stack_fault std_msgs/Bool "{data: false}"
+rostopic pub /warty/dbw_mode_disabled std_msgs/Bool "{data: false}"
+rostopic pub /warty/brake_ack_raptor std_msgs/Bool "{data: true}"
+
+
+
+################### Variable status ###################################
+
+rostopic pub /warty/mission_status deeporange14_msgs/MissionState "status: 'executedNav', stop_ros: false"
+rostopic pub /warty/mission_status deeporange14_msgs/MissionState "status: 'globalPlanReady', stop_ros: false"
+rostopic pub /warty/mission_status deeporange14_msgs/MissionState "status: 'BrakesDisengaging', stop_ros: false"
+rostopic pub /warty/mission_status deeporange14_msgs/MissionState "status: 'CommandingTorques', stop_ros: false"
+rostopic pub /warty/mission_status deeporange14_msgs/MissionState "status: 'MissionCompleted', stop_ros: false"
+rostopic pub /warty/mission_status deeporange14_msgs/MissionState "status: 'MissionCancelled', stop_ros: false"
+
+
+rostopic pub /warty/brake_enable_stack std_msgs/Bool "{data: true}"
+rostopic pub /warty/brake_enable_stack std_msgs/Bool "{data: false}"
+rostopic pub /warty/cmd_trq deeporange14_msgs/TorqueVauesMsg "left_torque: 0.0, right_torque: 0.0"
+rostopic pub /warty/raptor_state deeporange14_msgs/RaptorStateMsg '[0, now]' '[8, 3, true]'
+
+################ Induce Faults #######################################
+
+rostopic pub /warty/raptor_handshake_fail std_msgs/Bool "{data: true}"
+rostopic pub /warty/stack_fault std_msgs/Bool "{data: true}"
+rostopic pub /warty/dbw_mode_disabled std_msgs/Bool "{data: true}"
+rostopic pub /warty/brake_ack_raptor std_msgs/Bool "{data: false}"
+
+rostopic pub /warty/mission_status deeporange14_msgs/MissionState "status: 'executedNav', stop_ros: true"
+rostopic pub /warty/mission_status deeporange14_msgs/MissionState "status: 'globalPlanReady', stop_ros: true"
+rostopic pub /warty/mission_status deeporange14_msgs/MissionState "status: 'BrakesDisengaging', stop_ros: true"
+rostopic pub /warty/mission_status deeporange14_msgs/MissionState "status: 'CommandingTorques', stop_ros: true"
+rostopic pub /warty/mission_status deeporange14_msgs/MissionState "status: 'MissionCompleted', stop_ros: true"
+rostopic pub /warty/mission_status deeporange14_msgs/MissionState "status: 'MissionCancelled', stop_ros: true"
+
+rostopic pub /warty/raptor_state deeporange14_msgs/RaptorStateMsg "system_state: 98, dbw_mode: 3, brake_enable_status: false" # false is state we dont want
+rostopic pub /warty/raptor_state deeporange14_msgs/RaptorStateMsg "system_state: 98, dbw_mode: 2, brake_enable_status: false"
+rostopic pub /warty/raptor_state deeporange14_msgs/RaptorStateMsg "system_state: 98, dbw_mode: 2, brake_enable_status: true"
+
+
+
+####WARNING: no messages received and simulated time is active.
+Is /clock being published?
+
+
+
+rostopic pub /RaptorStateMsg deeporange14_msgs/RaptorStateMsg "{
+  header: {stamp: now, frame_id: 'ros'},
+  seq: 1,
+  stamp: now,
+  system_state: 1.5,
+  dbw_mode: 2.0,
+  brake_enable_status: true
+}"

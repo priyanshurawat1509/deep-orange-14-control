@@ -12,6 +12,16 @@
     :initarg :header
     :type std_msgs-msg:Header
     :initform (cl:make-instance 'std_msgs-msg:Header))
+   (seq
+    :reader seq
+    :initarg :seq
+    :type cl:integer
+    :initform 0)
+   (stamp
+    :reader stamp
+    :initarg :stamp
+    :type cl:real
+    :initform 0)
    (left_torque
     :reader left_torque
     :initarg :left_torque
@@ -37,6 +47,16 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader deeporange14_msgs-msg:header-val is deprecated.  Use deeporange14_msgs-msg:header instead.")
   (header m))
 
+(cl:ensure-generic-function 'seq-val :lambda-list '(m))
+(cl:defmethod seq-val ((m <TorqueValuesMsg>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader deeporange14_msgs-msg:seq-val is deprecated.  Use deeporange14_msgs-msg:seq instead.")
+  (seq m))
+
+(cl:ensure-generic-function 'stamp-val :lambda-list '(m))
+(cl:defmethod stamp-val ((m <TorqueValuesMsg>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader deeporange14_msgs-msg:stamp-val is deprecated.  Use deeporange14_msgs-msg:stamp instead.")
+  (stamp m))
+
 (cl:ensure-generic-function 'left_torque-val :lambda-list '(m))
 (cl:defmethod left_torque-val ((m <TorqueValuesMsg>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader deeporange14_msgs-msg:left_torque-val is deprecated.  Use deeporange14_msgs-msg:left_torque instead.")
@@ -49,6 +69,20 @@
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <TorqueValuesMsg>) ostream)
   "Serializes a message object of type '<TorqueValuesMsg>"
   (roslisp-msg-protocol:serialize (cl:slot-value msg 'header) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'seq)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 8) (cl:slot-value msg 'seq)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 16) (cl:slot-value msg 'seq)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 24) (cl:slot-value msg 'seq)) ostream)
+  (cl:let ((__sec (cl:floor (cl:slot-value msg 'stamp)))
+        (__nsec (cl:round (cl:* 1e9 (cl:- (cl:slot-value msg 'stamp) (cl:floor (cl:slot-value msg 'stamp)))))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __nsec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __nsec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __nsec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __nsec) ostream))
   (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'left_torque))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
@@ -71,6 +105,20 @@
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <TorqueValuesMsg>) istream)
   "Deserializes a message object of type '<TorqueValuesMsg>"
   (roslisp-msg-protocol:deserialize (cl:slot-value msg 'header) istream)
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'seq)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) (cl:slot-value msg 'seq)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) (cl:slot-value msg 'seq)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) (cl:slot-value msg 'seq)) (cl:read-byte istream))
+    (cl:let ((__sec 0) (__nsec 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 0) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'stamp) (cl:+ (cl:coerce __sec 'cl:double-float) (cl:/ __nsec 1e9))))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -101,19 +149,21 @@
   "deeporange14_msgs/TorqueValuesMsg")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<TorqueValuesMsg>)))
   "Returns md5sum for a message object of type '<TorqueValuesMsg>"
-  "6d520ba6826fce2ad8c1220c1158f51a")
+  "f89af58c9dfa929a2769a3c304e31d8f")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'TorqueValuesMsg)))
   "Returns md5sum for a message object of type 'TorqueValuesMsg"
-  "6d520ba6826fce2ad8c1220c1158f51a")
+  "f89af58c9dfa929a2769a3c304e31d8f")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<TorqueValuesMsg>)))
   "Returns full string definition for message of type '<TorqueValuesMsg>"
-  (cl:format cl:nil "Header header~%~%float64 left_torque~%float64 right_torque~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%  uint32 seq~%  time stamp~%float64 left_torque~%float64 right_torque~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'TorqueValuesMsg)))
   "Returns full string definition for message of type 'TorqueValuesMsg"
-  (cl:format cl:nil "Header header~%~%float64 left_torque~%float64 right_torque~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%  uint32 seq~%  time stamp~%float64 left_torque~%float64 right_torque~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <TorqueValuesMsg>))
   (cl:+ 0
      (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'header))
+     4
+     8
      8
      8
 ))
@@ -121,6 +171,8 @@
   "Converts a ROS message object to a list"
   (cl:list 'TorqueValuesMsg
     (cl:cons ':header (header msg))
+    (cl:cons ':seq (seq msg))
+    (cl:cons ':stamp (stamp msg))
     (cl:cons ':left_torque (left_torque msg))
     (cl:cons ':right_torque (right_torque msg))
 ))

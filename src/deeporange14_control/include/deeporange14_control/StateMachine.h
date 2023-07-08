@@ -62,7 +62,7 @@ namespace deeporange14
         allStates state;
         
         ros::Timer timer;
-        double a_little_after_the_beginning;
+        double start_timer;
         // Publishers
 
 

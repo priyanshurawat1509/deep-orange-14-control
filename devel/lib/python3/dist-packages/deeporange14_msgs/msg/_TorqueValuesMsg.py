@@ -6,14 +6,16 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
+import genpy
 import std_msgs.msg
 
 class TorqueValuesMsg(genpy.Message):
-  _md5sum = "6d520ba6826fce2ad8c1220c1158f51a"
+  _md5sum = "f89af58c9dfa929a2769a3c304e31d8f"
   _type = "deeporange14_msgs/TorqueValuesMsg"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """Header header
-
+  uint32 seq
+  time stamp
 float64 left_torque
 float64 right_torque
 
@@ -33,8 +35,8 @@ time stamp
 #Frame this data is associated with
 string frame_id
 """
-  __slots__ = ['header','left_torque','right_torque']
-  _slot_types = ['std_msgs/Header','float64','float64']
+  __slots__ = ['header','seq','stamp','left_torque','right_torque']
+  _slot_types = ['std_msgs/Header','uint32','time','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -44,7 +46,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,left_torque,right_torque
+       header,seq,stamp,left_torque,right_torque
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -55,12 +57,18 @@ string frame_id
       # message fields cannot be None, assign default values for those that are
       if self.header is None:
         self.header = std_msgs.msg.Header()
+      if self.seq is None:
+        self.seq = 0
+      if self.stamp is None:
+        self.stamp = genpy.Time()
       if self.left_torque is None:
         self.left_torque = 0.
       if self.right_torque is None:
         self.right_torque = 0.
     else:
       self.header = std_msgs.msg.Header()
+      self.seq = 0
+      self.stamp = genpy.Time()
       self.left_torque = 0.
       self.right_torque = 0.
 
@@ -85,7 +93,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_2d().pack(_x.left_torque, _x.right_torque))
+      buff.write(_get_struct_3I2d().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque, _x.right_torque))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -99,6 +107,8 @@ string frame_id
     try:
       if self.header is None:
         self.header = std_msgs.msg.Header()
+      if self.stamp is None:
+        self.stamp = genpy.Time()
       end = 0
       _x = self
       start = end
@@ -115,8 +125,9 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 16
-      (_x.left_torque, _x.right_torque,) = _get_struct_2d().unpack(str[start:end])
+      end += 28
+      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque, _x.right_torque,) = _get_struct_3I2d().unpack(str[start:end])
+      self.stamp.canon()
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -138,7 +149,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_2d().pack(_x.left_torque, _x.right_torque))
+      buff.write(_get_struct_3I2d().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque, _x.right_torque))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -153,6 +164,8 @@ string frame_id
     try:
       if self.header is None:
         self.header = std_msgs.msg.Header()
+      if self.stamp is None:
+        self.stamp = genpy.Time()
       end = 0
       _x = self
       start = end
@@ -169,8 +182,9 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 16
-      (_x.left_torque, _x.right_torque,) = _get_struct_2d().unpack(str[start:end])
+      end += 28
+      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque, _x.right_torque,) = _get_struct_3I2d().unpack(str[start:end])
+      self.stamp.canon()
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -179,15 +193,15 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_2d = None
-def _get_struct_2d():
-    global _struct_2d
-    if _struct_2d is None:
-        _struct_2d = struct.Struct("<2d")
-    return _struct_2d
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
+_struct_3I2d = None
+def _get_struct_3I2d():
+    global _struct_3I2d
+    if _struct_3I2d is None:
+        _struct_3I2d = struct.Struct("<3I2d")
+    return _struct_3I2d

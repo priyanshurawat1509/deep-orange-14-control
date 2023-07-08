@@ -26,6 +26,8 @@ struct MobilityMsg_
 
   MobilityMsg_()
     : header()
+    , seq(0)
+    , stamp()
     , left_torque(0.0)
     , right_torque(0.0)
     , au_state(0)
@@ -33,6 +35,8 @@ struct MobilityMsg_
     }
   MobilityMsg_(const ContainerAllocator& _alloc)
     : header(_alloc)
+    , seq(0)
+    , stamp()
     , left_torque(0.0)
     , right_torque(0.0)
     , au_state(0)
@@ -44,6 +48,12 @@ struct MobilityMsg_
 
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
+
+   typedef uint32_t _seq_type;
+  _seq_type seq;
+
+   typedef ros::Time _stamp_type;
+  _stamp_type stamp;
 
    typedef double _left_torque_type;
   _left_torque_type left_torque;
@@ -87,6 +97,8 @@ template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::deeporange14_msgs::MobilityMsg_<ContainerAllocator1> & lhs, const ::deeporange14_msgs::MobilityMsg_<ContainerAllocator2> & rhs)
 {
   return lhs.header == rhs.header &&
+    lhs.seq == rhs.seq &&
+    lhs.stamp == rhs.stamp &&
     lhs.left_torque == rhs.left_torque &&
     lhs.right_torque == rhs.right_torque &&
     lhs.au_state == rhs.au_state &&
@@ -147,12 +159,12 @@ struct MD5Sum< ::deeporange14_msgs::MobilityMsg_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "b44b2f62d416d75980f2be768e605900";
+    return "d380c00cdf73d1bf5d0bffc60363a2cb";
   }
 
   static const char* value(const ::deeporange14_msgs::MobilityMsg_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xb44b2f62d416d759ULL;
-  static const uint64_t static_value2 = 0x80f2be768e605900ULL;
+  static const uint64_t static_value1 = 0xd380c00cdf73d1bfULL;
+  static const uint64_t static_value2 = 0x5d0bffc60363a2cbULL;
 };
 
 template<class ContainerAllocator>
@@ -173,6 +185,8 @@ struct Definition< ::deeporange14_msgs::MobilityMsg_<ContainerAllocator> >
   {
     return "#This represents a vector in free space -- currently defined to hold the left and right track #velocities\n"
 "Header header\n"
+"  uint32 seq\n"
+"  time stamp\n"
 "\n"
 "float64 left_torque\n"
 "float64 right_torque\n"
@@ -212,6 +226,8 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.header);
+      stream.next(m.seq);
+      stream.next(m.stamp);
       stream.next(m.left_torque);
       stream.next(m.right_torque);
       stream.next(m.au_state);
@@ -237,6 +253,10 @@ struct Printer< ::deeporange14_msgs::MobilityMsg_<ContainerAllocator> >
     s << indent << "header: ";
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
+    s << indent << "seq: ";
+    Printer<uint32_t>::stream(s, indent + "  ", v.seq);
+    s << indent << "stamp: ";
+    Printer<ros::Time>::stream(s, indent + "  ", v.stamp);
     s << indent << "left_torque: ";
     Printer<double>::stream(s, indent + "  ", v.left_torque);
     s << indent << "right_torque: ";

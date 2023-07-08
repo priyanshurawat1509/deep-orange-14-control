@@ -16,17 +16,21 @@
 
 (defclass deeporange14_msgs::TorqueValuesMsg
   :super ros::object
-  :slots (_header _left_torque _right_torque ))
+  :slots (_header _seq _stamp _left_torque _right_torque ))
 
 (defmethod deeporange14_msgs::TorqueValuesMsg
   (:init
    (&key
     ((:header __header) (instance std_msgs::Header :init))
+    ((:seq __seq) 0)
+    ((:stamp __stamp) (instance ros::time :init))
     ((:left_torque __left_torque) 0.0)
     ((:right_torque __right_torque) 0.0)
     )
    (send-super :init)
    (setq _header __header)
+   (setq _seq (round __seq))
+   (setq _stamp __stamp)
    (setq _left_torque (float __left_torque))
    (setq _right_torque (float __right_torque))
    self)
@@ -37,6 +41,12 @@
      (progn
        (if __header (setq _header (car __header)))
        _header)))
+  (:seq
+   (&optional __seq)
+   (if __seq (setq _seq __seq)) _seq)
+  (:stamp
+   (&optional __stamp)
+   (if __stamp (setq _stamp __stamp)) _stamp)
   (:left_torque
    (&optional __left_torque)
    (if __left_torque (setq _left_torque __left_torque)) _left_torque)
@@ -48,6 +58,10 @@
    (+
     ;; std_msgs/Header _header
     (send _header :serialization-length)
+    ;; uint32 _seq
+    4
+    ;; time _stamp
+    8
     ;; float64 _left_torque
     8
     ;; float64 _right_torque
@@ -59,6 +73,10 @@
               (make-string-output-stream (send self :serialization-length)))))
      ;; std_msgs/Header _header
        (send _header :serialize s)
+     ;; uint32 _seq
+       (write-long _seq s)
+     ;; time _stamp
+       (write-long (send _stamp :sec) s) (write-long (send _stamp :nsec) s)
      ;; float64 _left_torque
        (sys::poke _left_torque (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _right_torque
@@ -69,6 +87,10 @@
    (buf &optional (ptr- 0))
    ;; std_msgs/Header _header
      (send _header :deserialize buf ptr-) (incf ptr- (send _header :serialization-length))
+   ;; uint32 _seq
+     (setq _seq (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; time _stamp
+     (send _stamp :sec (sys::peek buf ptr- :integer)) (incf ptr- 4)  (send _stamp :nsec (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; float64 _left_torque
      (setq _left_torque (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _right_torque
@@ -77,11 +99,12 @@
    self)
   )
 
-(setf (get deeporange14_msgs::TorqueValuesMsg :md5sum-) "6d520ba6826fce2ad8c1220c1158f51a")
+(setf (get deeporange14_msgs::TorqueValuesMsg :md5sum-) "f89af58c9dfa929a2769a3c304e31d8f")
 (setf (get deeporange14_msgs::TorqueValuesMsg :datatype-) "deeporange14_msgs/TorqueValuesMsg")
 (setf (get deeporange14_msgs::TorqueValuesMsg :definition-)
       "Header header
-
+  uint32 seq
+  time stamp
 float64 left_torque
 float64 right_torque
 
@@ -105,6 +128,6 @@ string frame_id
 
 
 
-(provide :deeporange14_msgs/TorqueValuesMsg "6d520ba6826fce2ad8c1220c1158f51a")
+(provide :deeporange14_msgs/TorqueValuesMsg "f89af58c9dfa929a2769a3c304e31d8f")
 
 

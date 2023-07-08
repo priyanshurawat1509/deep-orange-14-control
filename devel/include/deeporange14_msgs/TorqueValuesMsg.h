@@ -26,11 +26,15 @@ struct TorqueValuesMsg_
 
   TorqueValuesMsg_()
     : header()
+    , seq(0)
+    , stamp()
     , left_torque(0.0)
     , right_torque(0.0)  {
     }
   TorqueValuesMsg_(const ContainerAllocator& _alloc)
     : header(_alloc)
+    , seq(0)
+    , stamp()
     , left_torque(0.0)
     , right_torque(0.0)  {
   (void)_alloc;
@@ -40,6 +44,12 @@ struct TorqueValuesMsg_
 
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
+
+   typedef uint32_t _seq_type;
+  _seq_type seq;
+
+   typedef ros::Time _stamp_type;
+  _stamp_type stamp;
 
    typedef double _left_torque_type;
   _left_torque_type left_torque;
@@ -77,6 +87,8 @@ template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::deeporange14_msgs::TorqueValuesMsg_<ContainerAllocator1> & lhs, const ::deeporange14_msgs::TorqueValuesMsg_<ContainerAllocator2> & rhs)
 {
   return lhs.header == rhs.header &&
+    lhs.seq == rhs.seq &&
+    lhs.stamp == rhs.stamp &&
     lhs.left_torque == rhs.left_torque &&
     lhs.right_torque == rhs.right_torque;
 }
@@ -135,12 +147,12 @@ struct MD5Sum< ::deeporange14_msgs::TorqueValuesMsg_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "6d520ba6826fce2ad8c1220c1158f51a";
+    return "f89af58c9dfa929a2769a3c304e31d8f";
   }
 
   static const char* value(const ::deeporange14_msgs::TorqueValuesMsg_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x6d520ba6826fce2aULL;
-  static const uint64_t static_value2 = 0xd8c1220c1158f51aULL;
+  static const uint64_t static_value1 = 0xf89af58c9dfa929aULL;
+  static const uint64_t static_value2 = 0x2769a3c304e31d8fULL;
 };
 
 template<class ContainerAllocator>
@@ -160,7 +172,8 @@ struct Definition< ::deeporange14_msgs::TorqueValuesMsg_<ContainerAllocator> >
   static const char* value()
   {
     return "Header header\n"
-"\n"
+"  uint32 seq\n"
+"  time stamp\n"
 "float64 left_torque\n"
 "float64 right_torque\n"
 "\n"
@@ -198,6 +211,8 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.header);
+      stream.next(m.seq);
+      stream.next(m.stamp);
       stream.next(m.left_torque);
       stream.next(m.right_torque);
     }
@@ -221,6 +236,10 @@ struct Printer< ::deeporange14_msgs::TorqueValuesMsg_<ContainerAllocator> >
     s << indent << "header: ";
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
+    s << indent << "seq: ";
+    Printer<uint32_t>::stream(s, indent + "  ", v.seq);
+    s << indent << "stamp: ";
+    Printer<ros::Time>::stream(s, indent + "  ", v.stamp);
     s << indent << "left_torque: ";
     Printer<double>::stream(s, indent + "  ", v.left_torque);
     s << indent << "right_torque: ";

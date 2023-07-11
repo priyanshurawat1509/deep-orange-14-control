@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 
   // create StateMachine object
   
-  deeporange14::RosHealthMonitor n_rosHealthmonitor(nh,priv_nh);
+
   deeporange14::StateMachine n_statemachine(nh, priv_nh);
 
   // create Data Logger object

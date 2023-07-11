@@ -10,7 +10,12 @@
 #include <geometry_msgs/TwistStamped.h>
 #include <geometry_msgs/Twist.h>
 #include <nav_msgs/Odometry.h>
+#include <tf2_msgs/TFMessage.h>
 
+#include <string>
+#include <ros/console.h>
+#include <geometry_msgs/Twist.h>
+#include <deeporange14_control/DeeporangeStateEnums.h>
 #include <deeporange14_msgs/MobilityMsg.h>
 #include <deeporange14_msgs/MissionStatus.h>
 #include <deeporange14_msgs/RaptorStateMsg.h>
@@ -25,14 +30,8 @@ namespace deeporange14
         ~StateMachine();
 
         private:
-        void getHanshakeFailed(const std_msgs::Bool::ConstPtr& raptorhsfail);
-
-        void getStackFault(const std_msgs::Bool::ConstPtr& stackfault);
-
-        void getDbwModedisabled(const std_msgs::Bool::ConstPtr& dbwmode);
-
-        void getRaptorBrakeStatus(const std_msgs::Bool::ConstPtr& raptorhsfail);
-
+        void checkStackStatus(const geometry_msgs::Twist::ConstPtr& cmdvelMsg);
+        
         void getMissionStatus(const deeporange14_msgs::MissionStatus::ConstPtr& missionStatus);
     
         void getBrakeEnable(const std_msgs::Bool::ConstPtr& brakeEnable);
@@ -50,7 +49,6 @@ namespace deeporange14
         //member variables 
         bool raptorhs_fail;
         bool stack_fault;
-        bool dbwmode_disable;
         std::string mission_status;
         bool brake_enable_stack;
         float l_torque;
@@ -58,8 +56,10 @@ namespace deeporange14
         bool stop_ros;
         bool raptorbrakeAck;
         uint system_state;
-        uint dbw_mode;
+        bool dbwmode_disable;
         allStates state;
+        double raptor_hb_timestamp;
+        double cmdvel_timestamp;
         
         ros::Timer timer;
         double start_timer;
@@ -67,10 +67,7 @@ namespace deeporange14
 
 
         // Subscribers
-        ros::Subscriber sub_raptorhsfail;
-        ros::Subscriber sub_stackfault;
-        ros::Subscriber sub_dbwmode;
-        ros::Subscriber sub_brkAck;
+        ros::Subscriber sub_cmdvel;
         ros::Subscriber sub_missionStatus;
         ros::Subscriber sub_brakeStatus;
         ros::Subscriber sub_rosController;

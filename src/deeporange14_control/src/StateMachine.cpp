@@ -3,17 +3,14 @@
 namespace deeporange14 {
 
     StateMachine::StateMachine(ros::NodeHandle &nh, ros::NodeHandle &priv_nh) {
-        //  Initialize Velocity Controller object
-        // Instantiate sub/pubs
-        sub_raptorhsfail = nh.subscribe(std::string(topic_ns + "/raptor_handshake_fail"), 10, &StateMachine::getHanshakeFailed, this, ros::TransportHints().tcpNoDelay(true));
-        sub_stackfault = nh.subscribe(std::string(topic_ns + "/stack_fault"), 10, &StateMachine::getStackFault, this, ros::TransportHints().tcpNoDelay(true));
-        sub_dbwmode = nh.subscribe(std::string(topic_ns + "/dbw_mode_disabled"), 10, &StateMachine::getDbwModedisabled, this, ros::TransportHints().tcpNoDelay(true));
-        sub_brkAck = nh.subscribe(std::string(topic_ns + "/brake_ack_raptor"),10, &StateMachine::getRaptorBrakeStatus, this, ros::TransportHints().tcpNoDelay(true));
+    
+        // Instantiate sub/pubs       
+
         sub_missionStatus = nh.subscribe(std::string(topic_ns + "/mission_status"), 10, &StateMachine::getMissionStatus, this, ros::TransportHints().tcpNoDelay(true));
         sub_brakeStatus = nh.subscribe(std::string(topic_ns + "/brake_enable_stack"), 10, &StateMachine::getBrakeEnable, this, ros::TransportHints().tcpNoDelay(true));
         sub_rosController = nh.subscribe(std::string(topic_ns + "/cmd_trq"), 10, &StateMachine::getTorqueValues, this, ros::TransportHints().tcpNoDelay(true));
         sub_raptorState = nh.subscribe(std::string(topic_ns + "/raptor_state"), 10, &StateMachine::getRaptorMsg, this, ros::TransportHints().tcpNoDelay(true));
-        
+        sub_cmdvel = nh.subscribe(std::string(topic_ns + "/cmd_vel"), 10, &StateMachine::checkStackStatus, this, ros::TransportHints().tcpNoDelay(true));
         pub_mobility = nh.advertise<deeporange14_msgs::MobilityMsg>(std::string(topic_ns +"/cmd_mobility"), 10, this);
 
         /* Initiate ROS State with a Startup state to be safe. This state will be published till the ...
@@ -30,7 +27,7 @@ namespace deeporange14 {
         stop_ros = false;
         raptorbrakeAck = false;
         system_state = 2;
-        dbw_mode = 1;
+
 
         mobilityMsg.left_torque = 0.0;
         mobilityMsg.right_torque = 0.0;
@@ -38,26 +35,19 @@ namespace deeporange14 {
         mobilityMsg.au_state = state;
 
         start_timer = ros::Time::now().toSec();
-        ROS_WARN("start time, %f", start_timer);
+
+        // raptor_hb_timestamp = ros::Time::now().toSec();
+        // cmdvel_timestamp = ros::Time::now().toSec();
 
         // Set up Timer - with calback to publish ROS state all the time that the node is running
-        timer = nh.createTimer(ros::Duration(1.0 / 20.0), &StateMachine::publishROSState, this);
+        timer = nh.createTimer(ros::Duration(1.0 / 50.0), &StateMachine::publishROSState, this);
         
     }
     StateMachine::~StateMachine(){}
 
-    void StateMachine::getHanshakeFailed(const std_msgs::Bool::ConstPtr& raptorhsMsg){
-        raptorhs_fail = raptorhsMsg->data; 
-    }
-
-    void StateMachine::getStackFault(const std_msgs::Bool::ConstPtr& stackfault){
-        stack_fault = stackfault->data;
-    }
-    void StateMachine::getDbwModedisabled(const std_msgs::Bool::ConstPtr& dbwmode){
-        dbwmode_disable = dbwmode->data;
-    }
-    void StateMachine::getRaptorBrakeStatus(const std_msgs::Bool::ConstPtr& raptorbrakeAckMsg){
-        raptorbrakeAck = raptorbrakeAckMsg->data;
+    void StateMachine::checkStackStatus(const geometry_msgs::Twist::ConstPtr& cmdvelMsg){
+        cmdvel_timestamp = ros::Time::now().toSec(); 
+        // ROS_WARN("cmd_vel timestamp : %f",cmdvel_timestamp); 
     }
     void StateMachine::getMissionStatus(const deeporange14_msgs::MissionStatus::ConstPtr& missionStatus){
         mission_status = missionStatus->status;
@@ -72,15 +62,19 @@ namespace deeporange14 {
     }
 
     void StateMachine::getRaptorMsg(const deeporange14_msgs::RaptorStateMsg::ConstPtr& raptorMsg){
+        raptor_hb_timestamp = raptorMsg->header.stamp.sec + raptorMsg->header.stamp.nsec*(1e-9);  
         system_state = raptorMsg->system_state;
-        dbw_mode = raptorMsg->dbw_mode;
-       
+        dbwmode_disable = raptorMsg->dbw_mode != 3;
+        raptorbrakeAck = raptorMsg->brake_enable_status;        
     }
  
     void StateMachine::publishROSState(const ros::TimerEvent& event)
     {
         /* Always continue to publish ROS state  */
-
+        stack_fault = (std::abs(cmdvel_timestamp - ros::Time::now().toSec()) > 0.1);
+        raptorhs_fail = (std::abs(raptor_hb_timestamp - ros::Time::now().toSec()) > 0.025);
+        // ROS_WARN("raptorHs fail timestmp %f",raptor_hb_timestamp);
+        // ROS_WARN("ros time now %f",ros::Time::now().toSec());
         StateMachine::updateROSStateMsg();
         pub_mobility.publish(mobilityMsg);
     }
@@ -96,38 +90,21 @@ namespace deeporange14 {
                 mobilityMsg.brake_enable = true;
                 mobilityMsg.au_state = state;
                 pub_mobility.publish(mobilityMsg);
-                ROS_WARN("In StartUp %f ",start_timer);
-                ROS_WARN("In StartUp ros time now %f ",ros::Time::now().toSec());
+                ROS_WARN("In startup");
 
                 if(!raptorhs_fail){ 
-                    ROS_WARN(" after while time, %f", (ros::Time::now().toSec()));  
-                    // Raptor Handshake established
+
                     state = AU2_IDLE;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
                     break;
 
                 }else{
-                    // keep checking for 3 secs 
-                    // if still not after 3 sec give Error
-                    
-                    while((std::abs(start_timer - ros::Time::now().toSec()) <= 3)){ // allow 3 seconds to 
-                         
-                        if (!raptorhs_fail){
-                            //Raptor Handshake established
-                            state = AU2_IDLE;
-                            mobilityMsg.au_state = state;                           
-                            pub_mobility.publish(mobilityMsg);
-                            break;
-                        } 
-                        ROS_WARN("Warning:[AU1_STARTUP]:RaptorHandshake checking"); 
-                        
-                    }
-                    state = AU98_FAULT;
-                    mobilityMsg.au_state = AU98_FAULT;
+                    state = AU1_STARTUP;
+                    mobilityMsg.au_state = AU1_STARTUP;
                     pub_mobility.publish(mobilityMsg);
                    
-                    ROS_ERROR("ERROR:[AU1_STARTUP]: RaptorHandshake not established");
+                    ROS_WARN("WARN:[AU1_STARTUP]: RaptorHandshake not established");
                     break;
                 }
                 
@@ -143,7 +120,7 @@ namespace deeporange14 {
                 ROS_WARN("In Idle");
 
 
-                if (!raptorhs_fail && system_state == 8 && dbw_mode == 3){
+                if (!raptorhs_fail && system_state == 8 && !dbwmode_disable){
                     state = AU3_WAIT_EXECUTION;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
@@ -158,11 +135,11 @@ namespace deeporange14 {
                     break;
                 }
 
-                else if (system_state != 8 or dbw_mode != 3){
+                else if (system_state != 8 or dbwmode_disable){
                     state = AU2_IDLE;
                     mobilityMsg.au_state = AU2_IDLE;
                     pub_mobility.publish(mobilityMsg);
-                    ROS_ERROR ("ERROR: [AU2_IDLE]: SystemState not 8 or dbw mode not 3 or /raptor_state topic is not published yet");
+                    ROS_ERROR ("ERROR: [AU2_IDLE]: SystemState not 8 or dbw mode not 3 ");
                     break;
                 }
 
@@ -235,8 +212,8 @@ namespace deeporange14 {
             }
             case AU4_EXEC_IMINENT:{
 
-                mobilityMsg.left_torque = 0.0;
-                mobilityMsg.right_torque = 0.0;
+                mobilityMsg.left_torque = l_torque;
+                mobilityMsg.right_torque = r_torque;
                 mobilityMsg.brake_enable = false; // Also check from stack if brake_enable command is false from stack,
                 //  because now global plan is ready and brakes should be disengaged
                 mobilityMsg.au_state = state;
@@ -301,8 +278,8 @@ namespace deeporange14 {
             }
 
             case AU5_DISENGAGED_BRAKE:{
-                mobilityMsg.left_torque = 0.0;
-                mobilityMsg.right_torque = 0.0;
+                mobilityMsg.left_torque = l_torque;
+                mobilityMsg.right_torque = r_torque;
                 mobilityMsg.brake_enable = false; // Also check from stack if brake command is true from stack
                 mobilityMsg.au_state = state;
                 pub_mobility.publish(mobilityMsg);     
@@ -374,8 +351,11 @@ namespace deeporange14 {
             
             case AU6_COMMAND_TORQUES:{ 
 
-                while(!raptorhs_fail && !dbwmode_disable && !stack_fault && !brake_enable_stack && mission_status =="CommandingTorques"&& !stop_ros){
+                while(!raptorhs_fail && !dbwmode_disable && !stack_fault && !brake_enable_stack && mission_status =="CommandingTorques"&& !stop_ros){          
+                    
                     state = AU6_COMMAND_TORQUES;
+                    mobilityMsg.left_torque = l_torque;
+                    mobilityMsg.right_torque = r_torque;
                     mobilityMsg.brake_enable = brake_enable_stack;
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);

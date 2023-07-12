@@ -185,6 +185,15 @@ namespace deeporange14 {
                     break;
                     
                 }
+                else if(stop_ros){
+                    //  go backuint8 left_brkPressure
+
+                    state = AU2_IDLE;
+                    mobilityMsg.au_state = state;
+                    pub_mobility.publish(mobilityMsg);
+                    ROS_WARN("Warning: [AU3_WAIT_EXECUTION]:stop button is pressed ");
+                    break;
+                }
 
                 else if(!brake_enable_stack){
                     state=AU3_WAIT_EXECUTION;
@@ -201,15 +210,7 @@ namespace deeporange14 {
                     ROS_WARN("Warning: [AU3_WAIT_EXECUTION]:execute button is not pressed yet or mission status incorrect");
                     break;
                 }
-                else if(stop_ros){
-                    //  go backuint8 left_brkPressure
 
-                    state = AU2_IDLE;
-                    mobilityMsg.au_state = state;
-                    pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: [AU3_WAIT_EXECUTION]:stop button is pressed ");
-                    break;
-                }
 
             }
             case AU4_EXEC_IMINENT:{
@@ -251,6 +252,14 @@ namespace deeporange14 {
                     break;
                     
                 }
+                else if(stop_ros){
+                    //  go back to idle
+                    state = AU2_IDLE;
+                    mobilityMsg.au_state = state;
+                    pub_mobility.publish(mobilityMsg);
+                    ROS_WARN("Warning: [AU4_EXEC_IMINENT]:stop button is pressed ");
+                    break;
+                }
                 else if(brake_enable_stack ){
                     state = AU4_EXEC_IMINENT;
                     mobilityMsg.brake_enable = brake_enable_stack;
@@ -268,14 +277,7 @@ namespace deeporange14 {
                     ROS_WARN("Warning: [AU4_EXEC_IMINENT]:Execute button pressed but global plan not ready yet");
                     break;
                 }
-                else if(stop_ros){
-                    //  go back to idle
-                    state = AU2_IDLE;
-                    mobilityMsg.au_state = state;
-                    pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: [AU4_EXEC_IMINENT]:stop button is pressed ");
-                    break;
-                }
+
                       
             }
 
@@ -316,6 +318,14 @@ namespace deeporange14 {
                     break;
                     
                 }
+                else if(stop_ros){
+                    //  go back to idle
+                    state = AU2_IDLE;
+                    mobilityMsg.au_state = state;
+                    pub_mobility.publish(mobilityMsg);
+                    ROS_WARN("Warning: [AU5_DISENGAGED_BRAKE]:stop button is pressed ");
+                    break;
+                }
                 else if(brake_enable_stack ){
                     state = AU5_DISENGAGED_BRAKE;
                     mobilityMsg.brake_enable = brake_enable_stack;
@@ -340,14 +350,7 @@ namespace deeporange14 {
                     break;
                 }
 
-                else if(stop_ros){
-                    //  go back to idle
-                    state = AU2_IDLE;
-                    mobilityMsg.au_state = state;
-                    pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: [AU5_DISENGAGED_BRAKE]:stop button is pressed ");
-                    break;
-                }
+
 
             }                
             
@@ -395,6 +398,14 @@ namespace deeporange14 {
                     break;
                     
                 }
+                else if(stop_ros){
+                    //  go back to idle
+                    state = AU2_IDLE;
+                    mobilityMsg.au_state = state;
+                    pub_mobility.publish(mobilityMsg);
+                    ROS_WARN("Warning: [AU6_COMMAND_TORQUES]:stop button is pressed ");
+                    break;
+                }
                 else if(brake_enable_stack ){
                     state = AU5_DISENGAGED_BRAKE;
                     mobilityMsg.brake_enable = brake_enable_stack;
@@ -412,14 +423,7 @@ namespace deeporange14 {
                     break;
                 }
 
-                else if(stop_ros){
-                    //  go back to idle
-                    state = AU2_IDLE;
-                    mobilityMsg.au_state = state;
-                    pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: [AU6_COMMAND_TORQUES]:stop button is pressed ");
-                    break;
-                }
+
             }
              
             case AU7_SAFE_STOP:{
@@ -454,6 +458,14 @@ namespace deeporange14 {
                     break;
                     
                 }
+                else if(stop_ros){
+                    //  go back to idle
+                    state = AU2_IDLE;
+                    mobilityMsg.au_state = state;
+                    pub_mobility.publish(mobilityMsg);
+                    ROS_WARN("Warning: [AU7_SAFE_STOP]:stop button is pressed ");
+                    break;
+                }
                 else if(!brake_enable_stack ){
                     state = AU5_DISENGAGED_BRAKE;
                     mobilityMsg.brake_enable = brake_enable_stack;
@@ -471,14 +483,7 @@ namespace deeporange14 {
                     break;
                 }
 
-                else if(stop_ros){
-                    //  go back to idle
-                    state = AU2_IDLE;
-                    mobilityMsg.au_state = state;
-                    pub_mobility.publish(mobilityMsg);
-                    ROS_WARN("Warning: [AU7_SAFE_STOP]:stop button is pressed ");
-                    break;
-                }
+
             }
             case AU98_FAULT:
                 ROS_ERROR("[AU98_Fault_state] : remain in fault");

@@ -9,7 +9,7 @@ Makes use of New Eagle package: can_dbc_parser (https://github.com/NewEagleRapto
 
 
 
-#include <deeporange14_control/RosHealthMonitor.h>
+
 #include<deeporange14_control/StateMachine.h>
 
 
@@ -22,7 +22,6 @@ int main(int argc, char **argv)
 
   // create StateMachine object
   
-
   deeporange14::StateMachine n_statemachine(nh, priv_nh);
 
   // create Data Logger object

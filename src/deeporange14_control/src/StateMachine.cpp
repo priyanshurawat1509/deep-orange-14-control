@@ -21,7 +21,7 @@ namespace deeporange14 {
         stack_fault = true;
         dbwmode_disable = false;
         mission_status = "";
-        brake_enable_stack = true;
+        brake_enable_stack = false;
         l_torque = 0.0;
         r_torque = 0.0;
         stop_ros = false;
@@ -71,8 +71,10 @@ namespace deeporange14 {
     void StateMachine::publishROSState(const ros::TimerEvent& event)
     {
         /* Always continue to publish ROS state  */
-        stack_fault = (std::abs(cmdvel_timestamp - ros::Time::now().toSec()) > 0.1);
-        raptorhs_fail = (std::abs(raptor_hb_timestamp - ros::Time::now().toSec()) > 0.025);
+        stack_fault = (std::abs(cmdvel_timestamp - ros::Time::now().toSec()) > 0.5);
+        // ROS_WARN("fault : %d",stack_fault); 
+        // ROS_WARN("time diff : %f",(std::abs(cmdvel_timestamp - ros::Time::now().toSec()))); 
+        raptorhs_fail = (std::abs(raptor_hb_timestamp - ros::Time::now().toSec()) > 0.5);
         // ROS_WARN("raptorHs fail timestmp %f",raptor_hb_timestamp);
         // ROS_WARN("ros time now %f",ros::Time::now().toSec());
         StateMachine::updateROSStateMsg();
@@ -220,7 +222,7 @@ namespace deeporange14 {
                 pub_mobility.publish(mobilityMsg);     
 
                 if(!raptorhs_fail && !dbwmode_disable && !stack_fault && !brake_enable_stack && mission_status =="globalPlanReady"&& !stop_ros){
-                        state = AU4_EXEC_IMINENT;
+                        state = AU5_DISENGAGED_BRAKE;
                         mobilityMsg.brake_enable = brake_enable_stack;
                         mobilityMsg.au_state = state;
                         pub_mobility.publish(mobilityMsg);
@@ -284,8 +286,8 @@ namespace deeporange14 {
                 mobilityMsg.au_state = state;
                 pub_mobility.publish(mobilityMsg);     
 
-                if(!raptorhs_fail && !dbwmode_disable && !stack_fault && !brake_enable_stack && raptorbrakeAck && mission_status =="BrakesDisengaging"&& !stop_ros ){
-                        state = AU4_EXEC_IMINENT;
+                if(!raptorhs_fail && !dbwmode_disable && !stack_fault && !brake_enable_stack && !raptorbrakeAck && mission_status =="BrakesDisengaging"&& !stop_ros ){
+                        state = AU6_COMMAND_TORQUES;
                         mobilityMsg.brake_enable = brake_enable_stack;
                         mobilityMsg.au_state = state;
                         pub_mobility.publish(mobilityMsg);
@@ -360,10 +362,12 @@ namespace deeporange14 {
                     mobilityMsg.au_state = state;
                     pub_mobility.publish(mobilityMsg);
                     // Call velcityController->commandTorques method with arguments 
+                    ROS_WARN("Warning: [AU6_COMMAND_TORQUES]:Commanding torques");
                     if (mission_status == "MissionCompleted" or mission_status == "MissionCancelled"){
                         state = AU7_SAFE_STOP;
                         mobilityMsg.au_state = state;
                         pub_mobility.publish(mobilityMsg);
+                        ROS_WARN("Warning: [AU6_COMMAND_TORQUES]:Initiating safe stop");
                         break;
                     }
                     
@@ -424,7 +428,8 @@ namespace deeporange14 {
                     state = AU2_IDLE;
                     mobilityMsg.brake_enable = brake_enable_stack;
                     mobilityMsg.au_state = state;
-                    pub_mobility.publish(mobilityMsg);                    
+                    pub_mobility.publish(mobilityMsg);       
+                    ROS_WARN("Warning: [AU7_SAFE_STOP]:In safe stop");             
                 }
 
                 else if (raptorhs_fail){

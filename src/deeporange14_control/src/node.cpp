@@ -8,9 +8,7 @@ Makes use of New Eagle package: can_dbc_parser (https://github.com/NewEagleRapto
 #include <ros/ros.h>
 
 
-
-#include <deeporange14_control/RosHealthMonitor.h>
-#include<deeporange14_control/StateMachine.h>
+#include<deeporange14_control/DeepOrangeStateSupervisor.h>
 
 
 
@@ -22,8 +20,7 @@ int main(int argc, char **argv)
 
   // create StateMachine object
   
-  deeporange14::RosHealthMonitor n_rosHealthmonitor(nh,priv_nh);
-  deeporange14::StateMachine n_statemachine(nh, priv_nh);
+  deeporange14::DeepOrangeStateSupervisor n_statemachine(nh, priv_nh);
 
   // create Data Logger object
   // deeporange14::DataLogger n_datalogger(nh, priv_nh);

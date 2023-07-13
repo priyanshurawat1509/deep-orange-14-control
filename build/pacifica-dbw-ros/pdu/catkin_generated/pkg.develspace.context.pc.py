@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "pdu"
-PROJECT_SPACE_DIR = "/users/sanskrj/deeporange14_control/devel"
+PROJECT_SPACE_DIR = "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/Updates/deeporange14_control/devel"
 PROJECT_VERSION = "1.0.0"

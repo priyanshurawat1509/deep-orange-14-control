@@ -1,7 +1,7 @@
 /* A high level state machine to interact with Raptor to control brakes torque command */
 
-#ifndef _STATE_MACHINE_H_
-#define _STATE_MACHINE_H_
+#ifndef _DEEPORANGE_STATE_SUPERVISOR_H_
+#define _DEEPORANGE_STATE_SUPERVISOR_H_
 
 #include <string.h>
 #include <ros/ros.h>
@@ -10,32 +10,30 @@
 #include <geometry_msgs/TwistStamped.h>
 #include <geometry_msgs/Twist.h>
 #include <nav_msgs/Odometry.h>
+#include <tf2_msgs/TFMessage.h>
 
+#include <string>
+#include <ros/console.h>
+#include <geometry_msgs/Twist.h>
+#include <deeporange14_control/DeeporangeStateEnums.h>
 #include <deeporange14_msgs/MobilityMsg.h>
 #include <deeporange14_msgs/MissionStatus.h>
 #include <deeporange14_msgs/RaptorStateMsg.h>
 #include <deeporange14_msgs/TorqueValuesMsg.h>
-#include <deeporange14_control/DeeporangeStateEnums.h>
 
 namespace deeporange14
 {
-    class StateMachine{
+    class DeepOrangeStateSupervisor{
         public:
-        StateMachine(ros::NodeHandle &node, ros::NodeHandle &priv_nh);
-        ~StateMachine();
+        DeepOrangeStateSupervisor(ros::NodeHandle &node, ros::NodeHandle &priv_nh);
+        ~DeepOrangeStateSupervisor();
 
         private:
-        void getHanshakeFailed(const std_msgs::Bool::ConstPtr& raptorhsfail);
-
-        void getStackFault(const std_msgs::Bool::ConstPtr& stackfault);
-
-        void getDbwModedisabled(const std_msgs::Bool::ConstPtr& dbwmode);
-
-        void getRaptorBrakeStatus(const std_msgs::Bool::ConstPtr& raptorhsfail);
-
+        void checkStackStatus(const geometry_msgs::Twist::ConstPtr& cmdvelMsg);
+        
         void getMissionStatus(const deeporange14_msgs::MissionStatus::ConstPtr& missionStatus);
     
-        void getBrakeEnable(const std_msgs::Bool::ConstPtr& brakeEnable);
+        void getStackBrakeEnable(const std_msgs::Bool::ConstPtr& StackBrakeEnable);
         
         void getTorqueValues(const deeporange14_msgs::TorqueValuesMsg::ConstPtr& trqvalues);
 
@@ -48,29 +46,31 @@ namespace deeporange14
         void updateROSStateMsg();
 
         //member variables 
-        bool raptorhs_fail;
+        bool raptorhb_fail;
         bool stack_fault;
-        bool dbwmode_disable;
         std::string mission_status;
         bool brake_enable_stack;
-        float l_torque;
-        float r_torque;
+        float cmd_trq_left;
+        float cmd_trq_right;
         bool stop_ros;
         bool raptorbrakeAck;
         uint system_state;
-        uint dbw_mode;
+        bool dbwmode_disable;
         allStates state;
+        double raptor_hb_timestamp;
+        double cmdvel_timestamp;
         
         ros::Timer timer;
         double start_timer;
+
+        float cmdvel_cutoff;
+        float raptorhb_cutoff;
+        int update_freq;
         // Publishers
 
 
         // Subscribers
-        ros::Subscriber sub_raptorhsfail;
-        ros::Subscriber sub_stackfault;
-        ros::Subscriber sub_dbwmode;
-        ros::Subscriber sub_brkAck;
+        ros::Subscriber sub_cmdvel;
         ros::Subscriber sub_missionStatus;
         ros::Subscriber sub_brakeStatus;
         ros::Subscriber sub_rosController;

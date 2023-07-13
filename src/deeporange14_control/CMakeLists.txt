@@ -48,8 +48,7 @@ include_directories(
 
 add_library(${PROJECT_NAME}
 
-  src/StateMachine.cpp
-  src/RosHealthMonitor.cpp
+  src/DeepOrangeStateSupervisor.cpp
 
 )
 add_executable(${PROJECT_NAME}_dbwnode src/node.cpp

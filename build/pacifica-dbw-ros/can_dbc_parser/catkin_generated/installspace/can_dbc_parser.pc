@@ -1,4 +1,4 @@
-prefix=/users/sanskrj/deeporange14_control/install
+prefix=/users/sanskrj/Desktop/DO13-Autonomy_gitWs/Updates/deeporange14_control/install
 
 Name: can_dbc_parser
 Description: Description of can_dbc_parser

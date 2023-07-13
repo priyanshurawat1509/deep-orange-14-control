@@ -24,6 +24,7 @@ enum allStates{
     AU98_FAULT                    = 254, 
 
 
+
   };
 } //deeporange14
 

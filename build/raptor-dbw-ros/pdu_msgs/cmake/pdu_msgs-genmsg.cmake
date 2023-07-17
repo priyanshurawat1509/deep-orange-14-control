@@ -34,7 +34,7 @@ add_custom_target(_pdu_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayReport.msg" NAME_WE)
 add_custom_target(_pdu_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pdu_msgs" "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayReport.msg" "std_msgs/Header:pdu_msgs/RelayStatus"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pdu_msgs" "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayReport.msg" "pdu_msgs/RelayStatus:std_msgs/Header"
 )
 
 get_filename_component(_filename "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayState.msg" NAME_WE)
@@ -74,7 +74,7 @@ _generate_msg_cpp(pdu_msgs
 _generate_msg_cpp(pdu_msgs
   "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayReport.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayStatus.msg"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/pdu_msgs
 )
 _generate_msg_cpp(pdu_msgs
@@ -147,7 +147,7 @@ _generate_msg_eus(pdu_msgs
 _generate_msg_eus(pdu_msgs
   "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayReport.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayStatus.msg"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/pdu_msgs
 )
 _generate_msg_eus(pdu_msgs
@@ -220,7 +220,7 @@ _generate_msg_lisp(pdu_msgs
 _generate_msg_lisp(pdu_msgs
   "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayReport.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayStatus.msg"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/pdu_msgs
 )
 _generate_msg_lisp(pdu_msgs
@@ -293,7 +293,7 @@ _generate_msg_nodejs(pdu_msgs
 _generate_msg_nodejs(pdu_msgs
   "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayReport.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayStatus.msg"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/pdu_msgs
 )
 _generate_msg_nodejs(pdu_msgs
@@ -366,7 +366,7 @@ _generate_msg_py(pdu_msgs
 _generate_msg_py(pdu_msgs
   "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayReport.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayStatus.msg"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pdu_msgs
 )
 _generate_msg_py(pdu_msgs

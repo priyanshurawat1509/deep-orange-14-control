@@ -7,6 +7,7 @@ namespace deeporange14{
         sub_moboility_msg_=node.subscribe(std::string(topic_ns+"/cmd_mobility"),10,&VelocityController::cmdMobilityCallback,this);
         sub_brakes_=node.subscribe(std::string(topic_ns+"/brake_command"),10,&VelocityController::brakeCallback,this);
         pub_cmd_trq_=node.advertise<deeporange14_msgs::TorqueCmdStamped>(std::string(topic_ns+"/cmd_trq"),10);
+        pub_cmd_vel_reprojected_=node.advertise<geometry_msgs::Twist>(std::string(topic_ns+"/cmd_vel_reprojected"),10);
         timer_ = node.createTimer(ros::Duration(1.0 / 50.0), &VelocityController::publishTorques, this);
         //member variables -- velocities (commanded and platform)
         cmdLinX_=0.0;
@@ -106,6 +107,11 @@ namespace deeporange14{
             }
             else{
                 this->velocityReprojection(cmdLinX_,cmdAngZ_);
+                //publishing these results on a different topic to compare the changes
+                geometry_msgs::Twist cmd_vel_reprojected_;
+                cmd_vel_reprojected_.linear.x=cmdLinX_;
+                cmd_vel_reprojected_.angular.z=cmdAngZ_;
+                pub_cmd_vel_reprojected_.publish(cmd_vel_reprojected_);
             }
             // odom_turn_curvature_=(vehLinX_!=0)?vehAngZ_/vehLinX_:std::numeric_limits<double>::infinity();
             tqDiff_ff_=(x0_*cmd_turn_curvature_)/(1+x1_*std::abs(cmd_turn_curvature_));

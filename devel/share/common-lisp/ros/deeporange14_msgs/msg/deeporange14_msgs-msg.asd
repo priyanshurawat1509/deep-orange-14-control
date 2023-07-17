@@ -13,6 +13,4 @@
     (:file "_package_RaptorStateMsg" :depends-on ("_package"))
     (:file "TorqueCmdStamped" :depends-on ("_package_TorqueCmdStamped"))
     (:file "_package_TorqueCmdStamped" :depends-on ("_package"))
-    (:file "TorqueValuesMsg" :depends-on ("_package_TorqueValuesMsg"))
-    (:file "_package_TorqueValuesMsg" :depends-on ("_package"))
   ))

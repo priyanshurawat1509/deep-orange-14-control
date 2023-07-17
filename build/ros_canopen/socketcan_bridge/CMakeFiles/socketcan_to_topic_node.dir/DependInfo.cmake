@@ -1,18 +1,33 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_bridge/src/socketcan_to_topic_node.cpp" "/users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/socketcan_bridge/CMakeFiles/socketcan_to_topic_node.dir/src/socketcan_to_topic_node.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "ROSCONSOLE_BACKEND_LOG4CXX"
+  "ROS_BUILD_SHARED_LIBS=1"
+  "ROS_PACKAGE_NAME=\"socketcan_bridge\""
   )
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/src/ros_canopen/socketcan_bridge/src/socketcan_to_topic_node.cpp" "ros_canopen/socketcan_bridge/CMakeFiles/socketcan_to_topic_node.dir/src/socketcan_to_topic_node.cpp.o" "gcc" "ros_canopen/socketcan_bridge/CMakeFiles/socketcan_to_topic_node.dir/src/socketcan_to_topic_node.cpp.o.d"
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_bridge/include"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/include"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include"
+  "/opt/ros/noetic/include"
+  "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )
 
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/socketcan_bridge/CMakeFiles/socketcan_to_topic.dir/DependInfo.cmake"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/socketcan_interface/CMakeFiles/socketcan_interface_string.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

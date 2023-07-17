@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/share/gennodejs/ros/canopen_chain_node/srv/GetObject.js"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/share/gennodejs/ros/canopen_chain_node/srv/SetObject.js"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/gennodejs/ros/canopen_chain_node/srv/GetObject.js"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/gennodejs/ros/canopen_chain_node/srv/SetObject.js"
   "CMakeFiles/canopen_chain_node_generate_messages_nodejs"
 )
 

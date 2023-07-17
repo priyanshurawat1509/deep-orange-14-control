@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/socketcan_interface/socketcan_interface-test_filter"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/socketcan_interface/socketcan_interface-test_filter.pdb"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_interface/socketcan_interface-test_filter"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_interface/socketcan_interface-test_filter.pdb"
   "CMakeFiles/socketcan_interface-test_filter.dir/test/test_filter.cpp.o"
-  "CMakeFiles/socketcan_interface-test_filter.dir/test/test_filter.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

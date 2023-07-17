@@ -1,4 +1,4 @@
-prefix=/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/install
+prefix=/users/vpurohi/deeporange_ws/deeporange14_control/install
 
 Name: canopen_chain_node
 Description: Description of canopen_chain_node

@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "${prefix}/include".split(';') if "${prefix}/i
 PROJECT_CATKIN_DEPENDS = "can_msgs;rosconsole_bridge;roscpp;socketcan_interface".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lsocketcan_to_topic;-ltopic_to_socketcan".split(';') if "-lsocketcan_to_topic;-ltopic_to_socketcan" != "" else []
 PROJECT_NAME = "socketcan_bridge"
-PROJECT_SPACE_DIR = "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/install"
+PROJECT_SPACE_DIR = "/users/vpurohi/deeporange_ws/deeporange14_control/install"
 PROJECT_VERSION = "0.8.5"

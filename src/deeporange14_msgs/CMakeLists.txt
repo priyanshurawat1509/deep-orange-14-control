@@ -12,7 +12,7 @@ add_message_files(DIRECTORY msgs FILES
   MobilityMsg.msg
   RaptorStateMsg.msg
   MissionStatus.msg
-  TorqueValuesMsg.msg
+  TorqueCmdStamped.msg
 )
 
 generate_messages(DEPENDENCIES

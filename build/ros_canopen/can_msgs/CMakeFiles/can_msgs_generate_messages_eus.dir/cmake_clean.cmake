@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/share/roseus/ros/can_msgs/manifest.l"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/share/roseus/ros/can_msgs/msg/Frame.l"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/can_msgs/manifest.l"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/can_msgs/msg/Frame.l"
   "CMakeFiles/can_msgs_generate_messages_eus"
 )
 

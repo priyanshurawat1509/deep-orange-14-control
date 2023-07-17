@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/canopen_402/canopen_402-test_clamping"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/canopen_402/canopen_402-test_clamping.pdb"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_402/canopen_402-test_clamping"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_402/canopen_402-test_clamping.pdb"
   "CMakeFiles/canopen_402-test_clamping.dir/test/clamping.cpp.o"
-  "CMakeFiles/canopen_402-test_clamping.dir/test/clamping.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

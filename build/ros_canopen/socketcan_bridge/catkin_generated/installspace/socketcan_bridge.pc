@@ -1,4 +1,4 @@
-prefix=/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/install
+prefix=/users/vpurohi/deeporange_ws/deeporange14_control/install
 
 Name: socketcan_bridge
 Description: Description of socketcan_bridge

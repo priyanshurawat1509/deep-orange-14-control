@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  nav_msgs
   can_dbc_parser
   sensor_msgs
   geometry_msgs
@@ -26,6 +27,7 @@ catkin_package(
   geometry_msgs
   sensor_msgs
   deeporange14_msgs
+  nav_msgs
   roscpp
   rospy
 
@@ -49,6 +51,7 @@ include_directories(
 add_library(${PROJECT_NAME}
 
   src/DeepOrangeStateSupervisor.cpp
+  src/DeepOrangeVelocityController.cpp
 
 )
 add_executable(${PROJECT_NAME}_dbwnode src/node.cpp

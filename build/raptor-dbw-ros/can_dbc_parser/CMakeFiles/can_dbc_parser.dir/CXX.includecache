@@ -766,10 +766,6 @@ can_dbc_parser/DbcMessage.h
 DbcUtilities.h
 /users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/src/DbcUtilities.h
 
-/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/src/DbcSignal.cpp
-can_dbc_parser/DbcSignal.h
--
-
 /users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/src/DbcUtilities.h
 ros/ros.h
 -
@@ -782,9 +778,5 @@ string
 can_dbc_parser/DbcSignal.h
 -
 can_dbc_parser/DbcMessage.h
--
-
-/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/src/LineParser.cpp
-can_dbc_parser/LineParser.h
 -
 

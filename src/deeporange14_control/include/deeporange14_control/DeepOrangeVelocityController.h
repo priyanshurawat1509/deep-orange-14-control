@@ -26,6 +26,7 @@ namespace deeporange14 {
         ros::Subscriber sub_brakes_;
         ros::Subscriber sub_moboility_msg_;
         ros::Publisher pub_cmd_trq_;
+        ros::Publisher pub_cmd_vel_reprojected_;
 
         ros::Timer timer_;
 

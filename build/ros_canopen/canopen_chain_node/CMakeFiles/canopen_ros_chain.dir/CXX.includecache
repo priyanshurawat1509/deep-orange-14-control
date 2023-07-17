@@ -922,12 +922,6 @@ ros/forwards.h
 
 /opt/ros/noetic/include/rosconsole/macros_generated.h
 
-/opt/ros/noetic/include/rosconsole_bridge/bridge.h
-ros/macros.h
--
-console_bridge/console.h
--
-
 /opt/ros/noetic/include/std_msgs/Float32.h
 string
 -
@@ -1308,10 +1302,6 @@ std_msgs/Float32.h
 std_msgs/Float64.h
 -
 std_msgs/String.h
--
-
-/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_chain_node/src/rosconsole_bridge.cpp
-rosconsole_bridge/bridge.h
 -
 
 /users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_master/include/canopen_master/can_layer.h

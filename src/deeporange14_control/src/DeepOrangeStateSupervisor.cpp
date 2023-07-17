@@ -20,7 +20,7 @@ namespace deeporange14 {
         state = AU_1_STARTUP; 
         raptor_hb_fail = true;
         stack_fault = true;
-        dbwmode_disable = false;
+        dbw_ros_mode = false;
         mission_status = "";
         cmd_brake_effort = 0.0;
         cmd_trq_left = 0.0;
@@ -66,7 +66,7 @@ namespace deeporange14 {
     void DeepOrangeStateSupervisor::getRaptorMsg(const deeporange14_msgs::RaptorStateMsg::ConstPtr& raptorMsg){
         raptor_hb_timestamp = raptorMsg->header.stamp.sec + raptorMsg->header.stamp.nsec*(1e-9);  
         system_state = raptorMsg->system_state;
-        dbwmode_disable = raptorMsg->dbw_mode != 3;
+        dbw_ros_mode = raptorMsg->dbw_mode != 3;
         raptorbrakeAck = raptorMsg->brake_enable_status;        
     }
  
@@ -118,7 +118,7 @@ namespace deeporange14 {
                 ROS_WARN("In Idle");
 
 
-                if (!raptor_hb_fail && system_state == 8 && !dbwmode_disable){
+                if (!raptor_hb_fail && system_state == 8 && !dbw_ros_mode){
                     state = AU_3_WAIT_EXECUTION;
                     break;
                     
@@ -129,7 +129,7 @@ namespace deeporange14 {
                     break;
                 }
 
-                else if (system_state != 8 or dbwmode_disable){
+                else if (system_state != 8 or dbw_ros_mode){
                     state = AU_2_IDLE;
                     ROS_ERROR ("ERROR: [AU_2_IDLE]: SystemState not 8 or dbw mode not 3 ");
                     break;
@@ -144,7 +144,7 @@ namespace deeporange14 {
                 mobilityMsg.brake_effort = 1.0; // Also check from stack if brake_enable command from stack should be true
 
 
-                if(!raptor_hb_fail && !dbwmode_disable && !stack_fault && cmd_brake_effort && mission_status =="executedNav" && !stop_ros){
+                if(!raptor_hb_fail && !dbw_ros_mode && !stack_fault && cmd_brake_effort && mission_status =="executedNav" && !stop_ros){
                     state = AU_4_EXEC_IMINENT;
                     mobilityMsg.brake_effort = cmd_brake_effort;
                     break;
@@ -155,7 +155,7 @@ namespace deeporange14 {
                     ROS_ERROR ("ERROR:[AU_3_WAIT_EXECUTION]: RaptorHandshake failed ");
                     break;
                 }
-                else if(dbwmode_disable){
+                else if(dbw_ros_mode){
                     state = AU_2_IDLE;
 
 
@@ -195,7 +195,7 @@ namespace deeporange14 {
                 mobilityMsg.right_torque_cmd = cmd_trq_right;
                 mobilityMsg.brake_effort = 0.0; // Also check from stack if brake_enable command is false from stack,
                 //  because now global plan is ready and brakes should be disengaged
-                if(!raptor_hb_fail && !dbwmode_disable && !stack_fault && !cmd_brake_effort && mission_status =="globalPlanReady"&& !stop_ros){
+                if(!raptor_hb_fail && !dbw_ros_mode && !stack_fault && !cmd_brake_effort && mission_status =="globalPlanReady"&& !stop_ros){
                         state = AU_5_DISENGAGED_BRAKE;
                         mobilityMsg.brake_effort = cmd_brake_effort;
                         break;
@@ -206,7 +206,7 @@ namespace deeporange14 {
                     ROS_ERROR ("ERROR: [AU_4_EXEC_IMINENT]:RaptorHandshake failed ");
                     break;
                 }
-                else if(dbwmode_disable){
+                else if(dbw_ros_mode){
                     state = AU_2_IDLE;
                     ROS_ERROR("ERROR:[AU_4_EXEC_IMINENT]: Out of dbwMode ");
                     break;                    
@@ -245,7 +245,7 @@ namespace deeporange14 {
                 mobilityMsg.right_torque_cmd = cmd_trq_right;
                 mobilityMsg.brake_effort = 0.0; // Also check from stack if brake command is true from stack
 
-                if(!raptor_hb_fail && !dbwmode_disable && !stack_fault && !cmd_brake_effort && !raptorbrakeAck && mission_status =="BrakesDisengaging"&& !stop_ros ){
+                if(!raptor_hb_fail && !dbw_ros_mode && !stack_fault && !cmd_brake_effort && !raptorbrakeAck && mission_status =="BrakesDisengaging"&& !stop_ros ){
                         state = AU_6_COMMAND_TORQUES;
                         mobilityMsg.brake_effort = cmd_brake_effort;
                         break;
@@ -256,7 +256,7 @@ namespace deeporange14 {
                     ROS_ERROR ("ERROR: [AU_5_DISENGAGED_BRAKE]:RaptorHandshake failed ");
                     break;
                 }
-                else if(dbwmode_disable){
+                else if(dbw_ros_mode){
                     state = AU_2_IDLE;
                     ROS_ERROR("ERROR: [AU_5_DISENGAGED_BRAKE]:Out of dbwMode ");
                     break;                    
@@ -297,7 +297,7 @@ namespace deeporange14 {
             
             case AU_6_COMMAND_TORQUES:{ 
 
-                while(!raptor_hb_fail && !dbwmode_disable && !stack_fault && !cmd_brake_effort && mission_status =="CommandingTorques"&& !stop_ros){          
+                while(!raptor_hb_fail && !dbw_ros_mode && !stack_fault && !cmd_brake_effort && mission_status =="CommandingTorques"&& !stop_ros){          
                     
                     state = AU_6_COMMAND_TORQUES;
                     mobilityMsg.left_torque_cmd = cmd_trq_left;
@@ -318,7 +318,7 @@ namespace deeporange14 {
                     ROS_ERROR ("ERROR: [AU_6_COMMAND_TORQUES]: RaptorHandshake failed ");
                     break;
                 }
-                else if(dbwmode_disable){
+                else if(dbw_ros_mode){
                     state = AU_2_IDLE;
                     ROS_ERROR("ERROR: [AU_6_COMMAND_TORQUES]:Out of dbwMode ");
                     break;                    
@@ -353,7 +353,7 @@ namespace deeporange14 {
              
             case AU_7_SAFE_STOP:{
 
-                if(!raptor_hb_fail && !dbwmode_disable && !stack_fault && cmd_brake_effort && mission_status =="MissionCompleted" or mission_status == "MissionCancelled" && !stop_ros){
+                if(!raptor_hb_fail && !dbw_ros_mode && !stack_fault && cmd_brake_effort && mission_status =="MissionCompleted" or mission_status == "MissionCancelled" && !stop_ros){
                     state = AU_2_IDLE;
                     mobilityMsg.brake_effort = cmd_brake_effort;
                     ROS_WARN("Warning: [AU_7_SAFE_STOP]:In safe stop");             
@@ -364,7 +364,7 @@ namespace deeporange14 {
                     ROS_ERROR ("ERROR: [AU_7_SAFE_STOP]:RaptorHandshake failed ");
                     break;
                 }
-                else if(dbwmode_disable){
+                else if(dbw_ros_mode){
                     state = AU_2_IDLE;
                     ROS_ERROR("ERROR: [AU_7_SAFE_STOP]: Out of dbwMode ");
                     break;                    

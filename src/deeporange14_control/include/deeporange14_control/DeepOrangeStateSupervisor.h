@@ -6,6 +6,7 @@
 #include <string.h>
 #include <ros/ros.h>
 #include <std_msgs/Bool.h>
+#include <std_msgs/Float32.h>
 #include <can_msgs/Frame.h>
 #include <geometry_msgs/TwistStamped.h>
 #include <geometry_msgs/Twist.h>
@@ -29,15 +30,15 @@ namespace deeporange14
         ~DeepOrangeStateSupervisor();
 
         private:
-        void checkStackStatus(const geometry_msgs::Twist::ConstPtr& cmdvelMsg);
+        void checkStackStatus(const geometry_msgs::Twist::ConstPtr& cmdVelMsg);
         
         void getMissionStatus(const deeporange14_msgs::MissionStatus::ConstPtr& missionStatus);
     
-        void getStackBrakeEnable(const std_msgs::Bool::ConstPtr& StackBrakeEnable);
+        void getStackBrakeCmd(const std_msgs::Float32::ConstPtr& brakeEffort);
         
-        void getTorqueValues(const deeporange14_msgs::TorqueValuesMsg::ConstPtr& trqvalues);
+        void getTorqueValues(const deeporange14_msgs::TorqueValuesMsg::ConstPtr& trqValues);
 
-        void getStopRos(const std_msgs::Bool::ConstPtr& StopRos);
+        void getStopRos(const std_msgs::Bool::ConstPtr& stopRosMsg);
 
         void getRaptorMsg(const deeporange14_msgs::RaptorStateMsg::ConstPtr& raptorMsg);
 
@@ -46,10 +47,10 @@ namespace deeporange14
         void updateROSStateMsg();
 
         //member variables 
-        bool raptorhb_fail;
+        bool raptor_hb_fail;
         bool stack_fault;
         std::string mission_status;
-        bool brake_enable_stack;
+        float cmd_brake_effort;
         float cmd_trq_left;
         float cmd_trq_right;
         bool stop_ros;
@@ -76,8 +77,8 @@ namespace deeporange14
         ros::Subscriber sub_rosController;
         ros::Subscriber sub_rosStop;
         ros::Subscriber sub_raptorState;
-      
-        std::string topic_ns = "/warty";
+        ros::Subscriber sub_stopros;
+        std::string topic_ns = "/deeporange14";
         ros::Publisher pub_mobility;
 
         // Init the msg variables

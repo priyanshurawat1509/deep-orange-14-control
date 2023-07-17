@@ -10,14 +10,14 @@ import genpy
 import std_msgs.msg
 
 class TorqueValuesMsg(genpy.Message):
-  _md5sum = "f89af58c9dfa929a2769a3c304e31d8f"
+  _md5sum = "f1b98deb31033bbbe89e52918f5fea36"
   _type = "deeporange14_msgs/TorqueValuesMsg"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """Header header
   uint32 seq
   time stamp
-float64 left_torque
-float64 right_torque
+float64 left_torque_cmd
+float64 right_torque_cmd
 
 ================================================================================
 MSG: std_msgs/Header
@@ -35,7 +35,7 @@ time stamp
 #Frame this data is associated with
 string frame_id
 """
-  __slots__ = ['header','seq','stamp','left_torque','right_torque']
+  __slots__ = ['header','seq','stamp','left_torque_cmd','right_torque_cmd']
   _slot_types = ['std_msgs/Header','uint32','time','float64','float64']
 
   def __init__(self, *args, **kwds):
@@ -46,7 +46,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,seq,stamp,left_torque,right_torque
+       header,seq,stamp,left_torque_cmd,right_torque_cmd
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -61,16 +61,16 @@ string frame_id
         self.seq = 0
       if self.stamp is None:
         self.stamp = genpy.Time()
-      if self.left_torque is None:
-        self.left_torque = 0.
-      if self.right_torque is None:
-        self.right_torque = 0.
+      if self.left_torque_cmd is None:
+        self.left_torque_cmd = 0.
+      if self.right_torque_cmd is None:
+        self.right_torque_cmd = 0.
     else:
       self.header = std_msgs.msg.Header()
       self.seq = 0
       self.stamp = genpy.Time()
-      self.left_torque = 0.
-      self.right_torque = 0.
+      self.left_torque_cmd = 0.
+      self.right_torque_cmd = 0.
 
   def _get_types(self):
     """
@@ -93,7 +93,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3I2d().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque, _x.right_torque))
+      buff.write(_get_struct_3I2d().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque_cmd, _x.right_torque_cmd))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -126,7 +126,7 @@ string frame_id
       _x = self
       start = end
       end += 28
-      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque, _x.right_torque,) = _get_struct_3I2d().unpack(str[start:end])
+      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque_cmd, _x.right_torque_cmd,) = _get_struct_3I2d().unpack(str[start:end])
       self.stamp.canon()
       return self
     except struct.error as e:
@@ -149,7 +149,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3I2d().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque, _x.right_torque))
+      buff.write(_get_struct_3I2d().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque_cmd, _x.right_torque_cmd))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -183,7 +183,7 @@ string frame_id
       _x = self
       start = end
       end += 28
-      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque, _x.right_torque,) = _get_struct_3I2d().unpack(str[start:end])
+      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque_cmd, _x.right_torque_cmd,) = _get_struct_3I2d().unpack(str[start:end])
       self.stamp.canon()
       return self
     except struct.error as e:

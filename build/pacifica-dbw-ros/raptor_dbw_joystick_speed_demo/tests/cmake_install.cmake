@@ -1,8 +1,8 @@
-# Install script for directory: /users/sanskrj/deeporange14_control/src/pacifica-dbw-ros/raptor_dbw_joystick_speed_demo/tests
+# Install script for directory: /users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/src/pacifica-dbw-ros/raptor_dbw_joystick_speed_demo/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/users/sanskrj/deeporange14_control/install")
+  set(CMAKE_INSTALL_PREFIX "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

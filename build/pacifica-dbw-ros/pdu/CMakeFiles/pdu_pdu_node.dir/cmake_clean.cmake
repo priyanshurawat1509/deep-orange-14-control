@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/deeporange14_control/devel/lib/pdu/pdu_node"
-  "/users/sanskrj/deeporange14_control/devel/lib/pdu/pdu_node.pdb"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/pdu/pdu_node"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/pdu/pdu_node.pdb"
   "CMakeFiles/pdu_pdu_node.dir/src/node.cpp.o"
   "CMakeFiles/pdu_pdu_node.dir/src/node.cpp.o.d"
   "CMakeFiles/pdu_pdu_node.dir/src/pdu.cpp.o"

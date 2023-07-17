@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/manifest.l"
-  "/users/sanskrj/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/MissionStatus.l"
-  "/users/sanskrj/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/MobilityMsg.l"
-  "/users/sanskrj/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/RaptorStateMsg.l"
-  "/users/sanskrj/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/TorqueValuesMsg.l"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/manifest.l"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/MissionStatus.l"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/MobilityMsg.l"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/RaptorStateMsg.l"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/TorqueValuesMsg.l"
   "CMakeFiles/deeporange14_msgs_generate_messages_eus"
 )
 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/deeporange14_control/devel/lib/canopen_master/canopen_bcm_sync"
-  "/users/sanskrj/deeporange14_control/devel/lib/canopen_master/canopen_bcm_sync.pdb"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/canopen_master/canopen_bcm_sync"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/canopen_master/canopen_bcm_sync.pdb"
   "CMakeFiles/canopen_bcm_sync.dir/src/bcm_sync.cpp.o"
   "CMakeFiles/canopen_bcm_sync.dir/src/bcm_sync.cpp.o.d"
 )

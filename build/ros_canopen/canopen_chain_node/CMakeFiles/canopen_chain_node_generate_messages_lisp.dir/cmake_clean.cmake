@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/deeporange14_control/devel/share/common-lisp/ros/canopen_chain_node/srv/GetObject.lisp"
-  "/users/sanskrj/deeporange14_control/devel/share/common-lisp/ros/canopen_chain_node/srv/SetObject.lisp"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/share/common-lisp/ros/canopen_chain_node/srv/GetObject.lisp"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/share/common-lisp/ros/canopen_chain_node/srv/SetObject.lisp"
   "CMakeFiles/canopen_chain_node_generate_messages_lisp"
 )
 

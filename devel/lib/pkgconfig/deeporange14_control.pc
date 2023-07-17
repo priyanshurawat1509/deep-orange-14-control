@@ -1,4 +1,4 @@
-prefix=/users/sanskrj/Desktop/DO13-Autonomy_gitWs/Updates/deeporange14_control/devel
+prefix=/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel
 
 Name: deeporange14_control
 Description: Description of deeporange14_control

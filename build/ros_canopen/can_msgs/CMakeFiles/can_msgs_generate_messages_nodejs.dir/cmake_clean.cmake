@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/deeporange14_control/devel/share/gennodejs/ros/can_msgs/msg/Frame.js"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/share/gennodejs/ros/can_msgs/msg/Frame.js"
   "CMakeFiles/can_msgs_generate_messages_nodejs"
 )
 

@@ -3,7 +3,7 @@ Header header
   uint32 seq
   time stamp
 
-float64 left_torque
-float64 right_torque
+float64 left_torque_cmd
+float64 right_torque_cmd
 uint8 au_state 
-bool brake_enable
+uint8 brake_effort

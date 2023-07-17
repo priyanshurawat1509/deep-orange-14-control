@@ -22,8 +22,8 @@ class TorqueValuesMsg {
       this.header = null;
       this.seq = null;
       this.stamp = null;
-      this.left_torque = null;
-      this.right_torque = null;
+      this.left_torque_cmd = null;
+      this.right_torque_cmd = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -44,17 +44,17 @@ class TorqueValuesMsg {
       else {
         this.stamp = {secs: 0, nsecs: 0};
       }
-      if (initObj.hasOwnProperty('left_torque')) {
-        this.left_torque = initObj.left_torque
+      if (initObj.hasOwnProperty('left_torque_cmd')) {
+        this.left_torque_cmd = initObj.left_torque_cmd
       }
       else {
-        this.left_torque = 0.0;
+        this.left_torque_cmd = 0.0;
       }
-      if (initObj.hasOwnProperty('right_torque')) {
-        this.right_torque = initObj.right_torque
+      if (initObj.hasOwnProperty('right_torque_cmd')) {
+        this.right_torque_cmd = initObj.right_torque_cmd
       }
       else {
-        this.right_torque = 0.0;
+        this.right_torque_cmd = 0.0;
       }
     }
   }
@@ -67,10 +67,10 @@ class TorqueValuesMsg {
     bufferOffset = _serializer.uint32(obj.seq, buffer, bufferOffset);
     // Serialize message field [stamp]
     bufferOffset = _serializer.time(obj.stamp, buffer, bufferOffset);
-    // Serialize message field [left_torque]
-    bufferOffset = _serializer.float64(obj.left_torque, buffer, bufferOffset);
-    // Serialize message field [right_torque]
-    bufferOffset = _serializer.float64(obj.right_torque, buffer, bufferOffset);
+    // Serialize message field [left_torque_cmd]
+    bufferOffset = _serializer.float64(obj.left_torque_cmd, buffer, bufferOffset);
+    // Serialize message field [right_torque_cmd]
+    bufferOffset = _serializer.float64(obj.right_torque_cmd, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -84,10 +84,10 @@ class TorqueValuesMsg {
     data.seq = _deserializer.uint32(buffer, bufferOffset);
     // Deserialize message field [stamp]
     data.stamp = _deserializer.time(buffer, bufferOffset);
-    // Deserialize message field [left_torque]
-    data.left_torque = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [right_torque]
-    data.right_torque = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [left_torque_cmd]
+    data.left_torque_cmd = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [right_torque_cmd]
+    data.right_torque_cmd = _deserializer.float64(buffer, bufferOffset);
     return data;
   }
 
@@ -104,7 +104,7 @@ class TorqueValuesMsg {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'f89af58c9dfa929a2769a3c304e31d8f';
+    return 'f1b98deb31033bbbe89e52918f5fea36';
   }
 
   static messageDefinition() {
@@ -113,8 +113,8 @@ class TorqueValuesMsg {
     Header header
       uint32 seq
       time stamp
-    float64 left_torque
-    float64 right_torque
+    float64 left_torque_cmd
+    float64 right_torque_cmd
     
     ================================================================================
     MSG: std_msgs/Header
@@ -162,18 +162,18 @@ class TorqueValuesMsg {
       resolved.stamp = {secs: 0, nsecs: 0}
     }
 
-    if (msg.left_torque !== undefined) {
-      resolved.left_torque = msg.left_torque;
+    if (msg.left_torque_cmd !== undefined) {
+      resolved.left_torque_cmd = msg.left_torque_cmd;
     }
     else {
-      resolved.left_torque = 0.0
+      resolved.left_torque_cmd = 0.0
     }
 
-    if (msg.right_torque !== undefined) {
-      resolved.right_torque = msg.right_torque;
+    if (msg.right_torque_cmd !== undefined) {
+      resolved.right_torque_cmd = msg.right_torque_cmd;
     }
     else {
-      resolved.right_torque = 0.0
+      resolved.right_torque_cmd = 0.0
     }
 
     return resolved;

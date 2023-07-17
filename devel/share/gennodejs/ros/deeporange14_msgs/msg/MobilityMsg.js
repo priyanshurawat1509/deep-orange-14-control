@@ -22,10 +22,10 @@ class MobilityMsg {
       this.header = null;
       this.seq = null;
       this.stamp = null;
-      this.left_torque = null;
-      this.right_torque = null;
+      this.left_torque_cmd = null;
+      this.right_torque_cmd = null;
       this.au_state = null;
-      this.brake_enable = null;
+      this.brake_effort = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -46,17 +46,17 @@ class MobilityMsg {
       else {
         this.stamp = {secs: 0, nsecs: 0};
       }
-      if (initObj.hasOwnProperty('left_torque')) {
-        this.left_torque = initObj.left_torque
+      if (initObj.hasOwnProperty('left_torque_cmd')) {
+        this.left_torque_cmd = initObj.left_torque_cmd
       }
       else {
-        this.left_torque = 0.0;
+        this.left_torque_cmd = 0.0;
       }
-      if (initObj.hasOwnProperty('right_torque')) {
-        this.right_torque = initObj.right_torque
+      if (initObj.hasOwnProperty('right_torque_cmd')) {
+        this.right_torque_cmd = initObj.right_torque_cmd
       }
       else {
-        this.right_torque = 0.0;
+        this.right_torque_cmd = 0.0;
       }
       if (initObj.hasOwnProperty('au_state')) {
         this.au_state = initObj.au_state
@@ -64,11 +64,11 @@ class MobilityMsg {
       else {
         this.au_state = 0;
       }
-      if (initObj.hasOwnProperty('brake_enable')) {
-        this.brake_enable = initObj.brake_enable
+      if (initObj.hasOwnProperty('brake_effort')) {
+        this.brake_effort = initObj.brake_effort
       }
       else {
-        this.brake_enable = false;
+        this.brake_effort = 0;
       }
     }
   }
@@ -81,14 +81,14 @@ class MobilityMsg {
     bufferOffset = _serializer.uint32(obj.seq, buffer, bufferOffset);
     // Serialize message field [stamp]
     bufferOffset = _serializer.time(obj.stamp, buffer, bufferOffset);
-    // Serialize message field [left_torque]
-    bufferOffset = _serializer.float64(obj.left_torque, buffer, bufferOffset);
-    // Serialize message field [right_torque]
-    bufferOffset = _serializer.float64(obj.right_torque, buffer, bufferOffset);
+    // Serialize message field [left_torque_cmd]
+    bufferOffset = _serializer.float64(obj.left_torque_cmd, buffer, bufferOffset);
+    // Serialize message field [right_torque_cmd]
+    bufferOffset = _serializer.float64(obj.right_torque_cmd, buffer, bufferOffset);
     // Serialize message field [au_state]
     bufferOffset = _serializer.uint8(obj.au_state, buffer, bufferOffset);
-    // Serialize message field [brake_enable]
-    bufferOffset = _serializer.bool(obj.brake_enable, buffer, bufferOffset);
+    // Serialize message field [brake_effort]
+    bufferOffset = _serializer.uint8(obj.brake_effort, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -102,14 +102,14 @@ class MobilityMsg {
     data.seq = _deserializer.uint32(buffer, bufferOffset);
     // Deserialize message field [stamp]
     data.stamp = _deserializer.time(buffer, bufferOffset);
-    // Deserialize message field [left_torque]
-    data.left_torque = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [right_torque]
-    data.right_torque = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [left_torque_cmd]
+    data.left_torque_cmd = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [right_torque_cmd]
+    data.right_torque_cmd = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [au_state]
     data.au_state = _deserializer.uint8(buffer, bufferOffset);
-    // Deserialize message field [brake_enable]
-    data.brake_enable = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [brake_effort]
+    data.brake_effort = _deserializer.uint8(buffer, bufferOffset);
     return data;
   }
 
@@ -126,7 +126,7 @@ class MobilityMsg {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'd380c00cdf73d1bf5d0bffc60363a2cb';
+    return '66e4d75167be5101a8d6b7cdceb2db0b';
   }
 
   static messageDefinition() {
@@ -137,10 +137,10 @@ class MobilityMsg {
       uint32 seq
       time stamp
     
-    float64 left_torque
-    float64 right_torque
+    float64 left_torque_cmd
+    float64 right_torque_cmd
     uint8 au_state 
-    bool brake_enable
+    uint8 brake_effort
     ================================================================================
     MSG: std_msgs/Header
     # Standard metadata for higher-level stamped data types.
@@ -187,18 +187,18 @@ class MobilityMsg {
       resolved.stamp = {secs: 0, nsecs: 0}
     }
 
-    if (msg.left_torque !== undefined) {
-      resolved.left_torque = msg.left_torque;
+    if (msg.left_torque_cmd !== undefined) {
+      resolved.left_torque_cmd = msg.left_torque_cmd;
     }
     else {
-      resolved.left_torque = 0.0
+      resolved.left_torque_cmd = 0.0
     }
 
-    if (msg.right_torque !== undefined) {
-      resolved.right_torque = msg.right_torque;
+    if (msg.right_torque_cmd !== undefined) {
+      resolved.right_torque_cmd = msg.right_torque_cmd;
     }
     else {
-      resolved.right_torque = 0.0
+      resolved.right_torque_cmd = 0.0
     }
 
     if (msg.au_state !== undefined) {
@@ -208,11 +208,11 @@ class MobilityMsg {
       resolved.au_state = 0
     }
 
-    if (msg.brake_enable !== undefined) {
-      resolved.brake_enable = msg.brake_enable;
+    if (msg.brake_effort !== undefined) {
+      resolved.brake_effort = msg.brake_effort;
     }
     else {
-      resolved.brake_enable = false
+      resolved.brake_effort = 0
     }
 
     return resolved;

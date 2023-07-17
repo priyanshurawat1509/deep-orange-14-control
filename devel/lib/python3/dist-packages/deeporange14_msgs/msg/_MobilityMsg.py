@@ -10,7 +10,7 @@ import genpy
 import std_msgs.msg
 
 class MobilityMsg(genpy.Message):
-  _md5sum = "d380c00cdf73d1bf5d0bffc60363a2cb"
+  _md5sum = "66e4d75167be5101a8d6b7cdceb2db0b"
   _type = "deeporange14_msgs/MobilityMsg"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """#This represents a vector in free space -- currently defined to hold the left and right track #velocities
@@ -18,10 +18,10 @@ Header header
   uint32 seq
   time stamp
 
-float64 left_torque
-float64 right_torque
+float64 left_torque_cmd
+float64 right_torque_cmd
 uint8 au_state 
-bool brake_enable
+uint8 brake_effort
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -38,8 +38,8 @@ time stamp
 #Frame this data is associated with
 string frame_id
 """
-  __slots__ = ['header','seq','stamp','left_torque','right_torque','au_state','brake_enable']
-  _slot_types = ['std_msgs/Header','uint32','time','float64','float64','uint8','bool']
+  __slots__ = ['header','seq','stamp','left_torque_cmd','right_torque_cmd','au_state','brake_effort']
+  _slot_types = ['std_msgs/Header','uint32','time','float64','float64','uint8','uint8']
 
   def __init__(self, *args, **kwds):
     """
@@ -49,7 +49,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,seq,stamp,left_torque,right_torque,au_state,brake_enable
+       header,seq,stamp,left_torque_cmd,right_torque_cmd,au_state,brake_effort
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -64,22 +64,22 @@ string frame_id
         self.seq = 0
       if self.stamp is None:
         self.stamp = genpy.Time()
-      if self.left_torque is None:
-        self.left_torque = 0.
-      if self.right_torque is None:
-        self.right_torque = 0.
+      if self.left_torque_cmd is None:
+        self.left_torque_cmd = 0.
+      if self.right_torque_cmd is None:
+        self.right_torque_cmd = 0.
       if self.au_state is None:
         self.au_state = 0
-      if self.brake_enable is None:
-        self.brake_enable = False
+      if self.brake_effort is None:
+        self.brake_effort = 0
     else:
       self.header = std_msgs.msg.Header()
       self.seq = 0
       self.stamp = genpy.Time()
-      self.left_torque = 0.
-      self.right_torque = 0.
+      self.left_torque_cmd = 0.
+      self.right_torque_cmd = 0.
       self.au_state = 0
-      self.brake_enable = False
+      self.brake_effort = 0
 
   def _get_types(self):
     """
@@ -102,7 +102,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3I2d2B().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque, _x.right_torque, _x.au_state, _x.brake_enable))
+      buff.write(_get_struct_3I2d2B().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque_cmd, _x.right_torque_cmd, _x.au_state, _x.brake_effort))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -135,8 +135,7 @@ string frame_id
       _x = self
       start = end
       end += 30
-      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque, _x.right_torque, _x.au_state, _x.brake_enable,) = _get_struct_3I2d2B().unpack(str[start:end])
-      self.brake_enable = bool(self.brake_enable)
+      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque_cmd, _x.right_torque_cmd, _x.au_state, _x.brake_effort,) = _get_struct_3I2d2B().unpack(str[start:end])
       self.stamp.canon()
       return self
     except struct.error as e:
@@ -159,7 +158,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3I2d2B().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque, _x.right_torque, _x.au_state, _x.brake_enable))
+      buff.write(_get_struct_3I2d2B().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque_cmd, _x.right_torque_cmd, _x.au_state, _x.brake_effort))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -193,8 +192,7 @@ string frame_id
       _x = self
       start = end
       end += 30
-      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque, _x.right_torque, _x.au_state, _x.brake_enable,) = _get_struct_3I2d2B().unpack(str[start:end])
-      self.brake_enable = bool(self.brake_enable)
+      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque_cmd, _x.right_torque_cmd, _x.au_state, _x.brake_effort,) = _get_struct_3I2d2B().unpack(str[start:end])
       self.stamp.canon()
       return self
     except struct.error as e:

@@ -16,7 +16,7 @@
 
 (defclass deeporange14_msgs::MobilityMsg
   :super ros::object
-  :slots (_header _seq _stamp _left_torque _right_torque _au_state _brake_enable ))
+  :slots (_header _seq _stamp _left_torque_cmd _right_torque_cmd _au_state _brake_effort ))
 
 (defmethod deeporange14_msgs::MobilityMsg
   (:init
@@ -24,19 +24,19 @@
     ((:header __header) (instance std_msgs::Header :init))
     ((:seq __seq) 0)
     ((:stamp __stamp) (instance ros::time :init))
-    ((:left_torque __left_torque) 0.0)
-    ((:right_torque __right_torque) 0.0)
+    ((:left_torque_cmd __left_torque_cmd) 0.0)
+    ((:right_torque_cmd __right_torque_cmd) 0.0)
     ((:au_state __au_state) 0)
-    ((:brake_enable __brake_enable) nil)
+    ((:brake_effort __brake_effort) 0)
     )
    (send-super :init)
    (setq _header __header)
    (setq _seq (round __seq))
    (setq _stamp __stamp)
-   (setq _left_torque (float __left_torque))
-   (setq _right_torque (float __right_torque))
+   (setq _left_torque_cmd (float __left_torque_cmd))
+   (setq _right_torque_cmd (float __right_torque_cmd))
    (setq _au_state (round __au_state))
-   (setq _brake_enable __brake_enable)
+   (setq _brake_effort (round __brake_effort))
    self)
   (:header
    (&rest __header)
@@ -51,18 +51,18 @@
   (:stamp
    (&optional __stamp)
    (if __stamp (setq _stamp __stamp)) _stamp)
-  (:left_torque
-   (&optional __left_torque)
-   (if __left_torque (setq _left_torque __left_torque)) _left_torque)
-  (:right_torque
-   (&optional __right_torque)
-   (if __right_torque (setq _right_torque __right_torque)) _right_torque)
+  (:left_torque_cmd
+   (&optional __left_torque_cmd)
+   (if __left_torque_cmd (setq _left_torque_cmd __left_torque_cmd)) _left_torque_cmd)
+  (:right_torque_cmd
+   (&optional __right_torque_cmd)
+   (if __right_torque_cmd (setq _right_torque_cmd __right_torque_cmd)) _right_torque_cmd)
   (:au_state
    (&optional __au_state)
    (if __au_state (setq _au_state __au_state)) _au_state)
-  (:brake_enable
-   (&optional (__brake_enable :null))
-   (if (not (eq __brake_enable :null)) (setq _brake_enable __brake_enable)) _brake_enable)
+  (:brake_effort
+   (&optional __brake_effort)
+   (if __brake_effort (setq _brake_effort __brake_effort)) _brake_effort)
   (:serialization-length
    ()
    (+
@@ -72,13 +72,13 @@
     4
     ;; time _stamp
     8
-    ;; float64 _left_torque
+    ;; float64 _left_torque_cmd
     8
-    ;; float64 _right_torque
+    ;; float64 _right_torque_cmd
     8
     ;; uint8 _au_state
     1
-    ;; bool _brake_enable
+    ;; uint8 _brake_effort
     1
     ))
   (:serialize
@@ -91,14 +91,14 @@
        (write-long _seq s)
      ;; time _stamp
        (write-long (send _stamp :sec) s) (write-long (send _stamp :nsec) s)
-     ;; float64 _left_torque
-       (sys::poke _left_torque (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _right_torque
-       (sys::poke _right_torque (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _left_torque_cmd
+       (sys::poke _left_torque_cmd (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _right_torque_cmd
+       (sys::poke _right_torque_cmd (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; uint8 _au_state
        (write-byte _au_state s)
-     ;; bool _brake_enable
-       (if _brake_enable (write-byte -1 s) (write-byte 0 s))
+     ;; uint8 _brake_effort
+       (write-byte _brake_effort s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -109,19 +109,19 @@
      (setq _seq (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; time _stamp
      (send _stamp :sec (sys::peek buf ptr- :integer)) (incf ptr- 4)  (send _stamp :nsec (sys::peek buf ptr- :integer)) (incf ptr- 4)
-   ;; float64 _left_torque
-     (setq _left_torque (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _right_torque
-     (setq _right_torque (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _left_torque_cmd
+     (setq _left_torque_cmd (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _right_torque_cmd
+     (setq _right_torque_cmd (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; uint8 _au_state
      (setq _au_state (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; bool _brake_enable
-     (setq _brake_enable (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; uint8 _brake_effort
+     (setq _brake_effort (sys::peek buf ptr- :char)) (incf ptr- 1)
    ;;
    self)
   )
 
-(setf (get deeporange14_msgs::MobilityMsg :md5sum-) "d380c00cdf73d1bf5d0bffc60363a2cb")
+(setf (get deeporange14_msgs::MobilityMsg :md5sum-) "66e4d75167be5101a8d6b7cdceb2db0b")
 (setf (get deeporange14_msgs::MobilityMsg :datatype-) "deeporange14_msgs/MobilityMsg")
 (setf (get deeporange14_msgs::MobilityMsg :definition-)
       "#This represents a vector in free space -- currently defined to hold the left and right track #velocities
@@ -129,10 +129,10 @@ Header header
   uint32 seq
   time stamp
 
-float64 left_torque
-float64 right_torque
+float64 left_torque_cmd
+float64 right_torque_cmd
 uint8 au_state 
-bool brake_enable
+uint8 brake_effort
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -153,6 +153,6 @@ string frame_id
 
 
 
-(provide :deeporange14_msgs/MobilityMsg "d380c00cdf73d1bf5d0bffc60363a2cb")
+(provide :deeporange14_msgs/MobilityMsg "66e4d75167be5101a8d6b7cdceb2db0b")
 
 

@@ -28,15 +28,15 @@ struct TorqueValuesMsg_
     : header()
     , seq(0)
     , stamp()
-    , left_torque(0.0)
-    , right_torque(0.0)  {
+    , left_torque_cmd(0.0)
+    , right_torque_cmd(0.0)  {
     }
   TorqueValuesMsg_(const ContainerAllocator& _alloc)
     : header(_alloc)
     , seq(0)
     , stamp()
-    , left_torque(0.0)
-    , right_torque(0.0)  {
+    , left_torque_cmd(0.0)
+    , right_torque_cmd(0.0)  {
   (void)_alloc;
     }
 
@@ -51,11 +51,11 @@ struct TorqueValuesMsg_
    typedef ros::Time _stamp_type;
   _stamp_type stamp;
 
-   typedef double _left_torque_type;
-  _left_torque_type left_torque;
+   typedef double _left_torque_cmd_type;
+  _left_torque_cmd_type left_torque_cmd;
 
-   typedef double _right_torque_type;
-  _right_torque_type right_torque;
+   typedef double _right_torque_cmd_type;
+  _right_torque_cmd_type right_torque_cmd;
 
 
 
@@ -89,8 +89,8 @@ bool operator==(const ::deeporange14_msgs::TorqueValuesMsg_<ContainerAllocator1>
   return lhs.header == rhs.header &&
     lhs.seq == rhs.seq &&
     lhs.stamp == rhs.stamp &&
-    lhs.left_torque == rhs.left_torque &&
-    lhs.right_torque == rhs.right_torque;
+    lhs.left_torque_cmd == rhs.left_torque_cmd &&
+    lhs.right_torque_cmd == rhs.right_torque_cmd;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -147,12 +147,12 @@ struct MD5Sum< ::deeporange14_msgs::TorqueValuesMsg_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "f89af58c9dfa929a2769a3c304e31d8f";
+    return "f1b98deb31033bbbe89e52918f5fea36";
   }
 
   static const char* value(const ::deeporange14_msgs::TorqueValuesMsg_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xf89af58c9dfa929aULL;
-  static const uint64_t static_value2 = 0x2769a3c304e31d8fULL;
+  static const uint64_t static_value1 = 0xf1b98deb31033bbbULL;
+  static const uint64_t static_value2 = 0xe89e52918f5fea36ULL;
 };
 
 template<class ContainerAllocator>
@@ -174,8 +174,8 @@ struct Definition< ::deeporange14_msgs::TorqueValuesMsg_<ContainerAllocator> >
     return "Header header\n"
 "  uint32 seq\n"
 "  time stamp\n"
-"float64 left_torque\n"
-"float64 right_torque\n"
+"float64 left_torque_cmd\n"
+"float64 right_torque_cmd\n"
 "\n"
 "================================================================================\n"
 "MSG: std_msgs/Header\n"
@@ -213,8 +213,8 @@ namespace serialization
       stream.next(m.header);
       stream.next(m.seq);
       stream.next(m.stamp);
-      stream.next(m.left_torque);
-      stream.next(m.right_torque);
+      stream.next(m.left_torque_cmd);
+      stream.next(m.right_torque_cmd);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -240,10 +240,10 @@ struct Printer< ::deeporange14_msgs::TorqueValuesMsg_<ContainerAllocator> >
     Printer<uint32_t>::stream(s, indent + "  ", v.seq);
     s << indent << "stamp: ";
     Printer<ros::Time>::stream(s, indent + "  ", v.stamp);
-    s << indent << "left_torque: ";
-    Printer<double>::stream(s, indent + "  ", v.left_torque);
-    s << indent << "right_torque: ";
-    Printer<double>::stream(s, indent + "  ", v.right_torque);
+    s << indent << "left_torque_cmd: ";
+    Printer<double>::stream(s, indent + "  ", v.left_torque_cmd);
+    s << indent << "right_torque_cmd: ";
+    Printer<double>::stream(s, indent + "  ", v.right_torque_cmd);
   }
 };
 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/deeporange14_control/devel/lib/raptor_dbw_joystick_demo/joystick_demo"
-  "/users/sanskrj/deeporange14_control/devel/lib/raptor_dbw_joystick_demo/joystick_demo.pdb"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/raptor_dbw_joystick_demo/joystick_demo"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/raptor_dbw_joystick_demo/joystick_demo.pdb"
   "CMakeFiles/raptor_dbw_joystick_demo_joystick_demo.dir/src/JoystickDemo.cpp.o"
   "CMakeFiles/raptor_dbw_joystick_demo_joystick_demo.dir/src/JoystickDemo.cpp.o.d"
   "CMakeFiles/raptor_dbw_joystick_demo_joystick_demo.dir/src/joystick_demo.cpp.o"

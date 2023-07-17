@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/deeporange14_control/devel/lib/socketcan_bridge/test_to_socketcan"
-  "/users/sanskrj/deeporange14_control/devel/lib/socketcan_bridge/test_to_socketcan.pdb"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/socketcan_bridge/test_to_socketcan"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/socketcan_bridge/test_to_socketcan.pdb"
   "CMakeFiles/test_to_socketcan.dir/test/to_socketcan_test.cpp.o"
   "CMakeFiles/test_to_socketcan.dir/test/to_socketcan_test.cpp.o.d"
 )

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/deeporange14_control/devel/lib/libcanopen_402_plugin.pdb"
-  "/users/sanskrj/deeporange14_control/devel/lib/libcanopen_402_plugin.so"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/libcanopen_402_plugin.pdb"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/libcanopen_402_plugin.so"
   "CMakeFiles/canopen_402_plugin.dir/src/plugin.cpp.o"
   "CMakeFiles/canopen_402_plugin.dir/src/plugin.cpp.o.d"
 )

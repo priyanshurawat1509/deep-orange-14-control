@@ -13,16 +13,15 @@ namespace deeporange14
 
 enum allStates{
     // ROS States
-    AU0_DEFAULT                   = 0,
-    AU1_STARTUP                   = 1,
-    AU2_IDLE                      = 2,
-    AU3_WAIT_EXECUTION            = 3,
-    AU4_EXEC_IMINENT              = 4,
-    AU5_DISENGAGED_BRAKE          = 5,
-    AU6_COMMAND_TORQUES           = 6,
-    AU7_SAFE_STOP                 = 7,
-    AU98_FAULT                    = 254, 
-
+    AU_0_DEFAULT                   = 0,
+    AU_1_STARTUP                   = 1,
+    AU_2_IDLE                      = 2,
+    AU_3_WAIT_EXECUTION            = 3,
+    AU_4_EXEC_IMINENT              = 4,
+    AU_5_DISENGAGED_BRAKE          = 5,
+    AU_6_COMMAND_TORQUES           = 6,
+    AU_7_SAFE_STOP                 = 7,
+    AU_200_FAULT                   = 200, 
 
 
   };

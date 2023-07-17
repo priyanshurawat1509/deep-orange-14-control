@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/deeporange14_control/devel/lib/libcanopen_master.pdb"
-  "/users/sanskrj/deeporange14_control/devel/lib/libcanopen_master.so"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/libcanopen_master.pdb"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/libcanopen_master.so"
   "CMakeFiles/canopen_master.dir/src/emcy.cpp.o"
   "CMakeFiles/canopen_master.dir/src/emcy.cpp.o.d"
   "CMakeFiles/canopen_master.dir/src/node.cpp.o"

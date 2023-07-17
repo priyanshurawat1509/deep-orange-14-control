@@ -5,8 +5,8 @@
           SEQ
           STAMP-VAL
           STAMP
-          LEFT_TORQUE-VAL
-          LEFT_TORQUE
-          RIGHT_TORQUE-VAL
-          RIGHT_TORQUE
+          LEFT_TORQUE_CMD-VAL
+          LEFT_TORQUE_CMD
+          RIGHT_TORQUE_CMD-VAL
+          RIGHT_TORQUE_CMD
 ))

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/deeporange14_control/devel/lib/canopen_chain_node/canopen_chain_node"
-  "/users/sanskrj/deeporange14_control/devel/lib/canopen_chain_node/canopen_chain_node.pdb"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/canopen_chain_node/canopen_chain_node"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/canopen_chain_node/canopen_chain_node.pdb"
   "CMakeFiles/canopen_chain_node.dir/src/chain_node.cpp.o"
   "CMakeFiles/canopen_chain_node.dir/src/chain_node.cpp.o.d"
 )

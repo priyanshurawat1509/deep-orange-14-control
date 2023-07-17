@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DROS_BUILD_SHARED_LIBS=1
 
-CXX_INCLUDES = -I/users/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include -I/opt/ros/noetic/include -isystem /usr/src/googletest/googletest/include -isystem /usr/src/googletest/googletest
+CXX_INCLUDES = -I/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/src/ros_canopen/socketcan_interface/include -I/opt/ros/noetic/include -isystem /usr/src/googletest/googletest/include -isystem /usr/src/googletest/googletest
 
 CXX_FLAGS = -std=gnu++14 -DGTEST_HAS_PTHREAD=1
 

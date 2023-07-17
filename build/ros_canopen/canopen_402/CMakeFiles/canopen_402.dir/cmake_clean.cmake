@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/deeporange14_control/devel/lib/libcanopen_402.pdb"
-  "/users/sanskrj/deeporange14_control/devel/lib/libcanopen_402.so"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/libcanopen_402.pdb"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/libcanopen_402.so"
   "CMakeFiles/canopen_402.dir/src/motor.cpp.o"
   "CMakeFiles/canopen_402.dir/src/motor.cpp.o.d"
 )

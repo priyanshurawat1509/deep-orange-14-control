@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/deeporange14_control/devel/lib/libcanopen_motor.pdb"
-  "/users/sanskrj/deeporange14_control/devel/lib/libcanopen_motor.so"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/libcanopen_motor.pdb"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/libcanopen_motor.so"
   "CMakeFiles/canopen_motor.dir/src/controller_manager_layer.cpp.o"
   "CMakeFiles/canopen_motor.dir/src/controller_manager_layer.cpp.o.d"
   "CMakeFiles/canopen_motor.dir/src/handle_layer.cpp.o"

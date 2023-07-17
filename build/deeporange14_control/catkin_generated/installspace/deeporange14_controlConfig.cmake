@@ -67,14 +67,14 @@ set(deeporange14_control_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(deeporange14_control_SOURCE_PREFIX /users/sanskrj/Desktop/DO13-Autonomy_gitWs/Updates/deeporange14_control/src/deeporange14_control)
-  set(deeporange14_control_DEVEL_PREFIX /users/sanskrj/Desktop/DO13-Autonomy_gitWs/Updates/deeporange14_control/devel)
+  set(deeporange14_control_SOURCE_PREFIX /users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/src/deeporange14_control)
+  set(deeporange14_control_DEVEL_PREFIX /users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel)
   set(deeporange14_control_INSTALL_PREFIX "")
   set(deeporange14_control_PREFIX ${deeporange14_control_DEVEL_PREFIX})
 else()
   set(deeporange14_control_SOURCE_PREFIX "")
   set(deeporange14_control_DEVEL_PREFIX "")
-  set(deeporange14_control_INSTALL_PREFIX /users/sanskrj/Desktop/DO13-Autonomy_gitWs/Updates/deeporange14_control/install)
+  set(deeporange14_control_INSTALL_PREFIX /users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/install)
   set(deeporange14_control_PREFIX ${deeporange14_control_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /users/sanskrj/Desktop/DO13-Autonomy_gitWs/Updates/deeporange14_control/install/lib;/users/sanskrj/deeporange14_control/devel/lib;/users/sanskrj/phoenix_source/clemson_LATEST/phoenix-r1/install/lib;/opt/ros/noetic/lib)
+    foreach(path /users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/install/lib;/users/sanskrj/deeporange14_control/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/deeporange14_control/devel/lib/socketcan_interface/socketcan_dump"
-  "/users/sanskrj/deeporange14_control/devel/lib/socketcan_interface/socketcan_dump.pdb"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/socketcan_interface/socketcan_dump"
+  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/socketcan_interface/socketcan_dump.pdb"
   "CMakeFiles/socketcan_dump.dir/src/candump.cpp.o"
   "CMakeFiles/socketcan_dump.dir/src/candump.cpp.o.d"
 )

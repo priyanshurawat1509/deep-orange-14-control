@@ -20,7 +20,7 @@
 #include <deeporange14_msgs/MobilityMsg.h>
 #include <deeporange14_msgs/MissionStatus.h>
 #include <deeporange14_msgs/RaptorStateMsg.h>
-#include <deeporange14_msgs/TorqueValuesMsg.h>
+#include <deeporange14_msgs/TorqueCmdStamped.h>
 
 namespace deeporange14
 {
@@ -36,7 +36,7 @@ namespace deeporange14
     
         void getStackBrakeCmd(const std_msgs::Float32::ConstPtr& brakeEffort);
         
-        void getTorqueValues(const deeporange14_msgs::TorqueValuesMsg::ConstPtr& trqValues);
+        void getTorqueValues(const deeporange14_msgs::TorqueCmdStamped::ConstPtr& trqValues);
 
         void getStopRos(const std_msgs::Bool::ConstPtr& stopRosMsg);
 
@@ -56,7 +56,7 @@ namespace deeporange14
         bool stop_ros;
         bool raptorbrakeAck;
         uint system_state;
-        bool dbwmode_disable;
+        bool dbw_ros_mode;
         allStates state;
         double raptor_hb_timestamp;
         double cmdvel_timestamp;
@@ -84,7 +84,7 @@ namespace deeporange14
         // Init the msg variables
         
         deeporange14_msgs::MobilityMsg mobilityMsg;
-        deeporange14_msgs::TorqueValuesMsg trqvalues;
+        deeporange14_msgs::TorqueCmdStamped trqvalues;
         deeporange14_msgs::RaptorStateMsg raptorMsg;
 
     };

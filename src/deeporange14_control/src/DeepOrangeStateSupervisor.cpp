@@ -56,7 +56,7 @@ namespace deeporange14 {
     void DeepOrangeStateSupervisor::getStackBrakeCmd(const std_msgs::Float32::ConstPtr& brakeEffort){
         cmd_brake_effort = brakeEffort->data;
     }       
-    void DeepOrangeStateSupervisor::getTorqueValues(const deeporange14_msgs::TorqueValuesMsg::ConstPtr& trqValues){
+    void DeepOrangeStateSupervisor::getTorqueValues(const deeporange14_msgs::TorqueCmdStamped::ConstPtr& trqValues){
         cmd_trq_left = trqValues->left_torque_cmd;
         cmd_trq_right = trqValues->right_torque_cmd;
     }

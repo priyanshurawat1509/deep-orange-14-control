@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/canopen_motor_node/canopen_motor_node-test_muparser"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/canopen_motor_node/canopen_motor_node-test_muparser.pdb"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_motor_node/canopen_motor_node-test_muparser"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_motor_node/canopen_motor_node-test_muparser.pdb"
   "CMakeFiles/canopen_motor_node-test_muparser.dir/test/test_muparser.cpp.o"
-  "CMakeFiles/canopen_motor_node-test_muparser.dir/test/test_muparser.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

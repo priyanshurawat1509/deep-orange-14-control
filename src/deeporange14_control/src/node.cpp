@@ -9,6 +9,7 @@ Makes use of New Eagle package: can_dbc_parser (https://github.com/NewEagleRapto
 
 
 #include<deeporange14_control/DeepOrangeStateSupervisor.h>
+#include<deeporange14_control/DeepOrangeVelocityController.h>
 
 
 
@@ -20,7 +21,8 @@ int main(int argc, char **argv)
 
   // create StateMachine object
   
-  deeporange14::DeepOrangeStateSupervisor deeporange_statesupervisor(nh, priv_nh);
+  deeporange14::DeepOrangeStateSupervisor deeporange_stateSupervisor(nh, priv_nh);
+  deeporange14::VelocityController deeporange_velocityController(nh, priv_nh);
 
   // create Data Logger object
   // deeporange14::DataLogger n_datalogger(nh, priv_nh);

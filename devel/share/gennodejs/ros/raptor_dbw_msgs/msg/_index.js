@@ -1,84 +1,84 @@
 
 "use strict";
 
-let WatchdogStatus = require('./WatchdogStatus.js');
-let WiperFront = require('./WiperFront.js');
-let DoorRequest = require('./DoorRequest.js');
-let AcceleratorPedalReport = require('./AcceleratorPedalReport.js');
-let LowVoltageSystemReport = require('./LowVoltageSystemReport.js');
-let WiperRear = require('./WiperRear.js');
-let DoorState = require('./DoorState.js');
-let DriverInputReport = require('./DriverInputReport.js');
-let SonarArcNum = require('./SonarArcNum.js');
-let TurnSignal = require('./TurnSignal.js');
-let WheelPositionReport = require('./WheelPositionReport.js');
-let TirePressureReport = require('./TirePressureReport.js');
-let GearCmd = require('./GearCmd.js');
-let ParkingBrake = require('./ParkingBrake.js');
-let MiscReport = require('./MiscReport.js');
-let BrakeCmd = require('./BrakeCmd.js');
 let SteeringCmd = require('./SteeringCmd.js');
-let MiscCmd = require('./MiscCmd.js');
-let HmiGlobalEnableReport = require('./HmiGlobalEnableReport.js');
+let HighBeamState = require('./HighBeamState.js');
+let MiscReport = require('./MiscReport.js');
+let ParkingBrake = require('./ParkingBrake.js');
+let WheelSpeedType = require('./WheelSpeedType.js');
 let GlobalEnableCmd = require('./GlobalEnableCmd.js');
-let HornState = require('./HornState.js');
-let HighBeam = require('./HighBeam.js');
-let Brake2Report = require('./Brake2Report.js');
-let Ignition = require('./Ignition.js');
+let LowVoltageSystemReport = require('./LowVoltageSystemReport.js');
 let SurroundReport = require('./SurroundReport.js');
-let BrakeReport = require('./BrakeReport.js');
+let HighBeam = require('./HighBeam.js');
+let DoorRequest = require('./DoorRequest.js');
+let HmiGlobalEnableReport = require('./HmiGlobalEnableReport.js');
+let WiperRear = require('./WiperRear.js');
+let SteeringReport = require('./SteeringReport.js');
+let HornState = require('./HornState.js');
+let WatchdogStatus = require('./WatchdogStatus.js');
+let Steering2Report = require('./Steering2Report.js');
 let Gear = require('./Gear.js');
+let TurnSignal = require('./TurnSignal.js');
+let WiperFront = require('./WiperFront.js');
+let WheelSpeedReport = require('./WheelSpeedReport.js');
+let OtherActuatorsReport = require('./OtherActuatorsReport.js');
+let DriverInputReport = require('./DriverInputReport.js');
+let AcceleratorPedalReport = require('./AcceleratorPedalReport.js');
+let LowBeam = require('./LowBeam.js');
+let MiscCmd = require('./MiscCmd.js');
+let BrakeReport = require('./BrakeReport.js');
 let GearReport = require('./GearReport.js');
 let ActuatorControlMode = require('./ActuatorControlMode.js');
-let WheelSpeedReport = require('./WheelSpeedReport.js');
-let HighBeamState = require('./HighBeamState.js');
-let LowBeam = require('./LowBeam.js');
-let WheelSpeedType = require('./WheelSpeedType.js');
+let Ignition = require('./Ignition.js');
 let TwistCmd = require('./TwistCmd.js');
-let SteeringReport = require('./SteeringReport.js');
-let OtherActuatorsReport = require('./OtherActuatorsReport.js');
-let Steering2Report = require('./Steering2Report.js');
-let FaultActionsReport = require('./FaultActionsReport.js');
+let WheelPositionReport = require('./WheelPositionReport.js');
+let GearCmd = require('./GearCmd.js');
+let TirePressureReport = require('./TirePressureReport.js');
 let AcceleratorPedalCmd = require('./AcceleratorPedalCmd.js');
+let Brake2Report = require('./Brake2Report.js');
+let FaultActionsReport = require('./FaultActionsReport.js');
+let SonarArcNum = require('./SonarArcNum.js');
+let BrakeCmd = require('./BrakeCmd.js');
+let DoorState = require('./DoorState.js');
 
 module.exports = {
-  WatchdogStatus: WatchdogStatus,
-  WiperFront: WiperFront,
-  DoorRequest: DoorRequest,
-  AcceleratorPedalReport: AcceleratorPedalReport,
-  LowVoltageSystemReport: LowVoltageSystemReport,
-  WiperRear: WiperRear,
-  DoorState: DoorState,
-  DriverInputReport: DriverInputReport,
-  SonarArcNum: SonarArcNum,
-  TurnSignal: TurnSignal,
-  WheelPositionReport: WheelPositionReport,
-  TirePressureReport: TirePressureReport,
-  GearCmd: GearCmd,
-  ParkingBrake: ParkingBrake,
-  MiscReport: MiscReport,
-  BrakeCmd: BrakeCmd,
   SteeringCmd: SteeringCmd,
-  MiscCmd: MiscCmd,
-  HmiGlobalEnableReport: HmiGlobalEnableReport,
+  HighBeamState: HighBeamState,
+  MiscReport: MiscReport,
+  ParkingBrake: ParkingBrake,
+  WheelSpeedType: WheelSpeedType,
   GlobalEnableCmd: GlobalEnableCmd,
-  HornState: HornState,
-  HighBeam: HighBeam,
-  Brake2Report: Brake2Report,
-  Ignition: Ignition,
+  LowVoltageSystemReport: LowVoltageSystemReport,
   SurroundReport: SurroundReport,
-  BrakeReport: BrakeReport,
+  HighBeam: HighBeam,
+  DoorRequest: DoorRequest,
+  HmiGlobalEnableReport: HmiGlobalEnableReport,
+  WiperRear: WiperRear,
+  SteeringReport: SteeringReport,
+  HornState: HornState,
+  WatchdogStatus: WatchdogStatus,
+  Steering2Report: Steering2Report,
   Gear: Gear,
+  TurnSignal: TurnSignal,
+  WiperFront: WiperFront,
+  WheelSpeedReport: WheelSpeedReport,
+  OtherActuatorsReport: OtherActuatorsReport,
+  DriverInputReport: DriverInputReport,
+  AcceleratorPedalReport: AcceleratorPedalReport,
+  LowBeam: LowBeam,
+  MiscCmd: MiscCmd,
+  BrakeReport: BrakeReport,
   GearReport: GearReport,
   ActuatorControlMode: ActuatorControlMode,
-  WheelSpeedReport: WheelSpeedReport,
-  HighBeamState: HighBeamState,
-  LowBeam: LowBeam,
-  WheelSpeedType: WheelSpeedType,
+  Ignition: Ignition,
   TwistCmd: TwistCmd,
-  SteeringReport: SteeringReport,
-  OtherActuatorsReport: OtherActuatorsReport,
-  Steering2Report: Steering2Report,
-  FaultActionsReport: FaultActionsReport,
+  WheelPositionReport: WheelPositionReport,
+  GearCmd: GearCmd,
+  TirePressureReport: TirePressureReport,
   AcceleratorPedalCmd: AcceleratorPedalCmd,
+  Brake2Report: Brake2Report,
+  FaultActionsReport: FaultActionsReport,
+  SonarArcNum: SonarArcNum,
+  BrakeCmd: BrakeCmd,
+  DoorState: DoorState,
 };

@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/socketcan_bridge/socketcan_bridge_node"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/StateSupervisor/deeporange14_control/devel/lib/socketcan_bridge/socketcan_bridge_node.pdb"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_bridge/socketcan_bridge_node"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_bridge/socketcan_bridge_node.pdb"
   "CMakeFiles/socketcan_bridge_node.dir/src/socketcan_bridge_node.cpp.o"
-  "CMakeFiles/socketcan_bridge_node.dir/src/socketcan_bridge_node.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

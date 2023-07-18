@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/bcm.h
+/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/bcm.h
 socketcan_interface/interface.h
 -
 sys/types.h
@@ -28,17 +28,17 @@ cstring
 boost/chrono.hpp
 -
 
-/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/delegates.h
+/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/delegates.h
 functional
 -
 
-/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/filter.h
+/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/filter.h
 vector
 -
 interface.h
-/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/interface.h
+/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/interface.h
 
-/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/interface.h
+/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/interface.h
 array
 -
 memory
@@ -48,19 +48,19 @@ functional
 boost/system/error_code.hpp
 -
 socketcan_interface/delegates.h
-/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/socketcan_interface/delegates.h
+/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/socketcan_interface/delegates.h
 socketcan_interface/logging.h
-/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/socketcan_interface/logging.h
+/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/socketcan_interface/logging.h
 socketcan_interface/settings.h
-/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/socketcan_interface/settings.h
+/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/socketcan_interface/settings.h
 
-/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/logging.h
+/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/logging.h
 console_bridge/console.h
 -
 sstream
 -
 
-/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/settings.h
+/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/settings.h
 map
 -
 string
@@ -70,15 +70,15 @@ memory
 boost/lexical_cast.hpp
 -
 
-/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/string.h
+/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/string.h
 interface.h
-/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/interface.h
+/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/interface.h
 filter.h
-/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/filter.h
+/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include/socketcan_interface/filter.h
 sstream
 -
 
-/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/src/canbcm.cpp
+/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/src/canbcm.cpp
 socketcan_interface/bcm.h
 -
 socketcan_interface/string.h

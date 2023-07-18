@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libsocketcan_interface_string.pdb"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libsocketcan_interface_string.so"
+  "/home/sanskrj/deeporange14_control/devel/lib/libsocketcan_interface_string.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/libsocketcan_interface_string.so"
   "CMakeFiles/socketcan_interface_string.dir/src/string.cpp.o"
 )
 

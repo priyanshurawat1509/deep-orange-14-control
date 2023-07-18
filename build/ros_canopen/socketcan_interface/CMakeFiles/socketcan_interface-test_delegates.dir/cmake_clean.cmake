@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_interface/socketcan_interface-test_delegates"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_interface/socketcan_interface-test_delegates.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/socketcan_interface/socketcan_interface-test_delegates"
+  "/home/sanskrj/deeporange14_control/devel/lib/socketcan_interface/socketcan_interface-test_delegates.pdb"
   "CMakeFiles/socketcan_interface-test_delegates.dir/test/test_delegates.cpp.o"
 )
 

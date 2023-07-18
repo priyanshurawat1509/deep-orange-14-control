@@ -6,5 +6,5 @@ CXX_FLAGS = -fPIC   -std=gnu++14
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"socketcan_bridge\" -Dsocketcan_to_topic_EXPORTS
 
-CXX_INCLUDES = -I/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_bridge/include -I/users/vpurohi/deeporange_ws/deeporange14_control/devel/include -I/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_bridge/include -I/home/sanskrj/deeporange14_control/devel/include -I/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/raptor_dbw_can/dbw_node"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/raptor_dbw_can/dbw_node.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/raptor_dbw_can/dbw_node"
+  "/home/sanskrj/deeporange14_control/devel/lib/raptor_dbw_can/dbw_node.pdb"
   "CMakeFiles/raptor_dbw_can_dbw_node.dir/src/node.cpp.o"
 )
 

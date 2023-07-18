@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/src
+CMAKE_SOURCE_DIR = /home/sanskrj/deeporange14_control/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/build
+CMAKE_BINARY_DIR = /home/sanskrj/deeporange14_control/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -115,8 +115,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -137,14 +137,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_progress_start /users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles /users/vpurohi/deeporange_ws/deeporange14_control/build/raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/progress.marks
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/raptor_dbw_joystick_speed_demo/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles 0
+	cd /home/sanskrj/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/sanskrj/deeporange14_control/build/CMakeFiles /home/sanskrj/deeporange14_control/build/raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/progress.marks
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/raptor_dbw_joystick_speed_demo/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sanskrj/deeporange14_control/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/raptor_dbw_joystick_speed_demo/clean
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/raptor_dbw_joystick_speed_demo/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/raptor_dbw_joystick_speed_demo/preinstall
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/raptor_dbw_joystick_speed_demo/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/raptor_dbw_joystick_speed_demo/preinstall
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/raptor_dbw_joystick_speed_demo/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/sanskrj/deeporange14_control/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/rule:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/rule
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/rule
 .PHONY : raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/rule
 
 # Convenience name for target.
@@ -179,7 +179,7 @@ raptor_dbw_joystick_speed_demo_joystick_speed_demo: raptor-dbw-ros/raptor_dbw_jo
 
 # fast build rule for target.
 raptor_dbw_joystick_speed_demo_joystick_speed_demo/fast:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build.make raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build.make raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build
 .PHONY : raptor_dbw_joystick_speed_demo_joystick_speed_demo/fast
 
 src/JoystickDemo.o: src/JoystickDemo.cpp.o
@@ -188,7 +188,7 @@ src/JoystickDemo.o: src/JoystickDemo.cpp.o
 
 # target to build an object file
 src/JoystickDemo.cpp.o:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build.make raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/src/JoystickDemo.cpp.o
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build.make raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/src/JoystickDemo.cpp.o
 .PHONY : src/JoystickDemo.cpp.o
 
 src/JoystickDemo.i: src/JoystickDemo.cpp.i
@@ -197,7 +197,7 @@ src/JoystickDemo.i: src/JoystickDemo.cpp.i
 
 # target to preprocess a source file
 src/JoystickDemo.cpp.i:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build.make raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/src/JoystickDemo.cpp.i
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build.make raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/src/JoystickDemo.cpp.i
 .PHONY : src/JoystickDemo.cpp.i
 
 src/JoystickDemo.s: src/JoystickDemo.cpp.s
@@ -206,7 +206,7 @@ src/JoystickDemo.s: src/JoystickDemo.cpp.s
 
 # target to generate assembly for a file
 src/JoystickDemo.cpp.s:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build.make raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/src/JoystickDemo.cpp.s
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build.make raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/src/JoystickDemo.cpp.s
 .PHONY : src/JoystickDemo.cpp.s
 
 src/joystick_demo.o: src/joystick_demo.cpp.o
@@ -215,7 +215,7 @@ src/joystick_demo.o: src/joystick_demo.cpp.o
 
 # target to build an object file
 src/joystick_demo.cpp.o:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build.make raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/src/joystick_demo.cpp.o
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build.make raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/src/joystick_demo.cpp.o
 .PHONY : src/joystick_demo.cpp.o
 
 src/joystick_demo.i: src/joystick_demo.cpp.i
@@ -224,7 +224,7 @@ src/joystick_demo.i: src/joystick_demo.cpp.i
 
 # target to preprocess a source file
 src/joystick_demo.cpp.i:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build.make raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/src/joystick_demo.cpp.i
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build.make raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/src/joystick_demo.cpp.i
 .PHONY : src/joystick_demo.cpp.i
 
 src/joystick_demo.s: src/joystick_demo.cpp.s
@@ -233,7 +233,7 @@ src/joystick_demo.s: src/joystick_demo.cpp.s
 
 # target to generate assembly for a file
 src/joystick_demo.cpp.s:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build.make raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/src/joystick_demo.cpp.s
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/build.make raptor-dbw-ros/raptor_dbw_joystick_speed_demo/CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/src/joystick_demo.cpp.s
 .PHONY : src/joystick_demo.cpp.s
 
 # Help Target
@@ -267,6 +267,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/sanskrj/deeporange14_control/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

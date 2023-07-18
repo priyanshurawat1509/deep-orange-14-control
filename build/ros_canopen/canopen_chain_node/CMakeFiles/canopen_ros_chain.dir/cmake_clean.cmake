@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libcanopen_ros_chain.pdb"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libcanopen_ros_chain.so"
+  "/home/sanskrj/deeporange14_control/devel/lib/libcanopen_ros_chain.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/libcanopen_ros_chain.so"
   "CMakeFiles/canopen_ros_chain.dir/src/ros_chain.cpp.o"
   "CMakeFiles/canopen_ros_chain.dir/src/rosconsole_bridge.cpp.o"
 )

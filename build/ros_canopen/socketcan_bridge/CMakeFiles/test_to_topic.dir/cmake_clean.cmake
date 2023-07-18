@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_bridge/test_to_topic"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_bridge/test_to_topic.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/socketcan_bridge/test_to_topic"
+  "/home/sanskrj/deeporange14_control/devel/lib/socketcan_bridge/test_to_topic.pdb"
   "CMakeFiles/test_to_topic.dir/test/to_topic_test.cpp.o"
 )
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/src
+CMAKE_SOURCE_DIR = /home/sanskrj/deeporange14_control/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/build
+CMAKE_BINARY_DIR = /home/sanskrj/deeporange14_control/build
 
 # Utility rule file for clean_test_results_socketcan_interface.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/build
 include ros_canopen/socketcan_interface/CMakeFiles/clean_test_results_socketcan_interface.dir/progress.make
 
 ros_canopen/socketcan_interface/CMakeFiles/clean_test_results_socketcan_interface:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/socketcan_interface && /usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /users/vpurohi/deeporange_ws/deeporange14_control/build/test_results/socketcan_interface
+	cd /home/sanskrj/deeporange14_control/build/ros_canopen/socketcan_interface && /usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/sanskrj/deeporange14_control/build/test_results/socketcan_interface
 
 clean_test_results_socketcan_interface: ros_canopen/socketcan_interface/CMakeFiles/clean_test_results_socketcan_interface
 clean_test_results_socketcan_interface: ros_canopen/socketcan_interface/CMakeFiles/clean_test_results_socketcan_interface.dir/build.make
@@ -67,10 +67,10 @@ ros_canopen/socketcan_interface/CMakeFiles/clean_test_results_socketcan_interfac
 .PHONY : ros_canopen/socketcan_interface/CMakeFiles/clean_test_results_socketcan_interface.dir/build
 
 ros_canopen/socketcan_interface/CMakeFiles/clean_test_results_socketcan_interface.dir/clean:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/socketcan_interface && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_socketcan_interface.dir/cmake_clean.cmake
+	cd /home/sanskrj/deeporange14_control/build/ros_canopen/socketcan_interface && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_socketcan_interface.dir/cmake_clean.cmake
 .PHONY : ros_canopen/socketcan_interface/CMakeFiles/clean_test_results_socketcan_interface.dir/clean
 
 ros_canopen/socketcan_interface/CMakeFiles/clean_test_results_socketcan_interface.dir/depend:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /users/vpurohi/deeporange_ws/deeporange14_control/src /users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface /users/vpurohi/deeporange_ws/deeporange14_control/build /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/socketcan_interface /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/socketcan_interface/CMakeFiles/clean_test_results_socketcan_interface.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sanskrj/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sanskrj/deeporange14_control/src /home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface /home/sanskrj/deeporange14_control/build /home/sanskrj/deeporange14_control/build/ros_canopen/socketcan_interface /home/sanskrj/deeporange14_control/build/ros_canopen/socketcan_interface/CMakeFiles/clean_test_results_socketcan_interface.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ros_canopen/socketcan_interface/CMakeFiles/clean_test_results_socketcan_interface.dir/depend
 

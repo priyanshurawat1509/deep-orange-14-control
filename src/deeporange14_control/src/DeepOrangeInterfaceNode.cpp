@@ -15,7 +15,7 @@ Makes use of New Eagle package: can_dbc_parser (https://github.com/NewEagleRapto
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "deeporange14");
+  ros::init(argc, argv, "DeepOrangeInterface");
   ros::NodeHandle nh;
   ros::NodeHandle priv_nh("~");
 
@@ -26,11 +26,8 @@ int main(int argc, char **argv)
 
   // create Data Logger object
   // deeporange14::DataLogger n_datalogger(nh, priv_nh);
-
   // deeporange14::DeepOrangeDbwCan can_node(nh, priv_nh);
   
-  // deeporange14::DeepOrangeVelcityController controller_node (nh, priv_nh);
-
   ros::spin();
 
   return 0;

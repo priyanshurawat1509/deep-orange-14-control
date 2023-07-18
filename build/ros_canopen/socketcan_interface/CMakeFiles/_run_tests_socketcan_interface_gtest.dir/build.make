@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/src
+CMAKE_SOURCE_DIR = /home/sanskrj/deeporange14_control/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/build
+CMAKE_BINARY_DIR = /home/sanskrj/deeporange14_control/build
 
 # Utility rule file for _run_tests_socketcan_interface_gtest.
 
@@ -63,10 +63,10 @@ ros_canopen/socketcan_interface/CMakeFiles/_run_tests_socketcan_interface_gtest.
 .PHONY : ros_canopen/socketcan_interface/CMakeFiles/_run_tests_socketcan_interface_gtest.dir/build
 
 ros_canopen/socketcan_interface/CMakeFiles/_run_tests_socketcan_interface_gtest.dir/clean:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/socketcan_interface && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_socketcan_interface_gtest.dir/cmake_clean.cmake
+	cd /home/sanskrj/deeporange14_control/build/ros_canopen/socketcan_interface && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_socketcan_interface_gtest.dir/cmake_clean.cmake
 .PHONY : ros_canopen/socketcan_interface/CMakeFiles/_run_tests_socketcan_interface_gtest.dir/clean
 
 ros_canopen/socketcan_interface/CMakeFiles/_run_tests_socketcan_interface_gtest.dir/depend:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /users/vpurohi/deeporange_ws/deeporange14_control/src /users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface /users/vpurohi/deeporange_ws/deeporange14_control/build /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/socketcan_interface /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/socketcan_interface/CMakeFiles/_run_tests_socketcan_interface_gtest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sanskrj/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sanskrj/deeporange14_control/src /home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface /home/sanskrj/deeporange14_control/build /home/sanskrj/deeporange14_control/build/ros_canopen/socketcan_interface /home/sanskrj/deeporange14_control/build/ros_canopen/socketcan_interface/CMakeFiles/_run_tests_socketcan_interface_gtest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ros_canopen/socketcan_interface/CMakeFiles/_run_tests_socketcan_interface_gtest.dir/depend
 

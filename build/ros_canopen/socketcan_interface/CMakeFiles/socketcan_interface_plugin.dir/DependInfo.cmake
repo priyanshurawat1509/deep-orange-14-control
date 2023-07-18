@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/src/socketcan_interface_plugin.cpp" "/users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/socketcan_interface/CMakeFiles/socketcan_interface_plugin.dir/src/socketcan_interface_plugin.cpp.o"
+  "/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/src/socketcan_interface_plugin.cpp" "/home/sanskrj/deeporange14_control/build/ros_canopen/socketcan_interface/CMakeFiles/socketcan_interface_plugin.dir/src/socketcan_interface_plugin.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -21,7 +21,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_interface/include"
+  "/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_interface/include"
   "/opt/ros/noetic/include"
   )
 

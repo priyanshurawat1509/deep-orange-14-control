@@ -10,7 +10,7 @@ import genpy
 import std_msgs.msg
 
 class MobilityMsg(genpy.Message):
-  _md5sum = "66e4d75167be5101a8d6b7cdceb2db0b"
+  _md5sum = "52b5461a1748b83406c477db1e2e86bd"
   _type = "deeporange14_msgs/MobilityMsg"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """#This represents a vector in free space -- currently defined to hold the left and right track #velocities
@@ -18,10 +18,12 @@ Header header
   uint32 seq
   time stamp
 
-float64 left_torque_cmd
-float64 right_torque_cmd
+float64 tqL_cmd
+float64 tqR_cmd
+uint8 brkL_cmd
+uint8 brkR_cmd
 uint8 au_state 
-uint8 brake_effort
+
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -38,8 +40,8 @@ time stamp
 #Frame this data is associated with
 string frame_id
 """
-  __slots__ = ['header','seq','stamp','left_torque_cmd','right_torque_cmd','au_state','brake_effort']
-  _slot_types = ['std_msgs/Header','uint32','time','float64','float64','uint8','uint8']
+  __slots__ = ['header','seq','stamp','tqL_cmd','tqR_cmd','brkL_cmd','brkR_cmd','au_state']
+  _slot_types = ['std_msgs/Header','uint32','time','float64','float64','uint8','uint8','uint8']
 
   def __init__(self, *args, **kwds):
     """
@@ -49,7 +51,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,seq,stamp,left_torque_cmd,right_torque_cmd,au_state,brake_effort
+       header,seq,stamp,tqL_cmd,tqR_cmd,brkL_cmd,brkR_cmd,au_state
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -64,22 +66,25 @@ string frame_id
         self.seq = 0
       if self.stamp is None:
         self.stamp = genpy.Time()
-      if self.left_torque_cmd is None:
-        self.left_torque_cmd = 0.
-      if self.right_torque_cmd is None:
-        self.right_torque_cmd = 0.
+      if self.tqL_cmd is None:
+        self.tqL_cmd = 0.
+      if self.tqR_cmd is None:
+        self.tqR_cmd = 0.
+      if self.brkL_cmd is None:
+        self.brkL_cmd = 0
+      if self.brkR_cmd is None:
+        self.brkR_cmd = 0
       if self.au_state is None:
         self.au_state = 0
-      if self.brake_effort is None:
-        self.brake_effort = 0
     else:
       self.header = std_msgs.msg.Header()
       self.seq = 0
       self.stamp = genpy.Time()
-      self.left_torque_cmd = 0.
-      self.right_torque_cmd = 0.
+      self.tqL_cmd = 0.
+      self.tqR_cmd = 0.
+      self.brkL_cmd = 0
+      self.brkR_cmd = 0
       self.au_state = 0
-      self.brake_effort = 0
 
   def _get_types(self):
     """
@@ -102,7 +107,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3I2d2B().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque_cmd, _x.right_torque_cmd, _x.au_state, _x.brake_effort))
+      buff.write(_get_struct_3I2d3B().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.tqL_cmd, _x.tqR_cmd, _x.brkL_cmd, _x.brkR_cmd, _x.au_state))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -134,8 +139,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 30
-      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque_cmd, _x.right_torque_cmd, _x.au_state, _x.brake_effort,) = _get_struct_3I2d2B().unpack(str[start:end])
+      end += 31
+      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.tqL_cmd, _x.tqR_cmd, _x.brkL_cmd, _x.brkR_cmd, _x.au_state,) = _get_struct_3I2d3B().unpack(str[start:end])
       self.stamp.canon()
       return self
     except struct.error as e:
@@ -158,7 +163,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3I2d2B().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque_cmd, _x.right_torque_cmd, _x.au_state, _x.brake_effort))
+      buff.write(_get_struct_3I2d3B().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.tqL_cmd, _x.tqR_cmd, _x.brkL_cmd, _x.brkR_cmd, _x.au_state))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -191,8 +196,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 30
-      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.left_torque_cmd, _x.right_torque_cmd, _x.au_state, _x.brake_effort,) = _get_struct_3I2d2B().unpack(str[start:end])
+      end += 31
+      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.tqL_cmd, _x.tqR_cmd, _x.brkL_cmd, _x.brkR_cmd, _x.au_state,) = _get_struct_3I2d3B().unpack(str[start:end])
       self.stamp.canon()
       return self
     except struct.error as e:
@@ -208,9 +213,9 @@ def _get_struct_3I():
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
-_struct_3I2d2B = None
-def _get_struct_3I2d2B():
-    global _struct_3I2d2B
-    if _struct_3I2d2B is None:
-        _struct_3I2d2B = struct.Struct("<3I2d2B")
-    return _struct_3I2d2B
+_struct_3I2d3B = None
+def _get_struct_3I2d3B():
+    global _struct_3I2d3B
+    if _struct_3I2d3B is None:
+        _struct_3I2d3B = struct.Struct("<3I2d3B")
+    return _struct_3I2d3B

@@ -67,14 +67,14 @@ set(socketcan_bridge_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(socketcan_bridge_SOURCE_PREFIX /users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_bridge)
-  set(socketcan_bridge_DEVEL_PREFIX /users/vpurohi/deeporange_ws/deeporange14_control/devel)
+  set(socketcan_bridge_SOURCE_PREFIX /home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_bridge)
+  set(socketcan_bridge_DEVEL_PREFIX /home/sanskrj/deeporange14_control/devel)
   set(socketcan_bridge_INSTALL_PREFIX "")
   set(socketcan_bridge_PREFIX ${socketcan_bridge_DEVEL_PREFIX})
 else()
   set(socketcan_bridge_SOURCE_PREFIX "")
   set(socketcan_bridge_DEVEL_PREFIX "")
-  set(socketcan_bridge_INSTALL_PREFIX /users/vpurohi/deeporange_ws/deeporange14_control/install)
+  set(socketcan_bridge_INSTALL_PREFIX /home/sanskrj/deeporange14_control/install)
   set(socketcan_bridge_PREFIX ${socketcan_bridge_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(socketcan_bridge_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_bridge/include " STREQUAL " ")
+if(NOT "/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_bridge/include " STREQUAL " ")
   set(socketcan_bridge_INCLUDE_DIRS "")
-  set(_include_dirs "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_bridge/include")
+  set(_include_dirs "/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_bridge/include")
   if(NOT "https://github.com/ros-industrial/ros_canopen/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/ros-industrial/ros_canopen/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://wiki.ros.org/socketcan_bridge " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socket
         message(FATAL_ERROR "Project 'socketcan_bridge' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'socketcan_bridge' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_bridge/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'socketcan_bridge' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_bridge/${idir}'.  ${_report}")
     endif()
     _list_append_unique(socketcan_bridge_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib;/users/vpurohi/catkin_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/sanskrj/deeporange14_control/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

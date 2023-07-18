@@ -20,8 +20,8 @@ class TorqueCmdStamped {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.header = null;
-      this.left_torque_cmd = null;
-      this.right_torque_cmd = null;
+      this.tqL_cmd = null;
+      this.tqR_cmd = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -30,17 +30,17 @@ class TorqueCmdStamped {
       else {
         this.header = new std_msgs.msg.Header();
       }
-      if (initObj.hasOwnProperty('left_torque_cmd')) {
-        this.left_torque_cmd = initObj.left_torque_cmd
+      if (initObj.hasOwnProperty('tqL_cmd')) {
+        this.tqL_cmd = initObj.tqL_cmd
       }
       else {
-        this.left_torque_cmd = 0;
+        this.tqL_cmd = 0.0;
       }
-      if (initObj.hasOwnProperty('right_torque_cmd')) {
-        this.right_torque_cmd = initObj.right_torque_cmd
+      if (initObj.hasOwnProperty('tqR_cmd')) {
+        this.tqR_cmd = initObj.tqR_cmd
       }
       else {
-        this.right_torque_cmd = 0;
+        this.tqR_cmd = 0.0;
       }
     }
   }
@@ -49,10 +49,10 @@ class TorqueCmdStamped {
     // Serializes a message object of type TorqueCmdStamped
     // Serialize message field [header]
     bufferOffset = std_msgs.msg.Header.serialize(obj.header, buffer, bufferOffset);
-    // Serialize message field [left_torque_cmd]
-    bufferOffset = _serializer.int64(obj.left_torque_cmd, buffer, bufferOffset);
-    // Serialize message field [right_torque_cmd]
-    bufferOffset = _serializer.int64(obj.right_torque_cmd, buffer, bufferOffset);
+    // Serialize message field [tqL_cmd]
+    bufferOffset = _serializer.float64(obj.tqL_cmd, buffer, bufferOffset);
+    // Serialize message field [tqR_cmd]
+    bufferOffset = _serializer.float64(obj.tqR_cmd, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -62,10 +62,10 @@ class TorqueCmdStamped {
     let data = new TorqueCmdStamped(null);
     // Deserialize message field [header]
     data.header = std_msgs.msg.Header.deserialize(buffer, bufferOffset);
-    // Deserialize message field [left_torque_cmd]
-    data.left_torque_cmd = _deserializer.int64(buffer, bufferOffset);
-    // Deserialize message field [right_torque_cmd]
-    data.right_torque_cmd = _deserializer.int64(buffer, bufferOffset);
+    // Deserialize message field [tqL_cmd]
+    data.tqL_cmd = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [tqR_cmd]
+    data.tqR_cmd = _deserializer.float64(buffer, bufferOffset);
     return data;
   }
 
@@ -82,7 +82,7 @@ class TorqueCmdStamped {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '21462a0b7ae1ab76630c08c72de4a6a0';
+    return 'd2b993d9f9c7329f407ee1c3b8d87a65';
   }
 
   static messageDefinition() {
@@ -91,8 +91,8 @@ class TorqueCmdStamped {
     #Message contains timestamped torque commands
     Header header
     
-    int64 left_torque_cmd
-    int64 right_torque_cmd
+    float64 tqL_cmd
+    float64 tqR_cmd
     ================================================================================
     MSG: std_msgs/Header
     # Standard metadata for higher-level stamped data types.
@@ -125,18 +125,18 @@ class TorqueCmdStamped {
       resolved.header = new std_msgs.msg.Header()
     }
 
-    if (msg.left_torque_cmd !== undefined) {
-      resolved.left_torque_cmd = msg.left_torque_cmd;
+    if (msg.tqL_cmd !== undefined) {
+      resolved.tqL_cmd = msg.tqL_cmd;
     }
     else {
-      resolved.left_torque_cmd = 0
+      resolved.tqL_cmd = 0.0
     }
 
-    if (msg.right_torque_cmd !== undefined) {
-      resolved.right_torque_cmd = msg.right_torque_cmd;
+    if (msg.tqR_cmd !== undefined) {
+      resolved.tqR_cmd = msg.tqR_cmd;
     }
     else {
-      resolved.right_torque_cmd = 0
+      resolved.tqR_cmd = 0.0
     }
 
     return resolved;

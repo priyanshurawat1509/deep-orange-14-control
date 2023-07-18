@@ -1,8 +1,8 @@
-prefix=/users/vpurohi/deeporange_ws/deeporange14_control/devel
+prefix=/home/sanskrj/deeporange14_control/devel
 
 Name: socketcan_bridge
 Description: Description of socketcan_bridge
 Version: 0.8.5
-Cflags: -I/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_bridge/include
+Cflags: -I/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_bridge/include
 Libs: -L${prefix}/lib -lsocketcan_to_topic -ltopic_to_socketcan
 Requires: can_msgs rosconsole_bridge roscpp socketcan_interface

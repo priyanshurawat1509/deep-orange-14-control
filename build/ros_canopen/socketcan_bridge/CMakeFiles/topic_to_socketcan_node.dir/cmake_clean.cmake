@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_bridge/topic_to_socketcan_node"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_bridge/topic_to_socketcan_node.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/socketcan_bridge/topic_to_socketcan_node"
+  "/home/sanskrj/deeporange14_control/devel/lib/socketcan_bridge/topic_to_socketcan_node.pdb"
   "CMakeFiles/topic_to_socketcan_node.dir/src/topic_to_socketcan_node.cpp.o"
 )
 

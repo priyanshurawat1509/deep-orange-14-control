@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_402/canopen_402-test_clamping"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_402/canopen_402-test_clamping.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/canopen_402/canopen_402-test_clamping"
+  "/home/sanskrj/deeporange14_control/devel/lib/canopen_402/canopen_402-test_clamping.pdb"
   "CMakeFiles/canopen_402-test_clamping.dir/test/clamping.cpp.o"
 )
 

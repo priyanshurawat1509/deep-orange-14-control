@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_bridge/test_conversion"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_bridge/test_conversion.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/socketcan_bridge/test_conversion"
+  "/home/sanskrj/deeporange14_control/devel/lib/socketcan_bridge/test_conversion.pdb"
   "CMakeFiles/test_conversion.dir/test/test_conversion.cpp.o"
 )
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/src
+CMAKE_SOURCE_DIR = /home/sanskrj/deeporange14_control/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/build
+CMAKE_BINARY_DIR = /home/sanskrj/deeporange14_control/build
 
 # Utility rule file for clean_test_results_canopen_motor_node.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/build
 include ros_canopen/canopen_motor_node/CMakeFiles/clean_test_results_canopen_motor_node.dir/progress.make
 
 ros_canopen/canopen_motor_node/CMakeFiles/clean_test_results_canopen_motor_node:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_motor_node && /usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /users/vpurohi/deeporange_ws/deeporange14_control/build/test_results/canopen_motor_node
+	cd /home/sanskrj/deeporange14_control/build/ros_canopen/canopen_motor_node && /usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/sanskrj/deeporange14_control/build/test_results/canopen_motor_node
 
 clean_test_results_canopen_motor_node: ros_canopen/canopen_motor_node/CMakeFiles/clean_test_results_canopen_motor_node
 clean_test_results_canopen_motor_node: ros_canopen/canopen_motor_node/CMakeFiles/clean_test_results_canopen_motor_node.dir/build.make
@@ -67,10 +67,10 @@ ros_canopen/canopen_motor_node/CMakeFiles/clean_test_results_canopen_motor_node.
 .PHONY : ros_canopen/canopen_motor_node/CMakeFiles/clean_test_results_canopen_motor_node.dir/build
 
 ros_canopen/canopen_motor_node/CMakeFiles/clean_test_results_canopen_motor_node.dir/clean:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_motor_node && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_canopen_motor_node.dir/cmake_clean.cmake
+	cd /home/sanskrj/deeporange14_control/build/ros_canopen/canopen_motor_node && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_canopen_motor_node.dir/cmake_clean.cmake
 .PHONY : ros_canopen/canopen_motor_node/CMakeFiles/clean_test_results_canopen_motor_node.dir/clean
 
 ros_canopen/canopen_motor_node/CMakeFiles/clean_test_results_canopen_motor_node.dir/depend:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /users/vpurohi/deeporange_ws/deeporange14_control/src /users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_motor_node /users/vpurohi/deeporange_ws/deeporange14_control/build /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_motor_node /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_motor_node/CMakeFiles/clean_test_results_canopen_motor_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sanskrj/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sanskrj/deeporange14_control/src /home/sanskrj/deeporange14_control/src/ros_canopen/canopen_motor_node /home/sanskrj/deeporange14_control/build /home/sanskrj/deeporange14_control/build/ros_canopen/canopen_motor_node /home/sanskrj/deeporange14_control/build/ros_canopen/canopen_motor_node/CMakeFiles/clean_test_results_canopen_motor_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ros_canopen/canopen_motor_node/CMakeFiles/clean_test_results_canopen_motor_node.dir/depend
 

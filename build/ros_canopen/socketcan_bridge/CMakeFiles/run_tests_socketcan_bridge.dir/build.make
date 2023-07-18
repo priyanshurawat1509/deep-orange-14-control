@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/src
+CMAKE_SOURCE_DIR = /home/sanskrj/deeporange14_control/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/build
+CMAKE_BINARY_DIR = /home/sanskrj/deeporange14_control/build
 
 # Utility rule file for run_tests_socketcan_bridge.
 
@@ -63,10 +63,10 @@ ros_canopen/socketcan_bridge/CMakeFiles/run_tests_socketcan_bridge.dir/build: ru
 .PHONY : ros_canopen/socketcan_bridge/CMakeFiles/run_tests_socketcan_bridge.dir/build
 
 ros_canopen/socketcan_bridge/CMakeFiles/run_tests_socketcan_bridge.dir/clean:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/socketcan_bridge && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_socketcan_bridge.dir/cmake_clean.cmake
+	cd /home/sanskrj/deeporange14_control/build/ros_canopen/socketcan_bridge && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_socketcan_bridge.dir/cmake_clean.cmake
 .PHONY : ros_canopen/socketcan_bridge/CMakeFiles/run_tests_socketcan_bridge.dir/clean
 
 ros_canopen/socketcan_bridge/CMakeFiles/run_tests_socketcan_bridge.dir/depend:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /users/vpurohi/deeporange_ws/deeporange14_control/src /users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/socketcan_bridge /users/vpurohi/deeporange_ws/deeporange14_control/build /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/socketcan_bridge /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/socketcan_bridge/CMakeFiles/run_tests_socketcan_bridge.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sanskrj/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sanskrj/deeporange14_control/src /home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_bridge /home/sanskrj/deeporange14_control/build /home/sanskrj/deeporange14_control/build/ros_canopen/socketcan_bridge /home/sanskrj/deeporange14_control/build/ros_canopen/socketcan_bridge/CMakeFiles/run_tests_socketcan_bridge.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ros_canopen/socketcan_bridge/CMakeFiles/run_tests_socketcan_bridge.dir/depend
 

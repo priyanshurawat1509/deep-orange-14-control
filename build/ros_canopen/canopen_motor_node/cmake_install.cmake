@@ -1,8 +1,8 @@
-# Install script for directory: /users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_motor_node
+# Install script for directory: /home/sanskrj/deeporange14_control/src/ros_canopen/canopen_motor_node
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/users/vpurohi/deeporange_ws/deeporange14_control/install")
+  set(CMAKE_INSTALL_PREFIX "/home/sanskrj/deeporange14_control/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,18 +38,18 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_motor_node/catkin_generated/installspace/canopen_motor_node.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/sanskrj/deeporange14_control/build/ros_canopen/canopen_motor_node/catkin_generated/installspace/canopen_motor_node.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canopen_motor_node/cmake" TYPE FILE FILES
-    "/users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_motor_node/catkin_generated/installspace/canopen_motor_nodeConfig.cmake"
-    "/users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_motor_node/catkin_generated/installspace/canopen_motor_nodeConfig-version.cmake"
+    "/home/sanskrj/deeporange14_control/build/ros_canopen/canopen_motor_node/catkin_generated/installspace/canopen_motor_nodeConfig.cmake"
+    "/home/sanskrj/deeporange14_control/build/ros_canopen/canopen_motor_node/catkin_generated/installspace/canopen_motor_nodeConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canopen_motor_node" TYPE FILE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_motor_node/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canopen_motor_node" TYPE FILE FILES "/home/sanskrj/deeporange14_control/src/ros_canopen/canopen_motor_node/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -59,12 +59,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcanopen_motor.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libcanopen_motor.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/sanskrj/deeporange14_control/devel/lib/libcanopen_motor.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcanopen_motor.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcanopen_motor.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcanopen_motor.so"
-         OLD_RPATH "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib:/opt/ros/noetic/lib:"
+         OLD_RPATH "/home/sanskrj/deeporange14_control/devel/lib:/opt/ros/noetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcanopen_motor.so")
@@ -82,12 +82,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_motor_node/canopen_motor_node"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/canopen_motor_node" TYPE EXECUTABLE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_motor_node/canopen_motor_node")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/canopen_motor_node" TYPE EXECUTABLE FILES "/home/sanskrj/deeporange14_control/devel/lib/canopen_motor_node/canopen_motor_node")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_motor_node/canopen_motor_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_motor_node/canopen_motor_node")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_motor_node/canopen_motor_node"
-         OLD_RPATH "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib:/opt/ros/noetic/lib:"
+         OLD_RPATH "/home/sanskrj/deeporange14_control/devel/lib:/opt/ros/noetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_motor_node/canopen_motor_node")
@@ -96,6 +96,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/canopen_motor_node" TYPE DIRECTORY FILES "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_motor_node/include/canopen_motor_node/" FILES_MATCHING REGEX "/[^/]*\\.h$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/canopen_motor_node" TYPE DIRECTORY FILES "/home/sanskrj/deeporange14_control/src/ros_canopen/canopen_motor_node/include/canopen_motor_node/" FILES_MATCHING REGEX "/[^/]*\\.h$")
 endif()
 

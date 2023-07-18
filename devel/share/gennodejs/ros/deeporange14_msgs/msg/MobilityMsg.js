@@ -22,10 +22,11 @@ class MobilityMsg {
       this.header = null;
       this.seq = null;
       this.stamp = null;
-      this.left_torque_cmd = null;
-      this.right_torque_cmd = null;
+      this.tqL_cmd = null;
+      this.tqR_cmd = null;
+      this.brkL_cmd = null;
+      this.brkR_cmd = null;
       this.au_state = null;
-      this.brake_effort = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -46,29 +47,35 @@ class MobilityMsg {
       else {
         this.stamp = {secs: 0, nsecs: 0};
       }
-      if (initObj.hasOwnProperty('left_torque_cmd')) {
-        this.left_torque_cmd = initObj.left_torque_cmd
+      if (initObj.hasOwnProperty('tqL_cmd')) {
+        this.tqL_cmd = initObj.tqL_cmd
       }
       else {
-        this.left_torque_cmd = 0.0;
+        this.tqL_cmd = 0.0;
       }
-      if (initObj.hasOwnProperty('right_torque_cmd')) {
-        this.right_torque_cmd = initObj.right_torque_cmd
+      if (initObj.hasOwnProperty('tqR_cmd')) {
+        this.tqR_cmd = initObj.tqR_cmd
       }
       else {
-        this.right_torque_cmd = 0.0;
+        this.tqR_cmd = 0.0;
+      }
+      if (initObj.hasOwnProperty('brkL_cmd')) {
+        this.brkL_cmd = initObj.brkL_cmd
+      }
+      else {
+        this.brkL_cmd = 0;
+      }
+      if (initObj.hasOwnProperty('brkR_cmd')) {
+        this.brkR_cmd = initObj.brkR_cmd
+      }
+      else {
+        this.brkR_cmd = 0;
       }
       if (initObj.hasOwnProperty('au_state')) {
         this.au_state = initObj.au_state
       }
       else {
         this.au_state = 0;
-      }
-      if (initObj.hasOwnProperty('brake_effort')) {
-        this.brake_effort = initObj.brake_effort
-      }
-      else {
-        this.brake_effort = 0;
       }
     }
   }
@@ -81,14 +88,16 @@ class MobilityMsg {
     bufferOffset = _serializer.uint32(obj.seq, buffer, bufferOffset);
     // Serialize message field [stamp]
     bufferOffset = _serializer.time(obj.stamp, buffer, bufferOffset);
-    // Serialize message field [left_torque_cmd]
-    bufferOffset = _serializer.float64(obj.left_torque_cmd, buffer, bufferOffset);
-    // Serialize message field [right_torque_cmd]
-    bufferOffset = _serializer.float64(obj.right_torque_cmd, buffer, bufferOffset);
+    // Serialize message field [tqL_cmd]
+    bufferOffset = _serializer.float64(obj.tqL_cmd, buffer, bufferOffset);
+    // Serialize message field [tqR_cmd]
+    bufferOffset = _serializer.float64(obj.tqR_cmd, buffer, bufferOffset);
+    // Serialize message field [brkL_cmd]
+    bufferOffset = _serializer.uint8(obj.brkL_cmd, buffer, bufferOffset);
+    // Serialize message field [brkR_cmd]
+    bufferOffset = _serializer.uint8(obj.brkR_cmd, buffer, bufferOffset);
     // Serialize message field [au_state]
     bufferOffset = _serializer.uint8(obj.au_state, buffer, bufferOffset);
-    // Serialize message field [brake_effort]
-    bufferOffset = _serializer.uint8(obj.brake_effort, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -102,21 +111,23 @@ class MobilityMsg {
     data.seq = _deserializer.uint32(buffer, bufferOffset);
     // Deserialize message field [stamp]
     data.stamp = _deserializer.time(buffer, bufferOffset);
-    // Deserialize message field [left_torque_cmd]
-    data.left_torque_cmd = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [right_torque_cmd]
-    data.right_torque_cmd = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [tqL_cmd]
+    data.tqL_cmd = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [tqR_cmd]
+    data.tqR_cmd = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [brkL_cmd]
+    data.brkL_cmd = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [brkR_cmd]
+    data.brkR_cmd = _deserializer.uint8(buffer, bufferOffset);
     // Deserialize message field [au_state]
     data.au_state = _deserializer.uint8(buffer, bufferOffset);
-    // Deserialize message field [brake_effort]
-    data.brake_effort = _deserializer.uint8(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 30;
+    return length + 31;
   }
 
   static datatype() {
@@ -126,7 +137,7 @@ class MobilityMsg {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '66e4d75167be5101a8d6b7cdceb2db0b';
+    return '52b5461a1748b83406c477db1e2e86bd';
   }
 
   static messageDefinition() {
@@ -137,10 +148,12 @@ class MobilityMsg {
       uint32 seq
       time stamp
     
-    float64 left_torque_cmd
-    float64 right_torque_cmd
+    float64 tqL_cmd
+    float64 tqR_cmd
+    uint8 brkL_cmd
+    uint8 brkR_cmd
     uint8 au_state 
-    uint8 brake_effort
+    
     ================================================================================
     MSG: std_msgs/Header
     # Standard metadata for higher-level stamped data types.
@@ -187,18 +200,32 @@ class MobilityMsg {
       resolved.stamp = {secs: 0, nsecs: 0}
     }
 
-    if (msg.left_torque_cmd !== undefined) {
-      resolved.left_torque_cmd = msg.left_torque_cmd;
+    if (msg.tqL_cmd !== undefined) {
+      resolved.tqL_cmd = msg.tqL_cmd;
     }
     else {
-      resolved.left_torque_cmd = 0.0
+      resolved.tqL_cmd = 0.0
     }
 
-    if (msg.right_torque_cmd !== undefined) {
-      resolved.right_torque_cmd = msg.right_torque_cmd;
+    if (msg.tqR_cmd !== undefined) {
+      resolved.tqR_cmd = msg.tqR_cmd;
     }
     else {
-      resolved.right_torque_cmd = 0.0
+      resolved.tqR_cmd = 0.0
+    }
+
+    if (msg.brkL_cmd !== undefined) {
+      resolved.brkL_cmd = msg.brkL_cmd;
+    }
+    else {
+      resolved.brkL_cmd = 0
+    }
+
+    if (msg.brkR_cmd !== undefined) {
+      resolved.brkR_cmd = msg.brkR_cmd;
+    }
+    else {
+      resolved.brkR_cmd = 0
     }
 
     if (msg.au_state !== undefined) {
@@ -206,13 +233,6 @@ class MobilityMsg {
     }
     else {
       resolved.au_state = 0
-    }
-
-    if (msg.brake_effort !== undefined) {
-      resolved.brake_effort = msg.brake_effort;
-    }
-    else {
-      resolved.brake_effort = 0
     }
 
     return resolved;

@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "${prefix}/include".split(';') if "${prefix}/i
 PROJECT_CATKIN_DEPENDS = "can_msgs;roscpp".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lcan_dbc_parser".split(';') if "-lcan_dbc_parser" != "" else []
 PROJECT_NAME = "can_dbc_parser"
-PROJECT_SPACE_DIR = "/users/vpurohi/deeporange_ws/deeporange14_control/install"
+PROJECT_SPACE_DIR = "/home/sanskrj/deeporange14_control/install"
 PROJECT_VERSION = "1.0.0"

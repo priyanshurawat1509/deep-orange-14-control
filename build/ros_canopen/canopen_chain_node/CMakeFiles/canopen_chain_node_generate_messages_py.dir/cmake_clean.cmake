@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/canopen_chain_node/srv/_GetObject.py"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/canopen_chain_node/srv/_SetObject.py"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/canopen_chain_node/srv/__init__.py"
+  "/home/sanskrj/deeporange14_control/devel/lib/python3/dist-packages/canopen_chain_node/srv/_GetObject.py"
+  "/home/sanskrj/deeporange14_control/devel/lib/python3/dist-packages/canopen_chain_node/srv/_SetObject.py"
+  "/home/sanskrj/deeporange14_control/devel/lib/python3/dist-packages/canopen_chain_node/srv/__init__.py"
   "CMakeFiles/canopen_chain_node_generate_messages_py"
 )
 

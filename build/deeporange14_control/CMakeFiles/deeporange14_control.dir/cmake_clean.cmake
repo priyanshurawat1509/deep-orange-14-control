@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libdeeporange14_control.pdb"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libdeeporange14_control.so"
+  "/home/sanskrj/deeporange14_control/devel/lib/libdeeporange14_control.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/libdeeporange14_control.so"
   "CMakeFiles/deeporange14_control.dir/src/DeepOrangeStateSupervisor.cpp.o"
   "CMakeFiles/deeporange14_control.dir/src/DeepOrangeVelocityController.cpp.o"
 )

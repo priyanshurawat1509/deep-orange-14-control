@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/src
+CMAKE_SOURCE_DIR = /home/sanskrj/deeporange14_control/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/build
+CMAKE_BINARY_DIR = /home/sanskrj/deeporange14_control/build
 
 # Utility rule file for can_msgs_gencpp.
 
@@ -63,10 +63,10 @@ ros_canopen/can_msgs/CMakeFiles/can_msgs_gencpp.dir/build: can_msgs_gencpp
 .PHONY : ros_canopen/can_msgs/CMakeFiles/can_msgs_gencpp.dir/build
 
 ros_canopen/can_msgs/CMakeFiles/can_msgs_gencpp.dir/clean:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/can_msgs && $(CMAKE_COMMAND) -P CMakeFiles/can_msgs_gencpp.dir/cmake_clean.cmake
+	cd /home/sanskrj/deeporange14_control/build/ros_canopen/can_msgs && $(CMAKE_COMMAND) -P CMakeFiles/can_msgs_gencpp.dir/cmake_clean.cmake
 .PHONY : ros_canopen/can_msgs/CMakeFiles/can_msgs_gencpp.dir/clean
 
 ros_canopen/can_msgs/CMakeFiles/can_msgs_gencpp.dir/depend:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /users/vpurohi/deeporange_ws/deeporange14_control/src /users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/can_msgs /users/vpurohi/deeporange_ws/deeporange14_control/build /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/can_msgs /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/can_msgs/CMakeFiles/can_msgs_gencpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sanskrj/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sanskrj/deeporange14_control/src /home/sanskrj/deeporange14_control/src/ros_canopen/can_msgs /home/sanskrj/deeporange14_control/build /home/sanskrj/deeporange14_control/build/ros_canopen/can_msgs /home/sanskrj/deeporange14_control/build/ros_canopen/can_msgs/CMakeFiles/can_msgs_gencpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ros_canopen/can_msgs/CMakeFiles/can_msgs_gencpp.dir/depend
 

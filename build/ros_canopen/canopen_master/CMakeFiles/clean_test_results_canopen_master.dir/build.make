@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/src
+CMAKE_SOURCE_DIR = /home/sanskrj/deeporange14_control/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/build
+CMAKE_BINARY_DIR = /home/sanskrj/deeporange14_control/build
 
 # Utility rule file for clean_test_results_canopen_master.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/build
 include ros_canopen/canopen_master/CMakeFiles/clean_test_results_canopen_master.dir/progress.make
 
 ros_canopen/canopen_master/CMakeFiles/clean_test_results_canopen_master:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_master && /usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /users/vpurohi/deeporange_ws/deeporange14_control/build/test_results/canopen_master
+	cd /home/sanskrj/deeporange14_control/build/ros_canopen/canopen_master && /usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/sanskrj/deeporange14_control/build/test_results/canopen_master
 
 clean_test_results_canopen_master: ros_canopen/canopen_master/CMakeFiles/clean_test_results_canopen_master
 clean_test_results_canopen_master: ros_canopen/canopen_master/CMakeFiles/clean_test_results_canopen_master.dir/build.make
@@ -67,10 +67,10 @@ ros_canopen/canopen_master/CMakeFiles/clean_test_results_canopen_master.dir/buil
 .PHONY : ros_canopen/canopen_master/CMakeFiles/clean_test_results_canopen_master.dir/build
 
 ros_canopen/canopen_master/CMakeFiles/clean_test_results_canopen_master.dir/clean:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_master && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_canopen_master.dir/cmake_clean.cmake
+	cd /home/sanskrj/deeporange14_control/build/ros_canopen/canopen_master && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_canopen_master.dir/cmake_clean.cmake
 .PHONY : ros_canopen/canopen_master/CMakeFiles/clean_test_results_canopen_master.dir/clean
 
 ros_canopen/canopen_master/CMakeFiles/clean_test_results_canopen_master.dir/depend:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /users/vpurohi/deeporange_ws/deeporange14_control/src /users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_master /users/vpurohi/deeporange_ws/deeporange14_control/build /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_master /users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_master/CMakeFiles/clean_test_results_canopen_master.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sanskrj/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sanskrj/deeporange14_control/src /home/sanskrj/deeporange14_control/src/ros_canopen/canopen_master /home/sanskrj/deeporange14_control/build /home/sanskrj/deeporange14_control/build/ros_canopen/canopen_master /home/sanskrj/deeporange14_control/build/ros_canopen/canopen_master/CMakeFiles/clean_test_results_canopen_master.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ros_canopen/canopen_master/CMakeFiles/clean_test_results_canopen_master.dir/depend
 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/raptor_dbw_joystick_speed_demo/joystick_speed_demo"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/raptor_dbw_joystick_speed_demo/joystick_speed_demo.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/raptor_dbw_joystick_speed_demo/joystick_speed_demo"
+  "/home/sanskrj/deeporange14_control/devel/lib/raptor_dbw_joystick_speed_demo/joystick_speed_demo.pdb"
   "CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/src/JoystickDemo.cpp.o"
   "CMakeFiles/raptor_dbw_joystick_speed_demo_joystick_speed_demo.dir/src/joystick_demo.cpp.o"
 )

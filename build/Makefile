@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/src
+CMAKE_SOURCE_DIR = /home/sanskrj/deeporange14_control/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/build
+CMAKE_BINARY_DIR = /home/sanskrj/deeporange14_control/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -115,8 +115,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles /users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sanskrj/deeporange14_control/build/CMakeFiles /home/sanskrj/deeporange14_control/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sanskrj/deeporange14_control/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -1598,19 +1598,6 @@ rosgraph_msgs_generate_messages_py/fast:
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named _deeporange14_msgs_generate_messages_check_deps_MobilityMsg
-
-# Build rule for target.
-_deeporange14_msgs_generate_messages_check_deps_MobilityMsg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _deeporange14_msgs_generate_messages_check_deps_MobilityMsg
-.PHONY : _deeporange14_msgs_generate_messages_check_deps_MobilityMsg
-
-# fast build rule for target.
-_deeporange14_msgs_generate_messages_check_deps_MobilityMsg/fast:
-	$(MAKE) -f deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_MobilityMsg.dir/build.make deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_MobilityMsg.dir/build
-.PHONY : _deeporange14_msgs_generate_messages_check_deps_MobilityMsg/fast
-
-#=============================================================================
 # Target rules for targets named deeporange14_msgs_genpy
 
 # Build rule for target.
@@ -1637,6 +1624,32 @@ deeporange14_msgs_generate_messages_nodejs/fast:
 .PHONY : deeporange14_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named deeporange14_msgs_gennodejs
+
+# Build rule for target.
+deeporange14_msgs_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 deeporange14_msgs_gennodejs
+.PHONY : deeporange14_msgs_gennodejs
+
+# fast build rule for target.
+deeporange14_msgs_gennodejs/fast:
+	$(MAKE) -f deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/build.make deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/build
+.PHONY : deeporange14_msgs_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped
+
+# Build rule for target.
+_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped
+.PHONY : _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped
+
+# fast build rule for target.
+_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped/fast:
+	$(MAKE) -f deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/build.make deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/build
+.PHONY : _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped/fast
+
+#=============================================================================
 # Target rules for targets named _deeporange14_msgs_generate_messages_check_deps_MissionStatus
 
 # Build rule for target.
@@ -1661,6 +1674,32 @@ deeporange14_msgs_generate_messages_cpp: cmake_check_build_system
 deeporange14_msgs_generate_messages_cpp/fast:
 	$(MAKE) -f deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_cpp.dir/build.make deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_cpp.dir/build
 .PHONY : deeporange14_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named _deeporange14_msgs_generate_messages_check_deps_MobilityMsg
+
+# Build rule for target.
+_deeporange14_msgs_generate_messages_check_deps_MobilityMsg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _deeporange14_msgs_generate_messages_check_deps_MobilityMsg
+.PHONY : _deeporange14_msgs_generate_messages_check_deps_MobilityMsg
+
+# fast build rule for target.
+_deeporange14_msgs_generate_messages_check_deps_MobilityMsg/fast:
+	$(MAKE) -f deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_MobilityMsg.dir/build.make deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_MobilityMsg.dir/build
+.PHONY : _deeporange14_msgs_generate_messages_check_deps_MobilityMsg/fast
+
+#=============================================================================
+# Target rules for targets named _deeporange14_msgs_generate_messages_check_deps_BrakePressureCmd
+
+# Build rule for target.
+_deeporange14_msgs_generate_messages_check_deps_BrakePressureCmd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _deeporange14_msgs_generate_messages_check_deps_BrakePressureCmd
+.PHONY : _deeporange14_msgs_generate_messages_check_deps_BrakePressureCmd
+
+# fast build rule for target.
+_deeporange14_msgs_generate_messages_check_deps_BrakePressureCmd/fast:
+	$(MAKE) -f deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_BrakePressureCmd.dir/build.make deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_BrakePressureCmd.dir/build
+.PHONY : _deeporange14_msgs_generate_messages_check_deps_BrakePressureCmd/fast
 
 #=============================================================================
 # Target rules for targets named deeporange14_msgs_generate_messages_eus
@@ -1765,32 +1804,6 @@ deeporange14_msgs_genlisp: cmake_check_build_system
 deeporange14_msgs_genlisp/fast:
 	$(MAKE) -f deeporange14_msgs/CMakeFiles/deeporange14_msgs_genlisp.dir/build.make deeporange14_msgs/CMakeFiles/deeporange14_msgs_genlisp.dir/build
 .PHONY : deeporange14_msgs_genlisp/fast
-
-#=============================================================================
-# Target rules for targets named _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped
-
-# Build rule for target.
-_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped
-.PHONY : _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped
-
-# fast build rule for target.
-_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped/fast:
-	$(MAKE) -f deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/build.make deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/build
-.PHONY : _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped/fast
-
-#=============================================================================
-# Target rules for targets named deeporange14_msgs_gennodejs
-
-# Build rule for target.
-deeporange14_msgs_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 deeporange14_msgs_gennodejs
-.PHONY : deeporange14_msgs_gennodejs
-
-# fast build rule for target.
-deeporange14_msgs_gennodejs/fast:
-	$(MAKE) -f deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/build.make deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/build
-.PHONY : deeporange14_msgs_gennodejs/fast
 
 #=============================================================================
 # Target rules for targets named pdu_pdu_node
@@ -4203,11 +4216,14 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... _deeporange14_msgs_generate_messages_check_deps_MobilityMsg"
 	@echo "... deeporange14_msgs_genpy"
 	@echo "... deeporange14_msgs_generate_messages_nodejs"
+	@echo "... deeporange14_msgs_gennodejs"
+	@echo "... _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped"
 	@echo "... _deeporange14_msgs_generate_messages_check_deps_MissionStatus"
 	@echo "... deeporange14_msgs_generate_messages_cpp"
+	@echo "... _deeporange14_msgs_generate_messages_check_deps_MobilityMsg"
+	@echo "... _deeporange14_msgs_generate_messages_check_deps_BrakePressureCmd"
 	@echo "... deeporange14_msgs_generate_messages_eus"
 	@echo "... _deeporange14_msgs_generate_messages_check_deps_RaptorStateMsg"
 	@echo "... deeporange14_msgs_geneus"
@@ -4216,8 +4232,6 @@ help:
 	@echo "... deeporange14_msgs_generate_messages"
 	@echo "... deeporange14_msgs_gencpp"
 	@echo "... deeporange14_msgs_genlisp"
-	@echo "... _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped"
-	@echo "... deeporange14_msgs_gennodejs"
 	@echo "... pdu_pdu_node"
 	@echo "... run_tests_pdu"
 	@echo "... _run_tests_pdu"

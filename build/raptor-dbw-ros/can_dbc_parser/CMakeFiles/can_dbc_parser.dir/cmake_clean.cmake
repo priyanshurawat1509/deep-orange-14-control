@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libcan_dbc_parser.pdb"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libcan_dbc_parser.so"
+  "/home/sanskrj/deeporange14_control/devel/lib/libcan_dbc_parser.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/libcan_dbc_parser.so"
   "CMakeFiles/can_dbc_parser.dir/src/Dbc.cpp.o"
   "CMakeFiles/can_dbc_parser.dir/src/DbcBuilder.cpp.o"
   "CMakeFiles/can_dbc_parser.dir/src/DbcMessage.cpp.o"

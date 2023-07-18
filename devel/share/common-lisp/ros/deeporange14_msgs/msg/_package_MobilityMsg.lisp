@@ -5,12 +5,14 @@
           SEQ
           STAMP-VAL
           STAMP
-          LEFT_TORQUE_CMD-VAL
-          LEFT_TORQUE_CMD
-          RIGHT_TORQUE_CMD-VAL
-          RIGHT_TORQUE_CMD
+          TQL_CMD-VAL
+          TQL_CMD
+          TQR_CMD-VAL
+          TQR_CMD
+          BRKL_CMD-VAL
+          BRKL_CMD
+          BRKR_CMD-VAL
+          BRKR_CMD
           AU_STATE-VAL
           AU_STATE
-          BRAKE_EFFORT-VAL
-          BRAKE_EFFORT
 ))

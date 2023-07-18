@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_motor_node/canopen_motor_node"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_motor_node/canopen_motor_node.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/canopen_motor_node/canopen_motor_node"
+  "/home/sanskrj/deeporange14_control/devel/lib/canopen_motor_node/canopen_motor_node.pdb"
   "CMakeFiles/canopen_motor_node.dir/src/canopen_motor_chain_node.cpp.o"
 )
 

@@ -8,7 +8,7 @@
 
 #include <string>
 #include <vector>
-#include <map>
+#include <memory>
 
 #include <ros/types.h>
 #include <ros/serialization.h>
@@ -26,13 +26,13 @@ struct TorqueCmdStamped_
 
   TorqueCmdStamped_()
     : header()
-    , left_torque_cmd(0)
-    , right_torque_cmd(0)  {
+    , tqL_cmd(0.0)
+    , tqR_cmd(0.0)  {
     }
   TorqueCmdStamped_(const ContainerAllocator& _alloc)
     : header(_alloc)
-    , left_torque_cmd(0)
-    , right_torque_cmd(0)  {
+    , tqL_cmd(0.0)
+    , tqR_cmd(0.0)  {
   (void)_alloc;
     }
 
@@ -41,11 +41,11 @@ struct TorqueCmdStamped_
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
 
-   typedef int64_t _left_torque_cmd_type;
-  _left_torque_cmd_type left_torque_cmd;
+   typedef double _tqL_cmd_type;
+  _tqL_cmd_type tqL_cmd;
 
-   typedef int64_t _right_torque_cmd_type;
-  _right_torque_cmd_type right_torque_cmd;
+   typedef double _tqR_cmd_type;
+  _tqR_cmd_type tqR_cmd;
 
 
 
@@ -77,8 +77,8 @@ template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::deeporange14_msgs::TorqueCmdStamped_<ContainerAllocator1> & lhs, const ::deeporange14_msgs::TorqueCmdStamped_<ContainerAllocator2> & rhs)
 {
   return lhs.header == rhs.header &&
-    lhs.left_torque_cmd == rhs.left_torque_cmd &&
-    lhs.right_torque_cmd == rhs.right_torque_cmd;
+    lhs.tqL_cmd == rhs.tqL_cmd &&
+    lhs.tqR_cmd == rhs.tqR_cmd;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -135,12 +135,12 @@ struct MD5Sum< ::deeporange14_msgs::TorqueCmdStamped_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "21462a0b7ae1ab76630c08c72de4a6a0";
+    return "d2b993d9f9c7329f407ee1c3b8d87a65";
   }
 
   static const char* value(const ::deeporange14_msgs::TorqueCmdStamped_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x21462a0b7ae1ab76ULL;
-  static const uint64_t static_value2 = 0x630c08c72de4a6a0ULL;
+  static const uint64_t static_value1 = 0xd2b993d9f9c7329fULL;
+  static const uint64_t static_value2 = 0x407ee1c3b8d87a65ULL;
 };
 
 template<class ContainerAllocator>
@@ -162,8 +162,8 @@ struct Definition< ::deeporange14_msgs::TorqueCmdStamped_<ContainerAllocator> >
     return "#Message contains timestamped torque commands\n"
 "Header header\n"
 "\n"
-"int64 left_torque_cmd\n"
-"int64 right_torque_cmd\n"
+"float64 tqL_cmd\n"
+"float64 tqR_cmd\n"
 "================================================================================\n"
 "MSG: std_msgs/Header\n"
 "# Standard metadata for higher-level stamped data types.\n"
@@ -198,8 +198,8 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.header);
-      stream.next(m.left_torque_cmd);
-      stream.next(m.right_torque_cmd);
+      stream.next(m.tqL_cmd);
+      stream.next(m.tqR_cmd);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -221,10 +221,10 @@ struct Printer< ::deeporange14_msgs::TorqueCmdStamped_<ContainerAllocator> >
     s << indent << "header: ";
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
-    s << indent << "left_torque_cmd: ";
-    Printer<int64_t>::stream(s, indent + "  ", v.left_torque_cmd);
-    s << indent << "right_torque_cmd: ";
-    Printer<int64_t>::stream(s, indent + "  ", v.right_torque_cmd);
+    s << indent << "tqL_cmd: ";
+    Printer<double>::stream(s, indent + "  ", v.tqL_cmd);
+    s << indent << "tqR_cmd: ";
+    Printer<double>::stream(s, indent + "  ", v.tqR_cmd);
   }
 };
 

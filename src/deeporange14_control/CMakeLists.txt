@@ -54,7 +54,7 @@ add_library(${PROJECT_NAME}
   src/DeepOrangeVelocityController.cpp
 
 )
-add_executable(${PROJECT_NAME}_dbwnode src/node.cpp
+add_executable(${PROJECT_NAME}_dbwnode src/DeepOrangeInterfaceNode.cpp
 
 )
 

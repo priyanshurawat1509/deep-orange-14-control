@@ -1,4 +1,4 @@
-prefix=/users/vpurohi/deeporange_ws/deeporange14_control/devel
+prefix=/home/sanskrj/deeporange14_control/devel
 
 Name: deeporange14_control
 Description: Description of deeporange14_control

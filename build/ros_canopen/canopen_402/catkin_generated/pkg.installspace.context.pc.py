@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "${prefix}/include;/usr/include".split(';') if
 PROJECT_CATKIN_DEPENDS = "canopen_master".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lcanopen_402".split(';') if "-lcanopen_402" != "" else []
 PROJECT_NAME = "canopen_402"
-PROJECT_SPACE_DIR = "/users/vpurohi/deeporange_ws/deeporange14_control/install"
+PROJECT_SPACE_DIR = "/home/sanskrj/deeporange14_control/install"
 PROJECT_VERSION = "0.8.5"

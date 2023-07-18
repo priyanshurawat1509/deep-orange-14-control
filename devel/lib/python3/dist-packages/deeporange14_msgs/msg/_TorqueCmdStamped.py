@@ -9,14 +9,14 @@ import struct
 import std_msgs.msg
 
 class TorqueCmdStamped(genpy.Message):
-  _md5sum = "21462a0b7ae1ab76630c08c72de4a6a0"
+  _md5sum = "d2b993d9f9c7329f407ee1c3b8d87a65"
   _type = "deeporange14_msgs/TorqueCmdStamped"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """#Message contains timestamped torque commands
 Header header
 
-int64 left_torque_cmd
-int64 right_torque_cmd
+float64 tqL_cmd
+float64 tqR_cmd
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -33,8 +33,8 @@ time stamp
 #Frame this data is associated with
 string frame_id
 """
-  __slots__ = ['header','left_torque_cmd','right_torque_cmd']
-  _slot_types = ['std_msgs/Header','int64','int64']
+  __slots__ = ['header','tqL_cmd','tqR_cmd']
+  _slot_types = ['std_msgs/Header','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -44,7 +44,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,left_torque_cmd,right_torque_cmd
+       header,tqL_cmd,tqR_cmd
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -55,14 +55,14 @@ string frame_id
       # message fields cannot be None, assign default values for those that are
       if self.header is None:
         self.header = std_msgs.msg.Header()
-      if self.left_torque_cmd is None:
-        self.left_torque_cmd = 0
-      if self.right_torque_cmd is None:
-        self.right_torque_cmd = 0
+      if self.tqL_cmd is None:
+        self.tqL_cmd = 0.
+      if self.tqR_cmd is None:
+        self.tqR_cmd = 0.
     else:
       self.header = std_msgs.msg.Header()
-      self.left_torque_cmd = 0
-      self.right_torque_cmd = 0
+      self.tqL_cmd = 0.
+      self.tqR_cmd = 0.
 
   def _get_types(self):
     """
@@ -85,7 +85,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_2q().pack(_x.left_torque_cmd, _x.right_torque_cmd))
+      buff.write(_get_struct_2d().pack(_x.tqL_cmd, _x.tqR_cmd))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -116,7 +116,7 @@ string frame_id
       _x = self
       start = end
       end += 16
-      (_x.left_torque_cmd, _x.right_torque_cmd,) = _get_struct_2q().unpack(str[start:end])
+      (_x.tqL_cmd, _x.tqR_cmd,) = _get_struct_2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -138,7 +138,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_2q().pack(_x.left_torque_cmd, _x.right_torque_cmd))
+      buff.write(_get_struct_2d().pack(_x.tqL_cmd, _x.tqR_cmd))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -170,7 +170,7 @@ string frame_id
       _x = self
       start = end
       end += 16
-      (_x.left_torque_cmd, _x.right_torque_cmd,) = _get_struct_2q().unpack(str[start:end])
+      (_x.tqL_cmd, _x.tqR_cmd,) = _get_struct_2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -179,12 +179,12 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_2q = None
-def _get_struct_2q():
-    global _struct_2q
-    if _struct_2q is None:
-        _struct_2q = struct.Struct("<2q")
-    return _struct_2q
+_struct_2d = None
+def _get_struct_2d():
+    global _struct_2d
+    if _struct_2d is None:
+        _struct_2d = struct.Struct("<2d")
+    return _struct_2d
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I

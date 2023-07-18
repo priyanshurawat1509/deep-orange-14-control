@@ -1,8 +1,8 @@
-# Install script for directory: /users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu/tests
+# Install script for directory: /home/sanskrj/deeporange14_control/src/raptor-dbw-ros/pdu/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/users/vpurohi/deeporange_ws/deeporange14_control/install")
+  set(CMAKE_INSTALL_PREFIX "/home/sanskrj/deeporange14_control/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

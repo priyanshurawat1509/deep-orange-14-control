@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"deeporange14_control\"
 
-CXX_INCLUDES = -I/users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_control/include -I/users/vpurohi/deeporange_ws/deeporange14_control/devel/include -I/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/sanskrj/deeporange14_control/src/deeporange14_control/include -I/home/sanskrj/deeporange14_control/devel/include -I/home/sanskrj/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

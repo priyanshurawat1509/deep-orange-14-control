@@ -1,5 +1,5 @@
 #Message contains timestamped torque commands
 Header header
 
-int64 left_torque_cmd
-int64 right_torque_cmd
+float64 tqL_cmd
+float64 tqR_cmd

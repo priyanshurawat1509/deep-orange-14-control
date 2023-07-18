@@ -97,7 +97,7 @@ namespace deeporange14{
             // ROS_INFO("Velocity error integral: %f, Curvature error integral: %f",errLinX_integral_,errOmega_integral_);
             prev_time_=(ros::Time::now().toSec()+ros::Time::now().toNSec()*1e-9);
         }
-        else if (autonomy_state_ == AU_6_COMMAND_TORQUES){
+        else if (autonomy_state_ == AU_6_EXEC_MISSION){
             //letting the controller kick in only when we move in the appropriate autonomy state
             //rate limiting the linear velocity and the curvature
             this->rateLimiter(prev_v_,prev_omega_,cmdLinX_,cmdAngZ_);
@@ -193,19 +193,19 @@ namespace deeporange14{
     void VelocityController::publishTorques(const ros::TimerEvent& event){
         deeporange14_msgs::TorqueCmdStamped trq_cmd_;
         trq_cmd_.header.stamp = ros::Time::now();
-        trq_cmd_.left_torque_cmd = tqL_;
-        trq_cmd_.right_torque_cmd = tqR_;
+        trq_cmd_.tqL_cmd = tqL_;
+        trq_cmd_.tqR_cmd = tqR_;
         pub_cmd_trq_.publish(trq_cmd_);
     }
 }
-    int main(int argc, char **argv)
-{
-  ros::init(argc, argv, "deeporange14_velocity_controller");
-  ros::NodeHandle node;
-  ros::NodeHandle priv_nh("~");
-  // create the velocity controller object
-  deeporange14::VelocityController n_velocity_controller(node, priv_nh);
-  // handle callbacks until shut down
-  ros::spin();
-  return 0;
-}
+//     int main(int argc, char **argv)
+// {
+//   ros::init(argc, argv, "deeporange14_velocity_controller");
+//   ros::NodeHandle node;
+//   ros::NodeHandle priv_nh("~");
+//   // create the velocity controller object
+//   deeporange14::VelocityController n_velocity_controller(node, priv_nh);
+//   // handle callbacks until shut down
+//   ros::spin();
+//   return 0;
+// }

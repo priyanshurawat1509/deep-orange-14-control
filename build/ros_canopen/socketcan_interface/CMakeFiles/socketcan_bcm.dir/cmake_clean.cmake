@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_interface/socketcan_bcm"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_interface/socketcan_bcm.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/socketcan_interface/socketcan_bcm"
+  "/home/sanskrj/deeporange14_control/devel/lib/socketcan_interface/socketcan_bcm.pdb"
   "CMakeFiles/socketcan_bcm.dir/src/canbcm.cpp.o"
 )
 

@@ -1,8 +1,8 @@
-prefix=/users/vpurohi/deeporange_ws/deeporange14_control/devel
+prefix=/home/sanskrj/deeporange14_control/devel
 
 Name: pdu_msgs
 Description: Description of pdu_msgs
 Version: 1.0.0
-Cflags: -I/users/vpurohi/deeporange_ws/deeporange14_control/devel/include
+Cflags: -I/home/sanskrj/deeporange14_control/devel/include
 Libs: -L${prefix}/lib 
 Requires: message_runtime std_msgs

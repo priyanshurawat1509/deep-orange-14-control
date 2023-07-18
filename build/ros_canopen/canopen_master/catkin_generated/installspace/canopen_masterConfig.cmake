@@ -67,14 +67,14 @@ set(canopen_master_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(canopen_master_SOURCE_PREFIX /users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_master)
-  set(canopen_master_DEVEL_PREFIX /users/vpurohi/deeporange_ws/deeporange14_control/devel)
+  set(canopen_master_SOURCE_PREFIX /home/sanskrj/deeporange14_control/src/ros_canopen/canopen_master)
+  set(canopen_master_DEVEL_PREFIX /home/sanskrj/deeporange14_control/devel)
   set(canopen_master_INSTALL_PREFIX "")
   set(canopen_master_PREFIX ${canopen_master_DEVEL_PREFIX})
 else()
   set(canopen_master_SOURCE_PREFIX "")
   set(canopen_master_DEVEL_PREFIX "")
-  set(canopen_master_INSTALL_PREFIX /users/vpurohi/deeporange_ws/deeporange14_control/install)
+  set(canopen_master_INSTALL_PREFIX /home/sanskrj/deeporange14_control/install)
   set(canopen_master_PREFIX ${canopen_master_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /users/vpurohi/deeporange_ws/deeporange14_control/install/lib;/users/vpurohi/catkin_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/sanskrj/deeporange14_control/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

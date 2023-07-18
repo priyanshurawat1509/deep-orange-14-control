@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_chain_node/canopen_sync_node"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_chain_node/canopen_sync_node.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/canopen_chain_node/canopen_sync_node"
+  "/home/sanskrj/deeporange14_control/devel/lib/canopen_chain_node/canopen_sync_node.pdb"
   "CMakeFiles/canopen_sync_node.dir/src/rosconsole_bridge.cpp.o"
   "CMakeFiles/canopen_sync_node.dir/src/sync_node.cpp.o"
 )

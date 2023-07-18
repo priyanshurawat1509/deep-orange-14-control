@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/src
+CMAKE_SOURCE_DIR = /home/sanskrj/deeporange14_control/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/build
+CMAKE_BINARY_DIR = /home/sanskrj/deeporange14_control/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -93,8 +93,8 @@ install/local/fast: preinstall/fast
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -137,14 +137,14 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_progress_start /users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles /users/vpurohi/deeporange_ws/deeporange14_control/build/raptor-dbw-ros/pdu/tests/CMakeFiles/progress.marks
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles 0
+	cd /home/sanskrj/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/sanskrj/deeporange14_control/build/CMakeFiles /home/sanskrj/deeporange14_control/build/raptor-dbw-ros/pdu/tests/CMakeFiles/progress.marks
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sanskrj/deeporange14_control/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/clean
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/preinstall
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/preinstall
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/sanskrj/deeporange14_control/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu.dir/rule:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu.dir/rule
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu.dir/rule
 .PHONY : raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu.dir/rule
 
 # Convenience name for target.
@@ -179,12 +179,12 @@ run_tests_pdu: raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu.dir/rule
 
 # fast build rule for target.
 run_tests_pdu/fast:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu.dir/build.make raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu.dir/build
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu.dir/build.make raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu.dir/build
 .PHONY : run_tests_pdu/fast
 
 # Convenience name for target.
 raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu.dir/rule:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu.dir/rule
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu.dir/rule
 .PHONY : raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu.dir/rule
 
 # Convenience name for target.
@@ -194,12 +194,12 @@ _run_tests_pdu: raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu.dir/rule
 
 # fast build rule for target.
 _run_tests_pdu/fast:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu.dir/build.make raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu.dir/build
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu.dir/build.make raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu.dir/build
 .PHONY : _run_tests_pdu/fast
 
 # Convenience name for target.
 raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check.dir/rule:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check.dir/rule
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check.dir/rule
 .PHONY : raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check.dir/rule
 
 # Convenience name for target.
@@ -209,12 +209,12 @@ run_tests_pdu_roslaunch-check: raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu
 
 # fast build rule for target.
 run_tests_pdu_roslaunch-check/fast:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check.dir/build.make raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check.dir/build
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check.dir/build.make raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check.dir/build
 .PHONY : run_tests_pdu_roslaunch-check/fast
 
 # Convenience name for target.
 raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check.dir/rule:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check.dir/rule
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check.dir/rule
 .PHONY : raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check.dir/rule
 
 # Convenience name for target.
@@ -224,12 +224,12 @@ _run_tests_pdu_roslaunch-check: raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_p
 
 # fast build rule for target.
 _run_tests_pdu_roslaunch-check/fast:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check.dir/build.make raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check.dir/build
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check.dir/build.make raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check.dir/build
 .PHONY : _run_tests_pdu_roslaunch-check/fast
 
 # Convenience name for target.
 raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check_.._launch.dir/rule:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check_.._launch.dir/rule
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check_.._launch.dir/rule
 .PHONY : raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check_.._launch.dir/rule
 
 # Convenience name for target.
@@ -239,12 +239,12 @@ run_tests_pdu_roslaunch-check_.._launch: raptor-dbw-ros/pdu/tests/CMakeFiles/run
 
 # fast build rule for target.
 run_tests_pdu_roslaunch-check_.._launch/fast:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check_.._launch.dir/build.make raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check_.._launch.dir/build
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check_.._launch.dir/build.make raptor-dbw-ros/pdu/tests/CMakeFiles/run_tests_pdu_roslaunch-check_.._launch.dir/build
 .PHONY : run_tests_pdu_roslaunch-check_.._launch/fast
 
 # Convenience name for target.
 raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check_.._launch.dir/rule:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check_.._launch.dir/rule
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check_.._launch.dir/rule
 .PHONY : raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check_.._launch.dir/rule
 
 # Convenience name for target.
@@ -254,12 +254,12 @@ _run_tests_pdu_roslaunch-check_.._launch: raptor-dbw-ros/pdu/tests/CMakeFiles/_r
 
 # fast build rule for target.
 _run_tests_pdu_roslaunch-check_.._launch/fast:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check_.._launch.dir/build.make raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check_.._launch.dir/build
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check_.._launch.dir/build.make raptor-dbw-ros/pdu/tests/CMakeFiles/_run_tests_pdu_roslaunch-check_.._launch.dir/build
 .PHONY : _run_tests_pdu_roslaunch-check_.._launch/fast
 
 # Convenience name for target.
 raptor-dbw-ros/pdu/tests/CMakeFiles/clean_test_results_pdu.dir/rule:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/CMakeFiles/clean_test_results_pdu.dir/rule
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 raptor-dbw-ros/pdu/tests/CMakeFiles/clean_test_results_pdu.dir/rule
 .PHONY : raptor-dbw-ros/pdu/tests/CMakeFiles/clean_test_results_pdu.dir/rule
 
 # Convenience name for target.
@@ -269,7 +269,7 @@ clean_test_results_pdu: raptor-dbw-ros/pdu/tests/CMakeFiles/clean_test_results_p
 
 # fast build rule for target.
 clean_test_results_pdu/fast:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/pdu/tests/CMakeFiles/clean_test_results_pdu.dir/build.make raptor-dbw-ros/pdu/tests/CMakeFiles/clean_test_results_pdu.dir/build
+	cd /home/sanskrj/deeporange14_control/build && $(MAKE) -f raptor-dbw-ros/pdu/tests/CMakeFiles/clean_test_results_pdu.dir/build.make raptor-dbw-ros/pdu/tests/CMakeFiles/clean_test_results_pdu.dir/build
 .PHONY : clean_test_results_pdu/fast
 
 # Help Target
@@ -303,6 +303,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/sanskrj/deeporange14_control/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

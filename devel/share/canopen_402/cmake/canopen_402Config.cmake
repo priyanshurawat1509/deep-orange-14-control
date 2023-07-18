@@ -67,14 +67,14 @@ set(canopen_402_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(canopen_402_SOURCE_PREFIX /users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_402)
-  set(canopen_402_DEVEL_PREFIX /users/vpurohi/deeporange_ws/deeporange14_control/devel)
+  set(canopen_402_SOURCE_PREFIX /home/sanskrj/deeporange14_control/src/ros_canopen/canopen_402)
+  set(canopen_402_DEVEL_PREFIX /home/sanskrj/deeporange14_control/devel)
   set(canopen_402_INSTALL_PREFIX "")
   set(canopen_402_PREFIX ${canopen_402_DEVEL_PREFIX})
 else()
   set(canopen_402_SOURCE_PREFIX "")
   set(canopen_402_DEVEL_PREFIX "")
-  set(canopen_402_INSTALL_PREFIX /users/vpurohi/deeporange_ws/deeporange14_control/install)
+  set(canopen_402_INSTALL_PREFIX /home/sanskrj/deeporange14_control/install)
   set(canopen_402_PREFIX ${canopen_402_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(canopen_402_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_402/include;/usr/include " STREQUAL " ")
+if(NOT "/home/sanskrj/deeporange14_control/src/ros_canopen/canopen_402/include;/usr/include " STREQUAL " ")
   set(canopen_402_INCLUDE_DIRS "")
-  set(_include_dirs "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_402/include;/usr/include")
+  set(_include_dirs "/home/sanskrj/deeporange14_control/src/ros_canopen/canopen_402/include;/usr/include")
   if(NOT "https://github.com/ros-industrial/ros_canopen/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/ros-industrial/ros_canopen/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://wiki.ros.org/canopen_402 " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canope
         message(FATAL_ERROR "Project 'canopen_402' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'canopen_402' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_402/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'canopen_402' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/sanskrj/deeporange14_control/src/ros_canopen/canopen_402/${idir}'.  ${_report}")
     endif()
     _list_append_unique(canopen_402_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib;/users/vpurohi/catkin_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/sanskrj/deeporange14_control/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/usr/src/googletest")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/users/vpurohi/deeporange_ws/deeporange14_control/build")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/sanskrj/deeporange14_control/build")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

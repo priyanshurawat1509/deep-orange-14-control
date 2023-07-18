@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/canopen_chain_node/manifest.l"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/canopen_chain_node/srv/GetObject.l"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/canopen_chain_node/srv/SetObject.l"
+  "/home/sanskrj/deeporange14_control/devel/share/roseus/ros/canopen_chain_node/manifest.l"
+  "/home/sanskrj/deeporange14_control/devel/share/roseus/ros/canopen_chain_node/srv/GetObject.l"
+  "/home/sanskrj/deeporange14_control/devel/share/roseus/ros/canopen_chain_node/srv/SetObject.l"
   "CMakeFiles/canopen_chain_node_generate_messages_eus"
 )
 

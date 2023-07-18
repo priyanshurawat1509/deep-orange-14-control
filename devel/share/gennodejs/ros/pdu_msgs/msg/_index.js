@@ -1,18 +1,18 @@
 
 "use strict";
 
+let RelayState = require('./RelayState.js');
 let RelayReport = require('./RelayReport.js');
-let FuseReport = require('./FuseReport.js');
+let FuseStatus = require('./FuseStatus.js');
 let RelayCommand = require('./RelayCommand.js');
 let RelayStatus = require('./RelayStatus.js');
-let RelayState = require('./RelayState.js');
-let FuseStatus = require('./FuseStatus.js');
+let FuseReport = require('./FuseReport.js');
 
 module.exports = {
+  RelayState: RelayState,
   RelayReport: RelayReport,
-  FuseReport: FuseReport,
+  FuseStatus: FuseStatus,
   RelayCommand: RelayCommand,
   RelayStatus: RelayStatus,
-  RelayState: RelayState,
-  FuseStatus: FuseStatus,
+  FuseReport: FuseReport,
 };

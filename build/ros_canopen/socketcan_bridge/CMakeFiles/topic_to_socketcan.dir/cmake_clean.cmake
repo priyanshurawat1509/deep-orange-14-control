@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libtopic_to_socketcan.pdb"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libtopic_to_socketcan.so"
+  "/home/sanskrj/deeporange14_control/devel/lib/libtopic_to_socketcan.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/libtopic_to_socketcan.so"
   "CMakeFiles/topic_to_socketcan.dir/src/rosconsole_bridge.cpp.o"
   "CMakeFiles/topic_to_socketcan.dir/src/topic_to_socketcan.cpp.o"
 )

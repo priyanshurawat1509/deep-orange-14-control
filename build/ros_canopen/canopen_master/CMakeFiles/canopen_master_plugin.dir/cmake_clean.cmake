@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libcanopen_master_plugin.pdb"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libcanopen_master_plugin.so"
+  "/home/sanskrj/deeporange14_control/devel/lib/libcanopen_master_plugin.pdb"
+  "/home/sanskrj/deeporange14_control/devel/lib/libcanopen_master_plugin.so"
   "CMakeFiles/canopen_master_plugin.dir/src/master_plugin.cpp.o"
 )
 

@@ -8,7 +8,7 @@
 
 #include <string>
 #include <vector>
-#include <map>
+#include <memory>
 
 #include <ros/types.h>
 #include <ros/serialization.h>
@@ -28,19 +28,21 @@ struct MobilityMsg_
     : header()
     , seq(0)
     , stamp()
-    , left_torque_cmd(0.0)
-    , right_torque_cmd(0.0)
-    , au_state(0)
-    , brake_effort(0)  {
+    , tqL_cmd(0.0)
+    , tqR_cmd(0.0)
+    , brkL_cmd(0)
+    , brkR_cmd(0)
+    , au_state(0)  {
     }
   MobilityMsg_(const ContainerAllocator& _alloc)
     : header(_alloc)
     , seq(0)
     , stamp()
-    , left_torque_cmd(0.0)
-    , right_torque_cmd(0.0)
-    , au_state(0)
-    , brake_effort(0)  {
+    , tqL_cmd(0.0)
+    , tqR_cmd(0.0)
+    , brkL_cmd(0)
+    , brkR_cmd(0)
+    , au_state(0)  {
   (void)_alloc;
     }
 
@@ -55,17 +57,20 @@ struct MobilityMsg_
    typedef ros::Time _stamp_type;
   _stamp_type stamp;
 
-   typedef double _left_torque_cmd_type;
-  _left_torque_cmd_type left_torque_cmd;
+   typedef double _tqL_cmd_type;
+  _tqL_cmd_type tqL_cmd;
 
-   typedef double _right_torque_cmd_type;
-  _right_torque_cmd_type right_torque_cmd;
+   typedef double _tqR_cmd_type;
+  _tqR_cmd_type tqR_cmd;
+
+   typedef uint8_t _brkL_cmd_type;
+  _brkL_cmd_type brkL_cmd;
+
+   typedef uint8_t _brkR_cmd_type;
+  _brkR_cmd_type brkR_cmd;
 
    typedef uint8_t _au_state_type;
   _au_state_type au_state;
-
-   typedef uint8_t _brake_effort_type;
-  _brake_effort_type brake_effort;
 
 
 
@@ -99,10 +104,11 @@ bool operator==(const ::deeporange14_msgs::MobilityMsg_<ContainerAllocator1> & l
   return lhs.header == rhs.header &&
     lhs.seq == rhs.seq &&
     lhs.stamp == rhs.stamp &&
-    lhs.left_torque_cmd == rhs.left_torque_cmd &&
-    lhs.right_torque_cmd == rhs.right_torque_cmd &&
-    lhs.au_state == rhs.au_state &&
-    lhs.brake_effort == rhs.brake_effort;
+    lhs.tqL_cmd == rhs.tqL_cmd &&
+    lhs.tqR_cmd == rhs.tqR_cmd &&
+    lhs.brkL_cmd == rhs.brkL_cmd &&
+    lhs.brkR_cmd == rhs.brkR_cmd &&
+    lhs.au_state == rhs.au_state;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -159,12 +165,12 @@ struct MD5Sum< ::deeporange14_msgs::MobilityMsg_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "66e4d75167be5101a8d6b7cdceb2db0b";
+    return "52b5461a1748b83406c477db1e2e86bd";
   }
 
   static const char* value(const ::deeporange14_msgs::MobilityMsg_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x66e4d75167be5101ULL;
-  static const uint64_t static_value2 = 0xa8d6b7cdceb2db0bULL;
+  static const uint64_t static_value1 = 0x52b5461a1748b834ULL;
+  static const uint64_t static_value2 = 0x06c477db1e2e86bdULL;
 };
 
 template<class ContainerAllocator>
@@ -188,10 +194,12 @@ struct Definition< ::deeporange14_msgs::MobilityMsg_<ContainerAllocator> >
 "  uint32 seq\n"
 "  time stamp\n"
 "\n"
-"float64 left_torque_cmd\n"
-"float64 right_torque_cmd\n"
+"float64 tqL_cmd\n"
+"float64 tqR_cmd\n"
+"uint8 brkL_cmd\n"
+"uint8 brkR_cmd\n"
 "uint8 au_state \n"
-"uint8 brake_effort\n"
+"\n"
 "================================================================================\n"
 "MSG: std_msgs/Header\n"
 "# Standard metadata for higher-level stamped data types.\n"
@@ -228,10 +236,11 @@ namespace serialization
       stream.next(m.header);
       stream.next(m.seq);
       stream.next(m.stamp);
-      stream.next(m.left_torque_cmd);
-      stream.next(m.right_torque_cmd);
+      stream.next(m.tqL_cmd);
+      stream.next(m.tqR_cmd);
+      stream.next(m.brkL_cmd);
+      stream.next(m.brkR_cmd);
       stream.next(m.au_state);
-      stream.next(m.brake_effort);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -257,14 +266,16 @@ struct Printer< ::deeporange14_msgs::MobilityMsg_<ContainerAllocator> >
     Printer<uint32_t>::stream(s, indent + "  ", v.seq);
     s << indent << "stamp: ";
     Printer<ros::Time>::stream(s, indent + "  ", v.stamp);
-    s << indent << "left_torque_cmd: ";
-    Printer<double>::stream(s, indent + "  ", v.left_torque_cmd);
-    s << indent << "right_torque_cmd: ";
-    Printer<double>::stream(s, indent + "  ", v.right_torque_cmd);
+    s << indent << "tqL_cmd: ";
+    Printer<double>::stream(s, indent + "  ", v.tqL_cmd);
+    s << indent << "tqR_cmd: ";
+    Printer<double>::stream(s, indent + "  ", v.tqR_cmd);
+    s << indent << "brkL_cmd: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.brkL_cmd);
+    s << indent << "brkR_cmd: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.brkR_cmd);
     s << indent << "au_state: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.au_state);
-    s << indent << "brake_effort: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.brake_effort);
   }
 };
 

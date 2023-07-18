@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/src
+CMAKE_SOURCE_DIR = /home/sanskrj/deeporange14_control/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /users/vpurohi/deeporange_ws/deeporange14_control/build
+CMAKE_BINARY_DIR = /home/sanskrj/deeporange14_control/build
 
 # Utility rule file for deeporange14_msgs_generate_messages.
 
@@ -63,10 +63,10 @@ deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages.dir/build: deep
 .PHONY : deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages.dir/build
 
 deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages.dir/clean:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/deeporange14_msgs && $(CMAKE_COMMAND) -P CMakeFiles/deeporange14_msgs_generate_messages.dir/cmake_clean.cmake
+	cd /home/sanskrj/deeporange14_control/build/deeporange14_msgs && $(CMAKE_COMMAND) -P CMakeFiles/deeporange14_msgs_generate_messages.dir/cmake_clean.cmake
 .PHONY : deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages.dir/clean
 
 deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages.dir/depend:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /users/vpurohi/deeporange_ws/deeporange14_control/src /users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs /users/vpurohi/deeporange_ws/deeporange14_control/build /users/vpurohi/deeporange_ws/deeporange14_control/build/deeporange14_msgs /users/vpurohi/deeporange_ws/deeporange14_control/build/deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sanskrj/deeporange14_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sanskrj/deeporange14_control/src /home/sanskrj/deeporange14_control/src/deeporange14_msgs /home/sanskrj/deeporange14_control/build /home/sanskrj/deeporange14_control/build/deeporange14_msgs /home/sanskrj/deeporange14_control/build/deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages.dir/depend
 

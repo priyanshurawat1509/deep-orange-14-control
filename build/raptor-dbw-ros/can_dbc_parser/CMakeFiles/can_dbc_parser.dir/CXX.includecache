@@ -86,10 +86,6 @@ can_dbc_parser/DbcMessage.h
 DbcUtilities.h
 /home/sanskrj/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/src/DbcUtilities.h
 
-/home/sanskrj/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/src/DbcSignal.cpp
-can_dbc_parser/DbcSignal.h
--
-
 /home/sanskrj/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/src/DbcUtilities.h
 ros/ros.h
 -
@@ -102,10 +98,6 @@ string
 can_dbc_parser/DbcSignal.h
 -
 can_dbc_parser/DbcMessage.h
--
-
-/home/sanskrj/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/src/LineParser.cpp
-can_dbc_parser/LineParser.h
 -
 
 /opt/ros/noetic/include/ros/advertise_options.h

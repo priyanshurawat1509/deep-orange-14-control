@@ -32,10 +32,6 @@ can_msgs/Frame.h
 ros/ros.h
 -
 
-/home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_bridge/src/rosconsole_bridge.cpp
-rosconsole_bridge/bridge.h
--
-
 /home/sanskrj/deeporange14_control/src/ros_canopen/socketcan_bridge/src/topic_to_socketcan.cpp
 socketcan_bridge/topic_to_socketcan.h
 -
@@ -795,12 +791,6 @@ ros/forwards.h
 /opt/ros/noetic/include/ros/ros/forwards.h
 
 /opt/ros/noetic/include/rosconsole/macros_generated.h
-
-/opt/ros/noetic/include/rosconsole_bridge/bridge.h
-ros/macros.h
--
-console_bridge/console.h
--
 
 /opt/ros/noetic/include/std_msgs/Header.h
 string

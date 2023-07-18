@@ -140,10 +140,6 @@ std_msgs/Float64.h
 std_msgs/String.h
 -
 
-/home/sanskrj/deeporange14_control/src/ros_canopen/canopen_chain_node/src/rosconsole_bridge.cpp
-rosconsole_bridge/bridge.h
--
-
 /home/sanskrj/deeporange14_control/src/ros_canopen/canopen_master/include/canopen_master/can_layer.h
 socketcan_interface/threading.h
 -
@@ -1241,12 +1237,6 @@ ros/forwards.h
 /opt/ros/noetic/include/ros/ros/forwards.h
 
 /opt/ros/noetic/include/rosconsole/macros_generated.h
-
-/opt/ros/noetic/include/rosconsole_bridge/bridge.h
-ros/macros.h
--
-console_bridge/console.h
--
 
 /opt/ros/noetic/include/std_msgs/Float32.h
 string

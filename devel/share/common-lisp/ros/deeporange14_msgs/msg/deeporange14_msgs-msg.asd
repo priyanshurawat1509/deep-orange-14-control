@@ -5,8 +5,6 @@
   :depends-on (:roslisp-msg-protocol :roslisp-utils :std_msgs-msg
 )
   :components ((:file "_package")
-    (:file "BrakePressureCmd" :depends-on ("_package_BrakePressureCmd"))
-    (:file "_package_BrakePressureCmd" :depends-on ("_package"))
     (:file "MissionStatus" :depends-on ("_package_MissionStatus"))
     (:file "_package_MissionStatus" :depends-on ("_package"))
     (:file "MobilityMsg" :depends-on ("_package_MobilityMsg"))

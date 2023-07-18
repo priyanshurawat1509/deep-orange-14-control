@@ -22,7 +22,9 @@ class RaptorStateMsg {
       this.header = null;
       this.system_state = null;
       this.dbw_mode = null;
-      this.brake_enable_status = null;
+      this.log_cmd = null;
+      this.brk_Lpres = null;
+      this.brk_Rpres = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -43,11 +45,23 @@ class RaptorStateMsg {
       else {
         this.dbw_mode = 0;
       }
-      if (initObj.hasOwnProperty('brake_enable_status')) {
-        this.brake_enable_status = initObj.brake_enable_status
+      if (initObj.hasOwnProperty('log_cmd')) {
+        this.log_cmd = initObj.log_cmd
       }
       else {
-        this.brake_enable_status = false;
+        this.log_cmd = false;
+      }
+      if (initObj.hasOwnProperty('brk_Lpres')) {
+        this.brk_Lpres = initObj.brk_Lpres
+      }
+      else {
+        this.brk_Lpres = 0.0;
+      }
+      if (initObj.hasOwnProperty('brk_Rpres')) {
+        this.brk_Rpres = initObj.brk_Rpres
+      }
+      else {
+        this.brk_Rpres = 0.0;
       }
     }
   }
@@ -60,8 +74,12 @@ class RaptorStateMsg {
     bufferOffset = _serializer.uint8(obj.system_state, buffer, bufferOffset);
     // Serialize message field [dbw_mode]
     bufferOffset = _serializer.uint8(obj.dbw_mode, buffer, bufferOffset);
-    // Serialize message field [brake_enable_status]
-    bufferOffset = _serializer.bool(obj.brake_enable_status, buffer, bufferOffset);
+    // Serialize message field [log_cmd]
+    bufferOffset = _serializer.bool(obj.log_cmd, buffer, bufferOffset);
+    // Serialize message field [brk_Lpres]
+    bufferOffset = _serializer.float64(obj.brk_Lpres, buffer, bufferOffset);
+    // Serialize message field [brk_Rpres]
+    bufferOffset = _serializer.float64(obj.brk_Rpres, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -75,15 +93,19 @@ class RaptorStateMsg {
     data.system_state = _deserializer.uint8(buffer, bufferOffset);
     // Deserialize message field [dbw_mode]
     data.dbw_mode = _deserializer.uint8(buffer, bufferOffset);
-    // Deserialize message field [brake_enable_status]
-    data.brake_enable_status = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [log_cmd]
+    data.log_cmd = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [brk_Lpres]
+    data.brk_Lpres = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [brk_Rpres]
+    data.brk_Rpres = _deserializer.float64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 3;
+    return length + 19;
   }
 
   static datatype() {
@@ -93,7 +115,7 @@ class RaptorStateMsg {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'ae18ce3d33a6f151cb9a6cb40431fc15';
+    return '2f69d1bbbcd956fab1e3b5107568ef48';
   }
 
   static messageDefinition() {
@@ -103,7 +125,9 @@ class RaptorStateMsg {
     
     uint8 system_state
     uint8 dbw_mode
-    bool brake_enable_status
+    bool log_cmd
+    float64 brk_Lpres 
+    float64 brk_Rpres
     
     ================================================================================
     MSG: std_msgs/Header
@@ -151,11 +175,25 @@ class RaptorStateMsg {
       resolved.dbw_mode = 0
     }
 
-    if (msg.brake_enable_status !== undefined) {
-      resolved.brake_enable_status = msg.brake_enable_status;
+    if (msg.log_cmd !== undefined) {
+      resolved.log_cmd = msg.log_cmd;
     }
     else {
-      resolved.brake_enable_status = false
+      resolved.log_cmd = false
+    }
+
+    if (msg.brk_Lpres !== undefined) {
+      resolved.brk_Lpres = msg.brk_Lpres;
+    }
+    else {
+      resolved.brk_Lpres = 0.0
+    }
+
+    if (msg.brk_Rpres !== undefined) {
+      resolved.brk_Rpres = msg.brk_Rpres;
+    }
+    else {
+      resolved.brk_Rpres = 0.0
     }
 
     return resolved;

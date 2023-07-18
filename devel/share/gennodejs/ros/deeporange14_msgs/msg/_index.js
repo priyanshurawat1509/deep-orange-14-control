@@ -1,16 +1,14 @@
 
 "use strict";
 
-let MissionStatus = require('./MissionStatus.js');
-let BrakePressureCmd = require('./BrakePressureCmd.js');
+let MobilityMsg = require('./MobilityMsg.js');
 let TorqueCmdStamped = require('./TorqueCmdStamped.js');
 let RaptorStateMsg = require('./RaptorStateMsg.js');
-let MobilityMsg = require('./MobilityMsg.js');
+let MissionStatus = require('./MissionStatus.js');
 
 module.exports = {
-  MissionStatus: MissionStatus,
-  BrakePressureCmd: BrakePressureCmd,
+  MobilityMsg: MobilityMsg,
   TorqueCmdStamped: TorqueCmdStamped,
   RaptorStateMsg: RaptorStateMsg,
-  MobilityMsg: MobilityMsg,
+  MissionStatus: MissionStatus,
 };

@@ -28,13 +28,17 @@ struct RaptorStateMsg_
     : header()
     , system_state(0)
     , dbw_mode(0)
-    , brake_enable_status(false)  {
+    , log_cmd(false)
+    , brk_Lpres(0.0)
+    , brk_Rpres(0.0)  {
     }
   RaptorStateMsg_(const ContainerAllocator& _alloc)
     : header(_alloc)
     , system_state(0)
     , dbw_mode(0)
-    , brake_enable_status(false)  {
+    , log_cmd(false)
+    , brk_Lpres(0.0)
+    , brk_Rpres(0.0)  {
   (void)_alloc;
     }
 
@@ -49,8 +53,14 @@ struct RaptorStateMsg_
    typedef uint8_t _dbw_mode_type;
   _dbw_mode_type dbw_mode;
 
-   typedef uint8_t _brake_enable_status_type;
-  _brake_enable_status_type brake_enable_status;
+   typedef uint8_t _log_cmd_type;
+  _log_cmd_type log_cmd;
+
+   typedef double _brk_Lpres_type;
+  _brk_Lpres_type brk_Lpres;
+
+   typedef double _brk_Rpres_type;
+  _brk_Rpres_type brk_Rpres;
 
 
 
@@ -84,7 +94,9 @@ bool operator==(const ::deeporange14_msgs::RaptorStateMsg_<ContainerAllocator1> 
   return lhs.header == rhs.header &&
     lhs.system_state == rhs.system_state &&
     lhs.dbw_mode == rhs.dbw_mode &&
-    lhs.brake_enable_status == rhs.brake_enable_status;
+    lhs.log_cmd == rhs.log_cmd &&
+    lhs.brk_Lpres == rhs.brk_Lpres &&
+    lhs.brk_Rpres == rhs.brk_Rpres;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -141,12 +153,12 @@ struct MD5Sum< ::deeporange14_msgs::RaptorStateMsg_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "ae18ce3d33a6f151cb9a6cb40431fc15";
+    return "2f69d1bbbcd956fab1e3b5107568ef48";
   }
 
   static const char* value(const ::deeporange14_msgs::RaptorStateMsg_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xae18ce3d33a6f151ULL;
-  static const uint64_t static_value2 = 0xcb9a6cb40431fc15ULL;
+  static const uint64_t static_value1 = 0x2f69d1bbbcd956faULL;
+  static const uint64_t static_value2 = 0xb1e3b5107568ef48ULL;
 };
 
 template<class ContainerAllocator>
@@ -169,7 +181,9 @@ struct Definition< ::deeporange14_msgs::RaptorStateMsg_<ContainerAllocator> >
 "\n"
 "uint8 system_state\n"
 "uint8 dbw_mode\n"
-"bool brake_enable_status\n"
+"bool log_cmd\n"
+"float64 brk_Lpres \n"
+"float64 brk_Rpres\n"
 "\n"
 "================================================================================\n"
 "MSG: std_msgs/Header\n"
@@ -207,7 +221,9 @@ namespace serialization
       stream.next(m.header);
       stream.next(m.system_state);
       stream.next(m.dbw_mode);
-      stream.next(m.brake_enable_status);
+      stream.next(m.log_cmd);
+      stream.next(m.brk_Lpres);
+      stream.next(m.brk_Rpres);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -233,8 +249,12 @@ struct Printer< ::deeporange14_msgs::RaptorStateMsg_<ContainerAllocator> >
     Printer<uint8_t>::stream(s, indent + "  ", v.system_state);
     s << indent << "dbw_mode: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.dbw_mode);
-    s << indent << "brake_enable_status: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.brake_enable_status);
+    s << indent << "log_cmd: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.log_cmd);
+    s << indent << "brk_Lpres: ";
+    Printer<double>::stream(s, indent + "  ", v.brk_Lpres);
+    s << indent << "brk_Rpres: ";
+    Printer<double>::stream(s, indent + "  ", v.brk_Rpres);
   }
 };
 

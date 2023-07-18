@@ -16,7 +16,7 @@
 
 (defclass deeporange14_msgs::RaptorStateMsg
   :super ros::object
-  :slots (_header _system_state _dbw_mode _brake_enable_status ))
+  :slots (_header _system_state _dbw_mode _log_cmd _brk_Lpres _brk_Rpres ))
 
 (defmethod deeporange14_msgs::RaptorStateMsg
   (:init
@@ -24,13 +24,17 @@
     ((:header __header) (instance std_msgs::Header :init))
     ((:system_state __system_state) 0)
     ((:dbw_mode __dbw_mode) 0)
-    ((:brake_enable_status __brake_enable_status) nil)
+    ((:log_cmd __log_cmd) nil)
+    ((:brk_Lpres __brk_Lpres) 0.0)
+    ((:brk_Rpres __brk_Rpres) 0.0)
     )
    (send-super :init)
    (setq _header __header)
    (setq _system_state (round __system_state))
    (setq _dbw_mode (round __dbw_mode))
-   (setq _brake_enable_status __brake_enable_status)
+   (setq _log_cmd __log_cmd)
+   (setq _brk_Lpres (float __brk_Lpres))
+   (setq _brk_Rpres (float __brk_Rpres))
    self)
   (:header
    (&rest __header)
@@ -45,9 +49,15 @@
   (:dbw_mode
    (&optional __dbw_mode)
    (if __dbw_mode (setq _dbw_mode __dbw_mode)) _dbw_mode)
-  (:brake_enable_status
-   (&optional (__brake_enable_status :null))
-   (if (not (eq __brake_enable_status :null)) (setq _brake_enable_status __brake_enable_status)) _brake_enable_status)
+  (:log_cmd
+   (&optional (__log_cmd :null))
+   (if (not (eq __log_cmd :null)) (setq _log_cmd __log_cmd)) _log_cmd)
+  (:brk_Lpres
+   (&optional __brk_Lpres)
+   (if __brk_Lpres (setq _brk_Lpres __brk_Lpres)) _brk_Lpres)
+  (:brk_Rpres
+   (&optional __brk_Rpres)
+   (if __brk_Rpres (setq _brk_Rpres __brk_Rpres)) _brk_Rpres)
   (:serialization-length
    ()
    (+
@@ -57,8 +67,12 @@
     1
     ;; uint8 _dbw_mode
     1
-    ;; bool _brake_enable_status
+    ;; bool _log_cmd
     1
+    ;; float64 _brk_Lpres
+    8
+    ;; float64 _brk_Rpres
+    8
     ))
   (:serialize
    (&optional strm)
@@ -70,8 +84,12 @@
        (write-byte _system_state s)
      ;; uint8 _dbw_mode
        (write-byte _dbw_mode s)
-     ;; bool _brake_enable_status
-       (if _brake_enable_status (write-byte -1 s) (write-byte 0 s))
+     ;; bool _log_cmd
+       (if _log_cmd (write-byte -1 s) (write-byte 0 s))
+     ;; float64 _brk_Lpres
+       (sys::poke _brk_Lpres (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _brk_Rpres
+       (sys::poke _brk_Rpres (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -82,20 +100,26 @@
      (setq _system_state (sys::peek buf ptr- :char)) (incf ptr- 1)
    ;; uint8 _dbw_mode
      (setq _dbw_mode (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; bool _brake_enable_status
-     (setq _brake_enable_status (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; bool _log_cmd
+     (setq _log_cmd (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; float64 _brk_Lpres
+     (setq _brk_Lpres (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _brk_Rpres
+     (setq _brk_Rpres (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;;
    self)
   )
 
-(setf (get deeporange14_msgs::RaptorStateMsg :md5sum-) "ae18ce3d33a6f151cb9a6cb40431fc15")
+(setf (get deeporange14_msgs::RaptorStateMsg :md5sum-) "2f69d1bbbcd956fab1e3b5107568ef48")
 (setf (get deeporange14_msgs::RaptorStateMsg :datatype-) "deeporange14_msgs/RaptorStateMsg")
 (setf (get deeporange14_msgs::RaptorStateMsg :definition-)
       "Header header
 
 uint8 system_state
 uint8 dbw_mode
-bool brake_enable_status
+bool log_cmd
+float64 brk_Lpres 
+float64 brk_Rpres
 
 ================================================================================
 MSG: std_msgs/Header
@@ -117,6 +141,6 @@ string frame_id
 
 
 
-(provide :deeporange14_msgs/RaptorStateMsg "ae18ce3d33a6f151cb9a6cb40431fc15")
+(provide :deeporange14_msgs/RaptorStateMsg "2f69d1bbbcd956fab1e3b5107568ef48")
 
 

@@ -1,4 +1,4 @@
-prefix=/home/sanskrj/deeporange14_control/install
+prefix=/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/install
 
 Name: deeporange14_msgs
 Description: Description of deeporange14_msgs

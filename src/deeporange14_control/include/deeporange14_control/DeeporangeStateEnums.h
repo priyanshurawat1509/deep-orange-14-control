@@ -16,12 +16,10 @@ enum allStates{
     AU_0_DEFAULT                   = 0,
     AU_1_STARTUP                   = 1,
     AU_2_IDLE                      = 2,
-    AU_3_WAIT_EXECUTION            = 3,
-    AU_4_EXEC_IMINENT              = 4,
-    AU_5_DISENGAGED_BRAKE          = 5,
-    AU_6_EXEC_MISSION              = 6,
-    AU_7_SAFE_STOP                 = 7,
-    AU_200_FAULT                   = 200, 
+    AU_3_ROS_MODE_EN               = 3,
+    AU_4_DISENGAGING_BRAKES        = 4,
+    AU_5_ROS_CONTROLLED            = 5,
+
     // Raptor States
     DBW_3_ROS_EN                   = 3
 

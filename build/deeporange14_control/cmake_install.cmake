@@ -1,8 +1,8 @@
-# Install script for directory: /home/sanskrj/deeporange14_control/src/deeporange14_control
+# Install script for directory: /users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_control
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/sanskrj/deeporange14_control/install")
+  set(CMAKE_INSTALL_PREFIX "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,41 +37,46 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/sanskrj/deeporange14_control/build/deeporange14_control/catkin_generated/installspace/deeporange14_control.pc")
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/build/deeporange14_control/catkin_generated/installspace/deeporange14_control.pc")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_control/cmake" TYPE FILE FILES
-    "/home/sanskrj/deeporange14_control/build/deeporange14_control/catkin_generated/installspace/deeporange14_controlConfig.cmake"
-    "/home/sanskrj/deeporange14_control/build/deeporange14_control/catkin_generated/installspace/deeporange14_controlConfig-version.cmake"
+    "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/build/deeporange14_control/catkin_generated/installspace/deeporange14_controlConfig.cmake"
+    "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/build/deeporange14_control/catkin_generated/installspace/deeporange14_controlConfig-version.cmake"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_control" TYPE FILE FILES "/home/sanskrj/deeporange14_control/src/deeporange14_control/package.xml")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_control" TYPE FILE FILES "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_control/package.xml")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/sanskrj/deeporange14_control/build/deeporange14_control/catkin_generated/installspace/deeporange14_control.pc")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/build/deeporange14_control/catkin_generated/installspace/deeporange14_control.pc")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_control/cmake" TYPE FILE FILES
-    "/home/sanskrj/deeporange14_control/build/deeporange14_control/catkin_generated/installspace/deeporange14_controlConfig.cmake"
-    "/home/sanskrj/deeporange14_control/build/deeporange14_control/catkin_generated/installspace/deeporange14_controlConfig-version.cmake"
+    "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/build/deeporange14_control/catkin_generated/installspace/deeporange14_controlConfig.cmake"
+    "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/build/deeporange14_control/catkin_generated/installspace/deeporange14_controlConfig-version.cmake"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_control" TYPE FILE FILES "/home/sanskrj/deeporange14_control/src/deeporange14_control/package.xml")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_control" TYPE FILE FILES "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_control/package.xml")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_control" TYPE DIRECTORY FILES
-    "/home/sanskrj/deeporange14_control/src/deeporange14_control/launch"
-    "/home/sanskrj/deeporange14_control/src/deeporange14_control/src"
-    "/home/sanskrj/deeporange14_control/src/deeporange14_control/dbc"
+    "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_control/launch"
+    "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_control/src"
+    "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_control/dbc"
     )
 endif()
 

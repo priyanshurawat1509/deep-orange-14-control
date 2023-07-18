@@ -21,7 +21,7 @@
 #include <deeporange14_msgs/MissionStatus.h>
 #include <deeporange14_msgs/RaptorStateMsg.h>
 #include <deeporange14_msgs/TorqueCmdStamped.h>
-#include <deeporange14_msgs/BrakePressureCmd.h>
+#include <deeporange14_msgs/BrakePressure.h>
 
 namespace deeporange14
 {
@@ -35,7 +35,6 @@ namespace deeporange14
         
         void getMissionStatus(const deeporange14_msgs::MissionStatus::ConstPtr& missionStatus);
     
-        void getStackBrakeCmd(const deeporange14_msgs::BrakePressureCmd::ConstPtr &brakeEffort);
         
         void getTorqueValues(const deeporange14_msgs::TorqueCmdStamped::ConstPtr& controllerTrqValues);
 
@@ -52,7 +51,8 @@ namespace deeporange14
         bool stack_fault;
         bool dbw_ros_mode;
         std::string mission_status;
-        float cmd_brake_effort;
+        float brkL_pr;
+        float brkR_pr;
         float tqL_cmd_controller;
         float tqR_cmd_controller;
         bool stop_ros;
@@ -64,22 +64,23 @@ namespace deeporange14
 
         
         double counter;
-        float cmdvel_cutoff;
-        float raptorhb_cutoff;
+        float cmdvel_timeout;
+        float raptorhb_timeout;
         int update_freq;
+        float brake_disengaged_threshold;
         
         // Publishers
         ros::Timer timer;
         ros::Publisher pub_mobility;
 
         // Subscribers
-        ros::Subscriber sub_cmdvel;
+        ros::Subscriber sub_cmdVel;
         ros::Subscriber sub_missionStatus;
         ros::Subscriber sub_brakeStatus;
         ros::Subscriber sub_rosController;
         ros::Subscriber sub_rosStop;
         ros::Subscriber sub_raptorState;
-        ros::Subscriber sub_stopros;
+        ros::Subscriber sub_stopRos;
         std::string topic_ns = "/deeporange14";
         
         // Init the msg variables

@@ -5,6 +5,10 @@
           SYSTEM_STATE
           DBW_MODE-VAL
           DBW_MODE
-          BRAKE_ENABLE_STATUS-VAL
-          BRAKE_ENABLE_STATUS
+          LOG_CMD-VAL
+          LOG_CMD
+          BRK_LPRES-VAL
+          BRK_LPRES
+          BRK_RPRES-VAL
+          BRK_RPRES
 ))

@@ -9,14 +9,16 @@ import struct
 import std_msgs.msg
 
 class RaptorStateMsg(genpy.Message):
-  _md5sum = "ae18ce3d33a6f151cb9a6cb40431fc15"
+  _md5sum = "2f69d1bbbcd956fab1e3b5107568ef48"
   _type = "deeporange14_msgs/RaptorStateMsg"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """Header header
 
 uint8 system_state
 uint8 dbw_mode
-bool brake_enable_status
+bool log_cmd
+float64 brk_Lpres 
+float64 brk_Rpres
 
 ================================================================================
 MSG: std_msgs/Header
@@ -34,8 +36,8 @@ time stamp
 #Frame this data is associated with
 string frame_id
 """
-  __slots__ = ['header','system_state','dbw_mode','brake_enable_status']
-  _slot_types = ['std_msgs/Header','uint8','uint8','bool']
+  __slots__ = ['header','system_state','dbw_mode','log_cmd','brk_Lpres','brk_Rpres']
+  _slot_types = ['std_msgs/Header','uint8','uint8','bool','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -45,7 +47,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,system_state,dbw_mode,brake_enable_status
+       header,system_state,dbw_mode,log_cmd,brk_Lpres,brk_Rpres
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -60,13 +62,19 @@ string frame_id
         self.system_state = 0
       if self.dbw_mode is None:
         self.dbw_mode = 0
-      if self.brake_enable_status is None:
-        self.brake_enable_status = False
+      if self.log_cmd is None:
+        self.log_cmd = False
+      if self.brk_Lpres is None:
+        self.brk_Lpres = 0.
+      if self.brk_Rpres is None:
+        self.brk_Rpres = 0.
     else:
       self.header = std_msgs.msg.Header()
       self.system_state = 0
       self.dbw_mode = 0
-      self.brake_enable_status = False
+      self.log_cmd = False
+      self.brk_Lpres = 0.
+      self.brk_Rpres = 0.
 
   def _get_types(self):
     """
@@ -89,7 +97,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3B().pack(_x.system_state, _x.dbw_mode, _x.brake_enable_status))
+      buff.write(_get_struct_3B2d().pack(_x.system_state, _x.dbw_mode, _x.log_cmd, _x.brk_Lpres, _x.brk_Rpres))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -119,9 +127,9 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 3
-      (_x.system_state, _x.dbw_mode, _x.brake_enable_status,) = _get_struct_3B().unpack(str[start:end])
-      self.brake_enable_status = bool(self.brake_enable_status)
+      end += 19
+      (_x.system_state, _x.dbw_mode, _x.log_cmd, _x.brk_Lpres, _x.brk_Rpres,) = _get_struct_3B2d().unpack(str[start:end])
+      self.log_cmd = bool(self.log_cmd)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -143,7 +151,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3B().pack(_x.system_state, _x.dbw_mode, _x.brake_enable_status))
+      buff.write(_get_struct_3B2d().pack(_x.system_state, _x.dbw_mode, _x.log_cmd, _x.brk_Lpres, _x.brk_Rpres))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -174,9 +182,9 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 3
-      (_x.system_state, _x.dbw_mode, _x.brake_enable_status,) = _get_struct_3B().unpack(str[start:end])
-      self.brake_enable_status = bool(self.brake_enable_status)
+      end += 19
+      (_x.system_state, _x.dbw_mode, _x.log_cmd, _x.brk_Lpres, _x.brk_Rpres,) = _get_struct_3B2d().unpack(str[start:end])
+      self.log_cmd = bool(self.log_cmd)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -185,12 +193,12 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_3B = None
-def _get_struct_3B():
-    global _struct_3B
-    if _struct_3B is None:
-        _struct_3B = struct.Struct("<3B")
-    return _struct_3B
+_struct_3B2d = None
+def _get_struct_3B2d():
+    global _struct_3B2d
+    if _struct_3B2d is None:
+        _struct_3B2d = struct.Struct("<3B2d")
+    return _struct_3B2d
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I

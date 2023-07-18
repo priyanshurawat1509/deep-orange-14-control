@@ -91,13 +91,13 @@ namespace deeporange14{
         errLinX_prev_=errLinX_current_;
         errOmega_prev_=errOmega_current_;
         //integrator reset when we move into 'waiting for execution' state -- after a mission is completed or cancelled, we move back to 'startup' state in the state machine, but the transitions to 'wait execution' should happen
-        if (autonomy_state_ == AU_3_WAIT_EXECUTION){
+        if (autonomy_state_ == AU_3_ROS_MODE_EN){
             errLinX_integral_=0.0;
             errOmega_integral_=0.0;
             // ROS_INFO("Velocity error integral: %f, Curvature error integral: %f",errLinX_integral_,errOmega_integral_);
             prev_time_=(ros::Time::now().toSec()+ros::Time::now().toNSec()*1e-9);
         }
-        else if (autonomy_state_ == AU_6_EXEC_MISSION){
+        else if (autonomy_state_ == AU_5_ROS_CONTROLLED || autonomy_state_ == AU_4_DISENGAGING_BRAKES ){
             //letting the controller kick in only when we move in the appropriate autonomy state
             //rate limiting the linear velocity and the curvature
             this->rateLimiter(prev_v_,prev_omega_,cmdLinX_,cmdAngZ_);

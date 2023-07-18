@@ -1,8 +1,0 @@
-prefix=/home/sanskrj/deeporange14_control/devel
-
-Name: pdu
-Description: Description of pdu
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

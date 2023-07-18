@@ -2,8 +2,8 @@
 <launch>
   <node pkg="deeporange14_control" type="deeporange14_StateSupervisor" name="deeporange14" output="screen">
     
-    <param name="cmdvel_cutoff" default="0.5" />
-    <param name="raptorhb_cutoff" value="0.5" />
+    <param name="cmdvel_timeout" default="0.5" />
+    <param name="raptorhb_timeout" value="0.5" />
     <param name="update_freq" value="50" />
   </node>
 

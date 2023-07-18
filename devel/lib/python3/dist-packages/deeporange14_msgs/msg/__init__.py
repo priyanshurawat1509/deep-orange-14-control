@@ -1,4 +1,4 @@
-from ._BrakePressureCmd import *
+from ._BrakePressure import *
 from ._MissionStatus import *
 from ._MobilityMsg import *
 from ._RaptorStateMsg import *

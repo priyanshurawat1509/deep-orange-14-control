@@ -1,2 +1,0 @@
-set(pdu_msgs_MESSAGE_FILES "/home/sanskrj/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/FuseReport.msg;/home/sanskrj/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/FuseStatus.msg;/home/sanskrj/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayCommand.msg;/home/sanskrj/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayReport.msg;/home/sanskrj/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayState.msg;/home/sanskrj/deeporange14_control/src/raptor-dbw-ros/pdu_msgs/msg/RelayStatus.msg")
-set(pdu_msgs_SERVICE_FILES "")

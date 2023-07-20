@@ -6,6 +6,7 @@
 #include <string.h>
 #include <ros/ros.h>
 #include <std_msgs/Bool.h>
+#include <std_msgs/UInt8.h>
 #include <std_msgs/Float32.h>
 #include <can_msgs/Frame.h>
 #include <geometry_msgs/TwistStamped.h>
@@ -21,7 +22,7 @@
 #include <deeporange14_msgs/MissionStatus.h>
 #include <deeporange14_msgs/RaptorStateMsg.h>
 #include <deeporange14_msgs/TorqueCmdStamped.h>
-#include <deeporange14_msgs/BrakePressure.h>
+
 
 namespace deeporange14
 {
@@ -35,7 +36,6 @@ namespace deeporange14
         
         void getMissionStatus(const deeporange14_msgs::MissionStatus::ConstPtr& missionStatus);
     
-        
         void getTorqueValues(const deeporange14_msgs::TorqueCmdStamped::ConstPtr& controllerTrqValues);
 
         void getStopRos(const std_msgs::Bool::ConstPtr& stopRosMsg);
@@ -61,7 +61,8 @@ namespace deeporange14
         allStates state;
         double raptor_hb_timestamp;
         double cmdvel_timestamp;
-
+       
+        uint system_state;
         
         double counter;
         float cmdvel_timeout;
@@ -72,14 +73,15 @@ namespace deeporange14
         // Publishers
         ros::Timer timer;
         ros::Publisher pub_mobility;
+        ros::Publisher pub_states;
 
         // Subscribers
-        ros::Subscriber sub_cmdVel;
+        
         ros::Subscriber sub_missionStatus;
         ros::Subscriber sub_brakeStatus;
         ros::Subscriber sub_rosController;
-        ros::Subscriber sub_rosStop;
         ros::Subscriber sub_raptorState;
+        ros::Subscriber sub_cmdVel;
         ros::Subscriber sub_stopRos;
         std::string topic_ns = "/deeporange14";
         
@@ -88,6 +90,7 @@ namespace deeporange14
         deeporange14_msgs::MobilityMsg mobilityMsg;
         deeporange14_msgs::TorqueCmdStamped trqvalues;
         deeporange14_msgs::RaptorStateMsg raptorMsg;
+        std_msgs::UInt8 au_state;
 
     };
 

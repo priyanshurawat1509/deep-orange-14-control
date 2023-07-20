@@ -1099,6 +1099,7 @@ deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeStateSupe
  /opt/ros/noetic/include/ros/node_handle.h \
  /opt/ros/noetic/include/std_msgs/Bool.h \
  /opt/ros/noetic/include/ros/message_operations.h \
+ /opt/ros/noetic/include/std_msgs/UInt8.h \
  /opt/ros/noetic/include/std_msgs/Float32.h \
  /users/sanskrj/deeporange14_control/devel/include/can_msgs/Frame.h \
  /opt/ros/noetic/include/std_msgs/Header.h \
@@ -1118,5 +1119,4 @@ deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeStateSupe
  /users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/include/deeporange14_msgs/MobilityMsg.h \
  /users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/include/deeporange14_msgs/MissionStatus.h \
  /users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/include/deeporange14_msgs/RaptorStateMsg.h \
- /users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/include/deeporange14_msgs/TorqueCmdStamped.h \
- /users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/include/deeporange14_msgs/BrakePressure.h
+ /users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/include/deeporange14_msgs/TorqueCmdStamped.h

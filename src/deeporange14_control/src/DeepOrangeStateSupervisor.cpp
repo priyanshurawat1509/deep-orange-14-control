@@ -64,7 +64,7 @@ namespace deeporange14
     void DeepOrangeStateSupervisor::getRaptorMsg(const deeporange14_msgs::RaptorStateMsg::ConstPtr &raptorMsg)
     {
         raptor_hb_timestamp = raptorMsg->header.stamp.sec + raptorMsg->header.stamp.nsec * (1e-9);
-        system_state = raptorMsg->system_state;
+        speed_state = raptorMsg->speed_state;
         dbw_ros_mode = raptorMsg->dbw_mode == DBW_3_ROS_EN;
         brkL_pr = raptorMsg->brk_Lpres; 
         brkR_pr = raptorMsg->brk_Rpres; 
@@ -230,7 +230,7 @@ namespace deeporange14
                 break;
             }
 
-            else if (system_state == SPEED_STATE_Ready2Move)
+            else if (speed_state == SPEED_STATE_Ready2Move)
             {
 
                 state = AU_5_ROS_CONTROLLED;

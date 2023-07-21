@@ -1,8 +1,8 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "deeporange14_msgs: 4 messages, 0 services")
+message(STATUS "deeporange14_msgs: 5 messages, 0 services")
 
-set(MSG_I_FLAGS "-Ideeporange14_msgs:/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Ideeporange14_msgs:/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,24 +17,29 @@ add_custom_target(deeporange14_msgs_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg" NAME_WE)
 add_custom_target(_deeporange14_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "deeporange14_msgs" "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "deeporange14_msgs" "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg" "std_msgs/Header"
 )
 
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg" NAME_WE)
 add_custom_target(_deeporange14_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "deeporange14_msgs" "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "deeporange14_msgs" "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg" "std_msgs/Header"
 )
 
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg" NAME_WE)
 add_custom_target(_deeporange14_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "deeporange14_msgs" "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "deeporange14_msgs" "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg" "std_msgs/Header"
 )
 
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg" NAME_WE)
 add_custom_target(_deeporange14_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "deeporange14_msgs" "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "deeporange14_msgs" "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg" "std_msgs/Header"
+)
+
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg" NAME_WE)
+add_custom_target(_deeporange14_msgs_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "deeporange14_msgs" "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg" "std_msgs/Header"
 )
 
 #
@@ -44,25 +49,31 @@ add_custom_target(_deeporange14_msgs_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/deeporange14_msgs
 )
 _generate_msg_cpp(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/deeporange14_msgs
 )
 _generate_msg_cpp(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/deeporange14_msgs
 )
 _generate_msg_cpp(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/deeporange14_msgs
+)
+_generate_msg_cpp(deeporange14_msgs
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/deeporange14_msgs
@@ -82,13 +93,15 @@ add_custom_target(deeporange14_msgs_generate_messages_cpp
 add_dependencies(deeporange14_msgs_generate_messages deeporange14_msgs_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_cpp _deeporange14_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_cpp _deeporange14_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_cpp _deeporange14_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg" NAME_WE)
+add_dependencies(deeporange14_msgs_generate_messages_cpp _deeporange14_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_cpp _deeporange14_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -101,25 +114,31 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS deeporange14_msgs_generate_messages
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/deeporange14_msgs
 )
 _generate_msg_eus(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/deeporange14_msgs
 )
 _generate_msg_eus(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/deeporange14_msgs
 )
 _generate_msg_eus(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/deeporange14_msgs
+)
+_generate_msg_eus(deeporange14_msgs
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/deeporange14_msgs
@@ -139,13 +158,15 @@ add_custom_target(deeporange14_msgs_generate_messages_eus
 add_dependencies(deeporange14_msgs_generate_messages deeporange14_msgs_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_eus _deeporange14_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_eus _deeporange14_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_eus _deeporange14_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg" NAME_WE)
+add_dependencies(deeporange14_msgs_generate_messages_eus _deeporange14_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_eus _deeporange14_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -158,25 +179,31 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS deeporange14_msgs_generate_messages
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/deeporange14_msgs
 )
 _generate_msg_lisp(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/deeporange14_msgs
 )
 _generate_msg_lisp(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/deeporange14_msgs
 )
 _generate_msg_lisp(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/deeporange14_msgs
+)
+_generate_msg_lisp(deeporange14_msgs
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/deeporange14_msgs
@@ -196,13 +223,15 @@ add_custom_target(deeporange14_msgs_generate_messages_lisp
 add_dependencies(deeporange14_msgs_generate_messages deeporange14_msgs_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_lisp _deeporange14_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_lisp _deeporange14_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_lisp _deeporange14_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg" NAME_WE)
+add_dependencies(deeporange14_msgs_generate_messages_lisp _deeporange14_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_lisp _deeporange14_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -215,25 +244,31 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS deeporange14_msgs_generate_messages
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/deeporange14_msgs
 )
 _generate_msg_nodejs(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/deeporange14_msgs
 )
 _generate_msg_nodejs(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/deeporange14_msgs
 )
 _generate_msg_nodejs(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/deeporange14_msgs
+)
+_generate_msg_nodejs(deeporange14_msgs
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/deeporange14_msgs
@@ -253,13 +288,15 @@ add_custom_target(deeporange14_msgs_generate_messages_nodejs
 add_dependencies(deeporange14_msgs_generate_messages deeporange14_msgs_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_nodejs _deeporange14_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_nodejs _deeporange14_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_nodejs _deeporange14_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg" NAME_WE)
+add_dependencies(deeporange14_msgs_generate_messages_nodejs _deeporange14_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_nodejs _deeporange14_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -272,25 +309,31 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS deeporange14_msgs_generate_messages
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/deeporange14_msgs
 )
 _generate_msg_py(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/deeporange14_msgs
 )
 _generate_msg_py(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/deeporange14_msgs
 )
 _generate_msg_py(deeporange14_msgs
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/deeporange14_msgs
+)
+_generate_msg_py(deeporange14_msgs
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/deeporange14_msgs
@@ -310,13 +353,15 @@ add_custom_target(deeporange14_msgs_generate_messages_py
 add_dependencies(deeporange14_msgs_generate_messages deeporange14_msgs_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_py _deeporange14_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_py _deeporange14_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_py _deeporange14_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg" NAME_WE)
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg" NAME_WE)
+add_dependencies(deeporange14_msgs_generate_messages_py _deeporange14_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg" NAME_WE)
 add_dependencies(deeporange14_msgs_generate_messages_py _deeporange14_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

@@ -16,7 +16,7 @@
 
 (defclass deeporange14_msgs::RaptorStateMsg
   :super ros::object
-  :slots (_header _system_state _dbw_mode _log_cmd _brk_Lpres _brk_Rpres ))
+  :slots (_header _system_state _dbw_mode _log_cmd _brk_Lpres _brk_Rpres _speed_state ))
 
 (defmethod deeporange14_msgs::RaptorStateMsg
   (:init
@@ -27,6 +27,7 @@
     ((:log_cmd __log_cmd) nil)
     ((:brk_Lpres __brk_Lpres) 0.0)
     ((:brk_Rpres __brk_Rpres) 0.0)
+    ((:speed_state __speed_state) 0)
     )
    (send-super :init)
    (setq _header __header)
@@ -35,6 +36,7 @@
    (setq _log_cmd __log_cmd)
    (setq _brk_Lpres (float __brk_Lpres))
    (setq _brk_Rpres (float __brk_Rpres))
+   (setq _speed_state (round __speed_state))
    self)
   (:header
    (&rest __header)
@@ -58,6 +60,9 @@
   (:brk_Rpres
    (&optional __brk_Rpres)
    (if __brk_Rpres (setq _brk_Rpres __brk_Rpres)) _brk_Rpres)
+  (:speed_state
+   (&optional __speed_state)
+   (if __speed_state (setq _speed_state __speed_state)) _speed_state)
   (:serialization-length
    ()
    (+
@@ -73,6 +78,8 @@
     8
     ;; float64 _brk_Rpres
     8
+    ;; uint8 _speed_state
+    1
     ))
   (:serialize
    (&optional strm)
@@ -90,6 +97,8 @@
        (sys::poke _brk_Lpres (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _brk_Rpres
        (sys::poke _brk_Rpres (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; uint8 _speed_state
+       (write-byte _speed_state s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -106,11 +115,13 @@
      (setq _brk_Lpres (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _brk_Rpres
      (setq _brk_Rpres (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; uint8 _speed_state
+     (setq _speed_state (sys::peek buf ptr- :char)) (incf ptr- 1)
    ;;
    self)
   )
 
-(setf (get deeporange14_msgs::RaptorStateMsg :md5sum-) "2f69d1bbbcd956fab1e3b5107568ef48")
+(setf (get deeporange14_msgs::RaptorStateMsg :md5sum-) "dcb6dba9032126797cb38b2382c5770a")
 (setf (get deeporange14_msgs::RaptorStateMsg :datatype-) "deeporange14_msgs/RaptorStateMsg")
 (setf (get deeporange14_msgs::RaptorStateMsg :definition-)
       "Header header
@@ -120,6 +131,7 @@ uint8 dbw_mode
 bool log_cmd
 float64 brk_Lpres 
 float64 brk_Rpres
+uint8 speed_state
 
 ================================================================================
 MSG: std_msgs/Header
@@ -141,6 +153,6 @@ string frame_id
 
 
 
-(provide :deeporange14_msgs/RaptorStateMsg "2f69d1bbbcd956fab1e3b5107568ef48")
+(provide :deeporange14_msgs/RaptorStateMsg "dcb6dba9032126797cb38b2382c5770a")
 
 

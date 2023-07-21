@@ -1,8 +1,8 @@
-# Install script for directory: /users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs
+# Install script for directory: /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/install")
+  set(CMAKE_INSTALL_PREFIX "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,61 +44,62 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_msgs/msgs" TYPE FILE FILES
-    "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg"
-    "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg"
-    "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg"
-    "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg"
+    "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MobilityMsg.msg"
+    "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg"
+    "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg"
+    "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg"
+    "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_msgs/cmake" TYPE FILE FILES "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/build/deeporange14_msgs/catkin_generated/installspace/deeporange14_msgs-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_msgs/cmake" TYPE FILE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/deeporange14_msgs/catkin_generated/installspace/deeporange14_msgs-msg-paths.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/include/deeporange14_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/share/gennodejs/ros/deeporange14_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/gennodejs/ros/deeporange14_msgs")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/build/deeporange14_msgs/catkin_generated/installspace/deeporange14_msgs.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/deeporange14_msgs/catkin_generated/installspace/deeporange14_msgs.pc")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_msgs/cmake" TYPE FILE FILES "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/build/deeporange14_msgs/catkin_generated/installspace/deeporange14_msgs-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_msgs/cmake" TYPE FILE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/deeporange14_msgs/catkin_generated/installspace/deeporange14_msgs-msg-extras.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_msgs/cmake" TYPE FILE FILES
-    "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/build/deeporange14_msgs/catkin_generated/installspace/deeporange14_msgsConfig.cmake"
-    "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/build/deeporange14_msgs/catkin_generated/installspace/deeporange14_msgsConfig-version.cmake"
+    "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/deeporange14_msgs/catkin_generated/installspace/deeporange14_msgsConfig.cmake"
+    "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/deeporange14_msgs/catkin_generated/installspace/deeporange14_msgsConfig-version.cmake"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_msgs" TYPE FILE FILES "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_msgs" TYPE FILE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_msgs" TYPE DIRECTORY FILES "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/src/deeporange14_msgs/msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deeporange14_msgs" TYPE DIRECTORY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/msgs")
 endif()
 

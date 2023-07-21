@@ -8,7 +8,7 @@
 
 #include <string>
 #include <vector>
-#include <memory>
+#include <map>
 
 #include <ros/types.h>
 #include <ros/serialization.h>
@@ -26,22 +26,18 @@ struct MobilityMsg_
 
   MobilityMsg_()
     : header()
-    , seq(0)
-    , stamp()
     , tqL_cmd(0.0)
     , tqR_cmd(0.0)
-    , brkL_cmd(0)
-    , brkR_cmd(0)
+    , brkL_cmd(0.0)
+    , brkR_cmd(0.0)
     , au_state(0)  {
     }
   MobilityMsg_(const ContainerAllocator& _alloc)
     : header(_alloc)
-    , seq(0)
-    , stamp()
     , tqL_cmd(0.0)
     , tqR_cmd(0.0)
-    , brkL_cmd(0)
-    , brkR_cmd(0)
+    , brkL_cmd(0.0)
+    , brkR_cmd(0.0)
     , au_state(0)  {
   (void)_alloc;
     }
@@ -51,22 +47,16 @@ struct MobilityMsg_
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
 
-   typedef uint32_t _seq_type;
-  _seq_type seq;
-
-   typedef ros::Time _stamp_type;
-  _stamp_type stamp;
-
    typedef double _tqL_cmd_type;
   _tqL_cmd_type tqL_cmd;
 
    typedef double _tqR_cmd_type;
   _tqR_cmd_type tqR_cmd;
 
-   typedef uint8_t _brkL_cmd_type;
+   typedef float _brkL_cmd_type;
   _brkL_cmd_type brkL_cmd;
 
-   typedef uint8_t _brkR_cmd_type;
+   typedef float _brkR_cmd_type;
   _brkR_cmd_type brkR_cmd;
 
    typedef uint8_t _au_state_type;
@@ -102,8 +92,6 @@ template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::deeporange14_msgs::MobilityMsg_<ContainerAllocator1> & lhs, const ::deeporange14_msgs::MobilityMsg_<ContainerAllocator2> & rhs)
 {
   return lhs.header == rhs.header &&
-    lhs.seq == rhs.seq &&
-    lhs.stamp == rhs.stamp &&
     lhs.tqL_cmd == rhs.tqL_cmd &&
     lhs.tqR_cmd == rhs.tqR_cmd &&
     lhs.brkL_cmd == rhs.brkL_cmd &&
@@ -165,12 +153,12 @@ struct MD5Sum< ::deeporange14_msgs::MobilityMsg_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "52b5461a1748b83406c477db1e2e86bd";
+    return "db3ff148ca2e480eda9720b0eb366e47";
   }
 
   static const char* value(const ::deeporange14_msgs::MobilityMsg_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x52b5461a1748b834ULL;
-  static const uint64_t static_value2 = 0x06c477db1e2e86bdULL;
+  static const uint64_t static_value1 = 0xdb3ff148ca2e480eULL;
+  static const uint64_t static_value2 = 0xda9720b0eb366e47ULL;
 };
 
 template<class ContainerAllocator>
@@ -191,13 +179,11 @@ struct Definition< ::deeporange14_msgs::MobilityMsg_<ContainerAllocator> >
   {
     return "#This represents a vector in free space -- currently defined to hold the left and right track #velocities\n"
 "Header header\n"
-"  uint32 seq\n"
-"  time stamp\n"
 "\n"
 "float64 tqL_cmd\n"
 "float64 tqR_cmd\n"
-"uint8 brkL_cmd\n"
-"uint8 brkR_cmd\n"
+"float32 brkL_cmd\n"
+"float32 brkR_cmd\n"
 "uint8 au_state \n"
 "\n"
 "================================================================================\n"
@@ -234,8 +220,6 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.header);
-      stream.next(m.seq);
-      stream.next(m.stamp);
       stream.next(m.tqL_cmd);
       stream.next(m.tqR_cmd);
       stream.next(m.brkL_cmd);
@@ -262,18 +246,14 @@ struct Printer< ::deeporange14_msgs::MobilityMsg_<ContainerAllocator> >
     s << indent << "header: ";
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
-    s << indent << "seq: ";
-    Printer<uint32_t>::stream(s, indent + "  ", v.seq);
-    s << indent << "stamp: ";
-    Printer<ros::Time>::stream(s, indent + "  ", v.stamp);
     s << indent << "tqL_cmd: ";
     Printer<double>::stream(s, indent + "  ", v.tqL_cmd);
     s << indent << "tqR_cmd: ";
     Printer<double>::stream(s, indent + "  ", v.tqR_cmd);
     s << indent << "brkL_cmd: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.brkL_cmd);
+    Printer<float>::stream(s, indent + "  ", v.brkL_cmd);
     s << indent << "brkR_cmd: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.brkR_cmd);
+    Printer<float>::stream(s, indent + "  ", v.brkR_cmd);
     s << indent << "au_state: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.au_state);
   }

@@ -11,4 +11,6 @@
           BRK_LPRES
           BRK_RPRES-VAL
           BRK_RPRES
+          SPEED_STATE-VAL
+          SPEED_STATE
 ))

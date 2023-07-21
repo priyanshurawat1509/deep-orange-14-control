@@ -58,11 +58,12 @@ namespace deeporange14
         bool stop_ros;
         bool raptorbrakeAck;
 
-        allStates state;
+        uint state;
+        uint speed_state;
         double raptor_hb_timestamp;
         double cmdvel_timestamp;
        
-        uint system_state;
+        
         
         double counter;
         float cmdvel_timeout;

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/python3/dist-packages/can_msgs/msg/_Frame.py"
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/python3/dist-packages/can_msgs/msg/__init__.py"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/can_msgs/msg/_Frame.py"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/can_msgs/msg/__init__.py"
   "CMakeFiles/can_msgs_generate_messages_py"
 )
 

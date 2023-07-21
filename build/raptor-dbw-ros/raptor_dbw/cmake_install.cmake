@@ -1,8 +1,8 @@
-# Install script for directory: /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/raptor_dbw
+# Install script for directory: /users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/raptor_dbw
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/install")
+  set(CMAKE_INSTALL_PREFIX "/users/vpurohi/deeporange_ws/deeporange14_control/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,12 +37,7 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/raptor_dbw" TYPE FILE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/raptor_dbw/package.xml")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/raptor_dbw" TYPE FILE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/raptor_dbw/package.xml")
 endif()
 

@@ -1,4 +1,4 @@
-prefix=/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel
+prefix=/users/vpurohi/deeporange_ws/deeporange14_control/devel
 
 Name: pdu
 Description: Description of pdu

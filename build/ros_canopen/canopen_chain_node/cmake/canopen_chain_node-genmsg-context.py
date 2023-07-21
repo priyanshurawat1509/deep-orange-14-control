@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = ""
-services_str = "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/ros_canopen/canopen_chain_node/srv/GetObject.srv;/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/ros_canopen/canopen_chain_node/srv/SetObject.srv"
+services_str = "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_chain_node/srv/GetObject.srv;/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_chain_node/srv/SetObject.srv"
 pkg_name = "canopen_chain_node"
 dependencies_str = ""
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

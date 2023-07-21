@@ -1,11 +1,11 @@
 file(REMOVE_RECURSE
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/roseus/ros/pdu_msgs/manifest.l"
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/roseus/ros/pdu_msgs/msg/FuseReport.l"
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/roseus/ros/pdu_msgs/msg/FuseStatus.l"
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/roseus/ros/pdu_msgs/msg/RelayCommand.l"
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/roseus/ros/pdu_msgs/msg/RelayReport.l"
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/roseus/ros/pdu_msgs/msg/RelayState.l"
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/roseus/ros/pdu_msgs/msg/RelayStatus.l"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/pdu_msgs/manifest.l"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/pdu_msgs/msg/FuseReport.l"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/pdu_msgs/msg/FuseStatus.l"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/pdu_msgs/msg/RelayCommand.l"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/pdu_msgs/msg/RelayReport.l"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/pdu_msgs/msg/RelayState.l"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/pdu_msgs/msg/RelayStatus.l"
   "CMakeFiles/pdu_msgs_generate_messages_eus"
 )
 

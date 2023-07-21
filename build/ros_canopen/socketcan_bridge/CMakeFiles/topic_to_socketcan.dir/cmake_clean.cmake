@@ -1,10 +1,8 @@
 file(REMOVE_RECURSE
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libtopic_to_socketcan.pdb"
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libtopic_to_socketcan.so"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libtopic_to_socketcan.pdb"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libtopic_to_socketcan.so"
   "CMakeFiles/topic_to_socketcan.dir/src/rosconsole_bridge.cpp.o"
-  "CMakeFiles/topic_to_socketcan.dir/src/rosconsole_bridge.cpp.o.d"
   "CMakeFiles/topic_to_socketcan.dir/src/topic_to_socketcan.cpp.o"
-  "CMakeFiles/topic_to_socketcan.dir/src/topic_to_socketcan.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

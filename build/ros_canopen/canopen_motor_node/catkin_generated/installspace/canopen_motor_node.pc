@@ -1,4 +1,4 @@
-prefix=/home/administrator/Documents/DEEPORANGE14/deeporange14_control/install
+prefix=/users/vpurohi/deeporange_ws/deeporange14_control/install
 
 Name: canopen_motor_node
 Description: Description of canopen_motor_node

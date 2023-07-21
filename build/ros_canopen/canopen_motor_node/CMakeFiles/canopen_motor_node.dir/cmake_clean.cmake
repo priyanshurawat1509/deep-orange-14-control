@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/canopen_motor_node/canopen_motor_node"
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/canopen_motor_node/canopen_motor_node.pdb"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_motor_node/canopen_motor_node"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_motor_node/canopen_motor_node.pdb"
   "CMakeFiles/canopen_motor_node.dir/src/canopen_motor_chain_node.cpp.o"
-  "CMakeFiles/canopen_motor_node.dir/src/canopen_motor_chain_node.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

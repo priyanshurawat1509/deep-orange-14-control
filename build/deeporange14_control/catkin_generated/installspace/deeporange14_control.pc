@@ -1,4 +1,4 @@
-prefix=/home/administrator/Documents/DEEPORANGE14/deeporange14_control/install
+prefix=/users/vpurohi/deeporange_ws/deeporange14_control/install
 
 Name: deeporange14_control
 Description: Description of deeporange14_control

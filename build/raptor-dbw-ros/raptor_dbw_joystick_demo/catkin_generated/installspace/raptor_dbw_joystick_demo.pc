@@ -1,4 +1,4 @@
-prefix=/home/administrator/Documents/DEEPORANGE14/deeporange14_control/install
+prefix=/users/vpurohi/deeporange_ws/deeporange14_control/install
 
 Name: raptor_dbw_joystick_demo
 Description: Description of raptor_dbw_joystick_demo

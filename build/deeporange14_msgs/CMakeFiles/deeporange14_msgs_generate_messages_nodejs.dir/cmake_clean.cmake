@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/gennodejs/ros/deeporange14_msgs/msg/AuStatusMsg.js"
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/gennodejs/ros/deeporange14_msgs/msg/MissionStatus.js"
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/gennodejs/ros/deeporange14_msgs/msg/MobilityMsg.js"
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/gennodejs/ros/deeporange14_msgs/msg/RaptorStateMsg.js"
-  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/gennodejs/ros/deeporange14_msgs/msg/TorqueCmdStamped.js"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/gennodejs/ros/deeporange14_msgs/msg/AuStatusMsg.js"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/gennodejs/ros/deeporange14_msgs/msg/MissionStatus.js"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/gennodejs/ros/deeporange14_msgs/msg/MobilityMsg.js"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/gennodejs/ros/deeporange14_msgs/msg/RaptorStateMsg.js"
+  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/gennodejs/ros/deeporange14_msgs/msg/TorqueCmdStamped.js"
   "CMakeFiles/deeporange14_msgs_generate_messages_nodejs"
 )
 

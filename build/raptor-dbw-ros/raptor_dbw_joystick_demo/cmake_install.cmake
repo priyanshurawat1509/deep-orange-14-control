@@ -1,8 +1,8 @@
-# Install script for directory: /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/raptor_dbw_joystick_demo
+# Install script for directory: /users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/raptor_dbw_joystick_demo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/install")
+  set(CMAKE_INSTALL_PREFIX "/users/vpurohi/deeporange_ws/deeporange14_control/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,34 +37,29 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/build/raptor-dbw-ros/raptor_dbw_joystick_demo/catkin_generated/installspace/raptor_dbw_joystick_demo.pc")
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/raptor-dbw-ros/raptor_dbw_joystick_demo/catkin_generated/installspace/raptor_dbw_joystick_demo.pc")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/raptor_dbw_joystick_demo/cmake" TYPE FILE FILES
-    "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/raptor-dbw-ros/raptor_dbw_joystick_demo/catkin_generated/installspace/raptor_dbw_joystick_demoConfig.cmake"
-    "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/raptor-dbw-ros/raptor_dbw_joystick_demo/catkin_generated/installspace/raptor_dbw_joystick_demoConfig-version.cmake"
+    "/users/vpurohi/deeporange_ws/deeporange14_control/build/raptor-dbw-ros/raptor_dbw_joystick_demo/catkin_generated/installspace/raptor_dbw_joystick_demoConfig.cmake"
+    "/users/vpurohi/deeporange_ws/deeporange14_control/build/raptor-dbw-ros/raptor_dbw_joystick_demo/catkin_generated/installspace/raptor_dbw_joystick_demoConfig-version.cmake"
     )
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/raptor_dbw_joystick_demo" TYPE FILE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/raptor_dbw_joystick_demo/package.xml")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/raptor_dbw_joystick_demo" TYPE FILE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/raptor_dbw_joystick_demo/package.xml")
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/raptor_dbw_joystick_demo/joystick_demo" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/raptor_dbw_joystick_demo/joystick_demo")
     file(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/raptor_dbw_joystick_demo/joystick_demo"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/raptor_dbw_joystick_demo" TYPE EXECUTABLE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/raptor_dbw_joystick_demo/joystick_demo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/raptor_dbw_joystick_demo" TYPE EXECUTABLE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/raptor_dbw_joystick_demo/joystick_demo")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/raptor_dbw_joystick_demo/joystick_demo" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/raptor_dbw_joystick_demo/joystick_demo")
     file(RPATH_CHANGE
@@ -77,13 +72,13 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   endif()
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/raptor_dbw_joystick_demo" TYPE DIRECTORY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/raptor_dbw_joystick_demo/launch")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/raptor_dbw_joystick_demo" TYPE DIRECTORY FILES "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/raptor_dbw_joystick_demo/launch")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/raptor-dbw-ros/raptor_dbw_joystick_demo/tests/cmake_install.cmake")
+  include("/users/vpurohi/deeporange_ws/deeporange14_control/build/raptor-dbw-ros/raptor_dbw_joystick_demo/tests/cmake_install.cmake")
 
 endif()
 

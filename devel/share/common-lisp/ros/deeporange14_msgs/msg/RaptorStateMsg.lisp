@@ -36,12 +36,7 @@
     :reader brk_Rpres
     :initarg :brk_Rpres
     :type cl:float
-    :initform 0.0)
-   (speed_state
-    :reader speed_state
-    :initarg :speed_state
-    :type cl:fixnum
-    :initform 0))
+    :initform 0.0))
 )
 
 (cl:defclass RaptorStateMsg (<RaptorStateMsg>)
@@ -81,11 +76,6 @@
 (cl:defmethod brk_Rpres-val ((m <RaptorStateMsg>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader deeporange14_msgs-msg:brk_Rpres-val is deprecated.  Use deeporange14_msgs-msg:brk_Rpres instead.")
   (brk_Rpres m))
-
-(cl:ensure-generic-function 'speed_state-val :lambda-list '(m))
-(cl:defmethod speed_state-val ((m <RaptorStateMsg>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader deeporange14_msgs-msg:speed_state-val is deprecated.  Use deeporange14_msgs-msg:speed_state instead.")
-  (speed_state m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <RaptorStateMsg>) ostream)
   "Serializes a message object of type '<RaptorStateMsg>"
   (roslisp-msg-protocol:serialize (cl:slot-value msg 'header) ostream)
@@ -110,7 +100,6 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'speed_state)) ostream)
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <RaptorStateMsg>) istream)
   "Deserializes a message object of type '<RaptorStateMsg>"
@@ -138,7 +127,6 @@
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
     (cl:setf (cl:slot-value msg 'brk_Rpres) (roslisp-utils:decode-double-float-bits bits)))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'speed_state)) (cl:read-byte istream))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<RaptorStateMsg>)))
@@ -149,16 +137,16 @@
   "deeporange14_msgs/RaptorStateMsg")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<RaptorStateMsg>)))
   "Returns md5sum for a message object of type '<RaptorStateMsg>"
-  "dcb6dba9032126797cb38b2382c5770a")
+  "2f69d1bbbcd956fab1e3b5107568ef48")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'RaptorStateMsg)))
   "Returns md5sum for a message object of type 'RaptorStateMsg"
-  "dcb6dba9032126797cb38b2382c5770a")
+  "2f69d1bbbcd956fab1e3b5107568ef48")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<RaptorStateMsg>)))
   "Returns full string definition for message of type '<RaptorStateMsg>"
-  (cl:format cl:nil "Header header~%~%uint8 system_state~%uint8 dbw_mode~%bool log_cmd~%float64 brk_Lpres ~%float64 brk_Rpres~%uint8 speed_state~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%~%uint8 system_state~%uint8 dbw_mode~%bool log_cmd~%float64 brk_Lpres ~%float64 brk_Rpres~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'RaptorStateMsg)))
   "Returns full string definition for message of type 'RaptorStateMsg"
-  (cl:format cl:nil "Header header~%~%uint8 system_state~%uint8 dbw_mode~%bool log_cmd~%float64 brk_Lpres ~%float64 brk_Rpres~%uint8 speed_state~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%~%uint8 system_state~%uint8 dbw_mode~%bool log_cmd~%float64 brk_Lpres ~%float64 brk_Rpres~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <RaptorStateMsg>))
   (cl:+ 0
      (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'header))
@@ -167,7 +155,6 @@
      1
      8
      8
-     1
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <RaptorStateMsg>))
   "Converts a ROS message object to a list"
@@ -178,5 +165,4 @@
     (cl:cons ':log_cmd (log_cmd msg))
     (cl:cons ':brk_Lpres (brk_Lpres msg))
     (cl:cons ':brk_Rpres (brk_Rpres msg))
-    (cl:cons ':speed_state (speed_state msg))
 ))

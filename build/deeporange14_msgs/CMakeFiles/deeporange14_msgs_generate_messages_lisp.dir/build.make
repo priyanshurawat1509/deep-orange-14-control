@@ -57,7 +57,6 @@ deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_lisp: /users/vp
 deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_lisp: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/RaptorStateMsg.lisp
 deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_lisp: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/MissionStatus.lisp
 deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_lisp: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/TorqueCmdStamped.lisp
-deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_lisp: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/AuStatusMsg.lisp
 
 
 /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/MobilityMsg.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
@@ -84,18 +83,11 @@ deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_lisp: /users/vp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from deeporange14_msgs/TorqueCmdStamped.msg"
 	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/deeporange14_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg -Ideeporange14_msgs:/users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p deeporange14_msgs -o /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg
 
-/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/AuStatusMsg.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
-/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/AuStatusMsg.lisp: /users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg
-/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/AuStatusMsg.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Lisp code from deeporange14_msgs/AuStatusMsg.msg"
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/deeporange14_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg -Ideeporange14_msgs:/users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p deeporange14_msgs -o /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg
-
 deeporange14_msgs_generate_messages_lisp: deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_lisp
 deeporange14_msgs_generate_messages_lisp: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/MobilityMsg.lisp
 deeporange14_msgs_generate_messages_lisp: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/RaptorStateMsg.lisp
 deeporange14_msgs_generate_messages_lisp: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/MissionStatus.lisp
 deeporange14_msgs_generate_messages_lisp: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/TorqueCmdStamped.lisp
-deeporange14_msgs_generate_messages_lisp: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/AuStatusMsg.lisp
 deeporange14_msgs_generate_messages_lisp: deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_lisp.dir/build.make
 
 .PHONY : deeporange14_msgs_generate_messages_lisp

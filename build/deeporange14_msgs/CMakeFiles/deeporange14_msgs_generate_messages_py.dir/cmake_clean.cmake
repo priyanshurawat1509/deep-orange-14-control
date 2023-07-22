@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_AuStatusMsg.py"
   "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_MissionStatus.py"
   "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_MobilityMsg.py"
   "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_RaptorStateMsg.py"

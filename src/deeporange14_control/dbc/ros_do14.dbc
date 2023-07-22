@@ -35,20 +35,19 @@ BS_:
 
 BU_: ROS RAPTOR 
 
-
-BO_ 901 AU_Status_msgs: 6 ROS
- SG_ log_ack : 0|1@1+ (1,0) [0|1] "-" RAPTOR
- SG_ rtk_ack : 1|1@1+ (1,0) [0|1] "-" RAPTOR
- SG_ meas_gps_lin : 2|16@1- (0.001,0) [-32.768|+32.767] "m/s" RAPTOR
- SG_ meas_gps_ang : 18|16@1- (0.0001,0) [-3.2768|+3.2767] "rad/s" RAPTOR
-
-BO_ 902 AU_Control_msg: 8 ROS
+BO_ 901 ROS_Supervisor_msgs: 8 ROS
  SG_ auSt : 0|8@1+ (1,0) [0|255] "-" RAPTOR
- SG_ au_heartbeat : 8|4@1+ (1,0) [0|15] "-" RAPTOR
- SG_ tqL_cmd : 12|16@1- (0.01526,0) [-500|500] "N-m" RAPTOR
- SG_ tqR_cmd : 28|16@1- (0.01526,0) [-500|500] "N-m" RAPTOR
- SG_ brkL_cmd: 44|8@1+ (0.0039,0) [0|1] "bar" RAPTOR
- SG_ brkR_cmd : 52|8@1+ (0.0039,0) [0|1] "bar" RAPTOR 
+ SG_ log_ack : 8|1@1+ (1,0) [0|1] "-" RAPTOR
+ SG_ rtk_ack : 9|1@1+ (1,0) [0|1] "-" RAPTOR
+ SG_ au_heartbeat : 10|4@1+ (1,0) [0|1] "-" RAPTOR
+ SG_ meas_lin_vel : 14|16@1- (0.001,0) [-32.768|+32.767] "m/s" RAPTOR
+ SG_ meas_ang_vel : 30|16@1- (0.0001,0) [-3.2768|+3.2767] "rad/s" RAPTOR
 
-CM_ BO_ 901 "Measured velocities, Logging and RTK status";
-CM_ BO_ 902 "Mobility commands form ROS (Torque and Brakes)";
+BO_ 902 ROS_Control_msg: 8 ROS
+ SG_ tqL_cmd : 0|16@1- (0.01526,0) [-500|500] "N-m" RAPTOR
+ SG_ tqR_cmd : 16|16@1- (0.01526,0) [-500|500] "N-m" RAPTOR
+ SG_ brkL_cmd: 32|8@1+ (1,0) [0|64] "bar" RAPTOR
+ SG_ brkR_cmd : 40|8@1+ (0.25,0) [0|64] "bar" RAPTOR
+
+CM_ BO_ 901 "State Machine msgs from DBW Supervisor";
+CM_ BO_ 902 "Mobility commands form ROS (Torque and Velocity)";

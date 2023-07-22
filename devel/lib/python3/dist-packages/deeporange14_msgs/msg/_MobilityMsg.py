@@ -6,19 +6,22 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
+import genpy
 import std_msgs.msg
 
 class MobilityMsg(genpy.Message):
-  _md5sum = "db3ff148ca2e480eda9720b0eb366e47"
+  _md5sum = "52b5461a1748b83406c477db1e2e86bd"
   _type = "deeporange14_msgs/MobilityMsg"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """#This represents a vector in free space -- currently defined to hold the left and right track #velocities
 Header header
+  uint32 seq
+  time stamp
 
 float64 tqL_cmd
 float64 tqR_cmd
-float32 brkL_cmd
-float32 brkR_cmd
+uint8 brkL_cmd
+uint8 brkR_cmd
 uint8 au_state 
 
 ================================================================================
@@ -37,8 +40,8 @@ time stamp
 #Frame this data is associated with
 string frame_id
 """
-  __slots__ = ['header','tqL_cmd','tqR_cmd','brkL_cmd','brkR_cmd','au_state']
-  _slot_types = ['std_msgs/Header','float64','float64','float32','float32','uint8']
+  __slots__ = ['header','seq','stamp','tqL_cmd','tqR_cmd','brkL_cmd','brkR_cmd','au_state']
+  _slot_types = ['std_msgs/Header','uint32','time','float64','float64','uint8','uint8','uint8']
 
   def __init__(self, *args, **kwds):
     """
@@ -48,7 +51,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,tqL_cmd,tqR_cmd,brkL_cmd,brkR_cmd,au_state
+       header,seq,stamp,tqL_cmd,tqR_cmd,brkL_cmd,brkR_cmd,au_state
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -59,22 +62,28 @@ string frame_id
       # message fields cannot be None, assign default values for those that are
       if self.header is None:
         self.header = std_msgs.msg.Header()
+      if self.seq is None:
+        self.seq = 0
+      if self.stamp is None:
+        self.stamp = genpy.Time()
       if self.tqL_cmd is None:
         self.tqL_cmd = 0.
       if self.tqR_cmd is None:
         self.tqR_cmd = 0.
       if self.brkL_cmd is None:
-        self.brkL_cmd = 0.
+        self.brkL_cmd = 0
       if self.brkR_cmd is None:
-        self.brkR_cmd = 0.
+        self.brkR_cmd = 0
       if self.au_state is None:
         self.au_state = 0
     else:
       self.header = std_msgs.msg.Header()
+      self.seq = 0
+      self.stamp = genpy.Time()
       self.tqL_cmd = 0.
       self.tqR_cmd = 0.
-      self.brkL_cmd = 0.
-      self.brkR_cmd = 0.
+      self.brkL_cmd = 0
+      self.brkR_cmd = 0
       self.au_state = 0
 
   def _get_types(self):
@@ -98,7 +107,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_2d2fB().pack(_x.tqL_cmd, _x.tqR_cmd, _x.brkL_cmd, _x.brkR_cmd, _x.au_state))
+      buff.write(_get_struct_3I2d3B().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.tqL_cmd, _x.tqR_cmd, _x.brkL_cmd, _x.brkR_cmd, _x.au_state))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -112,6 +121,8 @@ string frame_id
     try:
       if self.header is None:
         self.header = std_msgs.msg.Header()
+      if self.stamp is None:
+        self.stamp = genpy.Time()
       end = 0
       _x = self
       start = end
@@ -128,8 +139,9 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 25
-      (_x.tqL_cmd, _x.tqR_cmd, _x.brkL_cmd, _x.brkR_cmd, _x.au_state,) = _get_struct_2d2fB().unpack(str[start:end])
+      end += 31
+      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.tqL_cmd, _x.tqR_cmd, _x.brkL_cmd, _x.brkR_cmd, _x.au_state,) = _get_struct_3I2d3B().unpack(str[start:end])
+      self.stamp.canon()
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -151,7 +163,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_2d2fB().pack(_x.tqL_cmd, _x.tqR_cmd, _x.brkL_cmd, _x.brkR_cmd, _x.au_state))
+      buff.write(_get_struct_3I2d3B().pack(_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.tqL_cmd, _x.tqR_cmd, _x.brkL_cmd, _x.brkR_cmd, _x.au_state))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -166,6 +178,8 @@ string frame_id
     try:
       if self.header is None:
         self.header = std_msgs.msg.Header()
+      if self.stamp is None:
+        self.stamp = genpy.Time()
       end = 0
       _x = self
       start = end
@@ -182,8 +196,9 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 25
-      (_x.tqL_cmd, _x.tqR_cmd, _x.brkL_cmd, _x.brkR_cmd, _x.au_state,) = _get_struct_2d2fB().unpack(str[start:end])
+      end += 31
+      (_x.seq, _x.stamp.secs, _x.stamp.nsecs, _x.tqL_cmd, _x.tqR_cmd, _x.brkL_cmd, _x.brkR_cmd, _x.au_state,) = _get_struct_3I2d3B().unpack(str[start:end])
+      self.stamp.canon()
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -192,15 +207,15 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_2d2fB = None
-def _get_struct_2d2fB():
-    global _struct_2d2fB
-    if _struct_2d2fB is None:
-        _struct_2d2fB = struct.Struct("<2d2fB")
-    return _struct_2d2fB
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
+_struct_3I2d3B = None
+def _get_struct_3I2d3B():
+    global _struct_3I2d3B
+    if _struct_3I2d3B is None:
+        _struct_3I2d3B = struct.Struct("<3I2d3B")
+    return _struct_3I2d3B

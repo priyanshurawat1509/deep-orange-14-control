@@ -57,7 +57,6 @@ deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_eus: /users/vpu
 deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_eus: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/RaptorStateMsg.l
 deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_eus: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/MissionStatus.l
 deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_eus: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/TorqueCmdStamped.l
-deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_eus: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/AuStatusMsg.l
 deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_eus: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/manifest.l
 
 
@@ -85,14 +84,8 @@ deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_eus: /users/vpu
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from deeporange14_msgs/TorqueCmdStamped.msg"
 	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/deeporange14_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg -Ideeporange14_msgs:/users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p deeporange14_msgs -o /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg
 
-/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/AuStatusMsg.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/AuStatusMsg.l: /users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg
-/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/AuStatusMsg.l: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp code from deeporange14_msgs/AuStatusMsg.msg"
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/deeporange14_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg -Ideeporange14_msgs:/users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p deeporange14_msgs -o /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg
-
 /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating EusLisp manifest code for deeporange14_msgs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp manifest code for deeporange14_msgs"
 	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/deeporange14_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs deeporange14_msgs std_msgs geometry_msgs
 
 deeporange14_msgs_generate_messages_eus: deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_eus
@@ -100,7 +93,6 @@ deeporange14_msgs_generate_messages_eus: /users/vpurohi/deeporange_ws/deeporange
 deeporange14_msgs_generate_messages_eus: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/RaptorStateMsg.l
 deeporange14_msgs_generate_messages_eus: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/MissionStatus.l
 deeporange14_msgs_generate_messages_eus: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/TorqueCmdStamped.l
-deeporange14_msgs_generate_messages_eus: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/AuStatusMsg.l
 deeporange14_msgs_generate_messages_eus: /users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/manifest.l
 deeporange14_msgs_generate_messages_eus: deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_eus.dir/build.make
 

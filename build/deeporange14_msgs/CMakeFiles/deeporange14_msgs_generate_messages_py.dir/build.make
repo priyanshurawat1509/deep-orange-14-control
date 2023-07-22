@@ -57,7 +57,6 @@ deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_py: /users/vpur
 deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_py: /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_RaptorStateMsg.py
 deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_py: /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_MissionStatus.py
 deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_py: /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_TorqueCmdStamped.py
-deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_py: /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_AuStatusMsg.py
 deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_py: /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/__init__.py
 
 
@@ -85,19 +84,12 @@ deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_py: /users/vpur
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG deeporange14_msgs/TorqueCmdStamped"
 	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/deeporange14_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg -Ideeporange14_msgs:/users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p deeporange14_msgs -o /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg
 
-/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_AuStatusMsg.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_AuStatusMsg.py: /users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg
-/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_AuStatusMsg.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG deeporange14_msgs/AuStatusMsg"
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/deeporange14_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg -Ideeporange14_msgs:/users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p deeporange14_msgs -o /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg
-
 /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/__init__.py: /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_MobilityMsg.py
 /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/__init__.py: /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_RaptorStateMsg.py
 /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/__init__.py: /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_MissionStatus.py
 /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/__init__.py: /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_TorqueCmdStamped.py
-/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/__init__.py: /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_AuStatusMsg.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python msg __init__.py for deeporange14_msgs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/users/vpurohi/deeporange_ws/deeporange14_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python msg __init__.py for deeporange14_msgs"
 	cd /users/vpurohi/deeporange_ws/deeporange14_control/build/deeporange14_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg --initpy
 
 deeporange14_msgs_generate_messages_py: deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_py
@@ -105,7 +97,6 @@ deeporange14_msgs_generate_messages_py: /users/vpurohi/deeporange_ws/deeporange1
 deeporange14_msgs_generate_messages_py: /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_RaptorStateMsg.py
 deeporange14_msgs_generate_messages_py: /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_MissionStatus.py
 deeporange14_msgs_generate_messages_py: /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_TorqueCmdStamped.py
-deeporange14_msgs_generate_messages_py: /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/_AuStatusMsg.py
 deeporange14_msgs_generate_messages_py: /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/deeporange14_msgs/msg/__init__.py
 deeporange14_msgs_generate_messages_py: deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_py.dir/build.make
 

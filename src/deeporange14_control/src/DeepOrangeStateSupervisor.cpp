@@ -14,7 +14,7 @@ namespace deeporange14
         sub_raptorState = nh.subscribe(std::string(topic_ns + "/raptor_state"), 10, &DeepOrangeStateSupervisor::getRaptorMsg, this, ros::TransportHints().tcpNoDelay(true));
         sub_cmdVel = nh.subscribe(std::string(topic_ns + "/cmd_vel"), 10, &DeepOrangeStateSupervisor::checkStackStatus, this, ros::TransportHints().tcpNoDelay(true));
         pub_mobility = nh.advertise<deeporange14_msgs::MobilityMsg>(std::string(topic_ns + "/cmd_mobility"), 10, this);
-        pub_states = nh.advertise<std_msgs::UInt8>(std::string(topic_ns + "/au_states"), 10, this);
+
         /* Initiate ROS State with a Startup state to be safe. This state will be published till the ...
         timer object intentionally changes it.Default Node is On and it is running continuously in linux service*/
 
@@ -64,7 +64,6 @@ namespace deeporange14
     void DeepOrangeStateSupervisor::getRaptorMsg(const deeporange14_msgs::RaptorStateMsg::ConstPtr &raptorMsg)
     {
         raptor_hb_timestamp = raptorMsg->header.stamp.sec + raptorMsg->header.stamp.nsec * (1e-9);
-        speed_state = raptorMsg->speed_state;
         dbw_ros_mode = raptorMsg->dbw_mode == DBW_3_ROS_EN;
         brkL_pr = raptorMsg->brk_Lpres; 
         brkR_pr = raptorMsg->brk_Rpres; 
@@ -79,8 +78,6 @@ namespace deeporange14
 
         DeepOrangeStateSupervisor::updateROSStateMsg();
         mobilityMsg.au_state = state;
-        au_state.data = state;
-        pub_states.publish(au_state);
         pub_mobility.publish(mobilityMsg);
     }
 
@@ -230,7 +227,7 @@ namespace deeporange14
                 break;
             }
 
-            else if (speed_state == SPEED_STATE_Ready2Move)
+            else if (brkL_pr < brake_disengaged_threshold && brkR_pr < brake_disengaged_threshold)
             {
 
                 state = AU_5_ROS_CONTROLLED;

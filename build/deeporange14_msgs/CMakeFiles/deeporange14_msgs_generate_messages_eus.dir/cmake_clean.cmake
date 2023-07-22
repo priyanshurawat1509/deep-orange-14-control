@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/manifest.l"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/AuStatusMsg.l"
   "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/MissionStatus.l"
   "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/MobilityMsg.l"
   "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/RaptorStateMsg.l"

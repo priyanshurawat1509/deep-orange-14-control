@@ -25,7 +25,6 @@ class RaptorStateMsg {
       this.log_cmd = null;
       this.brk_Lpres = null;
       this.brk_Rpres = null;
-      this.speed_state = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -64,12 +63,6 @@ class RaptorStateMsg {
       else {
         this.brk_Rpres = 0.0;
       }
-      if (initObj.hasOwnProperty('speed_state')) {
-        this.speed_state = initObj.speed_state
-      }
-      else {
-        this.speed_state = 0;
-      }
     }
   }
 
@@ -87,8 +80,6 @@ class RaptorStateMsg {
     bufferOffset = _serializer.float64(obj.brk_Lpres, buffer, bufferOffset);
     // Serialize message field [brk_Rpres]
     bufferOffset = _serializer.float64(obj.brk_Rpres, buffer, bufferOffset);
-    // Serialize message field [speed_state]
-    bufferOffset = _serializer.uint8(obj.speed_state, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -108,15 +99,13 @@ class RaptorStateMsg {
     data.brk_Lpres = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [brk_Rpres]
     data.brk_Rpres = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [speed_state]
-    data.speed_state = _deserializer.uint8(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 20;
+    return length + 19;
   }
 
   static datatype() {
@@ -126,7 +115,7 @@ class RaptorStateMsg {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'dcb6dba9032126797cb38b2382c5770a';
+    return '2f69d1bbbcd956fab1e3b5107568ef48';
   }
 
   static messageDefinition() {
@@ -139,7 +128,6 @@ class RaptorStateMsg {
     bool log_cmd
     float64 brk_Lpres 
     float64 brk_Rpres
-    uint8 speed_state
     
     ================================================================================
     MSG: std_msgs/Header
@@ -206,13 +194,6 @@ class RaptorStateMsg {
     }
     else {
       resolved.brk_Rpres = 0.0
-    }
-
-    if (msg.speed_state !== undefined) {
-      resolved.speed_state = msg.speed_state;
-    }
-    else {
-      resolved.speed_state = 0
     }
 
     return resolved;

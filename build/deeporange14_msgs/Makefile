@@ -168,21 +168,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg.dir/rule:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg.dir/rule
-.PHONY : deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg.dir/rule
-
-# Convenience name for target.
-_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg: deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg.dir/rule
-
-.PHONY : _deeporange14_msgs_generate_messages_check_deps_AuStatusMsg
-
-# fast build rule for target.
-_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg/fast:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg.dir/build.make deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg.dir/build
-.PHONY : _deeporange14_msgs_generate_messages_check_deps_AuStatusMsg/fast
-
-# Convenience name for target.
 deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_MobilityMsg.dir/rule:
 	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_MobilityMsg.dir/rule
 .PHONY : deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_MobilityMsg.dir/rule
@@ -226,36 +211,6 @@ deeporange14_msgs_generate_messages_nodejs: deeporange14_msgs/CMakeFiles/deepora
 deeporange14_msgs_generate_messages_nodejs/fast:
 	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_nodejs.dir/build.make deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_nodejs.dir/build
 .PHONY : deeporange14_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/rule:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/rule
-.PHONY : deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/rule
-
-# Convenience name for target.
-deeporange14_msgs_gennodejs: deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/rule
-
-.PHONY : deeporange14_msgs_gennodejs
-
-# fast build rule for target.
-deeporange14_msgs_gennodejs/fast:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/build.make deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/build
-.PHONY : deeporange14_msgs_gennodejs/fast
-
-# Convenience name for target.
-deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/rule:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/rule
-.PHONY : deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/rule
-
-# Convenience name for target.
-_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped: deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/rule
-
-.PHONY : _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped
-
-# fast build rule for target.
-_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped/fast:
-	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/build.make deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/build
-.PHONY : _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped/fast
 
 # Convenience name for target.
 deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_MissionStatus.dir/rule:
@@ -407,6 +362,36 @@ deeporange14_msgs_genlisp/fast:
 	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f deeporange14_msgs/CMakeFiles/deeporange14_msgs_genlisp.dir/build.make deeporange14_msgs/CMakeFiles/deeporange14_msgs_genlisp.dir/build
 .PHONY : deeporange14_msgs_genlisp/fast
 
+# Convenience name for target.
+deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/rule:
+	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/rule
+.PHONY : deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/rule
+
+# Convenience name for target.
+_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped: deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/rule
+
+.PHONY : _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped
+
+# fast build rule for target.
+_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped/fast:
+	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/build.make deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped.dir/build
+.PHONY : _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped/fast
+
+# Convenience name for target.
+deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/rule:
+	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f CMakeFiles/Makefile2 deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/rule
+.PHONY : deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/rule
+
+# Convenience name for target.
+deeporange14_msgs_gennodejs: deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/rule
+
+.PHONY : deeporange14_msgs_gennodejs
+
+# fast build rule for target.
+deeporange14_msgs_gennodejs/fast:
+	cd /users/vpurohi/deeporange_ws/deeporange14_control/build && $(MAKE) -f deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/build.make deeporange14_msgs/CMakeFiles/deeporange14_msgs_gennodejs.dir/build
+.PHONY : deeporange14_msgs_gennodejs/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -418,12 +403,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... _deeporange14_msgs_generate_messages_check_deps_AuStatusMsg"
 	@echo "... _deeporange14_msgs_generate_messages_check_deps_MobilityMsg"
 	@echo "... deeporange14_msgs_genpy"
 	@echo "... deeporange14_msgs_generate_messages_nodejs"
-	@echo "... deeporange14_msgs_gennodejs"
-	@echo "... _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped"
 	@echo "... _deeporange14_msgs_generate_messages_check_deps_MissionStatus"
 	@echo "... deeporange14_msgs_generate_messages_cpp"
 	@echo "... test"
@@ -436,6 +418,8 @@ help:
 	@echo "... deeporange14_msgs_generate_messages"
 	@echo "... deeporange14_msgs_gencpp"
 	@echo "... deeporange14_msgs_genlisp"
+	@echo "... _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped"
+	@echo "... deeporange14_msgs_gennodejs"
 .PHONY : help
 
 

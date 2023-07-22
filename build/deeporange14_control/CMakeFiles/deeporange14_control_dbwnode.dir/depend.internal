@@ -82,12 +82,10 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
  /opt/ros/noetic/include/std_msgs/Float32.h
  /opt/ros/noetic/include/std_msgs/Header.h
  /opt/ros/noetic/include/std_msgs/String.h
- /opt/ros/noetic/include/std_msgs/UInt8.h
  /opt/ros/noetic/include/tf2_msgs/TFMessage.h
  /opt/ros/noetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/noetic/include/xmlrpcpp/XmlRpcValue.h
  /users/vpurohi/deeporange_ws/deeporange14_control/devel/include/can_msgs/Frame.h
- /users/vpurohi/deeporange_ws/deeporange14_control/devel/include/deeporange14_msgs/AuStatusMsg.h
  /users/vpurohi/deeporange_ws/deeporange14_control/devel/include/deeporange14_msgs/MissionStatus.h
  /users/vpurohi/deeporange_ws/deeporange14_control/devel/include/deeporange14_msgs/MobilityMsg.h
  /users/vpurohi/deeporange_ws/deeporange14_control/devel/include/deeporange14_msgs/RaptorStateMsg.h

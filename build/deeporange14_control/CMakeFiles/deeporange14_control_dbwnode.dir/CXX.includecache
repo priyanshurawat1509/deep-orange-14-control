@@ -1090,22 +1090,6 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/opt/ros/noetic/include/std_msgs/UInt8.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-
 /opt/ros/noetic/include/tf2_msgs/TFMessage.h
 string
 -
@@ -1141,24 +1125,6 @@ time.h
 -
 
 /users/vpurohi/deeporange_ws/deeporange14_control/devel/include/can_msgs/Frame.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-std_msgs/Header.h
--
-
-/users/vpurohi/deeporange_ws/deeporange14_control/devel/include/deeporange14_msgs/AuStatusMsg.h
 string
 -
 vector
@@ -1315,8 +1281,6 @@ ros/ros.h
 -
 std_msgs/Bool.h
 -
-std_msgs/UInt8.h
--
 std_msgs/Float32.h
 -
 can_msgs/Frame.h
@@ -1384,10 +1348,6 @@ ros/ros.h
 deeporange14_control/DeepOrangeStateSupervisor.h
 -
 deeporange14_control/DeepOrangeVelocityController.h
--
-deeporange14_control/DeepOrangeDbwCan.h
--
-deeporange14_control/DataLogger.h
 -
 
 /users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/Dbc.h

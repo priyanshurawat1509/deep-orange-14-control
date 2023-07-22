@@ -43,7 +43,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs/RaptorStateMsg.msg"
     "/users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs/MissionStatus.msg"
     "/users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs/TorqueCmdStamped.msg"
-    "/users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/msgs/AuStatusMsg.msg"
     )
 endif()
 

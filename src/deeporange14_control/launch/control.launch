@@ -1,25 +1,10 @@
 <?xml version="1.0"?>
 <launch>
-  
-  <node pkg="deeporange14_control" type="deeporange14_control_dbwnode" name="DeepOrangeInterface" output="screen">
-    <param name="cmdvel_timeout" type="double" value="5" />
-    <param name="raptorhb_timeout" type= "double" value="5" />
-    <param name="update_freq" type="int" value="50" />
-    <param name="dbc_file_ros" textfile="$(find deeporange14_control)/dbc/ros_do14.dbc" />
-    <param name="dbc_file_raptor" textfile="$(find deeporange14_control)/dbc/CAN1.dbc" />
+  <node pkg="deeporange14_control" type="deeporange14_StateSupervisor" name="deeporange14" output="screen">
+    
+    <param name="cmdvel_timeout" default="0.5" />
+    <param name="raptorhb_timeout" value="0.5" />
+    <param name="update_freq" value="50" />
   </node>
-
-
-  <arg name="use_socketcan" default="true" />
-  <arg name="use_kvaser" default="false" />
-  <arg name="socketcan_device" default="can0" />  <!--// vehicle's CAN1-->
-
-
-  <node pkg="socketcan_bridge" type="socketcan_bridge_node" name="socketcan_bridge" if="$(arg use_socketcan)">
-    <param name="can_device" value="$(arg socketcan_device)" />
-    <remap from="received_messages" to="can_tx"/>
-    <remap from="sent_messages" to="can_rx"/>
-  </node>
-
 
 </launch>

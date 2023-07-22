@@ -41,7 +41,7 @@ namespace deeporange14 {
         void velocityReprojection(double &v, double &w);
 
         //rate limiter on the commands
-        void rateLimiter(double &prev_v_, double &prev_curvature_, double &v, double &curvature);
+        void rateLimiter(double &prev_u_, double &u_);
         
         //member variables -- velocities (commanded and odom)
         double cmdLinX_;
@@ -55,6 +55,7 @@ namespace deeporange14 {
         double x0_;
         double x1_;
         double a_;
+        double b_;
 
         // member variables -- feedforward and PID torques
         double tqDiff_ff_;
@@ -87,13 +88,9 @@ namespace deeporange14 {
         double tq_Max_;
         double tq_Min_;
 
-        //member variables -- rate limiting and velocity reprojection
-        double max_acceleration_limit_;
-        double min_acceleration_limit_;
-        double max_alpha_limit_;
-        double min_alpha_limit_;
+
         // double curvature_rate_limit_;
-        double trackwidth;
+        // double trackwidth;
         double v_sz;                            //intersection of max curvature line and max lateral acceleration curve
         double R_min;                           // minimum allowable radius of curvature
         double lat_acc_max;                     // maximum allowable lateral acceleration
@@ -102,6 +99,7 @@ namespace deeporange14 {
         double dt_;
         double prev_v_;
         double prev_omega_;
+        double deadband_velocity;
 
         //member variables -- velocity limits
         double min_velocity;  // min positive linear velocity
@@ -111,6 +109,18 @@ namespace deeporange14 {
 
         //state-enumeration
         uint8_t autonomy_state_;
+
+        // Rate limiter constants
+        double dec_min;
+        double a_acc;
+        double b_acc;
+        double a_dec;
+        double b_dec;
+        double acc_max;
+        double dec_max;
+        double rmin;
+        double rmax;
+        double smoothing_factor;
 
 
 

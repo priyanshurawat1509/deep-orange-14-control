@@ -30,8 +30,7 @@ struct RaptorStateMsg_
     , dbw_mode(0)
     , log_cmd(false)
     , brk_Lpres(0.0)
-    , brk_Rpres(0.0)
-    , speed_state(0)  {
+    , brk_Rpres(0.0)  {
     }
   RaptorStateMsg_(const ContainerAllocator& _alloc)
     : header(_alloc)
@@ -39,8 +38,7 @@ struct RaptorStateMsg_
     , dbw_mode(0)
     , log_cmd(false)
     , brk_Lpres(0.0)
-    , brk_Rpres(0.0)
-    , speed_state(0)  {
+    , brk_Rpres(0.0)  {
   (void)_alloc;
     }
 
@@ -63,9 +61,6 @@ struct RaptorStateMsg_
 
    typedef double _brk_Rpres_type;
   _brk_Rpres_type brk_Rpres;
-
-   typedef uint8_t _speed_state_type;
-  _speed_state_type speed_state;
 
 
 
@@ -101,8 +96,7 @@ bool operator==(const ::deeporange14_msgs::RaptorStateMsg_<ContainerAllocator1> 
     lhs.dbw_mode == rhs.dbw_mode &&
     lhs.log_cmd == rhs.log_cmd &&
     lhs.brk_Lpres == rhs.brk_Lpres &&
-    lhs.brk_Rpres == rhs.brk_Rpres &&
-    lhs.speed_state == rhs.speed_state;
+    lhs.brk_Rpres == rhs.brk_Rpres;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -159,12 +153,12 @@ struct MD5Sum< ::deeporange14_msgs::RaptorStateMsg_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "dcb6dba9032126797cb38b2382c5770a";
+    return "2f69d1bbbcd956fab1e3b5107568ef48";
   }
 
   static const char* value(const ::deeporange14_msgs::RaptorStateMsg_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xdcb6dba903212679ULL;
-  static const uint64_t static_value2 = 0x7cb38b2382c5770aULL;
+  static const uint64_t static_value1 = 0x2f69d1bbbcd956faULL;
+  static const uint64_t static_value2 = 0xb1e3b5107568ef48ULL;
 };
 
 template<class ContainerAllocator>
@@ -190,7 +184,6 @@ struct Definition< ::deeporange14_msgs::RaptorStateMsg_<ContainerAllocator> >
 "bool log_cmd\n"
 "float64 brk_Lpres \n"
 "float64 brk_Rpres\n"
-"uint8 speed_state\n"
 "\n"
 "================================================================================\n"
 "MSG: std_msgs/Header\n"
@@ -231,7 +224,6 @@ namespace serialization
       stream.next(m.log_cmd);
       stream.next(m.brk_Lpres);
       stream.next(m.brk_Rpres);
-      stream.next(m.speed_state);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -263,8 +255,6 @@ struct Printer< ::deeporange14_msgs::RaptorStateMsg_<ContainerAllocator> >
     Printer<double>::stream(s, indent + "  ", v.brk_Lpres);
     s << indent << "brk_Rpres: ";
     Printer<double>::stream(s, indent + "  ", v.brk_Rpres);
-    s << indent << "speed_state: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.speed_state);
   }
 };
 

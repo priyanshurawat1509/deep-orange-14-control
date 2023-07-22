@@ -32,40 +32,48 @@ namespace deeporange14{
         errOmega_prev_=0.0;
         errOmega_integral_=0.0;
         errOmega_derivative_=0.0;
-        kP_linX_=200.0;
-        kI_linX_=20.0;
+        kP_linX_=150.0;
+        kI_linX_=30.0;
         kD_linX_=0.0;
-        kP_omega_=250.0;
-        kI_omega_=20.0;
+        kP_omega_=40.0;
+        kI_omega_=8.0;
         kD_omega_=0.0;
         //feedforward terms
-        x0_=1800.0;
+        x0_=1500.0;
         x1_=7.8;
-        a_=20.93;
+        a_=4.37;
+        b_=18.0;
         cmd_turn_curvature_=0.0;
         // odom_turn_curvature_=0.0;
         //torque limits
         tq_Max_=280.0;
         tq_Min_=-280.0;
         //rate limits
-        max_acceleration_limit_=0.5*9.80;   //[m/s]/s
-        min_acceleration_limit_=-0.3*9.80;  //[m/s]/s
-        max_alpha_limit_=1.0;               //[rad/s]/s
-        min_alpha_limit_=-1.0;              //[rad/s]/s
+  
         // curvature_rate_limit_=2.0;       //[1/m]/s
         prev_v_=0.0;
         prev_omega_=0.0;
         dt_=0.0;
 
-        trackwidth=2.60;
+        // trackwidth=2.60;
         max_velocity=10.0;
         min_velocity=0.5;
         max_omega=2.0;
         min_omega=0.5;
-        R_min = trackwidth/2;   // chosen so that tracks do not turn in opposite directions at max curvature
+        R_min = 2.0;   // chosen so that tracks do not turn in opposite directions at max curvature
         v_sz = max_omega*R_min; // v_sz = intersection of max curvature line and max lateral acceleration curve
         lat_acc_max = max_omega*v_sz;
         autonomy_state_=AU_1_STARTUP;
+        deadband_velocity=0.5;
+        // Rate limiter constants
+        dec_min = -0.1;
+        a_acc = 0.5;
+        b_acc = 3.0;
+        a_dec= -0.5;
+        b_dec = -15.0;
+        acc_max = 5.0;
+        dec_max = -5.0;
+        smoothing_factor = 20.0;
 
     }
     VelocityController::~VelocityController(){}
@@ -83,8 +91,7 @@ namespace deeporange14{
         autonomy_state_=msg->au_state;
     }
     
-    // defining the cmd_vel callback to update the torque message
-    void VelocityController::cmdVelCallback(const geometry_msgs::Twist::ConstPtr& msg){
+ void VelocityController::cmdVelCallback(const geometry_msgs::Twist::ConstPtr& msg){
         cmdLinX_=msg->linear.x;
         cmdAngZ_=msg->angular.z;
         cmd_turn_curvature_=(cmdLinX_!=0)?(cmdAngZ_/cmdLinX_):std::numeric_limits<double>::infinity();
@@ -100,7 +107,8 @@ namespace deeporange14{
         else if (autonomy_state_ == AU_5_ROS_CONTROLLED || autonomy_state_ == AU_4_DISENGAGING_BRAKES ){
             //letting the controller kick in only when we move in the appropriate autonomy state
             //rate limiting the linear velocity and the curvature
-            this->rateLimiter(prev_v_,prev_omega_,cmdLinX_,cmdAngZ_);
+            this->rateLimiter(prev_v_,cmdLinX_);
+            this->rateLimiter(prev_omega_,cmdAngZ_);
             //velocity reprojection on the commanded velocities
             if (cmdLinX_==0.0 && cmdAngZ_==0.0){
                 //do nothing -- this is when the local planner has not kicked in and the stack is still sending out zero velocities -- redundant but ok
@@ -160,35 +168,133 @@ namespace deeporange14{
         }
     }
     void VelocityController::velocityReprojection(double &v, double &w){
-        double R = (w != 0)? v/w : std::numeric_limits<double>::infinity();
-        double lat_acc = v * w;
-        if (fabs(v) <= min_velocity){
-        w = 0;
+    // Function to reproject commanded stack velocities onto a velocity
+    // space that is executable by the Deep Orange 14 vehicle
+
+    // Calculating commanded radius of curvature and lateral acceleration
+    double R = (w != 0)? v/w : std::numeric_limits<double>::infinity();
+    double lat_acc = v * w;
+
+    // Applying linear velocity limits to bring it into correct zone
+    if (v < min_velocity){
+      v = min_velocity;  // limited to max reverse
+    }
+    else if (v > max_velocity){
+      v = max_velocity;  // limited to max forward
+    }
+
+    // First Zone: Deadband (If small linear velocities -> go linear only and make angular velocities zero to avoid stall)
+    if(fabs(v) <= deadband_velocity){
+      w = 0;
+    }
+    // Second zone: Commanded curvature should not exceed max curvature
+    else if(fabs(v) <= v_sz && fabs(R) < R_min) {
+      w = v/R_min * (w/fabs(w));
+      if(!isfinite(w)){
+        ROS_WARN("Deep Orange: w is not finite within reprojection");
+      }
+    }
+    // Third zone: Commanded lateral acceleration should not exceed max
+    else if(fabs(v) <= max_velocity && fabs(lat_acc) > lat_acc_max) {
+      // Maintaining same curvature but reducing v and w to lie on v*w = lat_acc_max
+      v = sqrt(lat_acc_max*fabs(R)) * (v/fabs(v));
+      if(!isfinite(v)){
+        ROS_WARN("Deep Orange: v is not finite within reprojection");
+      }
+      
+      w = sqrt(lat_acc_max/fabs(R)) * (w/fabs(w));
+      if(!isfinite(w)){
+        ROS_WARN("Deep Orange: w is not finite within reprojection");
+      }
+    }
+    // TODO: State machine for accelerating, decelerating, stopped
+  }
+
+    void VelocityController::rateLimiter(double &prev_u_, double &u_){
+    /*
+    % if positive command
+dec_min = -0.1;
+if sign(u) > 0
+    % if positive last
+    if sign(ulast) >= 0
+        rmax = min([a_acc+b_acc*abs(ulast),acc_max]);
+        rmin = max([a_dec+b_dec*abs(ulast),dec_max]);
+    % if negative last
+    else
+        rmax = min([-(a_dec+b_dec*abs(ulast)),-dec_max]);
+        rmin = max([-(a_acc+b_acc*abs(ulast)),-acc_max]);
+    end
+% if negative command
+elseif sign(u) < 0
+    % if negative last
+    if sign(ulast) < 0
+        rmax = min([-(a_dec+b_dec*abs(ulast)),-dec_max]);
+        rmin = max([-(a_acc+b_acc*abs(ulast)),-acc_max]);
+    % if positive last
+    else
+        rmax = min([a_acc+b_acc*abs(ulast),acc_max]);
+        rmin = max([a_dec+b_dec*abs(ulast),dec_max]);
+    end
+% if zero command
+else
+    % if positive last
+    if sign(ulast) > 0
+        rmax = 0;
+        rmin =  max(-max([a_dec+b_dec*ulast,sm*ulast])+dec_min,dec_max);        double dec_min;
+        double a_acc;
+        double b_acc;
+        double a_dec;
+        double b_dec;
+        double acc_max;
+        double dec_max;
+        double rmin;
+        double rmax;
+        double smoothing_factor;
+    end
+end
+    */
+   //if positive command
+   if ( u_ > 0 ){
+    if (prev_u_ >= 0){
+    rmax = std::min(a_acc+b_acc*std::abs(prev_u_),acc_max);
+    rmin = std::max(a_dec+b_dec*std::abs(prev_u_),dec_max);          
+    }
+    else{
+        rmax = std::min(-(a_dec+b_dec*std::abs(prev_u_)),-dec_max);
+        rmin = std::max(-(a_acc+b_acc*std::abs(prev_u_)),-acc_max);
+    }
+   }
+   else if (u_ < 0){
+        if (prev_u_ < 0){
+            rmax = std::min(-(a_dec+b_dec*std::abs(prev_u_)),-dec_max);
+            rmin = std::max(-(a_acc+b_acc*std::abs(prev_u_)),-acc_max);
         }
-        else if (fabs(v) <= v_sz && fabs(R) < R_min) {
-        w = v/R_min * (w/fabs(w));
+
+        else{
+            rmax = std::min(a_acc+b_acc*std::abs(prev_u_),acc_max);
+            rmin = std::max(a_dec+b_dec*std::abs(prev_u_),dec_max);
         }
-        else if(fabs(v) <= max_velocity && fabs(lat_acc) > lat_acc_max) {
-            // Maintaining same curvature but reducing v and w to lie on v*w = lat_acc_max
-            v = sqrt(lat_acc_max*fabs(R)) * (v/fabs(v));
-            w = sqrt(lat_acc_max/fabs(R)) * (w/fabs(w));
+   }
+   else{
+       if (prev_u_ >0){
+           rmax = 0;
+           rmin = std::max(-std::max(a_dec+b_dec*prev_u_,smoothing_factor*prev_u_)+dec_min,dec_max);
+        }
+        else{
+            rmax = std::min(std::max(a_dec+b_dec*prev_u_,-smoothing_factor*prev_u_)-dec_min,-dec_max);
+            rmin = 0;
         }
     }
-    void VelocityController::rateLimiter(double &prev_v_, double &prev_omega_, double &v, double &omega){
         //limits the rate of change of the incoming velocity and curvature commands
-        current_time_=(ros::Time::now().toSec()+ros::Time::now().toNSec()*1e-9);
-        dt_=current_time_-prev_time_;
-        prev_time_=current_time_;
-        //linear velocity rate limiter
-        double rate_v_=(v-prev_v_)/dt_;
-        double allowable_rate_v_=std::max(std::min(rate_v_,max_acceleration_limit_),min_acceleration_limit_);
-        v=prev_v_+allowable_rate_v_*dt_;
-        prev_v_=v;
-        //curvature rate limiter
-        double rate_omega_=(omega-prev_omega_)/dt_;
-        double allowable_rate_omega_=std::max(std::min(rate_omega_,max_alpha_limit_),min_alpha_limit_);
-        omega=prev_omega_+allowable_rate_omega_*dt_;
-        prev_omega_=omega;
+    current_time_=(ros::Time::now().toSec()+ros::Time::now().toNSec()*1e-9);
+    dt_=current_time_-prev_time_;
+    prev_time_=current_time_;
+    //linear velocity rate limiter
+    double rate_u_ =(u_ - prev_u_)/dt_;
+    double allowable_rate_u_=std::max(std::min(rate_u_,rmax),rmin);
+    u_ =prev_u_+allowable_rate_u_*dt_;
+    prev_u_= u_;
+
     }
     void VelocityController::publishTorques(const ros::TimerEvent& event){
         deeporange14_msgs::TorqueCmdStamped trq_cmd_;

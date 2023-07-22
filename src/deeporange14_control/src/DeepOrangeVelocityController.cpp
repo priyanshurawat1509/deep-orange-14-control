@@ -56,9 +56,9 @@ namespace deeporange14{
         dt_=0.0;
 
         // trackwidth=2.60;
-        max_velocity=10.0;
+        max_velocity=1.6;
         min_velocity=0.5;
-        max_omega=2.0;
+        max_omega=1.3;
         min_omega=0.5;
         R_min = 2.0;   // chosen so that tracks do not turn in opposite directions at max curvature
         v_sz = max_omega*R_min; // v_sz = intersection of max curvature line and max lateral acceleration curve
@@ -71,8 +71,8 @@ namespace deeporange14{
         b_acc = 3.0;
         a_dec= -0.5;
         b_dec = -15.0;
-        acc_max = 5.0;
-        dec_max = -5.0;
+        acc_max = 1.0;
+        dec_max = -1.0;
         smoothing_factor = 20.0;
 
     }

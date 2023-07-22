@@ -1680,6 +1680,19 @@ _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped/fast:
 .PHONY : _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped/fast
 
 #=============================================================================
+# Target rules for targets named _deeporange14_msgs_generate_messages_check_deps_AuStatusMsg
+
+# Build rule for target.
+_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deeporange14_msgs_generate_messages_check_deps_AuStatusMsg
+.PHONY : _deeporange14_msgs_generate_messages_check_deps_AuStatusMsg
+
+# fast build rule for target.
+_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg/fast:
+	$(MAKE) $(MAKESILENT) -f deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg.dir/build.make deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg.dir/build
+.PHONY : _deeporange14_msgs_generate_messages_check_deps_AuStatusMsg/fast
+
+#=============================================================================
 # Target rules for targets named deeporange14_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -3461,6 +3474,71 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named novatel_oem7_msgs_generate_messages_cpp
+
+# Build rule for target.
+novatel_oem7_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 novatel_oem7_msgs_generate_messages_cpp
+.PHONY : novatel_oem7_msgs_generate_messages_cpp
+
+# fast build rule for target.
+novatel_oem7_msgs_generate_messages_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_cpp.dir/build.make deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_cpp.dir/build
+.PHONY : novatel_oem7_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named novatel_oem7_msgs_generate_messages_eus
+
+# Build rule for target.
+novatel_oem7_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 novatel_oem7_msgs_generate_messages_eus
+.PHONY : novatel_oem7_msgs_generate_messages_eus
+
+# fast build rule for target.
+novatel_oem7_msgs_generate_messages_eus/fast:
+	$(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_eus.dir/build.make deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_eus.dir/build
+.PHONY : novatel_oem7_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named novatel_oem7_msgs_generate_messages_lisp
+
+# Build rule for target.
+novatel_oem7_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 novatel_oem7_msgs_generate_messages_lisp
+.PHONY : novatel_oem7_msgs_generate_messages_lisp
+
+# fast build rule for target.
+novatel_oem7_msgs_generate_messages_lisp/fast:
+	$(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_lisp.dir/build.make deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_lisp.dir/build
+.PHONY : novatel_oem7_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named novatel_oem7_msgs_generate_messages_nodejs
+
+# Build rule for target.
+novatel_oem7_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 novatel_oem7_msgs_generate_messages_nodejs
+.PHONY : novatel_oem7_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+novatel_oem7_msgs_generate_messages_nodejs/fast:
+	$(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_nodejs.dir/build.make deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_nodejs.dir/build
+.PHONY : novatel_oem7_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named novatel_oem7_msgs_generate_messages_py
+
+# Build rule for target.
+novatel_oem7_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 novatel_oem7_msgs_generate_messages_py
+.PHONY : novatel_oem7_msgs_generate_messages_py
+
+# fast build rule for target.
+novatel_oem7_msgs_generate_messages_py/fast:
+	$(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_py.dir/build.make deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_py.dir/build
+.PHONY : novatel_oem7_msgs_generate_messages_py/fast
+
+#=============================================================================
 # Target rules for targets named deeporange14_control
 
 # Build rule for target.
@@ -4153,6 +4231,7 @@ help:
 	@echo "... _canopen_chain_node_generate_messages_check_deps_GetObject"
 	@echo "... _canopen_chain_node_generate_messages_check_deps_SetObject"
 	@echo "... _catkin_empty_exported_target"
+	@echo "... _deeporange14_msgs_generate_messages_check_deps_AuStatusMsg"
 	@echo "... _deeporange14_msgs_generate_messages_check_deps_MissionStatus"
 	@echo "... _deeporange14_msgs_generate_messages_check_deps_MobilityMsg"
 	@echo "... _deeporange14_msgs_generate_messages_check_deps_RaptorStateMsg"
@@ -4320,6 +4399,11 @@ help:
 	@echo "... nodelet_generate_messages_lisp"
 	@echo "... nodelet_generate_messages_nodejs"
 	@echo "... nodelet_generate_messages_py"
+	@echo "... novatel_oem7_msgs_generate_messages_cpp"
+	@echo "... novatel_oem7_msgs_generate_messages_eus"
+	@echo "... novatel_oem7_msgs_generate_messages_lisp"
+	@echo "... novatel_oem7_msgs_generate_messages_nodejs"
+	@echo "... novatel_oem7_msgs_generate_messages_py"
 	@echo "... pdu_msgs_gencpp"
 	@echo "... pdu_msgs_generate_messages"
 	@echo "... pdu_msgs_generate_messages_cpp"

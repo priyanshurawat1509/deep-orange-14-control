@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/AuStatusMsg.h"
   "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/MissionStatus.h"
   "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/MobilityMsg.h"
   "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/RaptorStateMsg.h"

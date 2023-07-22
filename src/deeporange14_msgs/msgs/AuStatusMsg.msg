@@ -8,4 +8,3 @@ uint8 rtkStatus
 float64 timesecVx
 float64 timesecWz
 float64 timesecRtk
-float64 timesecLog

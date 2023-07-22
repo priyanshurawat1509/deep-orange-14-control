@@ -115,7 +115,7 @@ namespace deeporange14 // TODO-> change namespace
         else message->GetSignal("meas_gps_lin")->SetResult(0);
         if(currTime - msg.timesecWz < 2) message->GetSignal("meas_gps_ang")->SetResult(msg.measuredWz); 
         else message->GetSignal("meas_gps_ang")->SetResult(0);
-        if(currTime - msg.timesecLog < 2) message->GetSignal("rtk_ack")->SetResult(msg.rtkStatus);
+        if(currTime - msg.timesecRtk < 2) message->GetSignal("rtk_ack")->SetResult(msg.rtkStatus);
         else message->GetSignal("rtk_ack")->SetResult(0);
         // Getting logging status using param value set by data logger
         if (ros::param::has("/log_status")) {
@@ -191,4 +191,4 @@ namespace deeporange14 // TODO-> change namespace
         }
         averageVx_ = 0;
     }
-} // end namespace deeporange_dbw_ros
+} // end namespace deeporange_14

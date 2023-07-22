@@ -699,6 +699,9 @@ nav_msgs_DIR:PATH=/opt/ros/noetic/share/nav_msgs/cmake
 //The directory containing a CMake configuration file for nodelet.
 nodelet_DIR:PATH=/opt/ros/noetic/share/nodelet/cmake
 
+//The directory containing a CMake configuration file for novatel_oem7_msgs.
+novatel_oem7_msgs_DIR:PATH=/home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/share/novatel_oem7_msgs/cmake
+
 //Value Computed by CMake
 pdu_BINARY_DIR:STATIC=/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/raptor-dbw-ros/pdu
 

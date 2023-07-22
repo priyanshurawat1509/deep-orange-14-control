@@ -1227,6 +1227,7 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
   /opt/ros/noetic/include/std_msgs/Bool.h \
   /opt/ros/noetic/include/ros/message_operations.h \
   /opt/ros/noetic/include/std_msgs/Float32.h \
+  /opt/ros/noetic/include/std_msgs/UInt8.h \
   /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/can_msgs/Frame.h \
   /opt/ros/noetic/include/std_msgs/Header.h \
   /opt/ros/noetic/include/geometry_msgs/TwistStamped.h \
@@ -1246,10 +1247,207 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
   /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/MissionStatus.h \
   /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/RaptorStateMsg.h \
   /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/TorqueCmdStamped.h \
-  /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/include/deeporange14_control/DeepOrangeVelocityController.h
+  /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/include/deeporange14_control/DeepOrangeVelocityController.h \
+  /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/include/deeporange14_control/DataLogger.h \
+  /usr/include/boost/date_time/posix_time/posix_time.hpp \
+  /usr/include/boost/date_time/posix_time/time_formatters.hpp \
+  /usr/include/boost/date_time/gregorian/gregorian.hpp \
+  /usr/include/boost/date_time/gregorian/formatters.hpp \
+  /usr/include/boost/date_time/date_formatting.hpp \
+  /usr/include/boost/date_time/iso_format.hpp \
+  /usr/include/boost/date_time/parse_format_base.hpp \
+  /usr/include/boost/io/ios_state.hpp \
+  /usr/include/boost/io_fwd.hpp \
+  /usr/include/boost/date_time/date_format_simple.hpp \
+  /usr/include/boost/date_time/gregorian/gregorian_io.hpp \
+  /usr/include/boost/date_time/date_facet.hpp \
+  /usr/include/boost/algorithm/string/replace.hpp \
+  /usr/include/boost/algorithm/string/config.hpp \
+  /usr/include/boost/algorithm/string/find_format.hpp \
+  /usr/include/c++/9/deque \
+  /usr/include/c++/9/bits/stl_deque.h \
+  /usr/include/c++/9/bits/deque.tcc \
+  /usr/include/boost/range/as_literal.hpp \
+  /usr/include/boost/range/iterator_range.hpp \
+  /usr/include/boost/range/iterator_range_io.hpp \
+  /usr/include/boost/range/detail/str_types.hpp \
+  /usr/include/boost/algorithm/string/concept.hpp \
+  /usr/include/boost/algorithm/string/detail/find_format.hpp \
+  /usr/include/boost/algorithm/string/detail/find_format_store.hpp \
+  /usr/include/boost/algorithm/string/detail/replace_storage.hpp \
+  /usr/include/boost/algorithm/string/sequence_traits.hpp \
+  /usr/include/boost/algorithm/string/yes_no_type.hpp \
+  /usr/include/boost/algorithm/string/detail/sequence.hpp \
+  /usr/include/boost/algorithm/string/detail/find_format_all.hpp \
+  /usr/include/boost/algorithm/string/finder.hpp \
+  /usr/include/boost/algorithm/string/constants.hpp \
+  /usr/include/boost/algorithm/string/detail/finder.hpp \
+  /usr/include/boost/algorithm/string/compare.hpp \
+  /usr/include/boost/algorithm/string/formatter.hpp \
+  /usr/include/boost/algorithm/string/detail/formatter.hpp \
+  /usr/include/boost/algorithm/string/detail/util.hpp \
+  /usr/include/boost/date_time/special_values_formatter.hpp \
+  /usr/include/boost/date_time/period_formatter.hpp \
+  /usr/include/boost/date_time/period_parser.hpp \
+  /usr/include/boost/date_time/string_parse_tree.hpp \
+  /usr/include/boost/algorithm/string/case_conv.hpp \
+  /usr/include/boost/iterator/transform_iterator.hpp \
+  /usr/include/boost/utility/result_of.hpp \
+  /usr/include/boost/preprocessor/repetition/enum_shifted_params.hpp \
+  /usr/include/boost/preprocessor/facilities/intercept.hpp \
+  /usr/include/boost/utility/detail/result_of_iterate.hpp \
+  /usr/include/boost/algorithm/string/detail/case_conv.hpp \
+  /usr/include/boost/date_time/string_convert.hpp \
+  /usr/include/boost/date_time/date_generator_formatter.hpp \
+  /usr/include/boost/date_time/date_generator_parser.hpp \
+  /usr/include/boost/date_time/format_date_parser.hpp \
+  /usr/include/boost/date_time/strings_from_facet.hpp \
+  /usr/include/boost/date_time/special_values_parser.hpp \
+  /usr/include/boost/date_time/gregorian/parsers.hpp \
+  /usr/include/boost/date_time/date_parsing.hpp \
+  /usr/include/boost/tokenizer.hpp \
+  /usr/include/boost/token_iterator.hpp \
+  /usr/include/boost/iterator/minimum_category.hpp \
+  /usr/include/boost/token_functions.hpp \
+  /usr/include/boost/date_time/time_formatting_streams.hpp \
+  /usr/include/boost/date_time/date_formatting_locales.hpp \
+  /usr/include/boost/date_time/date_names_put.hpp \
+  /usr/include/boost/date_time/time_parsing.hpp \
+  /usr/include/boost/date_time/posix_time/posix_time_io.hpp \
+  /usr/include/boost/date_time/time_facet.hpp \
+  /usr/include/boost/algorithm/string/erase.hpp \
+  /usr/include/boost/date_time/posix_time/time_parsers.hpp \
+  /usr/include/boost/date_time/local_time_adjustor.hpp \
+  /usr/include/boost/date_time/c_local_time_adjustor.hpp \
+  /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/include/deeporange14_control/DeepOrangeDbwCan.h \
+  /opt/ros/noetic/include/sensor_msgs/Imu.h \
+  /opt/ros/noetic/include/sensor_msgs/JointState.h \
+  /opt/ros/noetic/include/sensor_msgs/Joy.h \
+  /opt/ros/noetic/include/std_msgs/Empty.h \
+  /opt/ros/noetic/include/std_msgs/String.h \
+  /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/AuStatusMsg.h \
+  /home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/INSPVAX.h \
+  /home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/Oem7Header.h \
+  /home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/InertialSolutionStatus.h \
+  /home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/PositionOrVelocityType.h \
+  /home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/INSExtendedSolutionStatus.h \
+  /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/DbcMessage.h \
+  /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/DbcSignal.h \
+  /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/Dbc.h \
+  /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/DbcBuilder.h \
+  /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/LineParser.h \
+  /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/include/deeporange14_control/dispatch_can_msgs.h
 
+
+/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/LineParser.h:
+
+/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/DbcBuilder.h:
+
+/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/DbcSignal.h:
+
+/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/DbcMessage.h:
+
+/home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/PositionOrVelocityType.h:
+
+/home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/InertialSolutionStatus.h:
+
+/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/AuStatusMsg.h:
+
+/opt/ros/noetic/include/std_msgs/Empty.h:
+
+/opt/ros/noetic/include/sensor_msgs/Joy.h:
+
+/opt/ros/noetic/include/sensor_msgs/Imu.h:
+
+/usr/include/boost/date_time/c_local_time_adjustor.hpp:
+
+/usr/include/boost/date_time/local_time_adjustor.hpp:
+
+/usr/include/boost/date_time/time_facet.hpp:
+
+/usr/include/boost/date_time/posix_time/posix_time_io.hpp:
+
+/usr/include/boost/date_time/date_names_put.hpp:
+
+/usr/include/boost/date_time/date_formatting_locales.hpp:
+
+/usr/include/boost/date_time/time_formatting_streams.hpp:
+
+/usr/include/boost/token_functions.hpp:
+
+/usr/include/boost/iterator/minimum_category.hpp:
+
+/usr/include/boost/token_iterator.hpp:
+
+/usr/include/boost/tokenizer.hpp:
+
+/usr/include/boost/date_time/date_parsing.hpp:
+
+/usr/include/boost/date_time/gregorian/parsers.hpp:
+
+/usr/include/boost/date_time/strings_from_facet.hpp:
+
+/usr/include/boost/date_time/date_generator_parser.hpp:
+
+/usr/include/boost/date_time/date_generator_formatter.hpp:
+
+/usr/include/boost/date_time/string_convert.hpp:
+
+/usr/include/boost/algorithm/string/detail/case_conv.hpp:
+
+/usr/include/boost/preprocessor/facilities/intercept.hpp:
+
+/usr/include/boost/iterator/transform_iterator.hpp:
+
+/usr/include/boost/algorithm/string/case_conv.hpp:
+
+/usr/include/boost/date_time/period_parser.hpp:
+
+/usr/include/boost/date_time/period_formatter.hpp:
+
+/usr/include/boost/date_time/special_values_formatter.hpp:
+
+/usr/include/boost/algorithm/string/detail/util.hpp:
+
+/usr/include/boost/algorithm/string/detail/finder.hpp:
+
+/usr/include/boost/algorithm/string/constants.hpp:
+
+/usr/include/boost/algorithm/string/finder.hpp:
+
+/usr/include/boost/algorithm/string/detail/find_format_all.hpp:
+
+/usr/include/boost/algorithm/string/sequence_traits.hpp:
+
+/usr/include/boost/algorithm/string/detail/replace_storage.hpp:
+
+/usr/include/boost/algorithm/string/detail/find_format_store.hpp:
+
+/usr/include/boost/algorithm/string/yes_no_type.hpp:
+
+/usr/include/boost/range/detail/str_types.hpp:
+
+/usr/include/c++/9/bits/deque.tcc:
+
+/usr/include/c++/9/bits/stl_deque.h:
+
+/usr/include/boost/algorithm/string/config.hpp:
+
+/usr/include/boost/date_time/date_facet.hpp:
+
+/usr/include/boost/date_time/date_format_simple.hpp:
+
+/usr/include/boost/io_fwd.hpp:
+
+/usr/include/boost/io/ios_state.hpp:
+
+/usr/include/boost/date_time/iso_format.hpp:
+
+/usr/include/boost/date_time/date_formatting.hpp:
 
 /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/TorqueCmdStamped.h:
+
+/usr/include/boost/algorithm/string/formatter.hpp:
 
 /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/RaptorStateMsg.h:
 
@@ -1276,6 +1474,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 /opt/ros/noetic/include/std_msgs/Header.h:
 
 /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/can_msgs/Frame.h:
+
+/opt/ros/noetic/include/std_msgs/UInt8.h:
 
 /opt/ros/noetic/include/std_msgs/Float32.h:
 
@@ -1363,6 +1563,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/utility/binary.hpp:
 
+/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/include/deeporange14_control/DataLogger.h:
+
 /usr/include/boost/preprocessor/repetition/repeat_from_to.hpp:
 
 /usr/include/boost/preprocessor/repetition/enum_binary_params.hpp:
@@ -1404,6 +1606,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 /usr/include/boost/range/concepts.hpp:
 
 /usr/include/boost/range/has_range_iterator.hpp:
+
+/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/include/deeporange14_control/dispatch_can_msgs.h:
 
 /usr/include/boost/range/difference_type.hpp:
 
@@ -1447,6 +1651,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/predef/architecture/x86.h:
 
+/usr/include/boost/algorithm/string/detail/find_format.hpp:
+
 /usr/include/boost/container/container_fwd.hpp:
 
 /usr/include/boost/mpl/vector/aux_/pop_front.hpp:
@@ -1454,6 +1660,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 /usr/include/boost/type_traits/is_default_constructible.hpp:
 
 /usr/include/boost/date_time/adjust_functors.hpp:
+
+/usr/include/boost/date_time/gregorian/gregorian.hpp:
 
 /usr/include/boost/mpl/vector/aux_/push_front.hpp:
 
@@ -1591,11 +1799,15 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/preprocessor/array/elem.hpp:
 
+/usr/include/boost/date_time/string_parse_tree.hpp:
+
 /usr/include/boost/mpl/aux_/config/msvc_typename.hpp:
 
 /usr/include/boost/mpl/aux_/type_wrapper.hpp:
 
 /usr/include/boost/preprocessor/list/adt.hpp:
+
+/usr/include/boost/date_time/parse_format_base.hpp:
 
 /usr/include/boost/chrono/duration.hpp:
 
@@ -1610,6 +1822,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
+
+/usr/include/boost/date_time/time_parsing.hpp:
 
 /usr/include/boost/predef/compiler/intel.h:
 
@@ -1653,6 +1867,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/preprocessor/arithmetic/sub.hpp:
 
+/usr/include/boost/algorithm/string/concept.hpp:
+
 /usr/include/boost/predef/architecture/sparc.h:
 
 /usr/include/c++/9/algorithm:
@@ -1669,9 +1885,13 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/mpl/or.hpp:
 
+/usr/include/boost/date_time/posix_time/time_parsers.hpp:
+
 /usr/include/c++/9/bits/stl_algobase.h:
 
 /usr/include/boost/mpl/aux_/has_tag.hpp:
+
+/usr/include/boost/date_time/special_values_parser.hpp:
 
 /opt/ros/noetic/include/ros/time.h:
 
@@ -1815,6 +2035,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/mpl/vector/vector10.hpp:
 
+/usr/include/boost/algorithm/string/detail/sequence.hpp:
+
 /usr/include/boost/mpl/aux_/template_arity_fwd.hpp:
 
 /usr/include/boost/preprocessor/array/data.hpp:
@@ -1844,6 +2066,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 /usr/include/boost/mpl/placeholders.hpp:
 
 /usr/include/boost/mpl/long_fwd.hpp:
+
+/home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/INSPVAX.h:
 
 /usr/include/boost/move/detail/config_begin.hpp:
 
@@ -1977,6 +2201,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/smart_ptr/detail/sp_convertible.hpp:
 
+/usr/include/boost/algorithm/string/replace.hpp:
+
 /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h:
 
 /usr/include/boost/date_time/gregorian_calendar.hpp:
@@ -2069,6 +2295,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/x86_64-linux-gnu/c++/9/bits/messages_members.h:
 
+/usr/include/boost/date_time/format_date_parser.hpp:
+
 /usr/include/c++/9/cctype:
 
 /opt/ros/noetic/include/ros/timer.h:
@@ -2076,6 +2304,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 /usr/include/c++/9/bits/predefined_ops.h:
 
 /usr/include/boost/date_time/gregorian/gregorian_types.hpp:
+
+/usr/include/boost/date_time/posix_time/time_formatters.hpp:
 
 /usr/include/boost/predef/library/std/_prefix.h:
 
@@ -2191,6 +2421,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/mpl/vector/aux_/include_preprocessed.hpp:
 
+/usr/include/boost/range/as_literal.hpp:
+
 /usr/include/boost/mpl/lambda.hpp:
 
 /usr/include/c++/9/bits/locale_classes.h:
@@ -2235,6 +2467,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
+/usr/include/boost/preprocessor/repetition/enum_shifted_params.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
 /usr/include/boost/predef/architecture.h:
@@ -2250,6 +2484,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 /usr/include/boost/mpl/aux_/traits_lambda_spec.hpp:
 
 /usr/include/c++/9/atomic:
+
+/usr/include/boost/algorithm/string/find_format.hpp:
 
 /usr/include/boost/date_time/gregorian/greg_duration_types.hpp:
 
@@ -2471,6 +2707,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/predef/hardware/simd/arm/versions.h:
 
+/usr/include/boost/date_time/gregorian/formatters.hpp:
+
 /usr/include/boost/preprocessor/arithmetic/dec.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
@@ -2524,6 +2762,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 /usr/include/c++/9/bits/basic_string.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h:
+
+/usr/include/boost/algorithm/string/erase.hpp:
 
 /opt/ros/noetic/include/ros/master.h:
 
@@ -2703,6 +2943,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/predef/language/objc.h:
 
+/usr/include/boost/range/iterator_range_io.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
 
 /usr/include/boost/preprocessor/slot/slot.hpp:
@@ -2754,6 +2996,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 /usr/include/wctype.h:
 
 /usr/include/boost/mpl/greater.hpp:
+
+/usr/include/boost/utility/result_of.hpp:
 
 /usr/include/boost/bind/mem_fn_cc.hpp:
 
@@ -2841,11 +3085,15 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/c++/9/new:
 
+/usr/include/boost/algorithm/string/detail/formatter.hpp:
+
 /usr/include/c++/9/bits/locale_facets_nonio.h:
 
 /usr/include/boost/mpl/vector/aux_/begin_end.hpp:
 
 /usr/include/features.h:
+
+/usr/include/boost/algorithm/string/compare.hpp:
 
 /usr/include/c++/9/bits/codecvt.h:
 
@@ -2876,6 +3124,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 /usr/include/boost/mpl/size.hpp:
 
 /usr/include/boost/mpl/aux_/size_impl.hpp:
+
+/usr/include/boost/date_time/posix_time/posix_time.hpp:
 
 /usr/include/boost/mpl/distance.hpp:
 
@@ -2909,6 +3159,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/less_equal.hpp:
 
+/usr/include/boost/utility/detail/result_of_iterate.hpp:
+
 /usr/include/boost/mpl/greater_equal.hpp:
 
 /opt/ros/noetic/include/ros/init.h:
@@ -2929,6 +3181,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/smart_ptr/detail/yield_k.hpp:
 
+/home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/Oem7Header.h:
+
 /usr/include/boost/predef/version_number.h:
 
 /usr/include/c++/9/vector:
@@ -2938,6 +3192,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 /usr/include/c++/9/bits/vector.tcc:
 
 /usr/include/boost/math/special_functions/detail/round_fwd.hpp:
+
+/usr/include/c++/9/deque:
 
 /usr/include/boost/date_time/posix_time/posix_time_config.hpp:
 
@@ -3139,6 +3395,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/smart_ptr/detail/sp_counted_base.hpp:
 
+/opt/ros/noetic/include/std_msgs/String.h:
+
 /usr/include/boost/core/addressof.hpp:
 
 /usr/include/c++/9/bits/exception_ptr.h:
@@ -3160,6 +3418,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 /usr/include/c++/9/cstdarg:
 
 /usr/include/boost/predef/os/windows.h:
+
+/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/Dbc.h:
 
 /usr/include/boost/range/begin.hpp:
 
@@ -3463,6 +3723,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/date_time/compiler_config.hpp:
 
+/usr/include/boost/range/iterator_range.hpp:
+
 /usr/include/boost/date_time/posix_time/ptime.hpp:
 
 /usr/include/boost/date_time/posix_time/posix_time_system.hpp:
@@ -3591,6 +3853,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/predef/compiler/kai.h:
 
+/home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/INSExtendedSolutionStatus.h:
+
 /usr/include/boost/predef/compiler/metaware.h:
 
 /usr/include/boost/predef/compiler/metrowerks.h:
@@ -3637,6 +3901,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 
 /usr/include/boost/predef/os/aix.h:
 
+/usr/include/boost/date_time/gregorian/gregorian_io.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/boost/predef/compiler/dignus.h:
@@ -3660,6 +3926,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 /usr/include/boost/predef/platform/cloudabi.h:
 
 /usr/include/boost/predef/platform/mingw.h:
+
+/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/include/deeporange14_control/DeepOrangeDbwCan.h:
 
 /usr/include/boost/predef/platform/mingw64.h:
 
@@ -3720,6 +3988,8 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
 /usr/include/boost/detail/workaround.hpp:
 
 /usr/include/boost/iterator/iterator_categories.hpp:
+
+/opt/ros/noetic/include/sensor_msgs/JointState.h:
 
 /usr/include/boost/mpl/aux_/include_preprocessed.hpp:
 

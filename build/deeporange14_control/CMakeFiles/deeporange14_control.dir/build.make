@@ -97,16 +97,48 @@ deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeVelocityC
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/deeporange14_control.dir/src/DeepOrangeVelocityController.cpp.s"
 	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/deeporange14_control && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/src/DeepOrangeVelocityController.cpp -o CMakeFiles/deeporange14_control.dir/src/DeepOrangeVelocityController.cpp.s
 
+deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.o: deeporange14_control/CMakeFiles/deeporange14_control.dir/flags.make
+deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.o: /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/src/DeepOrangeDbwCan.cpp
+deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.o: deeporange14_control/CMakeFiles/deeporange14_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.o"
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/deeporange14_control && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.o -MF CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.o.d -o CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.o -c /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/src/DeepOrangeDbwCan.cpp
+
+deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.i"
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/deeporange14_control && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/src/DeepOrangeDbwCan.cpp > CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.i
+
+deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.s"
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/deeporange14_control && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/src/DeepOrangeDbwCan.cpp -o CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.s
+
+deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.o: deeporange14_control/CMakeFiles/deeporange14_control.dir/flags.make
+deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.o: /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/src/DataLogger.cpp
+deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.o: deeporange14_control/CMakeFiles/deeporange14_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.o"
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/deeporange14_control && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.o -MF CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.o.d -o CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.o -c /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/src/DataLogger.cpp
+
+deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.i"
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/deeporange14_control && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/src/DataLogger.cpp > CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.i
+
+deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.s"
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/deeporange14_control && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/src/DataLogger.cpp -o CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.s
+
 # Object files for target deeporange14_control
 deeporange14_control_OBJECTS = \
 "CMakeFiles/deeporange14_control.dir/src/DeepOrangeStateSupervisor.cpp.o" \
-"CMakeFiles/deeporange14_control.dir/src/DeepOrangeVelocityController.cpp.o"
+"CMakeFiles/deeporange14_control.dir/src/DeepOrangeVelocityController.cpp.o" \
+"CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.o" \
+"CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.o"
 
 # External object files for target deeporange14_control
 deeporange14_control_EXTERNAL_OBJECTS =
 
 /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libdeeporange14_control.so: deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeStateSupervisor.cpp.o
 /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libdeeporange14_control.so: deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeVelocityController.cpp.o
+/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libdeeporange14_control.so: deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.o
+/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libdeeporange14_control.so: deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.o
 /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libdeeporange14_control.so: deeporange14_control/CMakeFiles/deeporange14_control.dir/build.make
 /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libdeeporange14_control.so: /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libcan_dbc_parser.so
 /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libdeeporange14_control.so: /opt/ros/noetic/lib/libroscpp.so
@@ -127,7 +159,7 @@ deeporange14_control_EXTERNAL_OBJECTS =
 /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libdeeporange14_control.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
 /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libdeeporange14_control.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
 /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libdeeporange14_control.so: deeporange14_control/CMakeFiles/deeporange14_control.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libdeeporange14_control.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libdeeporange14_control.so"
 	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/deeporange14_control && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/deeporange14_control.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

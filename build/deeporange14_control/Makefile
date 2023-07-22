@@ -382,6 +382,76 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_cpp.dir/rule:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_cpp.dir/rule
+.PHONY : deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+novatel_oem7_msgs_generate_messages_cpp: deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_cpp.dir/rule
+.PHONY : novatel_oem7_msgs_generate_messages_cpp
+
+# fast build rule for target.
+novatel_oem7_msgs_generate_messages_cpp/fast:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_cpp.dir/build.make deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_cpp.dir/build
+.PHONY : novatel_oem7_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_eus.dir/rule:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_eus.dir/rule
+.PHONY : deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+novatel_oem7_msgs_generate_messages_eus: deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_eus.dir/rule
+.PHONY : novatel_oem7_msgs_generate_messages_eus
+
+# fast build rule for target.
+novatel_oem7_msgs_generate_messages_eus/fast:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_eus.dir/build.make deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_eus.dir/build
+.PHONY : novatel_oem7_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_lisp.dir/rule:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_lisp.dir/rule
+.PHONY : deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+novatel_oem7_msgs_generate_messages_lisp: deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_lisp.dir/rule
+.PHONY : novatel_oem7_msgs_generate_messages_lisp
+
+# fast build rule for target.
+novatel_oem7_msgs_generate_messages_lisp/fast:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_lisp.dir/build.make deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_lisp.dir/build
+.PHONY : novatel_oem7_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_nodejs.dir/rule
+.PHONY : deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+novatel_oem7_msgs_generate_messages_nodejs: deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_nodejs.dir/rule
+.PHONY : novatel_oem7_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+novatel_oem7_msgs_generate_messages_nodejs/fast:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_nodejs.dir/build.make deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_nodejs.dir/build
+.PHONY : novatel_oem7_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_py.dir/rule:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_py.dir/rule
+.PHONY : deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+novatel_oem7_msgs_generate_messages_py: deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_py.dir/rule
+.PHONY : novatel_oem7_msgs_generate_messages_py
+
+# fast build rule for target.
+novatel_oem7_msgs_generate_messages_py/fast:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_py.dir/build.make deeporange14_control/CMakeFiles/novatel_oem7_msgs_generate_messages_py.dir/build
+.PHONY : novatel_oem7_msgs_generate_messages_py/fast
+
+# Convenience name for target.
 deeporange14_control/CMakeFiles/deeporange14_control.dir/rule:
 	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 deeporange14_control/CMakeFiles/deeporange14_control.dir/rule
 .PHONY : deeporange14_control/CMakeFiles/deeporange14_control.dir/rule
@@ -408,6 +478,54 @@ deeporange14_control_dbwnode: deeporange14_control/CMakeFiles/deeporange14_contr
 deeporange14_control_dbwnode/fast:
 	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/build.make deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/build
 .PHONY : deeporange14_control_dbwnode/fast
+
+src/DataLogger.o: src/DataLogger.cpp.o
+.PHONY : src/DataLogger.o
+
+# target to build an object file
+src/DataLogger.cpp.o:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/deeporange14_control.dir/build.make deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.o
+.PHONY : src/DataLogger.cpp.o
+
+src/DataLogger.i: src/DataLogger.cpp.i
+.PHONY : src/DataLogger.i
+
+# target to preprocess a source file
+src/DataLogger.cpp.i:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/deeporange14_control.dir/build.make deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.i
+.PHONY : src/DataLogger.cpp.i
+
+src/DataLogger.s: src/DataLogger.cpp.s
+.PHONY : src/DataLogger.s
+
+# target to generate assembly for a file
+src/DataLogger.cpp.s:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/deeporange14_control.dir/build.make deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DataLogger.cpp.s
+.PHONY : src/DataLogger.cpp.s
+
+src/DeepOrangeDbwCan.o: src/DeepOrangeDbwCan.cpp.o
+.PHONY : src/DeepOrangeDbwCan.o
+
+# target to build an object file
+src/DeepOrangeDbwCan.cpp.o:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/deeporange14_control.dir/build.make deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.o
+.PHONY : src/DeepOrangeDbwCan.cpp.o
+
+src/DeepOrangeDbwCan.i: src/DeepOrangeDbwCan.cpp.i
+.PHONY : src/DeepOrangeDbwCan.i
+
+# target to preprocess a source file
+src/DeepOrangeDbwCan.cpp.i:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/deeporange14_control.dir/build.make deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.i
+.PHONY : src/DeepOrangeDbwCan.cpp.i
+
+src/DeepOrangeDbwCan.s: src/DeepOrangeDbwCan.cpp.s
+.PHONY : src/DeepOrangeDbwCan.s
+
+# target to generate assembly for a file
+src/DeepOrangeDbwCan.cpp.s:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f deeporange14_control/CMakeFiles/deeporange14_control.dir/build.make deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeDbwCan.cpp.s
+.PHONY : src/DeepOrangeDbwCan.cpp.s
 
 src/DeepOrangeInterfaceNode.o: src/DeepOrangeInterfaceNode.cpp.o
 .PHONY : src/DeepOrangeInterfaceNode.o
@@ -504,6 +622,11 @@ help:
 	@echo "... nav_msgs_generate_messages_lisp"
 	@echo "... nav_msgs_generate_messages_nodejs"
 	@echo "... nav_msgs_generate_messages_py"
+	@echo "... novatel_oem7_msgs_generate_messages_cpp"
+	@echo "... novatel_oem7_msgs_generate_messages_eus"
+	@echo "... novatel_oem7_msgs_generate_messages_lisp"
+	@echo "... novatel_oem7_msgs_generate_messages_nodejs"
+	@echo "... novatel_oem7_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -511,6 +634,12 @@ help:
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... deeporange14_control"
 	@echo "... deeporange14_control_dbwnode"
+	@echo "... src/DataLogger.o"
+	@echo "... src/DataLogger.i"
+	@echo "... src/DataLogger.s"
+	@echo "... src/DeepOrangeDbwCan.o"
+	@echo "... src/DeepOrangeDbwCan.i"
+	@echo "... src/DeepOrangeDbwCan.s"
 	@echo "... src/DeepOrangeInterfaceNode.o"
 	@echo "... src/DeepOrangeInterfaceNode.i"
 	@echo "... src/DeepOrangeInterfaceNode.s"

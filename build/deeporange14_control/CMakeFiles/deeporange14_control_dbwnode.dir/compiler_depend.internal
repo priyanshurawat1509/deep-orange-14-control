@@ -1228,6 +1228,7 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
  /opt/ros/noetic/include/std_msgs/Bool.h
  /opt/ros/noetic/include/ros/message_operations.h
  /opt/ros/noetic/include/std_msgs/Float32.h
+ /opt/ros/noetic/include/std_msgs/UInt8.h
  /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/can_msgs/Frame.h
  /opt/ros/noetic/include/std_msgs/Header.h
  /opt/ros/noetic/include/geometry_msgs/TwistStamped.h
@@ -1248,4 +1249,93 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
  /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/RaptorStateMsg.h
  /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/TorqueCmdStamped.h
  /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/include/deeporange14_control/DeepOrangeVelocityController.h
+ /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/include/deeporange14_control/DataLogger.h
+ /usr/include/boost/date_time/posix_time/posix_time.hpp
+ /usr/include/boost/date_time/posix_time/time_formatters.hpp
+ /usr/include/boost/date_time/gregorian/gregorian.hpp
+ /usr/include/boost/date_time/gregorian/formatters.hpp
+ /usr/include/boost/date_time/date_formatting.hpp
+ /usr/include/boost/date_time/iso_format.hpp
+ /usr/include/boost/date_time/parse_format_base.hpp
+ /usr/include/boost/io/ios_state.hpp
+ /usr/include/boost/io_fwd.hpp
+ /usr/include/boost/date_time/date_format_simple.hpp
+ /usr/include/boost/date_time/gregorian/gregorian_io.hpp
+ /usr/include/boost/date_time/date_facet.hpp
+ /usr/include/boost/algorithm/string/replace.hpp
+ /usr/include/boost/algorithm/string/config.hpp
+ /usr/include/boost/algorithm/string/find_format.hpp
+ /usr/include/c++/9/deque
+ /usr/include/c++/9/bits/stl_deque.h
+ /usr/include/c++/9/bits/deque.tcc
+ /usr/include/boost/range/as_literal.hpp
+ /usr/include/boost/range/iterator_range.hpp
+ /usr/include/boost/range/iterator_range_io.hpp
+ /usr/include/boost/range/detail/str_types.hpp
+ /usr/include/boost/algorithm/string/concept.hpp
+ /usr/include/boost/algorithm/string/detail/find_format.hpp
+ /usr/include/boost/algorithm/string/detail/find_format_store.hpp
+ /usr/include/boost/algorithm/string/detail/replace_storage.hpp
+ /usr/include/boost/algorithm/string/sequence_traits.hpp
+ /usr/include/boost/algorithm/string/yes_no_type.hpp
+ /usr/include/boost/algorithm/string/detail/sequence.hpp
+ /usr/include/boost/algorithm/string/detail/find_format_all.hpp
+ /usr/include/boost/algorithm/string/finder.hpp
+ /usr/include/boost/algorithm/string/constants.hpp
+ /usr/include/boost/algorithm/string/detail/finder.hpp
+ /usr/include/boost/algorithm/string/compare.hpp
+ /usr/include/boost/algorithm/string/formatter.hpp
+ /usr/include/boost/algorithm/string/detail/formatter.hpp
+ /usr/include/boost/algorithm/string/detail/util.hpp
+ /usr/include/boost/date_time/special_values_formatter.hpp
+ /usr/include/boost/date_time/period_formatter.hpp
+ /usr/include/boost/date_time/period_parser.hpp
+ /usr/include/boost/date_time/string_parse_tree.hpp
+ /usr/include/boost/algorithm/string/case_conv.hpp
+ /usr/include/boost/iterator/transform_iterator.hpp
+ /usr/include/boost/utility/result_of.hpp
+ /usr/include/boost/preprocessor/repetition/enum_shifted_params.hpp
+ /usr/include/boost/preprocessor/facilities/intercept.hpp
+ /usr/include/boost/utility/detail/result_of_iterate.hpp
+ /usr/include/boost/algorithm/string/detail/case_conv.hpp
+ /usr/include/boost/date_time/string_convert.hpp
+ /usr/include/boost/date_time/date_generator_formatter.hpp
+ /usr/include/boost/date_time/date_generator_parser.hpp
+ /usr/include/boost/date_time/format_date_parser.hpp
+ /usr/include/boost/date_time/strings_from_facet.hpp
+ /usr/include/boost/date_time/special_values_parser.hpp
+ /usr/include/boost/date_time/gregorian/parsers.hpp
+ /usr/include/boost/date_time/date_parsing.hpp
+ /usr/include/boost/tokenizer.hpp
+ /usr/include/boost/token_iterator.hpp
+ /usr/include/boost/iterator/minimum_category.hpp
+ /usr/include/boost/token_functions.hpp
+ /usr/include/boost/date_time/time_formatting_streams.hpp
+ /usr/include/boost/date_time/date_formatting_locales.hpp
+ /usr/include/boost/date_time/date_names_put.hpp
+ /usr/include/boost/date_time/time_parsing.hpp
+ /usr/include/boost/date_time/posix_time/posix_time_io.hpp
+ /usr/include/boost/date_time/time_facet.hpp
+ /usr/include/boost/algorithm/string/erase.hpp
+ /usr/include/boost/date_time/posix_time/time_parsers.hpp
+ /usr/include/boost/date_time/local_time_adjustor.hpp
+ /usr/include/boost/date_time/c_local_time_adjustor.hpp
+ /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/include/deeporange14_control/DeepOrangeDbwCan.h
+ /opt/ros/noetic/include/sensor_msgs/Imu.h
+ /opt/ros/noetic/include/sensor_msgs/JointState.h
+ /opt/ros/noetic/include/sensor_msgs/Joy.h
+ /opt/ros/noetic/include/std_msgs/Empty.h
+ /opt/ros/noetic/include/std_msgs/String.h
+ /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/AuStatusMsg.h
+ /home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/INSPVAX.h
+ /home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/Oem7Header.h
+ /home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/InertialSolutionStatus.h
+ /home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/PositionOrVelocityType.h
+ /home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/INSExtendedSolutionStatus.h
+ /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/DbcMessage.h
+ /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/DbcSignal.h
+ /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/Dbc.h
+ /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/DbcBuilder.h
+ /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include/can_dbc_parser/LineParser.h
+ /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_control/include/deeporange14_control/dispatch_can_msgs.h
 

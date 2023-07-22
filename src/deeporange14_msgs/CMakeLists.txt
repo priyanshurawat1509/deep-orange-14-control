@@ -13,6 +13,7 @@ add_message_files(DIRECTORY msgs FILES
   RaptorStateMsg.msg
   MissionStatus.msg
   TorqueCmdStamped.msg
+  AuStatusMsg.msg
 )
 
 generate_messages(DEPENDENCIES

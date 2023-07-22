@@ -18,6 +18,7 @@ find_package(catkin REQUIRED COMPONENTS
   deeporange14_msgs
   roslaunch
   message_generation
+  novatel_oem7_msgs
 )
 
 catkin_package(
@@ -30,6 +31,7 @@ catkin_package(
   nav_msgs
   roscpp
   rospy
+  novatel_oem7_msgs
 
 )
 
@@ -52,6 +54,8 @@ add_library(${PROJECT_NAME}
 
   src/DeepOrangeStateSupervisor.cpp
   src/DeepOrangeVelocityController.cpp
+  src/DeepOrangeDbwCan.cpp
+  src/DataLogger.cpp
 
 )
 add_executable(${PROJECT_NAME}_dbwnode src/DeepOrangeInterfaceNode.cpp

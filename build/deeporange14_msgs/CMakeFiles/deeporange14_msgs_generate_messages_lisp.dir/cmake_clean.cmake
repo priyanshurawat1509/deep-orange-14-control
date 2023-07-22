@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/AuStatusMsg.lisp"
   "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/MissionStatus.lisp"
   "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/MobilityMsg.lisp"
   "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/RaptorStateMsg.lisp"

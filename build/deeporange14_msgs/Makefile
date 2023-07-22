@@ -242,6 +242,20 @@ _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped/fast:
 .PHONY : _deeporange14_msgs_generate_messages_check_deps_TorqueCmdStamped/fast
 
 # Convenience name for target.
+deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg.dir/rule:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg.dir/rule
+.PHONY : deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg.dir/rule
+
+# Convenience name for target.
+_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg: deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg.dir/rule
+.PHONY : _deeporange14_msgs_generate_messages_check_deps_AuStatusMsg
+
+# fast build rule for target.
+_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg/fast:
+	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg.dir/build.make deeporange14_msgs/CMakeFiles/_deeporange14_msgs_generate_messages_check_deps_AuStatusMsg.dir/build
+.PHONY : _deeporange14_msgs_generate_messages_check_deps_AuStatusMsg/fast
+
+# Convenience name for target.
 deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_cpp.dir/rule:
 	cd /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_cpp.dir/rule
 .PHONY : deeporange14_msgs/CMakeFiles/deeporange14_msgs_generate_messages_cpp.dir/rule
@@ -394,6 +408,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... _deeporange14_msgs_generate_messages_check_deps_AuStatusMsg"
 	@echo "... _deeporange14_msgs_generate_messages_check_deps_MissionStatus"
 	@echo "... _deeporange14_msgs_generate_messages_check_deps_MobilityMsg"
 	@echo "... _deeporange14_msgs_generate_messages_check_deps_RaptorStateMsg"

@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel:$CMAKE_PREFIX_PATH"
 export PWD='/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src:$ROS_PACKAGE_PATH"

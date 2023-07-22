@@ -53,7 +53,6 @@ namespace deeporange14{
         // curvature_rate_limit_=2.0;       //[1/m]/s
         prev_v_=0.0;
         prev_omega_=0.0;
-        dt_=0.0;
 
         // trackwidth=2.60;
         max_velocity=1.6;
@@ -74,6 +73,7 @@ namespace deeporange14{
         acc_max = 1.0;
         dec_max = -1.0;
         smoothing_factor = 20.0;
+        dt_=1/50.0;
 
     }
     VelocityController::~VelocityController(){}
@@ -94,15 +94,16 @@ namespace deeporange14{
  void VelocityController::cmdVelCallback(const geometry_msgs::Twist::ConstPtr& msg){
         cmdLinX_=msg->linear.x;
         cmdAngZ_=msg->angular.z;
-        cmd_turn_curvature_=(cmdLinX_!=0)?(cmdAngZ_/cmdLinX_):std::numeric_limits<double>::infinity();
         errLinX_prev_=errLinX_current_;
         errOmega_prev_=errOmega_current_;
         //integrator reset when we move into 'waiting for execution' state -- after a mission is completed or cancelled, we move back to 'startup' state in the state machine, but the transitions to 'wait execution' should happen
         if (autonomy_state_ == AU_3_ROS_MODE_EN){
             errLinX_integral_=0.0;
             errOmega_integral_=0.0;
+            tqL_=0.0;
+            tqR_=0.0;
             // ROS_INFO("Velocity error integral: %f, Curvature error integral: %f",errLinX_integral_,errOmega_integral_);
-            prev_time_=(ros::Time::now().toSec()+ros::Time::now().toNSec()*1e-9);
+            // prev_time_=(ros::Time::now().toSec()+ros::Time::now().toNSec()*1e-9);
         }
         else if (autonomy_state_ == AU_5_ROS_CONTROLLED || autonomy_state_ == AU_4_DISENGAGING_BRAKES ){
             //letting the controller kick in only when we move in the appropriate autonomy state
@@ -112,6 +113,7 @@ namespace deeporange14{
             //velocity reprojection on the commanded velocities
             if (cmdLinX_==0.0 && cmdAngZ_==0.0){
                 //do nothing -- this is when the local planner has not kicked in and the stack is still sending out zero velocities -- redundant but ok
+                cmd_turn_curvature_=0.0;
             }
             else{
                 this->velocityReprojection(cmdLinX_,cmdAngZ_);
@@ -120,10 +122,11 @@ namespace deeporange14{
                 cmd_vel_reprojected_.linear.x=cmdLinX_;
                 cmd_vel_reprojected_.angular.z=cmdAngZ_;
                 pub_cmd_vel_reprojected_.publish(cmd_vel_reprojected_);
+                cmd_turn_curvature_=(cmdAngZ_/cmdLinX_);
             }
             // odom_turn_curvature_=(vehLinX_!=0)?vehAngZ_/vehLinX_:std::numeric_limits<double>::infinity();
             tqDiff_ff_=(x0_*cmd_turn_curvature_)/(1+x1_*std::abs(cmd_turn_curvature_));
-            tqCom_ff_=((cmdLinX_>=0)-(cmdLinX_<0))*(a_*std::abs(cmdLinX_)+20.0);
+            tqCom_ff_=((cmdLinX_>=0)-(cmdLinX_<0))*(a_*std::abs(cmdLinX_)+b_);
             //current errors
             errLinX_current_=cmdLinX_-vehLinX_;
             errOmega_current_=cmdAngZ_-vehAngZ_;
@@ -136,9 +139,10 @@ namespace deeporange14{
             // feedforward + PID output
             tqDiff_=tqDiff_ff_ + tqDiff_PID_;
             tqComm_=tqCom_ff_ + tqComm_PID_;
+            ROS_WARN("Curv: %f",cmd_turn_curvature_);
             //splitting the common and differential torque into left and right torque
-            tqL_=tqComm_+tqDiff_;
-            tqR_=tqComm_-tqDiff_;
+            tqL_=tqComm_-tqDiff_;
+            tqR_=tqComm_+tqDiff_;
             //anti-windup behavior
             if (((tqL_ >= tq_Max_ || tqR_ >= tq_Max_) || ((tqL_ <= tq_Min_) || (tqR_ <= tq_Min_)))){
                 if (tqComm_PID_*errLinX_current_ > 0){
@@ -286,9 +290,9 @@ end
         }
     }
         //limits the rate of change of the incoming velocity and curvature commands
-    current_time_=(ros::Time::now().toSec()+ros::Time::now().toNSec()*1e-9);
-    dt_=current_time_-prev_time_;
-    prev_time_=current_time_;
+    // current_time_=(ros::Time::now().toSec()+ros::Time::now().toNSec()*1e-9);
+    // dt_=current_time_-prev_time_;
+    // prev_time_=current_time_;
     //linear velocity rate limiter
     double rate_u_ =(u_ - prev_u_)/dt_;
     double allowable_rate_u_=std::max(std::min(rate_u_,rmax),rmin);

@@ -9,6 +9,7 @@
 #include <std_msgs/Float32.h>
 #include <std_msgs/UInt8.h>
 #include <can_msgs/Frame.h>
+#include <std_msgs/String.h>
 
 #include <geometry_msgs/TwistStamped.h>
 #include <geometry_msgs/Twist.h>
@@ -35,7 +36,7 @@ namespace deeporange14
         private:
         void checkStackStatus(const geometry_msgs::Twist::ConstPtr& cmdVelMsg);
         
-        void getMissionStatus(const deeporange14_msgs::MissionStatus::ConstPtr& missionStatus);
+        void getMissionStatus(const std_msgs::String::ConstPtr& missionStatus);
     
         
         void getTorqueValues(const deeporange14_msgs::TorqueCmdStamped::ConstPtr& controllerTrqValues);
@@ -51,6 +52,8 @@ namespace deeporange14
         //member variables 
         bool raptor_hb_detected;
         bool stack_fault;
+        // bool dbw_ros_en;
+        // bool dbw_ros_controlled;
         bool dbw_ros_mode;
         std::string mission_status;
         float brkL_pr;
@@ -84,7 +87,7 @@ namespace deeporange14
         ros::Subscriber sub_rosStop;
         ros::Subscriber sub_raptorState;
         ros::Subscriber sub_stopRos;
-        std::string topic_ns = "/deeporange14";
+        std::string topic_ns = "/deeporange1314";
         
         // Init the msg variables
         std_msgs::UInt8 auStateMsg;

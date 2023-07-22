@@ -3783,6 +3783,7 @@ deeporange14_control/CMakeFiles/deeporange14_control.dir/src/DeepOrangeStateSupe
   /opt/ros/noetic/include/std_msgs/UInt8.h \
   /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/can_msgs/Frame.h \
   /opt/ros/noetic/include/std_msgs/Header.h \
+  /opt/ros/noetic/include/std_msgs/String.h \
   /opt/ros/noetic/include/geometry_msgs/TwistStamped.h \
   /opt/ros/noetic/include/geometry_msgs/Twist.h \
   /opt/ros/noetic/include/geometry_msgs/Vector3.h \

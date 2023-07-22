@@ -1230,6 +1230,7 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
   /opt/ros/noetic/include/std_msgs/UInt8.h \
   /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/can_msgs/Frame.h \
   /opt/ros/noetic/include/std_msgs/Header.h \
+  /opt/ros/noetic/include/std_msgs/String.h \
   /opt/ros/noetic/include/geometry_msgs/TwistStamped.h \
   /opt/ros/noetic/include/geometry_msgs/Twist.h \
   /opt/ros/noetic/include/geometry_msgs/Vector3.h \
@@ -1324,7 +1325,6 @@ deeporange14_control/CMakeFiles/deeporange14_control_dbwnode.dir/src/DeepOrangeI
   /opt/ros/noetic/include/sensor_msgs/JointState.h \
   /opt/ros/noetic/include/sensor_msgs/Joy.h \
   /opt/ros/noetic/include/std_msgs/Empty.h \
-  /opt/ros/noetic/include/std_msgs/String.h \
   /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/AuStatusMsg.h \
   /home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/INSPVAX.h \
   /home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/include/novatel_oem7_msgs/Oem7Header.h \

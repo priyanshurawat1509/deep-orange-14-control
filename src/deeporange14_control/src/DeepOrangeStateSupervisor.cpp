@@ -22,6 +22,7 @@ namespace deeporange14
         raptor_hb_detected = false;
         stack_fault = true;
         dbw_ros_mode = false;
+        // dbw_ros_controlled = false;
         mission_status = "";
         tqL_cmd_controller = 0.0;
         tqR_cmd_controller = 0.0;
@@ -48,9 +49,9 @@ namespace deeporange14
         cmdvel_timestamp = ros::Time::now().toSec();
         // ROS_WARN("cmd_vel timestamp : %f",cmdvel_timestamp);
     }
-    void DeepOrangeStateSupervisor::getMissionStatus(const deeporange14_msgs::MissionStatus::ConstPtr &missionStatus)
+    void DeepOrangeStateSupervisor::getMissionStatus(const std_msgs::String::ConstPtr &missionStatus)
     {
-        mission_status = missionStatus->status;
+        mission_status = missionStatus->data;
     }
     void DeepOrangeStateSupervisor::getTorqueValues(const deeporange14_msgs::TorqueCmdStamped::ConstPtr &controllerTrqValues)
     {
@@ -64,7 +65,8 @@ namespace deeporange14
     void DeepOrangeStateSupervisor::getRaptorMsg(const deeporange14_msgs::RaptorStateMsg::ConstPtr &raptorMsg)
     {
         raptor_hb_timestamp = raptorMsg->header.stamp.sec + raptorMsg->header.stamp.nsec * (1e-9);
-        dbw_ros_mode = raptorMsg->dbw_mode == DBW_3_ROS_EN;
+        dbw_ros_mode = raptorMsg->dbw_mode == DBW_3_ROS_EN || raptorMsg->dbw_mode == DBW_4_ROS_CONTROLLED ;
+    
         brkL_pr = raptorMsg->brk_Lpres; 
         brkR_pr = raptorMsg->brk_Rpres; 
         speed_state = raptorMsg->speed_state;
@@ -101,6 +103,7 @@ namespace deeporange14
             mobilityMsg.tqR_cmd = 0.0;
             mobilityMsg.brkL_cmd = 1.0;
             mobilityMsg.brkR_cmd = 1.0;
+            mission_status="";
             // ROS_WARN("In startup");
 
             if(raptor_hb_detected){
@@ -125,6 +128,7 @@ namespace deeporange14
             mobilityMsg.tqR_cmd = 0.0;
             mobilityMsg.brkL_cmd = 1.0;
             mobilityMsg.brkR_cmd = 1.0;
+            mission_status="";
 
             // ROS_WARN("In Idle");
             if (!raptor_hb_detected)
@@ -192,7 +196,7 @@ namespace deeporange14
 
             else
             {   
-                ROS_WARN("[AU_3_ROS_MODE_EN]: shouldn't have reached here ");
+                ROS_WARN("[AU_3_ROS_MODE_EN] ");
                 // Do nothing
                 break;
             }
@@ -256,7 +260,7 @@ namespace deeporange14
             mobilityMsg.tqL_cmd = tqL_cmd_controller;
             mobilityMsg.tqR_cmd = tqR_cmd_controller;
             mobilityMsg.brkL_cmd = 0.0;
-            mobilityMsg.brkL_cmd = 0.0;
+            mobilityMsg.brkR_cmd = 0.0;
             
             if (!raptor_hb_detected)
             {

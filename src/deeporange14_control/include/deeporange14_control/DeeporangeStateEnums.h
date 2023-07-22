@@ -21,9 +21,11 @@ enum allStates{
     AU_5_ROS_CONTROLLED            = 5,
 
     // Raptor States
-    DBW_3_ROS_EN                   = 3,
 
-    SPEED_STATE_Ready2Move         = 2,
+    DBW_3_ROS_EN                   = 3,
+    DBW_4_ROS_CONTROLLED           = 4,
+
+    SPEED_STATE_Ready2Move         = 2
 
   };
 } //deeporange14

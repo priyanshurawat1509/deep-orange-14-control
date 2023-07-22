@@ -74,6 +74,10 @@ namespace deeporange14{
         dec_max = -1.0;
         smoothing_factor = 20.0;
         dt_=1/50.0;
+        remapping_state = VEHICLE_STOPPED;
+        v_moving_ss=0.2;
+        v_moving=0.1;
+        v_stopped=0.01;
 
     }
     VelocityController::~VelocityController(){}
@@ -102,29 +106,30 @@ namespace deeporange14{
             errOmega_integral_=0.0;
             tqL_=0.0;
             tqR_=0.0;
+            prev_v_=0.0;
+            prev_omega_=0.0;
+            remapping_state = VEHICLE_STOPPED;
+            ROS_WARN("Left: %f, Right: %f",tqL_,tqR_);
             // ROS_INFO("Velocity error integral: %f, Curvature error integral: %f",errLinX_integral_,errOmega_integral_);
             // prev_time_=(ros::Time::now().toSec()+ros::Time::now().toNSec()*1e-9);
         }
         else if (autonomy_state_ == AU_5_ROS_CONTROLLED || autonomy_state_ == AU_4_DISENGAGING_BRAKES ){
             //letting the controller kick in only when we move in the appropriate autonomy state
             //rate limiting the linear velocity and the curvature
+            //velocity reprojection on the commanded velocities
+            this->linearVelocityReprojection(cmdLinX_,cmdAngZ_);
+            this->twistReprojection(cmdLinX_,cmdAngZ_);
+            
+            //publishing these results on a different topic to compare the changes
+            geometry_msgs::Twist cmd_vel_reprojected_;
+            cmd_vel_reprojected_.linear.x=cmdLinX_;
+            cmd_vel_reprojected_.angular.z=cmdAngZ_;
+            pub_cmd_vel_reprojected_.publish(cmd_vel_reprojected_);
+            
             this->rateLimiter(prev_v_,cmdLinX_);
             this->rateLimiter(prev_omega_,cmdAngZ_);
-            //velocity reprojection on the commanded velocities
-            if (cmdLinX_==0.0 && cmdAngZ_==0.0){
-                //do nothing -- this is when the local planner has not kicked in and the stack is still sending out zero velocities -- redundant but ok
-                cmd_turn_curvature_=0.0;
-            }
-            else{
-                this->velocityReprojection(cmdLinX_,cmdAngZ_);
-                //publishing these results on a different topic to compare the changes
-                geometry_msgs::Twist cmd_vel_reprojected_;
-                cmd_vel_reprojected_.linear.x=cmdLinX_;
-                cmd_vel_reprojected_.angular.z=cmdAngZ_;
-                pub_cmd_vel_reprojected_.publish(cmd_vel_reprojected_);
-                cmd_turn_curvature_=(cmdAngZ_/cmdLinX_);
-            }
-            // odom_turn_curvature_=(vehLinX_!=0)?vehAngZ_/vehLinX_:std::numeric_limits<double>::infinity();
+            cmd_turn_curvature_=(cmdLinX_!=0.0 && cmdAngZ_!=0.0)?(cmdAngZ_/cmdLinX_):0.0;
+            
             tqDiff_ff_=(x0_*cmd_turn_curvature_)/(1+x1_*std::abs(cmd_turn_curvature_));
             tqCom_ff_=((cmdLinX_>=0)-(cmdLinX_<0))*(a_*std::abs(cmdLinX_)+b_);
             //current errors
@@ -139,12 +144,13 @@ namespace deeporange14{
             // feedforward + PID output
             tqDiff_=tqDiff_ff_ + tqDiff_PID_;
             tqComm_=tqCom_ff_ + tqComm_PID_;
-            ROS_WARN("Curv: %f",cmd_turn_curvature_);
+            // ROS_WARN("ff: %f, pid: %f",tqCom_ff_,tqComm_PID_);
             //splitting the common and differential torque into left and right torque
             tqL_=tqComm_-tqDiff_;
             tqR_=tqComm_+tqDiff_;
             //anti-windup behavior
             if (((tqL_ >= tq_Max_ || tqR_ >= tq_Max_) || ((tqL_ <= tq_Min_) || (tqR_ <= tq_Min_)))){
+                ROS_WARN("Saturated Left: %f, Saturated Right: %f",tqL_,tqR_);
                 if (tqComm_PID_*errLinX_current_ > 0){
                     //stop integration for common torque for the next timestep, hence only curvature integral updated
                     errOmega_integral_+=errOmega_current_*dt_;
@@ -159,6 +165,7 @@ namespace deeporange14{
                 tqR_=std::max((std::min(tqR_,tq_Max_)),tq_Min_);
             }
             else{
+                ROS_WARN("Unsaturated Left: %f, Unsaturated Right: %f",tqL_,tqR_);
                 // only update the error integrals, and NOT limit the torques since we haven't reached the limit
                 errLinX_integral_+=errLinX_current_*dt_;
                 errOmega_integral_+=errOmega_current_*dt_;
@@ -171,7 +178,52 @@ namespace deeporange14{
             tqR_=0.0;
         }
     }
-    void VelocityController::velocityReprojection(double &v, double &w){
+    void VelocityController::linearVelocityReprojection(double& v, double& w){
+
+        switch(remapping_state){
+
+            case VEHICLE_STOPPED:
+            {
+                ROS_INFO("VEHICLE STOPPED");
+                if (std::abs(v) >0 || std::abs(w)>0){
+                    //move into the accelerating state
+                    v=v_moving_ss; //v_accelerating is the minimum steady state velocity that we want the vehicle to move forward with
+                    remapping_state=VEHICLE_ACCELERATING;
+                    break;
+                }
+                else{
+                    //do nothing, remain in this state
+                    break;
+                }
+            }
+            case VEHICLE_ACCELERATING:{
+                ROS_INFO("VEHICLE ACCELERATING");
+                if (std::abs(vehLinX_) >= v_moving){
+                    remapping_state=VEHICLE_MOVING;
+                    break;
+                }
+                else{
+                    //do nothing, remain in this state
+                    break;
+                }
+            }
+            case VEHICLE_MOVING:{
+                ROS_INFO("VEHICLE MOVING");
+                //v stays the same and we do not need to reproject
+                if (std::abs(vehLinX_) <= v_stopped){
+                    v=0;
+                    remapping_state=VEHICLE_STOPPED;
+                    break;
+                }
+                else{
+                    //do nothing, remain in this state
+                    break;
+                }
+            }
+        }
+    }
+    
+    void VelocityController::twistReprojection(double &v, double &w){
     // Function to reproject commanded stack velocities onto a velocity
     // space that is executable by the Deep Orange 14 vehicle
 
@@ -180,10 +232,7 @@ namespace deeporange14{
     double lat_acc = v * w;
 
     // Applying linear velocity limits to bring it into correct zone
-    if (v < min_velocity){
-      v = min_velocity;  // limited to max reverse
-    }
-    else if (v > max_velocity){
+    if (v > max_velocity){
       v = max_velocity;  // limited to max forward
     }
 

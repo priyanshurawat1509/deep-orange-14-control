@@ -42,7 +42,7 @@ namespace deeporange14
                         std::string("_") + iso_time_str.substr(9,2) + std::string("-") + iso_time_str.substr(11,2) + std::string("-") + iso_time_str.substr(13,2);
             std::string can_log_name = file_name_header + std::string(".CAN.log");
             std::string ros_bag_name = file_name_header + std::string(".ROS.bag");
-            std::string logs_dir = std::string("~/do13_logs/");
+            std::string logs_dir = std::string("~/do14_logs/");
             can_log_name = logs_dir + can_log_name;
             ros_bag_name = logs_dir + ros_bag_name;
             std::cout<<"ISO Time: "<<iso_time_str<<std::endl;
@@ -52,8 +52,8 @@ namespace deeporange14
             // Record CAN log for all CAN buses combined
             system(("candump any -ta >" + can_log_name + " &").c_str());
             // Record ROS bags for relevant topics only
-            //system(("rosbag record -e '(.*)gps(.*)' -e '(.*)pose(.*)' -e '(.*)cmd_vel(.*)' -e '(.*)/novatel/oem7(.*)' -e '(.*)local_planner_and_controller(.*)' -e '(.*)tf(.*)' -x '(.*)approach_object(.*)' -x '(.*)approach_object_behavior(.*)' -x '(.*)global_costmap(.*)' -e '(.*)global_planner(.*)' -x '(.*)goto_object_behavior(.*)' -x '(.*)local_costmap(.*)' -x '(.*)omnigraph(.*)' -x '(.*)point_cloud_pipeline(.*)' -x '(.*)point_cloud_cache(.*)' -e '(.*)local_planner(.*)' -e '(.*)odom(.*)' -e '(.*)navigation_manager(.*)' -O " + ros_bag_name + " __name:=rosbag_recording &").c_str());
-            system(("rosbag record -a -O " + ros_bag_name + " __name:=rosbag_recording &").c_str());
+            system(("rosbag record -e '(.*)gps(.*)' -e '(.*)pose(.*)' -e '(.*)cmd_vel(.*)' -e '(.*)/novatel/oem7(.*)' -e '(.*)local_planner_and_controller(.*)' -e '(.*)tf(.*)' -x '(.*)approach_object(.*)' -x '(.*)approach_object_behavior(.*)' -x '(.*)global_costmap(.*)' -e '(.*)global_planner(.*)' -x '(.*)goto_object_behavior(.*)' -x '(.*)local_costmap(.*)' -x '(.*)omnigraph(.*)' -x '(.*)point_cloud_pipeline(.*)' -x '(.*)point_cloud_cache(.*)' -e '(.*)local_planner(.*)' -e '(.*)odom(.*)' -e '(.*)navigation_manager(.*)' -O " + ros_bag_name + " __name:=rosbag_recording &").c_str());
+            // system(("rosbag record -a -O " + ros_bag_name + " __name:=rosbag_recording &").c_str());
 
             // Update recording state
             isRecording = true;

@@ -38,8 +38,9 @@ namespace deeporange14 {
         void cmdMobilityCallback(const deeporange14_msgs::MobilityMsg::ConstPtr& msg);
 
         //velocity reprojection to the admissible range
-        void velocityReprojection(double &v, double &w);
-
+        void linearVelocityReprojection(double &v, double &w);
+        void twistReprojection(double &v, double &w);
+        
         //rate limiter on the commands
         void rateLimiter(double &prev_u_, double &u_);
         
@@ -100,6 +101,9 @@ namespace deeporange14 {
         double prev_v_;
         double prev_omega_;
         double deadband_velocity;
+        double v_moving_ss;
+        double v_moving;
+        double v_stopped;
 
         //member variables -- velocity limits
         double min_velocity;  // min positive linear velocity
@@ -109,6 +113,7 @@ namespace deeporange14 {
 
         //state-enumeration
         uint8_t autonomy_state_;
+        allStates remapping_state;
 
         // Rate limiter constants
         double dec_min;

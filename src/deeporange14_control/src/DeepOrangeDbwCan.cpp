@@ -96,8 +96,8 @@ namespace deeporange14 // TODO-> change namespace
 
         message->GetSignal("auSt")->SetResult(msg.au_state);
         message->GetSignal("au_heartbeat")->SetResult(*ros_hb_ptr_);
-        message->GetSignal("tqL_cmd")->SetResult(msg.tqL_cmd*0.0);
-        message->GetSignal("tqR_cmd")->SetResult(msg.tqR_cmd*0.0);
+        message->GetSignal("tqL_cmd")->SetResult(msg.tqL_cmd);
+        message->GetSignal("tqR_cmd")->SetResult(msg.tqR_cmd);
 
         frame_ = message->GetFrame();
         pub_can_.publish(frame_);

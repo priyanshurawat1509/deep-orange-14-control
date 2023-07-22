@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_master/canopen_bcm_sync"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_master/canopen_bcm_sync.pdb"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/canopen_master/canopen_bcm_sync"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/canopen_master/canopen_bcm_sync.pdb"
   "CMakeFiles/canopen_bcm_sync.dir/src/bcm_sync.cpp.o"
+  "CMakeFiles/canopen_bcm_sync.dir/src/bcm_sync.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

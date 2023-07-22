@@ -1,11 +1,11 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/pdu_msgs/msg/_FuseReport.py"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/pdu_msgs/msg/_FuseStatus.py"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/pdu_msgs/msg/_RelayCommand.py"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/pdu_msgs/msg/_RelayReport.py"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/pdu_msgs/msg/_RelayState.py"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/pdu_msgs/msg/_RelayStatus.py"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/pdu_msgs/msg/__init__.py"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/python3/dist-packages/pdu_msgs/msg/_FuseReport.py"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/python3/dist-packages/pdu_msgs/msg/_FuseStatus.py"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/python3/dist-packages/pdu_msgs/msg/_RelayCommand.py"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/python3/dist-packages/pdu_msgs/msg/_RelayReport.py"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/python3/dist-packages/pdu_msgs/msg/_RelayState.py"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/python3/dist-packages/pdu_msgs/msg/_RelayStatus.py"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/python3/dist-packages/pdu_msgs/msg/__init__.py"
   "CMakeFiles/pdu_msgs_generate_messages_py"
 )
 

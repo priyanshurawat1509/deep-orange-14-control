@@ -1,8 +1,8 @@
-# Install script for directory: /users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_chain_node
+# Install script for directory: /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/ros_canopen/canopen_chain_node
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/users/vpurohi/deeporange_ws/deeporange14_control/install")
+  set(CMAKE_INSTALL_PREFIX "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,73 +37,78 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canopen_chain_node/srv" TYPE FILE FILES
-    "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_chain_node/srv/GetObject.srv"
-    "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_chain_node/srv/SetObject.srv"
+    "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/ros_canopen/canopen_chain_node/srv/GetObject.srv"
+    "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/ros_canopen/canopen_chain_node/srv/SetObject.srv"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canopen_chain_node/cmake" TYPE FILE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_chain_node/catkin_generated/installspace/canopen_chain_node-msg-paths.cmake")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canopen_chain_node/cmake" TYPE FILE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/ros_canopen/canopen_chain_node/catkin_generated/installspace/canopen_chain_node-msg-paths.cmake")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/users/vpurohi/deeporange_ws/deeporange14_control/devel/include/canopen_chain_node")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/canopen_chain_node")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/roseus/ros/canopen_chain_node")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/roseus/ros/canopen_chain_node")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/canopen_chain_node")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/canopen_chain_node")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/gennodejs/ros/canopen_chain_node")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/gennodejs/ros/canopen_chain_node")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/canopen_chain_node")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/python3/dist-packages/canopen_chain_node")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/python3/dist-packages/canopen_chain_node")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/python3/dist-packages/canopen_chain_node")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_chain_node/catkin_generated/installspace/canopen_chain_node.pc")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/ros_canopen/canopen_chain_node/catkin_generated/installspace/canopen_chain_node.pc")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canopen_chain_node/cmake" TYPE FILE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_chain_node/catkin_generated/installspace/canopen_chain_node-msg-extras.cmake")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canopen_chain_node/cmake" TYPE FILE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/ros_canopen/canopen_chain_node/catkin_generated/installspace/canopen_chain_node-msg-extras.cmake")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canopen_chain_node/cmake" TYPE FILE FILES
-    "/users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_chain_node/catkin_generated/installspace/canopen_chain_nodeConfig.cmake"
-    "/users/vpurohi/deeporange_ws/deeporange14_control/build/ros_canopen/canopen_chain_node/catkin_generated/installspace/canopen_chain_nodeConfig-version.cmake"
+    "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/ros_canopen/canopen_chain_node/catkin_generated/installspace/canopen_chain_nodeConfig.cmake"
+    "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/ros_canopen/canopen_chain_node/catkin_generated/installspace/canopen_chain_nodeConfig-version.cmake"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canopen_chain_node" TYPE FILE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_chain_node/package.xml")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canopen_chain_node" TYPE FILE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/ros_canopen/canopen_chain_node/package.xml")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node/canopen_chain_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node/canopen_chain_node")
     file(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node/canopen_chain_node"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node" TYPE EXECUTABLE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_chain_node/canopen_chain_node")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node" TYPE EXECUTABLE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/canopen_chain_node/canopen_chain_node")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node/canopen_chain_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node/canopen_chain_node")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node/canopen_chain_node"
-         OLD_RPATH "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib:/opt/ros/noetic/lib:"
+         OLD_RPATH "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib:/opt/ros/noetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node/canopen_chain_node")
@@ -111,19 +116,19 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   endif()
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcanopen_ros_chain.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcanopen_ros_chain.so")
     file(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcanopen_ros_chain.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/libcanopen_ros_chain.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/libcanopen_ros_chain.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcanopen_ros_chain.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcanopen_ros_chain.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcanopen_ros_chain.so"
-         OLD_RPATH "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib:/opt/ros/noetic/lib:"
+         OLD_RPATH "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib:/opt/ros/noetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcanopen_ros_chain.so")
@@ -131,22 +136,22 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   endif()
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node/canopen_sync_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node/canopen_sync_node")
     file(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node/canopen_sync_node"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node" TYPE EXECUTABLE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_chain_node/canopen_sync_node")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node" TYPE EXECUTABLE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/canopen_chain_node/canopen_sync_node")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node/canopen_sync_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node/canopen_sync_node")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node/canopen_sync_node"
-         OLD_RPATH "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib:/opt/ros/noetic/lib:"
+         OLD_RPATH "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib:/opt/ros/noetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/canopen_chain_node/canopen_sync_node")
@@ -154,11 +159,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   endif()
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/canopen_chain_node" TYPE DIRECTORY FILES "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_chain_node/include/canopen_chain_node/" FILES_MATCHING REGEX "/[^/]*\\.h$")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/canopen_chain_node" TYPE DIRECTORY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/ros_canopen/canopen_chain_node/include/canopen_chain_node/" FILES_MATCHING REGEX "/[^/]*\\.h$")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canopen_chain_node" TYPE DIRECTORY FILES "/users/vpurohi/deeporange_ws/deeporange14_control/src/ros_canopen/canopen_chain_node/launch")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canopen_chain_node" TYPE DIRECTORY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/ros_canopen/canopen_chain_node/launch")
 endif()
 

@@ -1,4 +1,4 @@
-prefix=/users/vpurohi/deeporange_ws/deeporange14_control/install
+prefix=/home/administrator/Documents/DEEPORANGE14/deeporange14_control/install
 
 Name: raptor_dbw_can
 Description: Description of raptor_dbw_can

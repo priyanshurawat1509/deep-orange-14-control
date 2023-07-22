@@ -7,7 +7,9 @@
 #include <ros/ros.h>
 #include <std_msgs/Bool.h>
 #include <std_msgs/Float32.h>
+#include <std_msgs/UInt8.h>
 #include <can_msgs/Frame.h>
+
 #include <geometry_msgs/TwistStamped.h>
 #include <geometry_msgs/Twist.h>
 #include <nav_msgs/Odometry.h>
@@ -61,8 +63,8 @@ namespace deeporange14
         allStates state;
         double raptor_hb_timestamp;
         double cmdvel_timestamp;
-
-        
+        uint speed_state;
+        uint au_state;
         double counter;
         float cmdvel_timeout;
         float raptorhb_timeout;
@@ -72,6 +74,7 @@ namespace deeporange14
         // Publishers
         ros::Timer timer;
         ros::Publisher pub_mobility;
+        ros::Publisher pub_states;
 
         // Subscribers
         ros::Subscriber sub_cmdVel;
@@ -84,7 +87,7 @@ namespace deeporange14
         std::string topic_ns = "/deeporange14";
         
         // Init the msg variables
-        
+        std_msgs::UInt8 auStateMsg;
         deeporange14_msgs::MobilityMsg mobilityMsg;
         deeporange14_msgs::TorqueCmdStamped trqvalues;
         deeporange14_msgs::RaptorStateMsg raptorMsg;

@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/raptor_dbw_can/dbw_node"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/raptor_dbw_can/dbw_node.pdb"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/raptor_dbw_can/dbw_node"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/raptor_dbw_can/dbw_node.pdb"
   "CMakeFiles/raptor_dbw_can_dbw_node.dir/src/node.cpp.o"
+  "CMakeFiles/raptor_dbw_can_dbw_node.dir/src/node.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

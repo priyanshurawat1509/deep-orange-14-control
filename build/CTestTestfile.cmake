@@ -1,10 +1,11 @@
 # CMake generated Testfile for 
-# Source directory: /users/vpurohi/deeporange_ws/deeporange14_control/src
-# Build directory: /users/vpurohi/deeporange_ws/deeporange14_control/build
+# Source directory: /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src
+# Build directory: /home/administrator/Documents/DEEPORANGE14/deeporange14_control/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
+subdirs("pugixml")
 subdirs("raptor-dbw-ros/raptor_dbw")
 subdirs("ros_canopen/ros_canopen")
 subdirs("ros_canopen/can_msgs")

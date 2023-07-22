@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_interface/socketcan_dump"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_interface/socketcan_dump.pdb"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/socketcan_interface/socketcan_dump"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/socketcan_interface/socketcan_dump.pdb"
   "CMakeFiles/socketcan_dump.dir/src/candump.cpp.o"
+  "CMakeFiles/socketcan_dump.dir/src/candump.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

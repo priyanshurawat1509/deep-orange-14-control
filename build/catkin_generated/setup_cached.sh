@@ -7,7 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH='/users/vpurohi/catkin_ws/devel/lib:/opt/ros/noetic/lib'
-export PKG_CONFIG_PATH='/users/vpurohi/catkin_ws/devel/lib/pkgconfig:/opt/ros/noetic/lib/pkgconfig'
-export PWD='/users/vpurohi/deeporange_ws/deeporange14_control/build'
-export PYTHONPATH='/users/vpurohi/catkin_ws/devel/lib/python3/dist-packages:/opt/ros/noetic/lib/python3/dist-packages'
+export CMAKE_PREFIX_PATH="/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel:$CMAKE_PREFIX_PATH"
+export PWD='/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src:$ROS_PACKAGE_PATH"

@@ -1,4 +1,4 @@
-prefix=/users/vpurohi/deeporange_ws/deeporange14_control/install
+prefix=/home/administrator/Documents/DEEPORANGE14/deeporange14_control/install
 
 Name: pdu_msgs
 Description: Description of pdu_msgs

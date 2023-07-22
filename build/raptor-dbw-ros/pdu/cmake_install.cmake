@@ -1,8 +1,8 @@
-# Install script for directory: /users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu
+# Install script for directory: /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/pdu
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/users/vpurohi/deeporange_ws/deeporange14_control/install")
+  set(CMAKE_INSTALL_PREFIX "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,34 +37,39 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/build/raptor-dbw-ros/pdu/catkin_generated/installspace/pdu.pc")
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/raptor-dbw-ros/pdu/catkin_generated/installspace/pdu.pc")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pdu/cmake" TYPE FILE FILES
-    "/users/vpurohi/deeporange_ws/deeporange14_control/build/raptor-dbw-ros/pdu/catkin_generated/installspace/pduConfig.cmake"
-    "/users/vpurohi/deeporange_ws/deeporange14_control/build/raptor-dbw-ros/pdu/catkin_generated/installspace/pduConfig-version.cmake"
+    "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/raptor-dbw-ros/pdu/catkin_generated/installspace/pduConfig.cmake"
+    "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/raptor-dbw-ros/pdu/catkin_generated/installspace/pduConfig-version.cmake"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pdu" TYPE FILE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu/package.xml")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pdu" TYPE FILE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/pdu/package.xml")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/pdu/pdu_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/pdu/pdu_node")
     file(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/pdu/pdu_node"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pdu" TYPE EXECUTABLE FILES "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/pdu/pdu_node")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pdu" TYPE EXECUTABLE FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/pdu/pdu_node")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/pdu/pdu_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/pdu/pdu_node")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/pdu/pdu_node"
-         OLD_RPATH "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib:/opt/ros/noetic/lib:"
+         OLD_RPATH "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib:/opt/ros/noetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/pdu/pdu_node")
@@ -72,13 +77,13 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   endif()
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pdu" TYPE DIRECTORY FILES "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/pdu/launch")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pdu" TYPE DIRECTORY FILES "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/pdu/launch")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/users/vpurohi/deeporange_ws/deeporange14_control/build/raptor-dbw-ros/pdu/tests/cmake_install.cmake")
+  include("/home/administrator/Documents/DEEPORANGE14/deeporange14_control/build/raptor-dbw-ros/pdu/tests/cmake_install.cmake")
 
 endif()
 

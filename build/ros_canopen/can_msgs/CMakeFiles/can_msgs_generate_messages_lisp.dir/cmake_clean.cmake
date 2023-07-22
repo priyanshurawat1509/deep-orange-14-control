@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/can_msgs/msg/Frame.lisp"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/can_msgs/msg/Frame.lisp"
   "CMakeFiles/can_msgs_generate_messages_lisp"
 )
 

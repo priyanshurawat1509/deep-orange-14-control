@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_master/canopen_master-test_parser"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/canopen_master/canopen_master-test_parser.pdb"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/canopen_master/canopen_master-test_parser"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/canopen_master/canopen_master-test_parser.pdb"
   "CMakeFiles/canopen_master-test_parser.dir/test/test_parser.cpp.o"
+  "CMakeFiles/canopen_master-test_parser.dir/test/test_parser.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

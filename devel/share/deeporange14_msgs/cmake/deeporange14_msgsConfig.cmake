@@ -67,14 +67,14 @@ set(deeporange14_msgs_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(deeporange14_msgs_SOURCE_PREFIX /users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs)
-  set(deeporange14_msgs_DEVEL_PREFIX /users/vpurohi/deeporange_ws/deeporange14_control/devel)
+  set(deeporange14_msgs_SOURCE_PREFIX /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs)
+  set(deeporange14_msgs_DEVEL_PREFIX /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel)
   set(deeporange14_msgs_INSTALL_PREFIX "")
   set(deeporange14_msgs_PREFIX ${deeporange14_msgs_DEVEL_PREFIX})
 else()
   set(deeporange14_msgs_SOURCE_PREFIX "")
   set(deeporange14_msgs_DEVEL_PREFIX "")
-  set(deeporange14_msgs_INSTALL_PREFIX /users/vpurohi/deeporange_ws/deeporange14_control/install)
+  set(deeporange14_msgs_INSTALL_PREFIX /home/administrator/Documents/DEEPORANGE14/deeporange14_control/install)
   set(deeporange14_msgs_PREFIX ${deeporange14_msgs_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(deeporange14_msgs_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/users/vpurohi/deeporange_ws/deeporange14_control/devel/include " STREQUAL " ")
+if(NOT "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include " STREQUAL " ")
   set(deeporange14_msgs_INCLUDE_DIRS "")
-  set(_include_dirs "/users/vpurohi/deeporange_ws/deeporange14_control/devel/include")
+  set(_include_dirs "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/users/vpurohi/deeporange_ws/deeporange14_control/devel/include " STREQU
         message(FATAL_ERROR "Project 'deeporange14_msgs' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'deeporange14_msgs' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/users/vpurohi/deeporange_ws/deeporange14_control/src/deeporange14_msgs/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'deeporange14_msgs' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/deeporange14_msgs/${idir}'.  ${_report}")
     endif()
     _list_append_unique(deeporange14_msgs_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib;/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib;/users/vpurohi/catkin_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib;/home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

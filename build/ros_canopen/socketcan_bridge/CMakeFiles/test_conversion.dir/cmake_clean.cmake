@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_bridge/test_conversion"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib/socketcan_bridge/test_conversion.pdb"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/socketcan_bridge/test_conversion"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib/socketcan_bridge/test_conversion.pdb"
   "CMakeFiles/test_conversion.dir/test/test_conversion.cpp.o"
+  "CMakeFiles/test_conversion.dir/test/test_conversion.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

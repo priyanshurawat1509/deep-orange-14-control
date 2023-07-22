@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/pdu_msgs/msg/FuseReport.lisp"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/pdu_msgs/msg/FuseStatus.lisp"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/pdu_msgs/msg/RelayCommand.lisp"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/pdu_msgs/msg/RelayReport.lisp"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/pdu_msgs/msg/RelayState.lisp"
-  "/users/vpurohi/deeporange_ws/deeporange14_control/devel/share/common-lisp/ros/pdu_msgs/msg/RelayStatus.lisp"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/pdu_msgs/msg/FuseReport.lisp"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/pdu_msgs/msg/FuseStatus.lisp"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/pdu_msgs/msg/RelayCommand.lisp"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/pdu_msgs/msg/RelayReport.lisp"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/pdu_msgs/msg/RelayState.lisp"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/pdu_msgs/msg/RelayStatus.lisp"
   "CMakeFiles/pdu_msgs_generate_messages_lisp"
 )
 

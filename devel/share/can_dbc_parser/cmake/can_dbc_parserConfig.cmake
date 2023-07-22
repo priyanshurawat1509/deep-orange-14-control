@@ -67,14 +67,14 @@ set(can_dbc_parser_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(can_dbc_parser_SOURCE_PREFIX /users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser)
-  set(can_dbc_parser_DEVEL_PREFIX /users/vpurohi/deeporange_ws/deeporange14_control/devel)
+  set(can_dbc_parser_SOURCE_PREFIX /home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser)
+  set(can_dbc_parser_DEVEL_PREFIX /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel)
   set(can_dbc_parser_INSTALL_PREFIX "")
   set(can_dbc_parser_PREFIX ${can_dbc_parser_DEVEL_PREFIX})
 else()
   set(can_dbc_parser_SOURCE_PREFIX "")
   set(can_dbc_parser_DEVEL_PREFIX "")
-  set(can_dbc_parser_INSTALL_PREFIX /users/vpurohi/deeporange_ws/deeporange14_control/install)
+  set(can_dbc_parser_INSTALL_PREFIX /home/administrator/Documents/DEEPORANGE14/deeporange14_control/install)
   set(can_dbc_parser_PREFIX ${can_dbc_parser_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(can_dbc_parser_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include " STREQUAL " ")
+if(NOT "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include " STREQUAL " ")
   set(can_dbc_parser_INCLUDE_DIRS "")
-  set(_include_dirs "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include")
+  set(_include_dirs "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/can
         message(FATAL_ERROR "Project 'can_dbc_parser' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'can_dbc_parser' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/users/vpurohi/deeporange_ws/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'can_dbc_parser' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/administrator/Documents/DEEPORANGE14/deeporange14_control/src/raptor-dbw-ros/can_dbc_parser/${idir}'.  ${_report}")
     endif()
     _list_append_unique(can_dbc_parser_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /users/vpurohi/deeporange_ws/deeporange14_control/devel/lib;/users/vpurohi/deeporange_ws/deeporange14_control/devel/lib;/users/vpurohi/catkin_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/lib;/home/administrator/phoenix-source/clemson_deeporange_latest/phoenix-r1/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

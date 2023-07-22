@@ -16,7 +16,7 @@
 
 (defclass deeporange14_msgs::RaptorStateMsg
   :super ros::object
-  :slots (_header _system_state _dbw_mode _log_cmd _brk_Lpres _brk_Rpres ))
+  :slots (_header _system_state _dbw_mode _speed_state _log_cmd _brk_Lpres _brk_Rpres ))
 
 (defmethod deeporange14_msgs::RaptorStateMsg
   (:init
@@ -24,6 +24,7 @@
     ((:header __header) (instance std_msgs::Header :init))
     ((:system_state __system_state) 0)
     ((:dbw_mode __dbw_mode) 0)
+    ((:speed_state __speed_state) 0)
     ((:log_cmd __log_cmd) nil)
     ((:brk_Lpres __brk_Lpres) 0.0)
     ((:brk_Rpres __brk_Rpres) 0.0)
@@ -32,6 +33,7 @@
    (setq _header __header)
    (setq _system_state (round __system_state))
    (setq _dbw_mode (round __dbw_mode))
+   (setq _speed_state (round __speed_state))
    (setq _log_cmd __log_cmd)
    (setq _brk_Lpres (float __brk_Lpres))
    (setq _brk_Rpres (float __brk_Rpres))
@@ -49,6 +51,9 @@
   (:dbw_mode
    (&optional __dbw_mode)
    (if __dbw_mode (setq _dbw_mode __dbw_mode)) _dbw_mode)
+  (:speed_state
+   (&optional __speed_state)
+   (if __speed_state (setq _speed_state __speed_state)) _speed_state)
   (:log_cmd
    (&optional (__log_cmd :null))
    (if (not (eq __log_cmd :null)) (setq _log_cmd __log_cmd)) _log_cmd)
@@ -67,6 +72,8 @@
     1
     ;; uint8 _dbw_mode
     1
+    ;; uint8 _speed_state
+    1
     ;; bool _log_cmd
     1
     ;; float64 _brk_Lpres
@@ -84,6 +91,8 @@
        (write-byte _system_state s)
      ;; uint8 _dbw_mode
        (write-byte _dbw_mode s)
+     ;; uint8 _speed_state
+       (write-byte _speed_state s)
      ;; bool _log_cmd
        (if _log_cmd (write-byte -1 s) (write-byte 0 s))
      ;; float64 _brk_Lpres
@@ -100,6 +109,8 @@
      (setq _system_state (sys::peek buf ptr- :char)) (incf ptr- 1)
    ;; uint8 _dbw_mode
      (setq _dbw_mode (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _speed_state
+     (setq _speed_state (sys::peek buf ptr- :char)) (incf ptr- 1)
    ;; bool _log_cmd
      (setq _log_cmd (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
    ;; float64 _brk_Lpres
@@ -110,13 +121,14 @@
    self)
   )
 
-(setf (get deeporange14_msgs::RaptorStateMsg :md5sum-) "2f69d1bbbcd956fab1e3b5107568ef48")
+(setf (get deeporange14_msgs::RaptorStateMsg :md5sum-) "9c2bf3014b9a7a42f7e5e8b26caa8e03")
 (setf (get deeporange14_msgs::RaptorStateMsg :datatype-) "deeporange14_msgs/RaptorStateMsg")
 (setf (get deeporange14_msgs::RaptorStateMsg :definition-)
       "Header header
 
 uint8 system_state
 uint8 dbw_mode
+uint8 speed_state
 bool log_cmd
 float64 brk_Lpres 
 float64 brk_Rpres
@@ -141,6 +153,6 @@ string frame_id
 
 
 
-(provide :deeporange14_msgs/RaptorStateMsg "2f69d1bbbcd956fab1e3b5107568ef48")
+(provide :deeporange14_msgs/RaptorStateMsg "9c2bf3014b9a7a42f7e5e8b26caa8e03")
 
 

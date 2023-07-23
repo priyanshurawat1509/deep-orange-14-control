@@ -8,7 +8,7 @@
 
 #include <string>
 #include <vector>
-#include <memory>
+#include <map>
 
 #include <ros/types.h>
 #include <ros/serialization.h>
@@ -28,6 +28,7 @@ struct RaptorStateMsg_
     : header()
     , system_state(0)
     , dbw_mode(0)
+    , speed_state(0)
     , log_cmd(false)
     , brk_Lpres(0.0)
     , brk_Rpres(0.0)  {
@@ -36,6 +37,7 @@ struct RaptorStateMsg_
     : header(_alloc)
     , system_state(0)
     , dbw_mode(0)
+    , speed_state(0)
     , log_cmd(false)
     , brk_Lpres(0.0)
     , brk_Rpres(0.0)  {
@@ -52,6 +54,9 @@ struct RaptorStateMsg_
 
    typedef uint8_t _dbw_mode_type;
   _dbw_mode_type dbw_mode;
+
+   typedef uint8_t _speed_state_type;
+  _speed_state_type speed_state;
 
    typedef uint8_t _log_cmd_type;
   _log_cmd_type log_cmd;
@@ -94,6 +99,7 @@ bool operator==(const ::deeporange14_msgs::RaptorStateMsg_<ContainerAllocator1> 
   return lhs.header == rhs.header &&
     lhs.system_state == rhs.system_state &&
     lhs.dbw_mode == rhs.dbw_mode &&
+    lhs.speed_state == rhs.speed_state &&
     lhs.log_cmd == rhs.log_cmd &&
     lhs.brk_Lpres == rhs.brk_Lpres &&
     lhs.brk_Rpres == rhs.brk_Rpres;
@@ -153,12 +159,12 @@ struct MD5Sum< ::deeporange14_msgs::RaptorStateMsg_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "2f69d1bbbcd956fab1e3b5107568ef48";
+    return "9c2bf3014b9a7a42f7e5e8b26caa8e03";
   }
 
   static const char* value(const ::deeporange14_msgs::RaptorStateMsg_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x2f69d1bbbcd956faULL;
-  static const uint64_t static_value2 = 0xb1e3b5107568ef48ULL;
+  static const uint64_t static_value1 = 0x9c2bf3014b9a7a42ULL;
+  static const uint64_t static_value2 = 0xf7e5e8b26caa8e03ULL;
 };
 
 template<class ContainerAllocator>
@@ -181,6 +187,7 @@ struct Definition< ::deeporange14_msgs::RaptorStateMsg_<ContainerAllocator> >
 "\n"
 "uint8 system_state\n"
 "uint8 dbw_mode\n"
+"uint8 speed_state\n"
 "bool log_cmd\n"
 "float64 brk_Lpres \n"
 "float64 brk_Rpres\n"
@@ -221,6 +228,7 @@ namespace serialization
       stream.next(m.header);
       stream.next(m.system_state);
       stream.next(m.dbw_mode);
+      stream.next(m.speed_state);
       stream.next(m.log_cmd);
       stream.next(m.brk_Lpres);
       stream.next(m.brk_Rpres);
@@ -249,6 +257,8 @@ struct Printer< ::deeporange14_msgs::RaptorStateMsg_<ContainerAllocator> >
     Printer<uint8_t>::stream(s, indent + "  ", v.system_state);
     s << indent << "dbw_mode: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.dbw_mode);
+    s << indent << "speed_state: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.speed_state);
     s << indent << "log_cmd: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.log_cmd);
     s << indent << "brk_Lpres: ";

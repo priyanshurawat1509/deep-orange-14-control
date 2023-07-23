@@ -1,8 +1,9 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/include/deeporange14_msgs/MissionStatus.h"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/include/deeporange14_msgs/MobilityMsg.h"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/include/deeporange14_msgs/RaptorStateMsg.h"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/include/deeporange14_msgs/TorqueCmdStamped.h"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/AuStatusMsg.h"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/MissionStatus.h"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/MobilityMsg.h"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/RaptorStateMsg.h"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/include/deeporange14_msgs/TorqueCmdStamped.h"
   "CMakeFiles/deeporange14_msgs_generate_messages_cpp"
 )
 

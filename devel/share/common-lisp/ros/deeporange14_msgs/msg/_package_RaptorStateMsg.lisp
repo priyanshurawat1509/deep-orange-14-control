@@ -5,6 +5,8 @@
           SYSTEM_STATE
           DBW_MODE-VAL
           DBW_MODE
+          SPEED_STATE-VAL
+          SPEED_STATE
           LOG_CMD-VAL
           LOG_CMD
           BRK_LPRES-VAL

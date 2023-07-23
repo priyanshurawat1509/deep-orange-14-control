@@ -1,8 +1,9 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/MissionStatus.lisp"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/MobilityMsg.lisp"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/RaptorStateMsg.lisp"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/TorqueCmdStamped.lisp"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/AuStatusMsg.lisp"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/MissionStatus.lisp"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/MobilityMsg.lisp"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/RaptorStateMsg.lisp"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/common-lisp/ros/deeporange14_msgs/msg/TorqueCmdStamped.lisp"
   "CMakeFiles/deeporange14_msgs_generate_messages_lisp"
 )
 

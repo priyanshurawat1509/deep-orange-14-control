@@ -1,9 +1,10 @@
 file(REMOVE_RECURSE
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/manifest.l"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/MissionStatus.l"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/MobilityMsg.l"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/RaptorStateMsg.l"
-  "/users/sanskrj/Desktop/DO13-Autonomy_gitWs/main/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/TorqueCmdStamped.l"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/manifest.l"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/AuStatusMsg.l"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/MissionStatus.l"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/MobilityMsg.l"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/RaptorStateMsg.l"
+  "/home/administrator/Documents/DEEPORANGE14/deeporange14_control/devel/share/roseus/ros/deeporange14_msgs/msg/TorqueCmdStamped.l"
   "CMakeFiles/deeporange14_msgs_generate_messages_eus"
 )
 

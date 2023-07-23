@@ -9,13 +9,14 @@ import struct
 import std_msgs.msg
 
 class RaptorStateMsg(genpy.Message):
-  _md5sum = "2f69d1bbbcd956fab1e3b5107568ef48"
+  _md5sum = "9c2bf3014b9a7a42f7e5e8b26caa8e03"
   _type = "deeporange14_msgs/RaptorStateMsg"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """Header header
 
 uint8 system_state
 uint8 dbw_mode
+uint8 speed_state
 bool log_cmd
 float64 brk_Lpres 
 float64 brk_Rpres
@@ -36,8 +37,8 @@ time stamp
 #Frame this data is associated with
 string frame_id
 """
-  __slots__ = ['header','system_state','dbw_mode','log_cmd','brk_Lpres','brk_Rpres']
-  _slot_types = ['std_msgs/Header','uint8','uint8','bool','float64','float64']
+  __slots__ = ['header','system_state','dbw_mode','speed_state','log_cmd','brk_Lpres','brk_Rpres']
+  _slot_types = ['std_msgs/Header','uint8','uint8','uint8','bool','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -47,7 +48,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,system_state,dbw_mode,log_cmd,brk_Lpres,brk_Rpres
+       header,system_state,dbw_mode,speed_state,log_cmd,brk_Lpres,brk_Rpres
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -62,6 +63,8 @@ string frame_id
         self.system_state = 0
       if self.dbw_mode is None:
         self.dbw_mode = 0
+      if self.speed_state is None:
+        self.speed_state = 0
       if self.log_cmd is None:
         self.log_cmd = False
       if self.brk_Lpres is None:
@@ -72,6 +75,7 @@ string frame_id
       self.header = std_msgs.msg.Header()
       self.system_state = 0
       self.dbw_mode = 0
+      self.speed_state = 0
       self.log_cmd = False
       self.brk_Lpres = 0.
       self.brk_Rpres = 0.
@@ -97,7 +101,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3B2d().pack(_x.system_state, _x.dbw_mode, _x.log_cmd, _x.brk_Lpres, _x.brk_Rpres))
+      buff.write(_get_struct_4B2d().pack(_x.system_state, _x.dbw_mode, _x.speed_state, _x.log_cmd, _x.brk_Lpres, _x.brk_Rpres))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -127,8 +131,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 19
-      (_x.system_state, _x.dbw_mode, _x.log_cmd, _x.brk_Lpres, _x.brk_Rpres,) = _get_struct_3B2d().unpack(str[start:end])
+      end += 20
+      (_x.system_state, _x.dbw_mode, _x.speed_state, _x.log_cmd, _x.brk_Lpres, _x.brk_Rpres,) = _get_struct_4B2d().unpack(str[start:end])
       self.log_cmd = bool(self.log_cmd)
       return self
     except struct.error as e:
@@ -151,7 +155,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3B2d().pack(_x.system_state, _x.dbw_mode, _x.log_cmd, _x.brk_Lpres, _x.brk_Rpres))
+      buff.write(_get_struct_4B2d().pack(_x.system_state, _x.dbw_mode, _x.speed_state, _x.log_cmd, _x.brk_Lpres, _x.brk_Rpres))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -182,8 +186,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 19
-      (_x.system_state, _x.dbw_mode, _x.log_cmd, _x.brk_Lpres, _x.brk_Rpres,) = _get_struct_3B2d().unpack(str[start:end])
+      end += 20
+      (_x.system_state, _x.dbw_mode, _x.speed_state, _x.log_cmd, _x.brk_Lpres, _x.brk_Rpres,) = _get_struct_4B2d().unpack(str[start:end])
       self.log_cmd = bool(self.log_cmd)
       return self
     except struct.error as e:
@@ -193,15 +197,15 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_3B2d = None
-def _get_struct_3B2d():
-    global _struct_3B2d
-    if _struct_3B2d is None:
-        _struct_3B2d = struct.Struct("<3B2d")
-    return _struct_3B2d
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
+_struct_4B2d = None
+def _get_struct_4B2d():
+    global _struct_4B2d
+    if _struct_4B2d is None:
+        _struct_4B2d = struct.Struct("<4B2d")
+    return _struct_4B2d

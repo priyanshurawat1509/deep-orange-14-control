@@ -6,9 +6,11 @@
 #include <string.h>
 #include <ros/ros.h>
 #include <std_msgs/Bool.h>
-#include <std_msgs/UInt8.h>
 #include <std_msgs/Float32.h>
+#include <std_msgs/UInt8.h>
 #include <can_msgs/Frame.h>
+#include <std_msgs/String.h>
+
 #include <geometry_msgs/TwistStamped.h>
 #include <geometry_msgs/Twist.h>
 #include <nav_msgs/Odometry.h>
@@ -34,8 +36,9 @@ namespace deeporange14
         private:
         void checkStackStatus(const geometry_msgs::Twist::ConstPtr& cmdVelMsg);
         
-        void getMissionStatus(const deeporange14_msgs::MissionStatus::ConstPtr& missionStatus);
+        void getMissionStatus(const std_msgs::String::ConstPtr& missionStatus);
     
+        
         void getTorqueValues(const deeporange14_msgs::TorqueCmdStamped::ConstPtr& controllerTrqValues);
 
         void getStopRos(const std_msgs::Bool::ConstPtr& stopRosMsg);
@@ -49,6 +52,8 @@ namespace deeporange14
         //member variables 
         bool raptor_hb_detected;
         bool stack_fault;
+        // bool dbw_ros_en;
+        // bool dbw_ros_controlled;
         bool dbw_ros_mode;
         std::string mission_status;
         float brkL_pr;
@@ -61,9 +66,8 @@ namespace deeporange14
         allStates state;
         double raptor_hb_timestamp;
         double cmdvel_timestamp;
-       
-        uint system_state;
-        
+        uint speed_state;
+        uint au_state;
         double counter;
         float cmdvel_timeout;
         float raptorhb_timeout;
@@ -76,21 +80,20 @@ namespace deeporange14
         ros::Publisher pub_states;
 
         // Subscribers
-        
+        ros::Subscriber sub_cmdVel;
         ros::Subscriber sub_missionStatus;
         ros::Subscriber sub_brakeStatus;
         ros::Subscriber sub_rosController;
+        ros::Subscriber sub_rosStop;
         ros::Subscriber sub_raptorState;
-        ros::Subscriber sub_cmdVel;
         ros::Subscriber sub_stopRos;
-        std::string topic_ns = "/deeporange14";
+        std::string topic_ns = "/deeporange1314";
         
         // Init the msg variables
-        
+        std_msgs::UInt8 auStateMsg;
         deeporange14_msgs::MobilityMsg mobilityMsg;
         deeporange14_msgs::TorqueCmdStamped trqvalues;
         deeporange14_msgs::RaptorStateMsg raptorMsg;
-        std_msgs::UInt8 au_state;
 
     };
 

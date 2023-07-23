@@ -22,6 +22,7 @@ namespace deeporange14
         raptor_hb_detected = false;
         stack_fault = true;
         dbw_ros_mode = false;
+        // dbw_ros_controlled = false;
         mission_status = "";
         tqL_cmd_controller = 0.0;
         tqR_cmd_controller = 0.0;
@@ -48,9 +49,9 @@ namespace deeporange14
         cmdvel_timestamp = ros::Time::now().toSec();
         // ROS_WARN("cmd_vel timestamp : %f",cmdvel_timestamp);
     }
-    void DeepOrangeStateSupervisor::getMissionStatus(const deeporange14_msgs::MissionStatus::ConstPtr &missionStatus)
+    void DeepOrangeStateSupervisor::getMissionStatus(const std_msgs::String::ConstPtr &missionStatus)
     {
-        mission_status = missionStatus->status;
+        mission_status = missionStatus->data;
     }
     void DeepOrangeStateSupervisor::getTorqueValues(const deeporange14_msgs::TorqueCmdStamped::ConstPtr &controllerTrqValues)
     {
@@ -64,10 +65,11 @@ namespace deeporange14
     void DeepOrangeStateSupervisor::getRaptorMsg(const deeporange14_msgs::RaptorStateMsg::ConstPtr &raptorMsg)
     {
         raptor_hb_timestamp = raptorMsg->header.stamp.sec + raptorMsg->header.stamp.nsec * (1e-9);
-        system_state = raptorMsg->system_state;
-        dbw_ros_mode = raptorMsg->dbw_mode == DBW_3_ROS_EN;
+        dbw_ros_mode = raptorMsg->dbw_mode == DBW_3_ROS_EN || raptorMsg->dbw_mode == DBW_4_ROS_CONTROLLED ;
+    
         brkL_pr = raptorMsg->brk_Lpres; 
         brkR_pr = raptorMsg->brk_Rpres; 
+        speed_state = raptorMsg->speed_state;
      
     }
 
@@ -79,8 +81,8 @@ namespace deeporange14
 
         DeepOrangeStateSupervisor::updateROSStateMsg();
         mobilityMsg.au_state = state;
-        au_state.data = state;
-        pub_states.publish(au_state);
+        auStateMsg.data = state;
+        pub_states.publish(auStateMsg);
         pub_mobility.publish(mobilityMsg);
     }
 
@@ -101,16 +103,18 @@ namespace deeporange14
             mobilityMsg.tqR_cmd = 0.0;
             mobilityMsg.brkL_cmd = 1.0;
             mobilityMsg.brkR_cmd = 1.0;
+            mission_status="";
             // ROS_WARN("In startup");
 
             if(raptor_hb_detected){
-                ROS_WARN("WARN:[AU_1_STARTUP]: RaptorHandshake is established");
+                ROS_WARN("WARN:[AU_1_STARTUP]: RaptorHandshake is established, transitioning to AU_2_IDLE ");
                 state = AU_2_IDLE;
                 break;
             }
             else
             {
                 // do nothing , stay in same state 
+                ROS_WARN("[AU_1_STARTUP]:Raptor Handshake failed or not established yet");
                 break;
             }
 
@@ -124,6 +128,7 @@ namespace deeporange14
             mobilityMsg.tqR_cmd = 0.0;
             mobilityMsg.brkL_cmd = 1.0;
             mobilityMsg.brkR_cmd = 1.0;
+            mission_status="";
 
             // ROS_WARN("In Idle");
             if (!raptor_hb_detected)
@@ -135,12 +140,14 @@ namespace deeporange14
 
             else if(dbw_ros_mode)
             {
+                ROS_WARN("WARN: [AU_2_IDLE]: Transitioning to AU_3_ROS_EN ");
                 state = AU_3_ROS_MODE_EN;
                 break;
             }
             else 
             {
-                // do nothing ,stay in same state 
+                // do nothing ,stay in same state
+                ROS_WARN("WARN: [AU_2_IDLE]: RaptorHandshake failed or DBW ros mode disabled"); 
                 break;
             }
         }
@@ -175,7 +182,7 @@ namespace deeporange14
             {
                 //  go backuint8 left_brkPressure
                 state = AU_2_IDLE;
-                ROS_WARN("Warning: [AU_3_ROS_MODE_EN]:stop button is pressed ");
+                ROS_ERROR("ERROR: [AU_3_ROS_MODE_EN]:stop button is pressed ");
                 break;
             }
 
@@ -183,12 +190,13 @@ namespace deeporange14
             else if (mission_status == "globalPlanReady")
             {
                 state = AU_4_DISENGAGING_BRAKES; 
-                ROS_INFO("[AU_3_ROS_MODE_EN]: Global Plan Ready , disengaging brakes ");
+                ROS_WARN("[AU_3_ROS_MODE_EN]: Global Plan Ready , disengaging brakes ");
                 break;
             }
 
             else
-            {
+            {   
+                ROS_WARN("[AU_3_ROS_MODE_EN] ");
                 // Do nothing
                 break;
             }
@@ -226,20 +234,21 @@ namespace deeporange14
             {
                 //  go back to idle
                 state = AU_2_IDLE;
-                ROS_WARN("Warning: [AU_4_DISENGAGING_BRAKES]:stop button is pressed ");
+                ROS_ERROR("ERROR: [AU_4_DISENGAGING_BRAKES]:stop button is pressed ");
                 break;
             }
 
-            else if (system_state == SPEED_STATE_Ready2Move)
+            else if (speed_state == SPEED_STATE_Ready2Move)
             {
 
                 state = AU_5_ROS_CONTROLLED;
-                ROS_INFO("[AU_4_DISENGAGING_BRAKES]: Brakes disengaged, about to move ");
+                ROS_WARN("[AU_4_DISENGAGING_BRAKES]: Brakes disengaged, about to move ");
                 break;
             }
             else
             {
                 //  Do nothing
+                ROS_WARN("[AU_4_DISENGAGING_BRAKES]: Brakes disengaged, about to move ");
                 break;
             }
         }
@@ -251,7 +260,7 @@ namespace deeporange14
             mobilityMsg.tqL_cmd = tqL_cmd_controller;
             mobilityMsg.tqR_cmd = tqR_cmd_controller;
             mobilityMsg.brkL_cmd = 0.0;
-            mobilityMsg.brkL_cmd = 0.0;
+            mobilityMsg.brkR_cmd = 0.0;
             
             if (!raptor_hb_detected)
             {
@@ -282,12 +291,13 @@ namespace deeporange14
             else if (mission_status == "MissionCompleted" || mission_status == "MissionCancelled")
             {
                 state = AU_3_ROS_MODE_EN ;
-                ROS_INFO("[AU_5_ROS_CONTROLLED]: Mission Completed or Mission Cancelled going back to AU_3_ROS_MODE_EN");
+                ROS_WARN("[AU_5_ROS_CONTROLLED]: Mission Completed or Mission Cancelled going back to AU_3_ROS_MODE_EN");
                 break;
             }
             
             else{
                 // do nothing, remain in same state
+                ROS_WARN("[AU_5_ROS_CONTROLLED]: Should not be here");
                 break;
 
             }

@@ -22,6 +22,7 @@ class RaptorStateMsg {
       this.header = null;
       this.system_state = null;
       this.dbw_mode = null;
+      this.speed_state = null;
       this.log_cmd = null;
       this.brk_Lpres = null;
       this.brk_Rpres = null;
@@ -44,6 +45,12 @@ class RaptorStateMsg {
       }
       else {
         this.dbw_mode = 0;
+      }
+      if (initObj.hasOwnProperty('speed_state')) {
+        this.speed_state = initObj.speed_state
+      }
+      else {
+        this.speed_state = 0;
       }
       if (initObj.hasOwnProperty('log_cmd')) {
         this.log_cmd = initObj.log_cmd
@@ -74,6 +81,8 @@ class RaptorStateMsg {
     bufferOffset = _serializer.uint8(obj.system_state, buffer, bufferOffset);
     // Serialize message field [dbw_mode]
     bufferOffset = _serializer.uint8(obj.dbw_mode, buffer, bufferOffset);
+    // Serialize message field [speed_state]
+    bufferOffset = _serializer.uint8(obj.speed_state, buffer, bufferOffset);
     // Serialize message field [log_cmd]
     bufferOffset = _serializer.bool(obj.log_cmd, buffer, bufferOffset);
     // Serialize message field [brk_Lpres]
@@ -93,6 +102,8 @@ class RaptorStateMsg {
     data.system_state = _deserializer.uint8(buffer, bufferOffset);
     // Deserialize message field [dbw_mode]
     data.dbw_mode = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [speed_state]
+    data.speed_state = _deserializer.uint8(buffer, bufferOffset);
     // Deserialize message field [log_cmd]
     data.log_cmd = _deserializer.bool(buffer, bufferOffset);
     // Deserialize message field [brk_Lpres]
@@ -105,7 +116,7 @@ class RaptorStateMsg {
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 19;
+    return length + 20;
   }
 
   static datatype() {
@@ -115,7 +126,7 @@ class RaptorStateMsg {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '2f69d1bbbcd956fab1e3b5107568ef48';
+    return '9c2bf3014b9a7a42f7e5e8b26caa8e03';
   }
 
   static messageDefinition() {
@@ -125,6 +136,7 @@ class RaptorStateMsg {
     
     uint8 system_state
     uint8 dbw_mode
+    uint8 speed_state
     bool log_cmd
     float64 brk_Lpres 
     float64 brk_Rpres
@@ -173,6 +185,13 @@ class RaptorStateMsg {
     }
     else {
       resolved.dbw_mode = 0
+    }
+
+    if (msg.speed_state !== undefined) {
+      resolved.speed_state = msg.speed_state;
+    }
+    else {
+      resolved.speed_state = 0
     }
 
     if (msg.log_cmd !== undefined) {

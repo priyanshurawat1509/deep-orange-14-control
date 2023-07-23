@@ -10,6 +10,8 @@ Makes use of New Eagle package: can_dbc_parser (https://github.com/NewEagleRapto
 
 #include<deeporange14_control/DeepOrangeStateSupervisor.h>
 #include<deeporange14_control/DeepOrangeVelocityController.h>
+#include<deeporange14_control/DataLogger.h>
+#include<deeporange14_control/DeepOrangeDbwCan.h>
 
 
 
@@ -25,8 +27,8 @@ int main(int argc, char **argv)
   deeporange14::VelocityController deeporange_velocityController(nh, priv_nh);
 
   // create Data Logger object
-  // deeporange14::DataLogger n_datalogger(nh, priv_nh);
-  // deeporange14::DeepOrangeDbwCan can_node(nh, priv_nh);
+  deeporange14::DataLogger deeporange_datalogger(nh, priv_nh);
+  deeporange14::DeepOrangeDbwCan deeporange_canNode(nh, priv_nh);
   
   ros::spin();
 
